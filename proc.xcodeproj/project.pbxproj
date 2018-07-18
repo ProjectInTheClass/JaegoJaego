@@ -21,7 +21,6 @@
 		B838073520EDC00900A46B20 /* procUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838073420EDC00900A46B20 /* procUITests.swift */; };
 		B851460C20EF4608000E6C4E /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B851460B20EF4608000E6C4E /* CompleteViewController.swift */; };
 		B85366CD20F2FD3D00253BCC /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85366CC20F2FD3D00253BCC /* PopupView.swift */; };
-<<<<<<< HEAD
 		B85366DB20F3053400253BCC /* CHContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85366CF20F3053300253BCC /* CHContentViewController.swift */; };
 		B85366DC20F3053400253BCC /* CHControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85366D020F3053300253BCC /* CHControls.swift */; };
 		B85366DD20F3053400253BCC /* DrawingCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85366D120F3053300253BCC /* DrawingCanvasView.swift */; };
@@ -37,10 +36,6 @@
 		B85366E820F3147500253BCC /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85366E720F3147500253BCC /* UIViewController+Navigation.swift */; };
 		B8B55B8020FF24C10028B233 /* StoreChartListViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B7F20FF24C10028B233 /* StoreChartListViewControllerTableViewController.swift */; };
 		B8B55B8420FF32A00028B233 /* StoreChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B8320FF32A00028B233 /* StoreChartCell.swift */; };
-=======
->>>>>>> origin/master
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		B838072620EDC00900A46B20 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -79,7 +74,6 @@
 		B838073620EDC00900A46B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B851460B20EF4608000E6C4E /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
 		B85366CC20F2FD3D00253BCC /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		B85366CF20F3053300253BCC /* CHContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CHContentViewController.swift; path = "../../../../Downloads/PilotPlant-master/PilotPlant/CHContentViewController.swift"; sourceTree = "<group>"; };
 		B85366D020F3053300253BCC /* CHControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CHControls.swift; path = "../../../../Downloads/PilotPlant-master/PilotPlant/CHControls.swift"; sourceTree = "<group>"; };
 		B85366D120F3053300253BCC /* DrawingCanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrawingCanvasView.swift; path = "../../../../Downloads/PilotPlant-master/PilotPlant/DrawingCanvasView.swift"; sourceTree = "<group>"; };
@@ -95,8 +89,6 @@
 		B85366E720F3147500253BCC /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Navigation.swift"; path = "../../../../Downloads/PilotPlant-master/UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		B8B55B7F20FF24C10028B233 /* StoreChartListViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartListViewControllerTableViewController.swift; sourceTree = "<group>"; };
 		B8B55B8320FF32A00028B233 /* StoreChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartCell.swift; sourceTree = "<group>"; };
-=======
->>>>>>> origin/master
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,7 +313,6 @@
 			files = (
 				B838071720EDC00700A46B20 /* ViewController.swift in Sources */,
 				B85366CD20F2FD3D00253BCC /* PopupView.swift in Sources */,
-<<<<<<< HEAD
 				B85366E620F3053400253BCC /* SwipeActionTableViewCell.swift in Sources */,
 				B85366E520F3053400253BCC /* FIlters.swift in Sources */,
 				B85366DF20F3053400253BCC /* RecordButton.swift in Sources */,
@@ -336,9 +327,7 @@
 				B8B55B8020FF24C10028B233 /* StoreChartListViewControllerTableViewController.swift in Sources */,
 				B85366DE20F3053400253BCC /* CHPagingScrollViewController.swift in Sources */,
 				B85366DC20F3053400253BCC /* CHControls.swift in Sources */,
-=======
 				B838071520EDC00700A46B20 /* AppDelegate.swift in Sources */,
->>>>>>> origin/master
 				B851460C20EF4608000E6C4E /* CompleteViewController.swift in Sources */,
 				90476C4320FF26D2004F1E6B /* StockViewController.swift in Sources */,
 			);
