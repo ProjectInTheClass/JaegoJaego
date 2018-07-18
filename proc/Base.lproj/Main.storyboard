@@ -2746,6 +2746,7 @@
                                 <state key="normal" title="확인"/>
                                 <connections>
                                     <action selector="navigationBack:" destination="g79-2N-elw" eventType="touchUpInside" id="QhV-0a-tFM"/>
+                                    <action selector="navigationBackToRoot:" destination="g79-2N-elw" eventType="touchUpInside" id="zJt-FH-rjq"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I1M-B0-A1L">
@@ -2827,6 +2828,7 @@
                                 <state key="normal" title="확인"/>
                                 <connections>
                                     <action selector="navigationBack:" destination="Hw9-Av-VkO" eventType="touchUpInside" id="uY5-b9-Qmx"/>
+                                    <action selector="navigationBackToRoot:" destination="Hw9-Av-VkO" eventType="touchUpInside" id="pS7-Nf-zLr"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2oc-88-FQf">

@@ -97,7 +97,7 @@
             <objects>
                 <viewController title="재고재고" id="4mH-iz-GFh" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MfJ-wB-nNx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="537"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6OP-Ip-VJZ">
@@ -129,7 +129,7 @@
                                 <color key="backgroundColor" red="0.86054619750000005" green="0.89966340980000004" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JcU-Xw-bdC">
-                                <rect key="frame" x="0.0" y="149" width="414" height="537"/>
+                                <rect key="frame" x="0.0" y="-50" width="414" height="537"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="Z1q-6G-4kc" kind="embed" id="l2q-Et-UaM"/>
@@ -183,7 +183,7 @@
             <objects>
                 <viewController id="4W4-Ev-haJ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="udX-l0-WzM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="537"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1wF-gi-pUU">
@@ -223,7 +223,7 @@
             <objects>
                 <viewController id="A6X-rX-MY3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VUe-H3-hAv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8H-Sp-fgz">
@@ -366,12 +366,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKl-FJ-OWz">
-                                        <rect key="frame" x="166" y="0.0" width="42" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="확인"/>
                                         <connections>
-                                            <segue destination="4mH-iz-GFh" kind="show" id="4e5-4h-k5N"/>
+                                            <action selector="navigationBackWithoutAnimation:" destination="A6X-rX-MY3" eventType="touchUpInside" id="duF-N4-QQS"/>
+                                            <segue destination="4mH-iz-GFh" kind="show" id="15F-7O-eLb"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -381,6 +382,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5BD-SA-J9v"/>
                     </view>
+                    <size key="freeformSize" width="414" height="700"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSc-m4-giG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -435,6 +437,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="A6X-rX-MY3" kind="show" id="q78-ho-S2b"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="89" id="cTy-KY-8Qd">
                                         <rect key="frame" x="0.0" y="117" width="414" height="89"/>
@@ -1340,7 +1345,7 @@
         <image name="허니머스타드" width="111" height="130"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TbP-bj-rOe"/>
-        <segue reference="4e5-4h-k5N"/>
+        <segue reference="q78-ho-S2b"/>
+        <segue reference="15F-7O-eLb"/>
     </inferredMetricsTieBreakers>
 </document>
