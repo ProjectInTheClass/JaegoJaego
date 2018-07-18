@@ -360,7 +360,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-<<<<<<< HEAD
                                         <connections>
                                             <outlet property="itemDateLabel" destination="tTh-I3-eAc" id="3qV-Hu-MdL"/>
                                             <outlet property="itemImageView" destination="CmB-5j-1bN" id="h1I-RX-UZc"/>
@@ -368,8 +367,6 @@
                                             <outlet property="itemNameLabel" destination="ej3-kR-Lwy" id="EDZ-fZ-70d"/>
                                             <segue destination="A6X-rX-MY3" kind="show" id="q78-ho-S2b"/>
                                         </connections>
-=======
->>>>>>> origin/master
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="89" id="cTy-KY-8Qd">
                                         <rect key="frame" x="0.0" y="118" width="414" height="89"/>
