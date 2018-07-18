@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZQd-fk-OQz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uim-SG-37u">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -2583,6 +2583,9 @@
                                 <state key="normal" title="확인">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="ZQd-fk-OQz" kind="show" id="Pce-Kg-gre"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3V1-JT-gRQ">
                                 <rect key="frame" x="105" y="455" width="78" height="45"/>
@@ -2742,7 +2745,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="확인"/>
                                 <connections>
-                                    <segue destination="Uim-SG-37u" kind="show" id="i3z-UH-fPg"/>
+                                    <action selector="navigationBack:" destination="g79-2N-elw" eventType="touchUpInside" id="QhV-0a-tFM"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I1M-B0-A1L">
@@ -2822,6 +2825,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="확인"/>
+                                <connections>
+                                    <action selector="navigationBack:" destination="Hw9-Av-VkO" eventType="touchUpInside" id="uY5-b9-Qmx"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2oc-88-FQf">
                                 <rect key="frame" x="77" y="112" width="261" height="30"/>
@@ -2890,7 +2896,6 @@
         <image name="홈2" width="34" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0gJ-fJ-NVj"/>
         <segue reference="Qz8-AR-bYR"/>
         <segue reference="KhN-gX-yMN"/>
     </inferredMetricsTieBreakers>
