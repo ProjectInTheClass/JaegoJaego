@@ -399,11 +399,11 @@
                         <sections>
                             <tableViewSection headerTitle="1일 남음" id="U7v-WA-cva">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="89" id="d2V-7l-RJ5">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="89"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StoreTableViewCell" rowHeight="90" id="d2V-7l-RJ5" customClass="Storechart_StoreTableViewCell" customModule="proc" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d2V-7l-RJ5" id="YL1-lG-5Xb">
-                                            <rect key="frame" x="0.0" y="0.0" width="376" height="88.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOK-bK-epx">
@@ -413,7 +413,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="avocado" translatesAutoresizingMaskIntoConstraints="NO" id="CmB-5j-1bN">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="itemImageView" image="avocado" translatesAutoresizingMaskIntoConstraints="NO" id="CmB-5j-1bN">
                                                     <rect key="frame" x="38" y="15" width="65" height="58"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -424,25 +424,36 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2018.07.18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTh-I3-eAc">
-                                                    <rect key="frame" x="111" y="55" width="73" height="18"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="빨-1" translatesAutoresizingMaskIntoConstraints="NO" id="FQi-6c-4om">
+                                                    <rect key="frame" x="111" y="27" width="14" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2018.07.18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFO-EY-2EE">
+                                                    <rect key="frame" x="225" y="55" width="73" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="빨-1" translatesAutoresizingMaskIntoConstraints="NO" id="FQi-6c-4om">
-                                                    <rect key="frame" x="111" y="27" width="14" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2018.07.18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTh-I3-eAc">
+                                                    <rect key="frame" x="127" y="55" width="73" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="itemDateLabel" destination="tTh-I3-eAc" id="3qV-Hu-MdL"/>
+                                            <outlet property="itemImageView" destination="CmB-5j-1bN" id="h1I-RX-UZc"/>
+                                            <outlet property="itemManyLabel" destination="bOK-bK-epx" id="rBh-HF-VY7"/>
+                                            <outlet property="itemNameLabel" destination="ej3-kR-Lwy" id="EDZ-fZ-70d"/>
                                             <segue destination="A6X-rX-MY3" kind="show" id="q78-ho-S2b"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="89" id="cTy-KY-8Qd">
-                                        <rect key="frame" x="0.0" y="117" width="414" height="89"/>
+                                        <rect key="frame" x="0.0" y="118" width="414" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cTy-KY-8Qd" id="4L7-9N-l1o">
                                             <rect key="frame" x="0.0" y="0.0" width="376" height="88.666666666666671"/>
@@ -455,7 +466,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="새우" translatesAutoresizingMaskIntoConstraints="NO" id="CiL-YZ-zNi">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shrimp" translatesAutoresizingMaskIntoConstraints="NO" id="CiL-YZ-zNi">
                                                     <rect key="frame" x="38" y="15" width="65" height="58"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -481,7 +492,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="89" id="6vQ-th-Ddd">
-                                        <rect key="frame" x="0.0" y="206" width="414" height="89"/>
+                                        <rect key="frame" x="0.0" y="207" width="414" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6vQ-th-Ddd" id="0qy-WF-Meu">
                                             <rect key="frame" x="0.0" y="0.0" width="376" height="88.666666666666671"/>
@@ -494,7 +505,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="레몬" translatesAutoresizingMaskIntoConstraints="NO" id="fDB-IR-EOA">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lemon" translatesAutoresizingMaskIntoConstraints="NO" id="fDB-IR-EOA">
                                                     <rect key="frame" x="38" y="15" width="65" height="58"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -524,7 +535,7 @@
                             <tableViewSection headerTitle="2~5일 남음" id="dcV-6Y-GQB">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="89" id="DxC-nJ-89T">
-                                        <rect key="frame" x="0.0" y="323" width="414" height="89"/>
+                                        <rect key="frame" x="0.0" y="324" width="414" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DxC-nJ-89T" id="df8-Dr-Cho">
                                             <rect key="frame" x="0.0" y="0.0" width="376" height="88.666666666666671"/>
@@ -537,7 +548,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="새우" translatesAutoresizingMaskIntoConstraints="NO" id="RL2-H9-vsp">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shrimp" translatesAutoresizingMaskIntoConstraints="NO" id="RL2-H9-vsp">
                                                     <rect key="frame" x="38" y="15" width="65" height="58"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -563,7 +574,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="89" id="nzc-th-jPk">
-                                        <rect key="frame" x="0.0" y="412" width="414" height="89"/>
+                                        <rect key="frame" x="0.0" y="413" width="414" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nzc-th-jPk" id="HYd-GE-DaA">
                                             <rect key="frame" x="0.0" y="0.0" width="376" height="88.666666666666671"/>
@@ -602,7 +613,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="89" id="ZEP-LA-3ps">
-                                        <rect key="frame" x="0.0" y="501" width="414" height="89"/>
+                                        <rect key="frame" x="0.0" y="502" width="414" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZEP-LA-3ps" id="t1J-vS-jWu">
                                             <rect key="frame" x="0.0" y="0.0" width="376" height="88.666666666666671"/>
@@ -641,7 +652,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="89" id="kfm-Lb-Vba">
-                                        <rect key="frame" x="0.0" y="590" width="414" height="89"/>
+                                        <rect key="frame" x="0.0" y="591" width="414" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kfm-Lb-Vba" id="oMc-zh-j2X">
                                             <rect key="frame" x="0.0" y="0.0" width="388" height="88.666666666666671"/>
@@ -684,7 +695,7 @@
                             <tableViewSection headerTitle="5일 이상 남음" id="MrE-kF-nzN">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="89" id="yQe-Xl-gF5">
-                                        <rect key="frame" x="0.0" y="707" width="414" height="89"/>
+                                        <rect key="frame" x="0.0" y="708" width="414" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yQe-Xl-gF5" id="Geh-CZ-QyF">
                                             <rect key="frame" x="0.0" y="0.0" width="388" height="88.666666666666671"/>
@@ -723,7 +734,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="89" id="5dV-QX-V0h">
-                                        <rect key="frame" x="0.0" y="796" width="414" height="89"/>
+                                        <rect key="frame" x="0.0" y="797" width="414" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5dV-QX-V0h" id="z8B-FY-T8v">
                                             <rect key="frame" x="0.0" y="0.0" width="388" height="88.666666666666671"/>
@@ -762,7 +773,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="89" id="caN-sK-c2S">
-                                        <rect key="frame" x="0.0" y="885" width="414" height="89"/>
+                                        <rect key="frame" x="0.0" y="886" width="414" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="caN-sK-c2S" id="tpF-8P-X7K">
                                             <rect key="frame" x="0.0" y="0.0" width="388" height="88.666666666666671"/>
@@ -811,7 +822,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcb-Ex-47O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1512" y="-329"/>
+            <point key="canvasLocation" x="1511.5942028985507" y="-329.75543478260875"/>
         </scene>
         <!--재고재고-->
         <scene sceneID="ZV9-CA-YrK">
@@ -962,7 +973,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="새우" translatesAutoresizingMaskIntoConstraints="NO" id="u0q-SO-BFZ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shrimp" translatesAutoresizingMaskIntoConstraints="NO" id="u0q-SO-BFZ">
                                                     <rect key="frame" x="38" y="15" width="65" height="58"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -1323,14 +1334,14 @@
     </scenes>
     <resources>
         <image name="avocado" width="418" height="278"/>
+        <image name="lemon" width="133" height="85"/>
+        <image name="shrimp" width="266" height="177"/>
         <image name="노-1" width="152" height="155"/>
-        <image name="레몬" width="133" height="85"/>
         <image name="마요네즈" width="196" height="196"/>
         <image name="바코드-1" width="152" height="155"/>
         <image name="보-1" width="152" height="155"/>
         <image name="보르도소스" width="113" height="160"/>
         <image name="빨-1" width="152" height="155"/>
-        <image name="새우" width="266" height="177"/>
         <image name="샤워크림" width="166" height="166"/>
         <image name="스위트콘" width="134" height="134"/>
         <image name="스파게티면" width="200" height="200"/>

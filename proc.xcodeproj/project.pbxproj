@@ -33,6 +33,8 @@
 		B85366E520F3053400253BCC /* FIlters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85366D920F3053300253BCC /* FIlters.swift */; };
 		B85366E620F3053400253BCC /* SwipeActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85366DA20F3053400253BCC /* SwipeActionTableViewCell.swift */; };
 		B85366E820F3147500253BCC /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85366E720F3147500253BCC /* UIViewController+Navigation.swift */; };
+		B8B55B8020FF24C10028B233 /* StoreChartListViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B7F20FF24C10028B233 /* StoreChartListViewControllerTableViewController.swift */; };
+		B8B55B8420FF32A00028B233 /* StoreChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B8320FF32A00028B233 /* StoreChartCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		B85366D920F3053300253BCC /* FIlters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FIlters.swift; path = "../../../../Downloads/PilotPlant-master/PilotPlant/FIlters.swift"; sourceTree = "<group>"; };
 		B85366DA20F3053400253BCC /* SwipeActionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwipeActionTableViewCell.swift; path = "../../../../Downloads/PilotPlant-master/PilotPlant/SwipeActionTableViewCell.swift"; sourceTree = "<group>"; };
 		B85366E720F3147500253BCC /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Navigation.swift"; path = "../../../../Downloads/PilotPlant-master/UIViewController+Navigation.swift"; sourceTree = "<group>"; };
+		B8B55B7F20FF24C10028B233 /* StoreChartListViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartListViewControllerTableViewController.swift; sourceTree = "<group>"; };
+		B8B55B8320FF32A00028B233 /* StoreChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 				B817E0A120FC8FF400B2A37C /* Schedule.storyboard */,
 				B817E0A320FC900D00B2A37C /* Staff.storyboard */,
 				B817E0A620FC903200B2A37C /* Storechart.storyboard */,
+				B8B55B7F20FF24C10028B233 /* StoreChartListViewControllerTableViewController.swift */,
+				B8B55B8320FF32A00028B233 /* StoreChartCell.swift */,
 			);
 			path = proc;
 			sourceTree = "<group>";
@@ -335,8 +341,10 @@
 				B85366E120F3053400253BCC /* NavigationControllers.swift in Sources */,
 				B85366E320F3053400253BCC /* CHViews.swift in Sources */,
 				B85366DB20F3053400253BCC /* CHContentViewController.swift in Sources */,
+				B8B55B8420FF32A00028B233 /* StoreChartCell.swift in Sources */,
 				B85366E820F3147500253BCC /* UIViewController+Navigation.swift in Sources */,
 				B838071520EDC00700A46B20 /* AppDelegate.swift in Sources */,
+				B8B55B8020FF24C10028B233 /* StoreChartListViewControllerTableViewController.swift in Sources */,
 				B85366DE20F3053400253BCC /* CHPagingScrollViewController.swift in Sources */,
 				B85366DC20F3053400253BCC /* CHControls.swift in Sources */,
 				B851460C20EF4608000E6C4E /* CompleteViewController.swift in Sources */,
