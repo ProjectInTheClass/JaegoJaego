@@ -20,7 +20,7 @@
 		B838073520EDC00900A46B20 /* procUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838073420EDC00900A46B20 /* procUITests.swift */; };
 		B851460C20EF4608000E6C4E /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B851460B20EF4608000E6C4E /* CompleteViewController.swift */; };
 		B85366CD20F2FD3D00253BCC /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85366CC20F2FD3D00253BCC /* PopupView.swift */; };
-		B8B55B8020FF24C10028B233 /* StoreChartListViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B7F20FF24C10028B233 /* StoreChartListViewControllerTableViewController.swift */; };
+		B8B55B8020FF24C10028B233 /* StoreChartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */; };
 		B8B55B8420FF32A00028B233 /* StoreChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B8320FF32A00028B233 /* StoreChartCell.swift */; };
 		B8DD14A920FF3A7B00D5DD94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD14A820FF3A7B00D5DD94 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -62,7 +62,7 @@
 		B838073620EDC00900A46B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B851460B20EF4608000E6C4E /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
 		B85366CC20F2FD3D00253BCC /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
-		B8B55B7F20FF24C10028B233 /* StoreChartListViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartListViewControllerTableViewController.swift; sourceTree = "<group>"; };
+		B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartTableViewController.swift; sourceTree = "<group>"; };
 		B8B55B8320FF32A00028B233 /* StoreChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartCell.swift; sourceTree = "<group>"; };
 		B8DD14A820FF3A7B00D5DD94 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +136,7 @@
 				B817E0A120FC8FF400B2A37C /* Schedule.storyboard */,
 				B817E0A320FC900D00B2A37C /* Staff.storyboard */,
 				B817E0A620FC903200B2A37C /* Storechart.storyboard */,
-				B8B55B7F20FF24C10028B233 /* StoreChartListViewControllerTableViewController.swift */,
+				B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */,
 				B8B55B8320FF32A00028B233 /* StoreChartCell.swift */,
 			);
 			path = proc;
@@ -298,7 +298,7 @@
 				B838071720EDC00700A46B20 /* ViewController.swift in Sources */,
 				B85366CD20F2FD3D00253BCC /* PopupView.swift in Sources */,
 				B8B55B8420FF32A00028B233 /* StoreChartCell.swift in Sources */,
-				B8B55B8020FF24C10028B233 /* StoreChartListViewControllerTableViewController.swift in Sources */,
+				B8B55B8020FF24C10028B233 /* StoreChartTableViewController.swift in Sources */,
 				B8DD14A920FF3A7B00D5DD94 /* AppDelegate.swift in Sources */,
 				B851460C20EF4608000E6C4E /* CompleteViewController.swift in Sources */,
 				90476C4320FF26D2004F1E6B /* StockViewController.swift in Sources */,

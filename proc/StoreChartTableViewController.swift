@@ -11,21 +11,24 @@ import UIKit
 struct Store {
     var name: String
     var Date: String
-    var many: Int
+    var many: String
     var Image: String
 }
 
 
-class StoreChartListViewControllerTableViewController: UITableViewController {
-
+class StoreChartTableViewController: UITableViewController {
+    // UITableViewController = UIViewController , UITableViewController (테이블 뷰 관련), UTTableViewDelegate 제공
+/**
+     재고 목록 동적 테이블 뷰, 배열 사용
+ */
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     let StoreChart:[Store] = [
-        Store(name:"새우", Date:"2018/07/22", many: 20, Image: "shrimp"),
-        Store(name:"레몬", Date:"2018/07/21", many: 5, Image: "lemon"),
-        Store(name:"아보카도", Date:"2018/07/22",many: 15, Image: "avocado"),
+        Store(name:"새우", Date:"2018/07/22", many: "20", Image: "shrimp"),
+        Store(name:"레몬", Date:"2018/07/21", many: "5", Image: "lemon"),
+        Store(name:"아보카도", Date:"2018/07/22",many: "15", Image: "avocado"),
     ]
 
 
@@ -38,21 +41,24 @@ class StoreChartListViewControllerTableViewController: UITableViewController {
         return StoreChart.count
     }
 
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section:Int) -> String? {
-        return "StoreChart 배열"
-    }
+   // override func tableView(_ tableView: UITableView, titleForHeaderInSection section:Int) -> String? {
+   //     return "StoreChart 배열"
+   // }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:StoreChartCell! = tableView.dequeueReusableCell(withIdentifier: "StoreCell2", for: indexPath) as! StoreChartCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! StoreChartCell //tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! StoreChartCell
         let store:Store = StoreChart[indexPath.row]
-        
+
         cell.labelName.text = store.name
         cell.viewImage.image = UIImage(named: store.Image)
+        cell.labelDate.text = store.Date
+        cell.labelMany.text = store.many
+//
 //        cell.textLabel!.text = store.name
 //        cell.detailTextLabel?.text = String(store.many)
 //        cell.imageView?.image = UIImage(named: store.Image)
-//
+
         return cell
     }
 

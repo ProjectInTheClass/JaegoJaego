@@ -2652,7 +2652,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StoreCell2" rowHeight="100" id="t0M-7G-4hG" customClass="StoreChartCell" customModule="proc" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="t0M-7G-4hG" customClass="StoreChartCell" customModule="proc" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t0M-7G-4hG" id="aQc-Ff-dMi">
@@ -2686,10 +2686,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="labelName" destination="7ib-7W-Y54" id="0XT-WG-ubS"/>
-                                    <outlet property="viewImage" destination="7ed-tJ-26X" id="yxU-d6-BfM"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -2700,35 +2696,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgt-L1-E4J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-136.23188405797103" y="3270.652173913044"/>
-        </scene>
-        <!--Store Chart List View Controller Table View Controller-->
-        <scene sceneID="CUv-xZ-nC9">
-            <objects>
-                <tableViewController id="U98-lu-3kf" customClass="StoreChartListViewControllerTableViewController" customModule="proc" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z7R-t9-vzY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoreCell" id="Yea-1A-VU5">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yea-1A-VU5" id="vu5-6R-sQz">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="U98-lu-3kf" id="Sdc-1C-d0b"/>
-                            <outlet property="delegate" destination="U98-lu-3kf" id="Vu1-Ts-OAa"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hHF-S7-Et0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="919" y="3236"/>
+            <point key="canvasLocation" x="339" y="3270"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FXz-R5-hME">
@@ -2986,7 +2954,7 @@
         <image name="홈2" width="34" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qz8-AR-bYR"/>
+        <segue reference="RLq-zd-Mgh"/>
         <segue reference="KhN-gX-yMN"/>
     </inferredMetricsTieBreakers>
 </document>
