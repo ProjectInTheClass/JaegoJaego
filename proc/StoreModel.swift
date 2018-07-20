@@ -1,11 +1,3 @@
-//
-//  StoreModel.swift
-//  proc
-//
-//  Created by swuad-19 on 2018. 7. 19..
-//  Copyright © 2018년 swuad-19. All rights reserved.
-//
-
 import Foundation
 
 class Store {
@@ -20,7 +12,6 @@ class Store {
         self.many = many
         //self.Image = Image
     }
-    
 }
 
 class StoreModel {
@@ -34,6 +25,7 @@ class StoreModel {
 //            Store(name:"아보카도", Date:"2018/07/22",many: "15", Image: "avocado"),
 //            ]
         self.arrayList = []
+        
         var stock = Store(name:"새우", Date:"2018/07/22", many: "20")
         stock.Image = "shrimp"
         self.arrayList.append(stock)
@@ -47,6 +39,4 @@ class StoreModel {
         self.arrayList.append(stock)
         
     }
-   
-    
 }

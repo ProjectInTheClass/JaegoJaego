@@ -10,9 +10,5 @@ class StoreChartCell : UITableViewCell {
     @IBOutlet weak var labelDate:UILabel!
     @IBOutlet weak var labelMany:UILabel!
     
-    override func viewDidLoad(){
-        super.viewDidLoad()
-        
-        let infoStore = 
-    }
+
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 //struct Store {
 //    let name: String
@@ -34,20 +35,16 @@ class StoreChartTableViewController: UITableViewController {
  */
     var modelStore = StoreModel()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    
-
-
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // 모델의 데이터 개수와 셀 개수 일치시키기
-        return StoreChart.count
+        return self.modelStore.arrayList.count
     }
 
    // override func tableView(_ tableView: UITableView, titleForHeaderInSection section:Int) -> String? {
@@ -56,21 +53,47 @@ class StoreChartTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let info = self.modelStore.arrayList[indexPath.row]
+        let proccell:StoreChartCell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! StoreChartCell
+        
+        proccell.labelDate.text = info.Date
+        proccell.labelName.text = info.name
+        proccell.labelMany.text = info.many
+        if let image = info.Image {
+            proccell.viewImage.image = UIImage(named: image)
+        }
+//        proccell.textLabel?.text = info.many
+//        proccell.textLabel?.text = info.name
+//        proccell.textLabel?.text = info.Date
+       // proccell.imageView?.image = UIImage(named: image)
+//        if let image = info.Image {
+//            proccell.imageView?.image = UIImage(named: image)
+//        }
+       return proccell
+       /*
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! StoreChartCell //tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! StoreChartCell
-        let store:Store = StoreChart[indexPath.row]
+        let store:Store = modelStore[indexPath.row]
 
         cell.labelName.text = store.name
-        cell.viewImage.image = UIImage(named: store.Image)
+        //cell.viewImage.image = UIImage(named: store.image)
         cell.labelDate.text = store.Date
         cell.labelMany.text = store.many
+ */
 //
 //        cell.textLabel!.text = store.name
 //        cell.detailTextLabel?.text = String(store.many)
 //        cell.imageView?.image = UIImage(named: store.Image)
-
-        return cell
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender:Any?){
+        let cell = sender as! UITableViewCell
+        let indexPath:IndexPath! = self.tableView.indexPath(for: cell)
+        
+        self.modelStore.selectedIndex = indexPath.row
+        
+        let segueStore = segue.destination as! StoreInfoController
+        segueStore.modelStore = self.modelStore
+    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

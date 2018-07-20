@@ -129,7 +129,6 @@
 		B838071320EDC00700A46B20 /* proc */ = {
 			isa = PBXGroup;
 			children = (
-				B8877110210072FD0096BB58 /* StoreInfoController.swift */,
 				B8DD14A820FF3A7B00D5DD94 /* AppDelegate.swift */,
 				B838071620EDC00700A46B20 /* ViewController.swift */,
 				B838071820EDC00700A46B20 /* Main.storyboard */,
@@ -144,6 +143,7 @@
 				B817E0A120FC8FF400B2A37C /* Schedule.storyboard */,
 				B817E0A320FC900D00B2A37C /* Staff.storyboard */,
 				B817E0A620FC903200B2A37C /* Storechart.storyboard */,
+				B8877110210072FD0096BB58 /* StoreInfoController.swift */,
 				B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */,
 				B8B55B8320FF32A00028B233 /* StoreChartCell.swift */,
 				B8877112210077C70096BB58 /* StoreModel.swift */,
