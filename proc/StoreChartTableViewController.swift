@@ -8,28 +8,37 @@
 
 import UIKit
 
-struct Store {
-    var name: String
-    var Date: String
-    var many: String
-    var Image: String
-}
-
+//struct Store {
+//    let name: String
+//    let Date: String
+//    var many: String
+//    var Image: String
+//
+//}
+//
+//class StoreModel {
+//    var selectedIndex:Int = 0
+//    var arrayList:Array<Store>
+//
+//    let StoreChart:[Store] = [
+//        Store(name:"새우", Date:"2018/07/22", many: "20", Image: "shrimp"),
+//        Store(name:"레몬", Date:"2018/07/21", many: "5", Image: "lemon"),
+//        Store(name:"아보카도", Date:"2018/07/22",many: "15", Image: "avocado"),
+//    ]
+//}
 
 class StoreChartTableViewController: UITableViewController {
     // UITableViewController = UIViewController , UITableViewController (테이블 뷰 관련), UTTableViewDelegate 제공
 /**
      재고 목록 동적 테이블 뷰, 배열 사용
  */
+    var modelStore = StoreModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    let StoreChart:[Store] = [
-        Store(name:"새우", Date:"2018/07/22", many: "20", Image: "shrimp"),
-        Store(name:"레몬", Date:"2018/07/21", many: "5", Image: "lemon"),
-        Store(name:"아보카도", Date:"2018/07/22",many: "15", Image: "avocado"),
-    ]
+    
 
 
     override func numberOfSections(in tableView: UITableView) -> Int {
