@@ -51,6 +51,38 @@ class StoreChartTableViewController: UITableViewController {
    //     return "StoreChart 배열"
    // }
     
+//// - 슬라이드 삭제 시도 시작
+//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath:IndexPath) -> Bool{
+//        return true
+//    }
+//    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+//        // an array of UITableViewRowAction object
+//        return self.modelStore.arrayList.
+//    }
+//
+//    @available(iOS 11.0, *)
+//    override func tableView(_ tableView:UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
+//        let deleteAction = UIContextualAction(style: .destructive , title:"Add" ){(action, view, handler) in
+//            print("Add Action Tapped")
+//        }
+//        deleteAction.backgroundColor = .green
+//        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+//        return configuration
+//    }
+//
+//    @available(iOS 11.0, *)
+//    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
+//    {
+//        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, handler) in
+//            print("Delete Action Tapped")
+//        }
+//        deleteAction.backgroundColor = .red
+//        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+//        return configuration
+//    }
+//
+//
+//// - 슬라이드 삭제 시도 종료
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let info = self.modelStore.arrayList[indexPath.row]
@@ -62,13 +94,7 @@ class StoreChartTableViewController: UITableViewController {
         if let image = info.Image {
             proccell.viewImage.image = UIImage(named: image)
         }
-//        proccell.textLabel?.text = info.many
-//        proccell.textLabel?.text = info.name
-//        proccell.textLabel?.text = info.Date
-       // proccell.imageView?.image = UIImage(named: image)
-//        if let image = info.Image {
-//            proccell.imageView?.image = UIImage(named: image)
-//        }
+      
        return proccell
        /*
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! StoreChartCell //tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! StoreChartCell
