@@ -96,19 +96,6 @@ class StoreChartTableViewController: UITableViewController {
         }
       
        return proccell
-       /*
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! StoreChartCell //tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! StoreChartCell
-        let store:Store = modelStore[indexPath.row]
-
-        cell.labelName.text = store.name
-        //cell.viewImage.image = UIImage(named: store.image)
-        cell.labelDate.text = store.Date
-        cell.labelMany.text = store.many
- */
-//
-//        cell.textLabel!.text = store.name
-//        cell.detailTextLabel?.text = String(store.many)
-//        cell.imageView?.image = UIImage(named: store.Image)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender:Any?){
