@@ -40,11 +40,12 @@
                         <segue destination="aR2-ec-6ga" kind="relationship" relationship="viewControllers" id="vjW-IE-nL9"/>
                         <segue destination="fvO-Lx-4GS" kind="relationship" relationship="viewControllers" id="vgz-GB-Hy4"/>
                         <segue destination="mEQ-Rd-eID" kind="relationship" relationship="viewControllers" id="HCt-Dz-Sfs"/>
+                        <segue destination="Uim-SG-37u" kind="presentation" identifier="login" id="U7S-Ed-xfi"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bmy-hQ-zKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3071" y="3072"/>
+            <point key="canvasLocation" x="3113" y="3096"/>
         </scene>
         <!--홈-->
         <scene sceneID="OaX-wc-JBn">
@@ -2541,7 +2542,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LpD-L9-XFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4372" y="3956"/>
+            <point key="canvasLocation" x="4422" y="3955"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="QN2-o5-oZz">
@@ -2578,9 +2579,6 @@
                                 <state key="normal" title="확인">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="ZQd-fk-OQz" kind="show" id="Pce-Kg-gre"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3V1-JT-gRQ">
                                 <rect key="frame" x="105" y="455" width="78" height="45"/>
@@ -2641,7 +2639,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8mL-bJ-73I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="369.56521739130437" y="2492.934782608696"/>
+            <point key="canvasLocation" x="2629" y="2133"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FXz-R5-hME">

@@ -12,4 +12,5 @@ class ScheduleChartCell : UITableViewCell {
     @IBOutlet weak var scheduleTitle:UILabel!
     @IBOutlet weak var scheduleMemo: UILabel!
     @IBOutlet weak var scheduleEvent: UILabel!
+    @IBOutlet weak var scheduleCount: UILabel!
 }

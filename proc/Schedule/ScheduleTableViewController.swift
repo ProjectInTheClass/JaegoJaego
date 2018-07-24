@@ -8,9 +8,20 @@
 import UIKit
 import Foundation
 
-struct Colors{
-    static var darkGreen = UIColor(named: "darkGreen")
-    static var darkBlue = UIColor(named: "darkBlue")
+
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        let newRed = CGFloat(red)/255
+        let newGreen = CGFloat(green)/255
+        let newBlue = CGFloat(blue)/255
+        
+        self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
+    }
+}
+
+struct Colors {
+    static var darkGreen = UIColor(red: 46, green: 204, blue: 113)
+    static var darkBlue = UIColor(red: 52, green: 152, blue: 219)
 }
 
 enum scheduleStyle: String {
@@ -19,14 +30,16 @@ enum scheduleStyle: String {
 }
 
 struct Schedule {
-    var title: String
+    var title: Int
     var memo: String
     var style: scheduleStyle
+    var counts:Int = 1
     
-    init(title:String, memo:String,style:scheduleStyle) {
+    init(title:Int, memo:String,style:scheduleStyle, counts:Int) {
         self.title = title
         self.memo = memo
         self.style = style
+        self.counts = counts
     }
 }
 
@@ -34,18 +47,27 @@ struct ScheduleModel {
      var ScheduleArray:Array <Schedule>
     
     init(){
-        self.ScheduleArray = []
+        // 예약 시간에 따른 정렬 (1시  2시  5시 순)
+        // 순서에 따른 count 값
         
-        var stock =  Schedule(title:"2시 예약", memo:"태권도팀 30명", style: .reservation)
+        self.ScheduleArray = []
+        var stock =  Schedule(title: 14, memo:"태권도팀 30명", style: .reservation, counts: 1)
         self.ScheduleArray.append(stock)
-        stock =  Schedule(title:"5시 예약", memo:"삼성전자 단체회식 40명", style: .event)
+        stock =  Schedule(title: 17, memo:"삼성전자 단체회식 40명", style: .event, counts: 1)
         self.ScheduleArray.append(stock)
-        stock =  Schedule(title:"12시 예약", memo:"일반 8인", style: .reservation)
+        stock =  Schedule(title: 12, memo:"일반 8인", style: .reservation, counts:  1)
         self.ScheduleArray.append(stock)
-        stock =  Schedule(title:"11시 예약", memo:"12명", style: .event)
+        stock =  Schedule(title: 11, memo:"12명", style: .event, counts:  1)
         self.ScheduleArray.append(stock)
-    }
     
+        var sortedSchedule = self.ScheduleArray.sorted(by: { $0.title < $1.title} )
+        for i in 0..<ScheduleArray.count {
+            sortedSchedule[i].counts += i
+        }
+         ScheduleArray = sortedSchedule
+    }
+
+
 }
 
 
@@ -60,15 +82,24 @@ class ScheduleTableViewController : UITableViewController{
     // 모델의 데이터 개수와 셀 개수 일치시키기
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)->Int {
         return self.ModelSchedule.ScheduleArray.count
+        //self.ModelSchedule.ScheduleArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let scheduleInfo = self.ModelSchedule.ScheduleArray[indexPath.row]
         let ScheduleCell:ScheduleChartCell = tableView.dequeueReusableCell(withIdentifier: "ScheduleCell") as! ScheduleChartCell
         
-        ScheduleCell.scheduleTitle.text = scheduleInfo.title
+        ScheduleCell.scheduleTitle.text = String(scheduleInfo.title) + " 시"
         ScheduleCell.scheduleMemo.text = scheduleInfo.memo
+        ScheduleCell.scheduleMemo.textColor = UIColor.gray
         ScheduleCell.scheduleEvent.text = scheduleInfo.style.rawValue
+        // 예약, 이벤트별 폰트 색상 변경
+        if scheduleInfo.style.rawValue == scheduleStyle.reservation.rawValue {
+            ScheduleCell.scheduleEvent.textColor = Colors.darkGreen
+        }else {
+            ScheduleCell.scheduleEvent.textColor = Colors.darkBlue
+        }
+        ScheduleCell.scheduleCount.text = "No. " + String(scheduleInfo.counts)
         return ScheduleCell
     }
 
