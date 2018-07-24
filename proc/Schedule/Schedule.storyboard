@@ -94,7 +94,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="aAC-Rk-7V8"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="7Gc-kk-h18">
+                    <navigationItem key="navigationItem" title="Calendar" id="7Gc-kk-h18">
                         <barButtonItem key="rightBarButtonItem" title="일정 추가" id="Mds-d9-nMN">
                             <connections>
                                 <segue destination="Q89-nJ-D2T" kind="show" id="S8i-RG-lJ7"/>

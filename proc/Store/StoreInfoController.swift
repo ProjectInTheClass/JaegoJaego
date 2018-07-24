@@ -13,14 +13,15 @@ class StoreInfoController : UIViewController {
     @IBOutlet weak var labelDate:UILabel!
     @IBOutlet weak var labelMany:UILabel!
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let infoStore = modelStore.arrayList[modelStore.selectedIndex]
         
         labelName.text = infoStore.name
-        labelDate.text = infoStore.Date
-        labelMany.text = infoStore.many
+        labelDate.text = infoStore.DownDate
+        labelMany.text = String(infoStore.many)
         //viewImage.image = infoStore.Image
         
         if let fileName = infoStore.Image {
@@ -28,6 +29,10 @@ class StoreInfoController : UIViewController {
         }
     }
 
+    @IBAction func onClick(sender: AnyObject){
+        
+    }
+    
     
     @IBAction func touchClose(){
         let 완료 = {() -> Void in

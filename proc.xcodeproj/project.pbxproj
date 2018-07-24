@@ -22,13 +22,14 @@
 		B851460C20EF4608000E6C4E /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B851460B20EF4608000E6C4E /* CompleteViewController.swift */; };
 		B85366CD20F2FD3D00253BCC /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85366CC20F2FD3D00253BCC /* PopupView.swift */; };
 		B8877111210072FD0096BB58 /* StoreInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8877110210072FD0096BB58 /* StoreInfoController.swift */; };
-		B8877113210077C70096BB58 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8877112210077C70096BB58 /* StoreModel.swift */; };
 		B8B55B8020FF24C10028B233 /* StoreChartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */; };
 		B8B55B8420FF32A00028B233 /* StoreChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B8320FF32A00028B233 /* StoreChartCell.swift */; };
 		B8DD14A920FF3A7B00D5DD94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD14A820FF3A7B00D5DD94 /* AppDelegate.swift */; };
 		B8DFC23E2106D13B00626614 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC23D2106D13B00626614 /* ScheduleTableViewController.swift */; };
 		B8DFC2402106D6AC00626614 /* ScheduleChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC23F2106D6AC00626614 /* ScheduleChartCell.swift */; };
 		B8DFC2422106EC3500626614 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC2412106EC3500626614 /* ScheduleViewController.swift */; };
+		B8DFC247210710BF00626614 /* StoreCharCell_More.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC246210710BF00626614 /* StoreCharCell_More.swift */; };
+		B8FE6B7321073BD000C471FB /* CustomTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FE6B7221073BD000C471FB /* CustomTableViewCellDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,13 +73,14 @@
 		B851460B20EF4608000E6C4E /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
 		B85366CC20F2FD3D00253BCC /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		B8877110210072FD0096BB58 /* StoreInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfoController.swift; sourceTree = "<group>"; };
-		B8877112210077C70096BB58 /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartTableViewController.swift; sourceTree = "<group>"; };
 		B8B55B8320FF32A00028B233 /* StoreChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartCell.swift; sourceTree = "<group>"; };
 		B8DD14A820FF3A7B00D5DD94 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8DFC23D2106D13B00626614 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		B8DFC23F2106D6AC00626614 /* ScheduleChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleChartCell.swift; sourceTree = "<group>"; };
 		B8DFC2412106EC3500626614 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		B8DFC246210710BF00626614 /* StoreCharCell_More.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCharCell_More.swift; sourceTree = "<group>"; };
+		B8FE6B7221073BD000C471FB /* CustomTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		CA809CB3A8C0B1845755A6AE /* Pods-proc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proc.release.xcconfig"; path = "Pods/Target Support Files/Pods-proc/Pods-proc.release.xcconfig"; sourceTree = "<group>"; };
 		CE2034D60A2D3375CB5FB29D /* Pods_procTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_procTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -200,9 +202,10 @@
 			children = (
 				B817E0A620FC903200B2A37C /* Storechart.storyboard */,
 				B8877110210072FD0096BB58 /* StoreInfoController.swift */,
-				B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */,
 				B8B55B8320FF32A00028B233 /* StoreChartCell.swift */,
-				B8877112210077C70096BB58 /* StoreModel.swift */,
+				B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */,
+				B8DFC246210710BF00626614 /* StoreCharCell_More.swift */,
+				B8FE6B7221073BD000C471FB /* CustomTableViewCellDelegate.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -403,11 +406,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8DFC247210710BF00626614 /* StoreCharCell_More.swift in Sources */,
 				B8DFC2422106EC3500626614 /* ScheduleViewController.swift in Sources */,
 				B8DFC23E2106D13B00626614 /* ScheduleTableViewController.swift in Sources */,
+				B8FE6B7321073BD000C471FB /* CustomTableViewCellDelegate.swift in Sources */,
 				B838071720EDC00700A46B20 /* ViewController.swift in Sources */,
 				B8877111210072FD0096BB58 /* StoreInfoController.swift in Sources */,
-				B8877113210077C70096BB58 /* StoreModel.swift in Sources */,
 				B85366CD20F2FD3D00253BCC /* PopupView.swift in Sources */,
 				B8DFC2402106D6AC00626614 /* ScheduleChartCell.swift in Sources */,
 				B8B55B8420FF32A00028B233 /* StoreChartCell.swift in Sources */,
