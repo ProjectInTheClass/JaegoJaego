@@ -31,6 +31,7 @@
 		B8DFC2422106EC3500626614 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC2412106EC3500626614 /* ScheduleViewController.swift */; };
 		B8DFC247210710BF00626614 /* StoreCharCell_More.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC246210710BF00626614 /* StoreCharCell_More.swift */; };
 		B8FE6B7321073BD000C471FB /* CustomTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FE6B7221073BD000C471FB /* CustomTableViewCellDelegate.swift */; };
+		B8FE6B7521074DEB00C471FB /* AddStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FE6B7421074DEB00C471FB /* AddStoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		B8DFC2412106EC3500626614 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		B8DFC246210710BF00626614 /* StoreCharCell_More.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCharCell_More.swift; sourceTree = "<group>"; };
 		B8FE6B7221073BD000C471FB /* CustomTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCellDelegate.swift; sourceTree = "<group>"; };
+		B8FE6B7421074DEB00C471FB /* AddStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreViewController.swift; sourceTree = "<group>"; };
 		CA809CB3A8C0B1845755A6AE /* Pods-proc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proc.release.xcconfig"; path = "Pods/Target Support Files/Pods-proc/Pods-proc.release.xcconfig"; sourceTree = "<group>"; };
 		CE2034D60A2D3375CB5FB29D /* Pods_procTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_procTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -209,6 +211,7 @@
 				B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */,
 				B8DFC246210710BF00626614 /* StoreCharCell_More.swift */,
 				B8FE6B7221073BD000C471FB /* CustomTableViewCellDelegate.swift */,
+				B8FE6B7421074DEB00C471FB /* AddStoreViewController.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				B8B55B8420FF32A00028B233 /* StoreChartCell.swift in Sources */,
 				69EBD6F42100719C006B055B /* HomeViewController.swift in Sources */,
 				B8B55B8020FF24C10028B233 /* StoreChartTableViewController.swift in Sources */,
+				B8FE6B7521074DEB00C471FB /* AddStoreViewController.swift in Sources */,
 				B8DD14A920FF3A7B00D5DD94 /* AppDelegate.swift in Sources */,
 				B851460C20EF4608000E6C4E /* CompleteViewController.swift in Sources */,
 			);
