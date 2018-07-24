@@ -58,11 +58,7 @@
                         <viewLayoutGuide key="safeArea" id="hdK-SS-gso"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="DiN-m1-9ls">
-                        <barButtonItem key="rightBarButtonItem" title="재료 추가" id="nBo-UM-sVe">
-                            <connections>
-                                <segue destination="4W4-Ev-haJ" kind="show" id="3jU-lN-EsH"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="재료 추가" id="nBo-UM-sVe"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
@@ -188,6 +184,15 @@
                     <view key="view" contentMode="scaleToFill" id="abO-p9-N0D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="바코드 찍는 창" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxE-UI-Z6P">
+                                <rect key="frame" x="158" y="94" width="98" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="2Ua-gB-wKu"/>
                     </view>
@@ -514,12 +519,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="avocado" width="418" height="278"/>
-        <image name="ice" width="1018" height="994"/>
-        <image name="shrimp" width="266" height="177"/>
-        <image name="플러스기호(파랑)" width="117" height="117"/>
         <image name="그래프" width="924" height="720"/>
-        <image name="바코드-1" width="152" height="155"/>
-        <image name="카메라-1" width="152" height="155"/>
+        <image name="플러스기호(파랑)" width="117" height="117"/>
     </resources>
 </document>
