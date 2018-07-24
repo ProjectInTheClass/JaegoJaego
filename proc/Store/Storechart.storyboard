@@ -33,7 +33,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="플러스기호(파랑)"/>
                                         <connections>
-                                            <segue destination="4W4-Ev-haJ" kind="show" id="bXq-PZ-zam"/>
+                                            <segue destination="A6X-rX-MY3" kind="show" id="lsd-ku-CSL"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7w-8W-njB">
@@ -50,7 +50,7 @@
                                 <rect key="frame" x="0.0" y="105" width="414" height="631"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="lCz-0o-ZEK" kind="embed" id="URq-Mz-s7y"/>
+                                    <segue destination="lCz-0o-ZEK" kind="embed" id="xEy-wu-oaL"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -61,46 +61,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="470-iB-vBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-262.31884057971018" y="-503.804347826087"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="EXt-di-Lda">
-            <objects>
-                <viewController id="4W4-Ev-haJ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="udX-l0-WzM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1wF-gi-pUU">
-                                <rect key="frame" x="0.0" y="485" width="414" height="202"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="카메라-1" translatesAutoresizingMaskIntoConstraints="NO" id="L3A-RJ-TOE">
-                                        <rect key="frame" x="149" y="0.0" width="117" height="106"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="바코드-1" translatesAutoresizingMaskIntoConstraints="NO" id="3Vi-zV-rxd">
-                                        <rect key="frame" x="274" y="81" width="117" height="106"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hG-PS-Mbd">
-                                        <rect key="frame" x="46" y="81" width="95" height="113"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="연필이미지"/>
-                                        <connections>
-                                            <segue destination="A6X-rX-MY3" kind="show" id="TbP-bj-rOe"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.34400162960000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="s0Y-jC-dnK"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ot2-DQ-0tz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="897" y="-504"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="w8q-5Q-o6R">
@@ -215,6 +175,14 @@
                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aA-jn-6bU">
+                                <rect key="frame" x="287" y="55" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="cbe-EX-cr0" kind="show" id="SHN-n0-AvA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5BD-SA-J9v"/>
@@ -222,7 +190,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSc-m4-giG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="-504"/>
+            <point key="canvasLocation" x="874" y="-504"/>
+        </scene>
+        <!--Scanner View Controller-->
+        <scene sceneID="SMR-ej-6F9">
+            <objects>
+                <viewController id="cbe-EX-cr0" customClass="ScannerViewController" customModule="proc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qi7-z5-Jqv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="FOo-3l-b6v"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DHg-Z2-gj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1723" y="-489"/>
         </scene>
         <!--Store Chart Table View Controller-->
         <scene sceneID="pTK-Qu-4Z2">
@@ -567,7 +550,6 @@
         <image name="avocado" width="418" height="278"/>
         <image name="ice" width="1018" height="994"/>
         <image name="shrimp" width="266" height="177"/>
-        <image name="바코드-1" width="152" height="155"/>
         <image name="카메라-1" width="152" height="155"/>
         <image name="플러스기호(파랑)" width="117" height="117"/>
     </resources>
