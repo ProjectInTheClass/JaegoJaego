@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-
+// 색상 지정 함수
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {
         let newRed = CGFloat(red)/255
@@ -24,11 +24,15 @@ struct Colors {
     static var darkBlue = UIColor(red: 52, green: 152, blue: 219)
 }
 
+
+
+
 enum scheduleStyle: String {
     case reservation = "예약"
     case event = "이벤트"
 }
 
+// 일정 데이터 정의
 struct Schedule {
     var title: Int
     var memo: String
@@ -43,6 +47,7 @@ struct Schedule {
     }
 }
 
+// 일정 배열 <일정 데이터>
 struct ScheduleModel {
      var ScheduleArray:Array <Schedule>
     
@@ -61,6 +66,7 @@ struct ScheduleModel {
         self.ScheduleArray.append(stock)
     
         var sortedSchedule = self.ScheduleArray.sorted(by: { $0.title < $1.title} )
+        
         for i in 0..<ScheduleArray.count {
             sortedSchedule[i].counts += i
         }
@@ -84,22 +90,30 @@ class ScheduleTableViewController : UITableViewController{
         return self.ModelSchedule.ScheduleArray.count
         //self.ModelSchedule.ScheduleArray.count
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let scheduleInfo = self.ModelSchedule.ScheduleArray[indexPath.row]
         let ScheduleCell:ScheduleChartCell = tableView.dequeueReusableCell(withIdentifier: "ScheduleCell") as! ScheduleChartCell
+        
         
         ScheduleCell.scheduleTitle.text = String(scheduleInfo.title) + " 시"
         ScheduleCell.scheduleMemo.text = scheduleInfo.memo
         ScheduleCell.scheduleMemo.textColor = UIColor.gray
         ScheduleCell.scheduleEvent.text = scheduleInfo.style.rawValue
+        
+        
         // 예약, 이벤트별 폰트 색상 변경
         if scheduleInfo.style.rawValue == scheduleStyle.reservation.rawValue {
             ScheduleCell.scheduleEvent.textColor = Colors.darkGreen
         }else {
             ScheduleCell.scheduleEvent.textColor = Colors.darkBlue
         }
+        
+        
         ScheduleCell.scheduleCount.text = "No. " + String(scheduleInfo.counts)
+        
+        
+        
         return ScheduleCell
     }
 
