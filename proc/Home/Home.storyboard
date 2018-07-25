@@ -141,6 +141,39 @@
             </objects>
             <point key="canvasLocation" x="1260.8695652173915" y="-377.44565217391306"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="aOf-Sk-jnN">
+            <objects>
+                <viewController id="CWb-K5-ngO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4wW-Na-fj0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="홈틀-1" translatesAutoresizingMaskIntoConstraints="NO" id="rl4-pA-Q6n">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="곰돌이-1" translatesAutoresizingMaskIntoConstraints="NO" id="vJf-rX-otL">
+                                <rect key="frame" x="187" y="498" width="41" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="물방울-1" translatesAutoresizingMaskIntoConstraints="NO" id="oad-DC-jLU">
+                                <rect key="frame" x="153" y="191" width="31" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="그래프-1" translatesAutoresizingMaskIntoConstraints="NO" id="ifl-Gn-ZKO">
+                                <rect key="frame" x="206" y="184" width="35" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="rZW-3J-MGc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8OY-RW-TNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1897.1014492753625" y="-377.44565217391306"/>
+        </scene>
         <!--Table View Controller-->
         <scene sceneID="mBa-5W-aAf">
             <objects>
@@ -183,9 +216,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="곰돌이-1" width="605" height="596"/>
         <image name="공지재곰-1" width="4267" height="4267"/>
+        <image name="그래프-1" width="183" height="198"/>
         <image name="달력-1" width="3300" height="1604"/>
+        <image name="물방울-1" width="605" height="596"/>
         <image name="홈2" width="34" height="30"/>
         <image name="홈예시-1" width="1041" height="1853"/>
+        <image name="홈틀-1" width="1041" height="1853"/>
     </resources>
 </document>

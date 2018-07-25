@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		59CEA7A820FC81D700847485 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59CEA7A720FC81D700847485 /* Home.storyboard */; };
 		69EBD6F42100719C006B055B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EBD6F32100719C006B055B /* HomeViewController.swift */; };
-		90CE556B21072F8000E20EC7 /* barcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE556A21072F8000E20EC7 /* barcode.swift */; };
+		90CE556B21072F8000E20EC7 /* Barcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE556A21072F8000E20EC7 /* Barcode.swift */; };
 		90CE556D2107342000E20EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE556C2107342000E20EC7 /* AppDelegate.swift */; };
+		90CE5571210875C900E20EC7 /* Radiobutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE5570210875C900E20EC7 /* Radiobutton.swift */; };
 		A521E423DA2E2F45CCB29B6E /* Pods_proc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98437B6BEF1E17CDECD22727 /* Pods_proc.framework */; };
 		B817E0A220FC8FF400B2A37C /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B817E0A120FC8FF400B2A37C /* Schedule.storyboard */; };
 		B817E0A420FC900D00B2A37C /* Staff.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B817E0A320FC900D00B2A37C /* Staff.storyboard */; };
@@ -56,8 +57,9 @@
 		2F43A365F08E08E2C0A47016 /* Pods_procUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_procUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59CEA7A720FC81D700847485 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		69EBD6F32100719C006B055B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		90CE556A21072F8000E20EC7 /* barcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barcode.swift; sourceTree = "<group>"; };
+		90CE556A21072F8000E20EC7 /* Barcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barcode.swift; sourceTree = "<group>"; };
 		90CE556C2107342000E20EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		90CE5570210875C900E20EC7 /* Radiobutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radiobutton.swift; sourceTree = "<group>"; };
 		98437B6BEF1E17CDECD22727 /* Pods_proc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_proc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B817E0A120FC8FF400B2A37C /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		B817E0A320FC900D00B2A37C /* Staff.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Staff.storyboard; sourceTree = "<group>"; };
@@ -205,9 +207,10 @@
 			isa = PBXGroup;
 			children = (
 				B817E0A620FC903200B2A37C /* Storechart.storyboard */,
+				90CE5570210875C900E20EC7 /* Radiobutton.swift */,
 				B8877110210072FD0096BB58 /* StoreInfoController.swift */,
 				B8B55B8320FF32A00028B233 /* StoreChartCell.swift */,
-				90CE556A21072F8000E20EC7 /* barcode.swift */,
+				90CE556A21072F8000E20EC7 /* Barcode.swift */,
 				B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */,
 				B8DFC246210710BF00626614 /* StoreCharCell_More.swift */,
 				B8FE6B7221073BD000C471FB /* CustomTableViewCellDelegate.swift */,
@@ -418,8 +421,9 @@
 				B8FE6B7321073BD000C471FB /* CustomTableViewCellDelegate.swift in Sources */,
 				B838071720EDC00700A46B20 /* ViewController.swift in Sources */,
 				B8877111210072FD0096BB58 /* StoreInfoController.swift in Sources */,
+				90CE5571210875C900E20EC7 /* Radiobutton.swift in Sources */,
 				B85366CD20F2FD3D00253BCC /* PopupView.swift in Sources */,
-				90CE556B21072F8000E20EC7 /* barcode.swift in Sources */,
+				90CE556B21072F8000E20EC7 /* Barcode.swift in Sources */,
 				B8DFC2402106D6AC00626614 /* ScheduleChartCell.swift in Sources */,
 				90CE556D2107342000E20EC7 /* AppDelegate.swift in Sources */,
 				B8B55B8420FF32A00028B233 /* StoreChartCell.swift in Sources */,
