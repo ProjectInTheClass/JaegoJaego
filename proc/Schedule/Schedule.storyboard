@@ -93,6 +93,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calenderImg" translatesAutoresizingMaskIntoConstraints="NO" id="4ok-u2-Lke">
+                                <rect key="frame" x="11" y="72" width="392" height="315"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="aAC-Rk-7V8"/>
@@ -282,6 +286,7 @@
     </scenes>
     <resources>
         <image name="blueCircle" width="33" height="33"/>
+        <image name="calenderImg" width="650" height="558"/>
         <image name="greenCircle" width="33" height="33"/>
     </resources>
 </document>

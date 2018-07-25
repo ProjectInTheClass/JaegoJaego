@@ -32,7 +32,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func getValue () {
-        var Nametext:String = AddlblName.text
-        var Manytext:String = AddlblMany.text
+        var Nametext:String = AddlblName.text!
+        var Manytext:String = AddlblMany.text!
     }
 }
