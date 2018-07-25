@@ -27,6 +27,8 @@
 		B8877111210072FD0096BB58 /* StoreInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8877110210072FD0096BB58 /* StoreInfoController.swift */; };
 		B8B55B8020FF24C10028B233 /* StoreChartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */; };
 		B8B55B8420FF32A00028B233 /* StoreChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B8320FF32A00028B233 /* StoreChartCell.swift */; };
+		B8BA08F32108397F009C961B /* HomeChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA08F22108397F009C961B /* HomeChartCell.swift */; };
+		B8BA08F521083998009C961B /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA08F421083998009C961B /* HomeTableViewController.swift */; };
 		B8DFC23E2106D13B00626614 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC23D2106D13B00626614 /* ScheduleTableViewController.swift */; };
 		B8DFC2402106D6AC00626614 /* ScheduleChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC23F2106D6AC00626614 /* ScheduleChartCell.swift */; };
 		B8DFC2422106EC3500626614 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC2412106EC3500626614 /* ScheduleViewController.swift */; };
@@ -81,6 +83,8 @@
 		B8877110210072FD0096BB58 /* StoreInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfoController.swift; sourceTree = "<group>"; };
 		B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartTableViewController.swift; sourceTree = "<group>"; };
 		B8B55B8320FF32A00028B233 /* StoreChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartCell.swift; sourceTree = "<group>"; };
+		B8BA08F22108397F009C961B /* HomeChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChartCell.swift; sourceTree = "<group>"; };
+		B8BA08F421083998009C961B /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		B8DFC23D2106D13B00626614 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		B8DFC23F2106D6AC00626614 /* ScheduleChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleChartCell.swift; sourceTree = "<group>"; };
 		B8DFC2412106EC3500626614 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +239,8 @@
 			children = (
 				69EBD6F32100719C006B055B /* HomeViewController.swift */,
 				59CEA7A720FC81D700847485 /* Home.storyboard */,
+				B8BA08F22108397F009C961B /* HomeChartCell.swift */,
+				B8BA08F421083998009C961B /* HomeTableViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -425,8 +431,10 @@
 				B85366CD20F2FD3D00253BCC /* PopupView.swift in Sources */,
 				90CE556B21072F8000E20EC7 /* Barcode.swift in Sources */,
 				B8DFC2402106D6AC00626614 /* ScheduleChartCell.swift in Sources */,
+				B8BA08F32108397F009C961B /* HomeChartCell.swift in Sources */,
 				90CE556D2107342000E20EC7 /* AppDelegate.swift in Sources */,
 				B8B55B8420FF32A00028B233 /* StoreChartCell.swift in Sources */,
+				B8BA08F521083998009C961B /* HomeTableViewController.swift in Sources */,
 				69EBD6F42100719C006B055B /* HomeViewController.swift in Sources */,
 				B8B55B8020FF24C10028B233 /* StoreChartTableViewController.swift in Sources */,
 				B8FE6B7521074DEB00C471FB /* AddStoreViewController.swift in Sources */,

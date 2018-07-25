@@ -3,9 +3,9 @@ import Foundation
 
 
 enum saveStyle : String {
-    case temp = "실온"
+    case Fresh = "실온"
     case Cold = "냉장"
-    case iceCold = "냉동"
+    case Ice = "냉동"
 }
 
 struct Store {
@@ -61,7 +61,7 @@ struct StoreModel {
         stock.Image = "lemon"
         self.arrayList.append(stock)
         
-        stock = Store(name:"아보카도", DownDate:"2018/07/22",many: 15, saveStyle: .temp)
+        stock = Store(name:"아보카도", DownDate:"2018/07/22",many: 15, saveStyle: .Fresh)
         stock.Image = "avocado"
         self.arrayList.append(stock)
     }
@@ -74,7 +74,7 @@ struct StoreModel_More {
     var arrayList:Array<Store>
     
     // 들어온 날짜 = 당일 날짜
-    var infoDate2:String = HomeViewCtroller.dateInfo()
+    var infoDate2:String = HomeViewController.dateInfo()
     
     init(){
         //        let StoreChart:[Store] = [
@@ -93,7 +93,7 @@ struct StoreModel_More {
         stock.Image = "lemon"
         self.arrayList.append(stock)
         
-        stock = Store(name:"아보카도",  UpDate: infoDate2, DownDate:"2018년 07월 22일",many: 15, saveStyle: .temp, TotalMany:30, Call:"010-3333-2332")
+        stock = Store(name:"아보카도",  UpDate: infoDate2, DownDate:"2018년 07월 22일",many: 15, saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332")
         stock.Image = "avocado"
         self.arrayList.append(stock)
         

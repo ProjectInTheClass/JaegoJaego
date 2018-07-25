@@ -2,10 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-<<<<<<< HEAD
-=======
-      "filename" : "그래프.png",
->>>>>>> 3fd47a70c6520394656cace00515158bb0c1ee03
+      "filename" : "곰돌이.png",
       "scale" : "1x"
     },
     {
@@ -14,10 +11,6 @@
     },
     {
       "idiom" : "universal",
-<<<<<<< HEAD
-      "filename" : "그래프-1.png",
-=======
->>>>>>> 3fd47a70c6520394656cace00515158bb0c1ee03
       "scale" : "3x"
     }
   ],
