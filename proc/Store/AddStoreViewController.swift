@@ -19,6 +19,22 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var AddbtnFinish: UIButton! //완료
     
+    @IBOutlet weak var womanRadioButton: RadioButton!
+    @IBOutlet weak var manRadioButton: RadioButton!
+    
+    //라디오 버튼
+    override func awakeFromNib() {
+        self.view.layoutIfNeeded()
+        
+        womanRadioButton.isSelected = true
+        manRadioButton.isSelected = false
+    }
+    
+    override func viewDidLoad() {
+        womanRadioButton?.alternateButton = [manRadioButton!]
+        manRadioButton?.alternateButton = [womanRadioButton!]
+    }
+ 
     
     // 화면 아무곳 누르면 키보드 내려감
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
