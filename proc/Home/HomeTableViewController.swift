@@ -6,13 +6,14 @@ import Foundation
 struct HomeThrowChart {
     var processImage: String?
     var name :String
-    var saveStyle : String?
+    var saveStyle : saveStyle
     var many: Int = 1
-    var manyType:saveStyle
+    var manyType: String
     
-    init(name:String, many: Int, manyType:saveStyle){
+    init(name:String, many: Int, saveStyle:saveStyle, manyType:String){
         self.name = name
         self.many = many
+        self.saveStyle = saveStyle
         self.manyType = manyType
     }
 }
@@ -25,10 +26,10 @@ struct HomedisposalChart_Model {
     init() {
         self.HomeThrowArray = []
         
-        var throwItem = HomeThrowChart(name: "바나나", many: 20, manyType: .Cold)
+        var throwItem = HomeThrowChart(name: "바나나", many: 20, saveStyle: .Cold, manyType: "개수")
         self.HomeThrowArray.append(throwItem)
         
-        throwItem = HomeThrowChart(name: "아보카도", many: 10, manyType: .Fresh)
+        throwItem = HomeThrowChart(name: "아보카도", many: 10, saveStyle: .Cold, manyType: "박스")
         self.HomeThrowArray.append(throwItem)
         
         // 수량 순으로 정렬
@@ -53,13 +54,19 @@ class HomeTableViewController:UITableViewController {
     
     // UITableViewController 의 요소와 정의한 데이터들 일치시키기
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
         let ThrowInfo = self.ThrowArrayModel.HomeThrowArray[indexPath.row]
         let ThrowCell: HomeChartCell = tableView.dequeueReusableCell(withIdentifier: "CellnameHomeThrow") as! HomeChartCell
         
         ThrowCell.ThrowName.text = ThrowInfo.name
         ThrowCell.ThrowMany.text = String(ThrowInfo.many)
-        ThrowCell.ThrowManytype.text = ThrowInfo.manyType.rawValue
+        ThrowCell.ThrowSaveStyle.text = ThrowInfo.saveStyle.rawValue
         
+        
+//        if let image = ThrowCell.ThrowProcessImage {
+//            ThrowCell.ThrowSaveStyle.image = UIImage(named: image)
+//        }
+        ThrowCell.ThrowManytype.text = ThrowInfo.manyType
 //        if let testimage = ThrowCell.ThrowProcessImage {
 //            ThrowCell.ThrowProcessImage.image = UIImage(named: testimage)
 //        }
