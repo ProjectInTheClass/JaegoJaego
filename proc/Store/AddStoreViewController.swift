@@ -3,39 +3,6 @@ import UIKit
 
 class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let AddPikDate = UIPickerView()
-        
-        AddPikDate.delegate = self
-        
-        AddldlDatePiker.inputView = AddPikDate
-    }
-    
-     var myPickerData = [["2018","2019","2020","2021","2022","2023","2024","2025","2026","2027","2028","2029","2030"],["1","2","3","4","5","6","7","8","9","10","11","12"],
-        ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]]
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return myPickerData.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return myPickerData[component].count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return myPickerData[component][row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let year = myPickerData[0][pickerView.selectedRow(inComponent: 0)]
-        let month = myPickerData[1][pickerView.selectedRow(inComponent: 1)]
-        let day = myPickerData[2][pickerView.selectedRow(inComponent: 2)]
-        AddldlDatePiker.text = year + "-" + month + "-" + day
-    }
-    
-    
     @IBOutlet weak var AddlblName :UITextField!
     @IBOutlet weak var AddlblMany :UITextField!
     @IBOutlet weak var AddlblDate: UITextField!
@@ -43,8 +10,90 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     @IBOutlet weak var AddlblCall: UITextField!
     @IBOutlet weak var AddbtnFinish: UIButton! //완료
     
-    //피커뷰 사용
+    // 피커뷰 사용
     @IBOutlet weak var AddldlDatePiker: UITextField!
+    @IBOutlet weak var AddlblSavePiker: UITextField!
+    
+    // 날짜 데이터 저장 배열
+    let myPickerDate = [["2018","2019","2020","2021","2022","2023","2024","2025","2026","2027","2028","2029","2030"],["1","2","3","4","5","6","7","8","9","10","11","12"],["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]]
+    // 저장 방법 저장 배열
+    let myPickerSave = ["실온", "냉동", "냉장"]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // 날씨 피커뷰
+        let AddPikDate = UIPickerView()
+        AddPikDate.delegate = self
+        AddPikDate.tag = 1
+        AddldlDatePiker.inputView = AddPikDate
+        
+        // 저장 피커뷰
+        let SavePikView = UIPickerView()
+        SavePikView.delegate = self
+        SavePikView.tag = 2
+        AddlblSavePiker.inputView = SavePikView
+        
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        if pickerView.tag == 1 {
+            return myPickerDate.count
+        }
+        
+        if pickerView.tag == 2 {
+            return 1
+        }
+        
+        return 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        if pickerView.tag == 1 {
+           return myPickerDate[component].count
+        }
+        
+        if pickerView.tag == 2 {
+            return myPickerSave.count
+        }
+        
+        return 0
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        if pickerView.tag == 1 {
+            return myPickerDate[component][row]
+        }
+        
+        if pickerView.tag == 2 {
+            return myPickerSave[row]
+        }
+        
+        return nil
+        
+       
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if pickerView.tag == 1 {
+            let year = myPickerDate[0][pickerView.selectedRow(inComponent: 0)]
+            let month = myPickerDate[1][pickerView.selectedRow(inComponent: 1)]
+            let day = myPickerDate[2][pickerView.selectedRow(inComponent: 2)]
+            AddldlDatePiker.text = year + "-" + month + "-" + day
+        }
+        
+        if pickerView.tag == 2 {
+           AddlblSavePiker.text = myPickerSave[row]
+        }
+        
+     
+    }
+    
     
     
     
