@@ -35,7 +35,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         AddlblSavePiker.inputView = SavePikView
         
     }
-    
+// 피커뷰 함수 시작
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
         if pickerView.tag == 1 {
@@ -94,7 +94,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
      
     }
     
-    
+// 피커뷰 함수 끝
     
     
    // @IBOutlet weak var womanRadioButton: RadioButton!
@@ -122,20 +122,23 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         return true
     }
     
-
     
-    //버튼 클릭했을 때 함수
+//버튼 클릭했을 때 함수
     @IBAction func saveAddInfoBtn(_ sender: AnyObject) {
-        var test = StoreModel.init()
+        
+        // 오류 처리문
         var infoDateAdd:String = HomeDateModel.dateInfo()
+        
         
         var NameAdd:String = AddlblName.text!
         var ManyAdd:Int = Int(AddlblMany.text!)!
-        var DateAdd:String = AddlblDate.text!
+        var DateAdd:String = AddldlDatePiker.text!
         var CallAdd:String = AddlblCall.text!
         var SaveAdd:saveStyle = .Cold
+            //AddlblSavePiker.text!
         var TtManyAdd:Int = (30 + ManyAdd)
         
+   
         //시험용 배열 데이터 선언
         var addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd, saveStyle: SaveAdd, TotalMany: TtManyAdd, Call: CallAdd)
         
