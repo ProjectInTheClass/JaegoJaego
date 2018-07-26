@@ -44,7 +44,6 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate {
     //키보드 엔터키 누르면 키보드 내려감
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        print("바보")
         return true
     }
     
@@ -60,7 +59,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate {
     //버튼 클릭했을 때 함수
     @IBAction func saveAddInfoBtn(_ sender: AnyObject) {
         var test = StoreModel_More.init()
-        var infoDateAdd:String = HomeViewCtroller.dateInfo()
+        var infoDateAdd:String = HomeViewController.dateInfo()
         
         var NameAdd:String = AddlblName.text!
         var ManyAdd:Int = Int(AddlblMany.text!)!
@@ -80,5 +79,5 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate {
 //            print(test.arrayList[i])
 //        }
 //    }
-    
+    }
 }

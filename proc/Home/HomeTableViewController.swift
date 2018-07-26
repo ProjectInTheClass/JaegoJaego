@@ -33,7 +33,7 @@ struct HomedisposalChart_Model {
         self.HomeThrowArray.append(throwItem)
         
         // 수량 순으로 정렬
-        let sortedThrowItem = self.HomeThrowArray.sorted(by: { $0.many < $1.many})
+        let sortedThrowItem = self.HomeThrowArray.sorted(by: { $0.many > $1.many})
         HomeThrowArray = sortedThrowItem
     }
 

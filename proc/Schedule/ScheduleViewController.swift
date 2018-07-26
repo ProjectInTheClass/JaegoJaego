@@ -1,11 +1,26 @@
+
+
 //import JTAppleCalendar
-//import Foundation
-//
-//class ScheduleViewController :UIViewController {
-//    @IBOutlet weak var calenderView: JTAppleCalendarView!
-//    @IBOutlet weak var tableView: UITableView!
-//    @IBOutlet weak var showTodayButton: UIBarButtonItem!
-//    @IBOutlet weak var separatorViewTopConstraint: NSLayoutConstraint!
-//
-//    var scheduleGroup : [String:[]
-//}
+import UIKit
+import Foundation
+import FSCalendar
+
+class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendarDelegate {
+
+    @IBOutlet weak var todayDate :UILabel?
+    
+//    let scheduleDate = HomeViewController.dateInfo_Date()
+//    
+//    if let date = scheduleDate {
+//        todayDate?.text = scheduleDate
+//        
+//    }
+    
+    @IBOutlet weak var ourCalendar: FSCalendar!
+
+    //let newCalendar = FSCalendar().
+    
+//    @IBAction func tempbutton(_ sender: AnyObject){
+//        print(newCalendar)
+//    }
+}
