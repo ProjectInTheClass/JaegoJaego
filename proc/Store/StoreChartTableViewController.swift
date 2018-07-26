@@ -106,15 +106,15 @@ class StoreChartTableViewController: UITableViewController {
        return proccell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender:Any?){
-        let cell = sender as! UITableViewCell
-        let indexPath:IndexPath! = self.tableView.indexPath(for: cell)
-        
-        self.modelStore.selectedIndex = indexPath.row
-        
-        let segueStore = segue.destination as! StoreInfoController
-        segueStore.modelStore = self.modelStore
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender:Any?){
+//        let cell = sender as! UITableViewCell
+//        let indexPath:IndexPath! = self.tableView.indexPath(for: cell)
+//        
+//        self.modelStore.selectedIndex = indexPath.row
+//        
+//        let segueStore = segue.destination as! StoreInfoController
+//        segueStore.modelStore = self.modelStore
+//    }
 
 
 }

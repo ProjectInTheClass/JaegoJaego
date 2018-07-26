@@ -27,9 +27,7 @@
 		B838072A20EDC00900A46B20 /* procTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838072920EDC00900A46B20 /* procTests.swift */; };
 		B838073520EDC00900A46B20 /* procUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838073420EDC00900A46B20 /* procUITests.swift */; };
 		B851460C20EF4608000E6C4E /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B851460B20EF4608000E6C4E /* CompleteViewController.swift */; };
-		B8877111210072FD0096BB58 /* StoreInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8877110210072FD0096BB58 /* StoreInfoController.swift */; };
 		B8B55B8020FF24C10028B233 /* StoreChartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */; };
-		B8B55B8420FF32A00028B233 /* StoreChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B8320FF32A00028B233 /* StoreChartCell.swift */; };
 		B8DFC23E2106D13B00626614 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC23D2106D13B00626614 /* ScheduleTableViewController.swift */; };
 		B8DFC2402106D6AC00626614 /* ScheduleChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC23F2106D6AC00626614 /* ScheduleChartCell.swift */; };
 		B8DFC2422106EC3500626614 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC2412106EC3500626614 /* ScheduleViewController.swift */; };
@@ -83,9 +81,7 @@
 		B838073420EDC00900A46B20 /* procUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = procUITests.swift; sourceTree = "<group>"; };
 		B838073620EDC00900A46B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B851460B20EF4608000E6C4E /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
-		B8877110210072FD0096BB58 /* StoreInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfoController.swift; sourceTree = "<group>"; };
 		B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartTableViewController.swift; sourceTree = "<group>"; };
-		B8B55B8320FF32A00028B233 /* StoreChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartCell.swift; sourceTree = "<group>"; };
 		B8DFC23D2106D13B00626614 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		B8DFC23F2106D6AC00626614 /* ScheduleChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleChartCell.swift; sourceTree = "<group>"; };
 		B8DFC2412106EC3500626614 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
@@ -211,8 +207,6 @@
 			children = (
 				692965C62109DF38000AD605 /* Storechart.storyboard */,
 				90CE5570210875C900E20EC7 /* Radiobutton.swift */,
-				B8877110210072FD0096BB58 /* StoreInfoController.swift */,
-				B8B55B8320FF32A00028B233 /* StoreChartCell.swift */,
 				B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */,
 				B8DFC246210710BF00626614 /* StoreCharCell_More.swift */,
 				B8FE6B7421074DEB00C471FB /* AddStoreViewController.swift */,
@@ -431,12 +425,10 @@
 				B8119A34210998DB00C0D6EE /* ScheduleAddViewController.swift in Sources */,
 				B80B28F02109B9FB00413049 /* HomeTableViewController.swift in Sources */,
 				B838071720EDC00700A46B20 /* ViewController.swift in Sources */,
-				B8877111210072FD0096BB58 /* StoreInfoController.swift in Sources */,
 				90CE5571210875C900E20EC7 /* Radiobutton.swift in Sources */,
 				B8DFC2402106D6AC00626614 /* ScheduleChartCell.swift in Sources */,
 				B80B28EE2109B9CE00413049 /* HomeChartCell.swift in Sources */,
 				90CE556D2107342000E20EC7 /* AppDelegate.swift in Sources */,
-				B8B55B8420FF32A00028B233 /* StoreChartCell.swift in Sources */,
 				69EBD6F42100719C006B055B /* HomeViewController.swift in Sources */,
 				B8B55B8020FF24C10028B233 /* StoreChartTableViewController.swift in Sources */,
 				B8FE6B7521074DEB00C471FB /* AddStoreViewController.swift in Sources */,
