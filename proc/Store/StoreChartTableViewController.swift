@@ -48,15 +48,15 @@ struct StoreModel {
         self.arrayList = []
         
         var stock = Store(name:"새우", UpDate: infoDate2, DownDate:"2018년 07월 22일", many: 20, saveStyle: .Cold, TotalMany:80, Call:"010-1111-2222" )
-        stock.Image = "shrimp"
+        stock.Image = "그래프"
         self.arrayList.append(stock)
         
         stock = Store(name:"레몬",  UpDate: infoDate2, DownDate:"2018년 07월 21일", many: 5,saveStyle: .Cold, TotalMany:20, Call:"010-4444-4444")
-        stock.Image = "lemon"
+        stock.Image = "그래프"
         self.arrayList.append(stock)
         
         stock = Store(name:"아보카도",  UpDate: infoDate2, DownDate:"2018년 07월 22일",many: 15, saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332")
-        stock.Image = "avocado"
+        stock.Image = "그래프"
         self.arrayList.append(stock)
         
     }
