@@ -21,14 +21,13 @@ struct Store {
     
     
     // 재고 상세 데이터 생성자
-    init(name:String, UpDate:String, DownDate:String, many:Int, saveStyle:saveStyle, TotalMany:Int, Call:String?){
+    init(name:String, UpDate:String, DownDate:String, many:Int, saveStyle:saveStyle,  TotalMany:Int, Call:String?){
         self.name = name
         self.UpDate = UpDate
         self.DownDate = DownDate
         self.many = many
         self.saveStyle = saveStyle
-        
-        //self.Image? = String(UIImage(named:Image))
+    
         self.TotalMany = TotalMany + many
         self.Call = Call
         // 거래처와 이미지는 안받아도 됨, 전체 수량은 수량으로 계산
@@ -95,6 +94,7 @@ class StoreChartTableViewController: UITableViewController {
         proccell.labelSaveStyle.text = info.saveStyle.rawValue
         proccell.labelUpDate.text = info.UpDate
         proccell.labelDownDate.text = info.DownDate
+        
         proccell.labelMany.text = String(info.many)
         proccell.labelTotalMany.text = String(info.TotalMany)
         proccell.Call.text = info.Call

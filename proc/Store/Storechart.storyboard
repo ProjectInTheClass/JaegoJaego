@@ -235,12 +235,12 @@
         <scene sceneID="pTK-Qu-4Z2">
             <objects>
                 <tableViewController id="lCz-0o-ZEK" customClass="StoreChartTableViewController" customModule="proc" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YhB-Ac-3Cj">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="225" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YhB-Ac-3Cj">
                         <rect key="frame" x="0.0" y="0.0" width="416" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="90" id="uxg-y2-xC0" customClass="StoreChartCell" customModule="proc" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="90" id="uxg-y2-xC0">
                                 <rect key="frame" x="0.0" y="28" width="416" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uxg-y2-xC0" id="yGc-YN-OjQ">
@@ -377,14 +377,14 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="more_Call" destination="LaS-SK-tsP" id="D6K-ng-rAb"/>
-                                    <outlet property="more_ChartImage" destination="cTp-hf-Rnp" id="K7Y-Ci-xk8"/>
-                                    <outlet property="more_labelDownDate" destination="zpU-qe-oL3" id="4Bq-CT-gdd"/>
-                                    <outlet property="more_labelMany" destination="9Cw-Ff-uY8" id="1YG-Cg-nbw"/>
-                                    <outlet property="more_labelName" destination="q9J-s5-1kp" id="ONm-ap-BeG"/>
-                                    <outlet property="more_labelSaveStyle" destination="WHX-xn-KXf" id="spl-dU-rqL"/>
-                                    <outlet property="more_labelTotalMany" destination="vOG-vG-32j" id="siC-gC-qHr"/>
-                                    <outlet property="more_labelUpDate" destination="Oa8-8f-Kcr" id="mcl-H2-P4U"/>
+                                    <outlet property="Call" destination="LaS-SK-tsP" id="OdT-3T-Za9"/>
+                                    <outlet property="ChartImage" destination="cTp-hf-Rnp" id="Lwy-IR-kQQ"/>
+                                    <outlet property="labelDownDate" destination="zpU-qe-oL3" id="sCy-1b-sJJ"/>
+                                    <outlet property="labelMany" destination="9Cw-Ff-uY8" id="gwi-mG-BEu"/>
+                                    <outlet property="labelName" destination="q9J-s5-1kp" id="vHA-Wt-uCS"/>
+                                    <outlet property="labelSaveStyle" destination="WHX-xn-KXf" id="877-eJ-Fg2"/>
+                                    <outlet property="labelTotalMany" destination="vOG-vG-32j" id="ynw-Hx-8cB"/>
+                                    <outlet property="labelUpDate" destination="Oa8-8f-Kcr" id="ftR-rj-DHi"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
