@@ -54,14 +54,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hdK-SS-gso"/>
                     </view>
-                    <navigationItem key="navigationItem" title="재고 목록" id="DiN-m1-9ls">
-                        <barButtonItem key="rightBarButtonItem" title="재료 추가" id="nBo-UM-sVe">
-                            <connections>
-                                <segue destination="A6X-rX-MY3" kind="presentation" id="LQA-SA-vjM"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <tabBarItem key="tabBarItem" title="재고목록" image="카테고리2" id="sJR-Gq-KZB"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="5f0-Xc-H2Q" id="Qr3-8V-kpu"/>
                     </connections>
@@ -500,6 +494,7 @@
     </scenes>
     <resources>
         <image name="그래프" width="924" height="720"/>
+        <image name="카테고리2" width="29" height="25"/>
         <image name="폐기목록-1" width="3125" height="5559"/>
     </resources>
 </document>

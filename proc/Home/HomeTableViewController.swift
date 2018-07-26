@@ -1,7 +1,6 @@
 import UIKit
 import Foundation
 
-
 // 폐기 목록 데이터 타입 정의
 struct HomeThrowChart {
     var processImage: String?
@@ -22,7 +21,7 @@ struct HomeThrowChart {
 struct HomedisposalChart_Model {
     var selectedIndex:Int = 0
     var HomeThrowArray:Array <HomeThrowChart>
-
+    
     init() {
         self.HomeThrowArray = []
         
@@ -36,7 +35,7 @@ struct HomedisposalChart_Model {
         let sortedThrowItem = self.HomeThrowArray.sorted(by: { $0.many > $1.many})
         HomeThrowArray = sortedThrowItem
     }
-
+    
 }
 
 class HomeTableViewController:UITableViewController {
@@ -57,22 +56,22 @@ class HomeTableViewController:UITableViewController {
         
         let ThrowInfo = self.ThrowArrayModel.HomeThrowArray[indexPath.row]
         let ThrowCell: HomeChartCell = tableView.dequeueReusableCell(withIdentifier: "CellnameHomeThrow") as! HomeChartCell
-//
-//        ThrowCell.ThrowName.text = ThrowInfo.name
-//        ThrowCell.ThrowMany.text = String(ThrowInfo.many)
-//        ThrowCell.ThrowSaveStyle.text = ThrowInfo.saveStyle.rawValue
-//
-//
-////        if let image = ThrowCell.ThrowProcessImage {
-////            ThrowCell.ThrowSaveStyle.image = UIImage(named: image)
-////        }
-//        ThrowCell.ThrowManytype.text = ThrowInfo.manyType
-////        if let testimage = ThrowCell.ThrowProcessImage {
-////            ThrowCell.ThrowProcessImage.image = UIImage(named: testimage)
-////        }
-////        if let testimage = ThrowCell.ThrowManytype {
-////            ThrowCell.ThrowSavetype.image = UIImage(named: testimage)
-////        }
+        //
+        //        ThrowCell.ThrowName.text = ThrowInfo.name
+        //        ThrowCell.ThrowMany.text = String(ThrowInfo.many)
+        //        ThrowCell.ThrowSaveStyle.text = ThrowInfo.saveStyle.rawValue
+        //
+        //
+        ////        if let image = ThrowCell.ThrowProcessImage {
+        ////            ThrowCell.ThrowSaveStyle.image = UIImage(named: image)
+        ////        }
+        //        ThrowCell.ThrowManytype.text = ThrowInfo.manyType
+        ////        if let testimage = ThrowCell.ThrowProcessImage {
+        ////            ThrowCell.ThrowProcessImage.image = UIImage(named: testimage)
+        ////        }
+        ////        if let testimage = ThrowCell.ThrowManytype {
+        ////            ThrowCell.ThrowSavetype.image = UIImage(named: testimage)
+        ////        }
         return ThrowCell
     }
     

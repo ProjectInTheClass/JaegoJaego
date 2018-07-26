@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Schedule View Controller-->
+        <!--일정-->
         <scene sceneID="YST-oN-oez">
             <objects>
                 <viewController id="lHW-kL-pfQ" customClass="ScheduleViewController" customModule="proc" customModuleProvider="target" sceneMemberID="viewController">
@@ -53,6 +53,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="w9D-oA-Okp"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="일정" image="메모2" id="bWj-fn-S9b"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="szD-x0-fPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -340,6 +342,7 @@
     <resources>
         <image name="blueCircle" width="33" height="33"/>
         <image name="greenCircle" width="33" height="33"/>
+        <image name="메모2" width="54" height="51"/>
         <image name="일정틀-1" width="3125" height="5559"/>
         <image name="테마투명-1" width="3125" height="5559"/>
     </resources>
