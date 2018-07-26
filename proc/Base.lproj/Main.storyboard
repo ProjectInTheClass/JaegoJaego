@@ -39,8 +39,8 @@
                     <connections>
                         <segue destination="Uim-SG-37u" kind="presentation" identifier="login" id="U7S-Ed-xfi"/>
                         <segue destination="UbP-W8-qE6" kind="relationship" relationship="viewControllers" id="s6l-fZ-Tul"/>
-                        <segue destination="C58-Ba-pIg" kind="relationship" relationship="viewControllers" id="eka-pJ-V5h"/>
                         <segue destination="OEG-TF-8pK" kind="relationship" relationship="viewControllers" id="Hzh-H3-ndB"/>
+                        <segue destination="C58-Ba-pIg" kind="relationship" relationship="viewControllers" id="Sgn-IX-mXp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bmy-hQ-zKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -67,7 +67,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7A9-xd-d3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4104" y="3060"/>
+            <point key="canvasLocation" x="4198" y="3057"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="uSe-Gy-1Ky">
