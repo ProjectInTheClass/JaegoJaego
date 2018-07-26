@@ -278,19 +278,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64K-BU-5dt">
-                                <rect key="frame" x="149" y="513" width="116" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.93228505710659904" green="0.93228505710659904" blue="0.93228505710659904" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="확인">
-                                    <color key="titleColor" red="0.0092401649746193248" green="0.0092401649746193248" blue="0.0092401649746193248" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="Complete:" destination="Q89-nJ-D2T" eventType="touchUpInside" id="dQe-Po-nzI"/>
-                                    <action selector="navigationBack:" destination="Q89-nJ-D2T" eventType="touchUpInside" id="O15-bA-I0G"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qp-jk-Rd8">
                                 <rect key="frame" x="25" y="264" width="369" height="3"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -314,15 +301,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryY-yw-mIQ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryY-yw-mIQ" customClass="RadioButton" customModule="proc" customModuleProvider="target">
                                 <rect key="frame" x="59" y="147" width="102" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94546426566770791" green="0.94089680544709098" blue="0.95003172588832485" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="이벤트">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="Eventbutton:" destination="Q89-nJ-D2T" eventType="touchUpInside" id="5hB-Z9-QWY"/>
+                                    <action selector="eventbutton:" destination="Q89-nJ-D2T" eventType="touchUpInside" id="MKJ-ac-WUL"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgF-k5-ikg">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgF-k5-ikg" customClass="RadioButton" customModule="proc" customModuleProvider="target">
                                 <rect key="frame" x="248" y="147" width="102" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94546426566770791" green="0.94089680544709098" blue="0.95003172588832485" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -330,13 +321,27 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hak-d6-JFf">
+                                <rect key="frame" x="191" y="520" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="확인"/>
+                                <connections>
+                                    <action selector="complete:" destination="Q89-nJ-D2T" eventType="touchUpInside" id="CHw-3e-8Ee"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gd7-Ng-Qf8"/>
                     </view>
+                    <connections>
+                        <outlet property="Eventbutton" destination="ryY-yw-mIQ" id="fSV-EO-D0W"/>
+                        <outlet property="Reservebutton" destination="FgF-k5-ikg" id="oEa-D0-bg2"/>
+                        <outlet property="rename" destination="HQ7-8T-kg2" id="amQ-6d-Sce"/>
+                        <outlet property="text" destination="fjw-E5-yo8" id="NJ1-cK-6qB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PdZ-Yr-J0s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-297.10144927536237" y="209.5108695652174"/>
+            <point key="canvasLocation" x="-446" y="210"/>
         </scene>
     </scenes>
     <resources>
