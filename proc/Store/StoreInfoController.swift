@@ -36,11 +36,8 @@ class StoreInfoController : UIViewController {
     
     @IBAction func touchClose(){
         let 완료 = {() -> Void in
-            print("성공적 완료")
+            print("touchClose 완료")
         }
-        
-        //나는 멋지다 왜냐하면 나는 멋쟁이기 때문이다.
-//        self.dismiss(animated: true, completion: 완료)
     }
     
     @IBAction func touchBack (_ sender: Any){

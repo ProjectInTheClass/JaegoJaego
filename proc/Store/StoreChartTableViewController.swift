@@ -105,7 +105,11 @@ class StoreChartTableViewController: UITableViewController {
 /**
      재고 목록 동적 테이블 뷰, 배열 사용
  */
+    
+    // 재고 기본
     var modelStore = StoreModel()
+    
+    // 재고 상세
     var modelStore2 = StoreModel_More()
     
 //    override func viewDidLoad() {
@@ -120,6 +124,10 @@ class StoreChartTableViewController: UITableViewController {
         return self.modelStore.arrayList.count
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -149,7 +157,7 @@ class StoreChartTableViewController: UITableViewController {
             proccell.viewImage.image = UIImage(named: image)
         }
       
-       return proccell2
+       return proccell
     }
     
 //    @IBAction func taponButton(sender: UIButton){
