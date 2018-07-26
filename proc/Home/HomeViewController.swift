@@ -15,33 +15,17 @@ class HomeViewController: UIViewController {
     // 오늘의 날짜
     @IBOutlet weak var labelDate :UILabel?
     
-
-    //오늘 날짜 구하는 함수. 년, 월, 일
-    static func dateInfo()-> String {
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
-        let stringDate = dateFormatter.string(from: date)
-        return stringDate
-
-    }
-
-    static func dateInfo_Date() -> String{
-        let date2 = Date()
-        let dateFormatter2 = DateFormatter()
-        dateFormatter2.dateFormat = "dd"
-        let stringDate2 = dateFormatter2.string(from: date2)
-        return stringDate2
-    }
-    
     override func viewDidLoad() {
-        let infoDate:String = HomeViewController.dateInfo()
-
-        if let date:String = infoDate {
-            labelDate?.text = infoDate
-
+        
+        let infoDates = HomeDateModel.dateInfo()
+        let infoToday = HomeDateModel.todayDateInfo()
+        
+        if let date:String = infoDates {
+            labelDate?.text = infoDates
         }
-
+        if let today:String = infoToday {
+            
+        }
     }
     
 }
