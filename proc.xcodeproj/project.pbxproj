@@ -1,242 +1,238 @@
 // !$*UTF8*$!
 {
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 50;
-	objects = {
+archiveVersion = 1;
+classes = {
+};
+objectVersion = 50;
+objects = {
 
 /* Begin PBXBuildFile section */
-		59CEA7A820FC81D700847485 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59CEA7A720FC81D700847485 /* Home.storyboard */; };
-		69EBD6F42100719C006B055B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EBD6F32100719C006B055B /* HomeViewController.swift */; };
-		90CE556D2107342000E20EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE556C2107342000E20EC7 /* AppDelegate.swift */; };
-		90CE5571210875C900E20EC7 /* Radiobutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE5570210875C900E20EC7 /* Radiobutton.swift */; };
-		A521E423DA2E2F45CCB29B6E /* Pods_proc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98437B6BEF1E17CDECD22727 /* Pods_proc.framework */; };
-		B8119A302109763400C0D6EE /* HomeDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8119A2F2109763400C0D6EE /* HomeDateModel.swift */; };
-		B8119A322109945D00C0D6EE /* HomelittleCalTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8119A312109945D00C0D6EE /* HomelittleCalTableView.swift */; };
-		B8119A34210998DB00C0D6EE /* ScheduleAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8119A33210998DB00C0D6EE /* ScheduleAddViewController.swift */; };
-		B817E0A220FC8FF400B2A37C /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B817E0A120FC8FF400B2A37C /* Schedule.storyboard */; };
-		B817E0A420FC900D00B2A37C /* Staff.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B817E0A320FC900D00B2A37C /* Staff.storyboard */; };
-		B817E0A720FC903200B2A37C /* Storechart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B817E0A620FC903200B2A37C /* Storechart.storyboard */; };
-		B838071720EDC00700A46B20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838071620EDC00700A46B20 /* ViewController.swift */; };
-		B838071A20EDC00700A46B20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B838071820EDC00700A46B20 /* Main.storyboard */; };
-		B838071C20EDC00900A46B20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B838071B20EDC00900A46B20 /* Assets.xcassets */; };
-		B838071F20EDC00900A46B20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B838071D20EDC00900A46B20 /* LaunchScreen.storyboard */; };
-		B838072A20EDC00900A46B20 /* procTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838072920EDC00900A46B20 /* procTests.swift */; };
-		B838073520EDC00900A46B20 /* procUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838073420EDC00900A46B20 /* procUITests.swift */; };
-		B851460C20EF4608000E6C4E /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B851460B20EF4608000E6C4E /* CompleteViewController.swift */; };
-		B8877111210072FD0096BB58 /* StoreInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8877110210072FD0096BB58 /* StoreInfoController.swift */; };
-		B8B55B8020FF24C10028B233 /* StoreChartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */; };
-		B8B55B8420FF32A00028B233 /* StoreChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B8320FF32A00028B233 /* StoreChartCell.swift */; };
-		B8BA08F32108397F009C961B /* HomeChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA08F22108397F009C961B /* HomeChartCell.swift */; };
-		B8BA08F521083998009C961B /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA08F421083998009C961B /* HomeTableViewController.swift */; };
-		B8DFC23E2106D13B00626614 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC23D2106D13B00626614 /* ScheduleTableViewController.swift */; };
-		B8DFC2402106D6AC00626614 /* ScheduleChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC23F2106D6AC00626614 /* ScheduleChartCell.swift */; };
-		B8DFC2422106EC3500626614 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC2412106EC3500626614 /* ScheduleViewController.swift */; };
-		B8DFC247210710BF00626614 /* StoreCharCell_More.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC246210710BF00626614 /* StoreCharCell_More.swift */; };
-		B8FE6B7521074DEB00C471FB /* AddStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FE6B7421074DEB00C471FB /* AddStoreViewController.swift */; };
+	59CEA7A820FC81D700847485 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59CEA7A720FC81D700847485 /* Home.storyboard */; };
+	69EBD6F42100719C006B055B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EBD6F32100719C006B055B /* HomeViewController.swift */; };
+	90CE556D2107342000E20EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE556C2107342000E20EC7 /* AppDelegate.swift */; };
+	90CE5571210875C900E20EC7 /* Radiobutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE5570210875C900E20EC7 /* Radiobutton.swift */; };
+	A521E423DA2E2F45CCB29B6E /* Pods_proc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98437B6BEF1E17CDECD22727 /* Pods_proc.framework */; };
+	B8119A302109763400C0D6EE /* HomeDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8119A2F2109763400C0D6EE /* HomeDateModel.swift */; };
+	B8119A322109945D00C0D6EE /* HomelittleCalTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8119A312109945D00C0D6EE /* HomelittleCalTableView.swift */; };
+	B8119A34210998DB00C0D6EE /* ScheduleAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8119A33210998DB00C0D6EE /* ScheduleAddViewController.swift */; };
+	B817E0A220FC8FF400B2A37C /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B817E0A120FC8FF400B2A37C /* Schedule.storyboard */; };
+	B817E0A420FC900D00B2A37C /* Staff.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B817E0A320FC900D00B2A37C /* Staff.storyboard */; };
+	B817E0A720FC903200B2A37C /* Storechart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B817E0A620FC903200B2A37C /* Storechart.storyboard */; };
+	B838071720EDC00700A46B20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838071620EDC00700A46B20 /* ViewController.swift */; };
+	B838071A20EDC00700A46B20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B838071820EDC00700A46B20 /* Main.storyboard */; };
+	B838071C20EDC00900A46B20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B838071B20EDC00900A46B20 /* Assets.xcassets */; };
+	B838071F20EDC00900A46B20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B838071D20EDC00900A46B20 /* LaunchScreen.storyboard */; };
+	B838072A20EDC00900A46B20 /* procTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838072920EDC00900A46B20 /* procTests.swift */; };
+	B838073520EDC00900A46B20 /* procUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838073420EDC00900A46B20 /* procUITests.swift */; };
+	B851460C20EF4608000E6C4E /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B851460B20EF4608000E6C4E /* CompleteViewController.swift */; };
+	B8877111210072FD0096BB58 /* StoreInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8877110210072FD0096BB58 /* StoreInfoController.swift */; };
+	B8B55B8020FF24C10028B233 /* StoreChartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */; };
+	B8B55B8420FF32A00028B233 /* StoreChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B8320FF32A00028B233 /* StoreChartCell.swift */; };
+	B8DFC23E2106D13B00626614 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC23D2106D13B00626614 /* ScheduleTableViewController.swift */; };
+	B8DFC2402106D6AC00626614 /* ScheduleChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC23F2106D6AC00626614 /* ScheduleChartCell.swift */; };
+	B8DFC2422106EC3500626614 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC2412106EC3500626614 /* ScheduleViewController.swift */; };
+	B8DFC247210710BF00626614 /* StoreCharCell_More.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC246210710BF00626614 /* StoreCharCell_More.swift */; };
+	B8FE6B7521074DEB00C471FB /* AddStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FE6B7421074DEB00C471FB /* AddStoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B838072620EDC00900A46B20 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B838070920EDC00700A46B20 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B838071020EDC00700A46B20;
-			remoteInfo = proc;
-		};
-		B838073120EDC00900A46B20 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B838070920EDC00700A46B20 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B838071020EDC00700A46B20;
-			remoteInfo = proc;
-		};
+	B838072620EDC00900A46B20 /* PBXContainerItemProxy */ = {
+		isa = PBXContainerItemProxy;
+		containerPortal = B838070920EDC00700A46B20 /* Project object */;
+		proxyType = 1;
+		remoteGlobalIDString = B838071020EDC00700A46B20;
+		remoteInfo = proc;
+	};
+	B838073120EDC00900A46B20 /* PBXContainerItemProxy */ = {
+		isa = PBXContainerItemProxy;
+		containerPortal = B838070920EDC00700A46B20 /* Project object */;
+		proxyType = 1;
+		remoteGlobalIDString = B838071020EDC00700A46B20;
+		remoteInfo = proc;
+	};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		24DC7D3C9D0FCFFB0CBC4C28 /* Pods-proc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-proc/Pods-proc.debug.xcconfig"; sourceTree = "<group>"; };
-		2F43A365F08E08E2C0A47016 /* Pods_procUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_procUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		59CEA7A720FC81D700847485 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		69EBD6F32100719C006B055B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		90CE556C2107342000E20EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		90CE5570210875C900E20EC7 /* Radiobutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radiobutton.swift; sourceTree = "<group>"; };
-		98437B6BEF1E17CDECD22727 /* Pods_proc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_proc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8119A2F2109763400C0D6EE /* HomeDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDateModel.swift; sourceTree = "<group>"; };
-		B8119A312109945D00C0D6EE /* HomelittleCalTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomelittleCalTableView.swift; sourceTree = "<group>"; };
-		B8119A33210998DB00C0D6EE /* ScheduleAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddViewController.swift; sourceTree = "<group>"; };
-		B817E0A120FC8FF400B2A37C /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
-		B817E0A320FC900D00B2A37C /* Staff.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Staff.storyboard; sourceTree = "<group>"; };
-		B817E0A620FC903200B2A37C /* Storechart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storechart.storyboard; sourceTree = "<group>"; };
-		B838071120EDC00700A46B20 /* proc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = proc.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B838071620EDC00700A46B20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B838071920EDC00700A46B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B838071B20EDC00900A46B20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B838071E20EDC00900A46B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B838072020EDC00900A46B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B838072520EDC00900A46B20 /* procTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = procTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B838072920EDC00900A46B20 /* procTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = procTests.swift; sourceTree = "<group>"; };
-		B838072B20EDC00900A46B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B838073020EDC00900A46B20 /* procUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = procUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B838073420EDC00900A46B20 /* procUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = procUITests.swift; sourceTree = "<group>"; };
-		B838073620EDC00900A46B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B851460B20EF4608000E6C4E /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
-		B8877110210072FD0096BB58 /* StoreInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfoController.swift; sourceTree = "<group>"; };
-		B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartTableViewController.swift; sourceTree = "<group>"; };
-		B8B55B8320FF32A00028B233 /* StoreChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartCell.swift; sourceTree = "<group>"; };
-		B8BA08F22108397F009C961B /* HomeChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChartCell.swift; sourceTree = "<group>"; };
-		B8BA08F421083998009C961B /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
-		B8DFC23D2106D13B00626614 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
-		B8DFC23F2106D6AC00626614 /* ScheduleChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleChartCell.swift; sourceTree = "<group>"; };
-		B8DFC2412106EC3500626614 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
-		B8DFC246210710BF00626614 /* StoreCharCell_More.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCharCell_More.swift; sourceTree = "<group>"; };
-		B8FE6B7421074DEB00C471FB /* AddStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreViewController.swift; sourceTree = "<group>"; };
-		CA809CB3A8C0B1845755A6AE /* Pods-proc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proc.release.xcconfig"; path = "Pods/Target Support Files/Pods-proc/Pods-proc.release.xcconfig"; sourceTree = "<group>"; };
-		CE2034D60A2D3375CB5FB29D /* Pods_procTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_procTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+	24DC7D3C9D0FCFFB0CBC4C28 /* Pods-proc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-proc/Pods-proc.debug.xcconfig"; sourceTree = "<group>"; };
+	2F43A365F08E08E2C0A47016 /* Pods_procUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_procUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+	59CEA7A720FC81D700847485 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+	69EBD6F32100719C006B055B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+	90CE556C2107342000E20EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+	90CE5570210875C900E20EC7 /* Radiobutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radiobutton.swift; sourceTree = "<group>"; };
+	98437B6BEF1E17CDECD22727 /* Pods_proc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_proc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+	B8119A2F2109763400C0D6EE /* HomeDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDateModel.swift; sourceTree = "<group>"; };
+	B8119A312109945D00C0D6EE /* HomelittleCalTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomelittleCalTableView.swift; sourceTree = "<group>"; };
+	B8119A33210998DB00C0D6EE /* ScheduleAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddViewController.swift; sourceTree = "<group>"; };
+	B817E0A120FC8FF400B2A37C /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
+	B817E0A320FC900D00B2A37C /* Staff.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Staff.storyboard; sourceTree = "<group>"; };
+	B817E0A620FC903200B2A37C /* Storechart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storechart.storyboard; sourceTree = "<group>"; };
+	B838071120EDC00700A46B20 /* proc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = proc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+	B838071620EDC00700A46B20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+	B838071920EDC00700A46B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+	B838071B20EDC00900A46B20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+	B838071E20EDC00900A46B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+	B838072020EDC00900A46B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+	B838072520EDC00900A46B20 /* procTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = procTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+	B838072920EDC00900A46B20 /* procTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = procTests.swift; sourceTree = "<group>"; };
+	B838072B20EDC00900A46B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+	B838073020EDC00900A46B20 /* procUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = procUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+	B838073420EDC00900A46B20 /* procUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = procUITests.swift; sourceTree = "<group>"; };
+	B838073620EDC00900A46B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+	B851460B20EF4608000E6C4E /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
+	B8877110210072FD0096BB58 /* StoreInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfoController.swift; sourceTree = "<group>"; };
+	B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartTableViewController.swift; sourceTree = "<group>"; };
+	B8B55B8320FF32A00028B233 /* StoreChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartCell.swift; sourceTree = "<group>"; };
+	B8DFC23D2106D13B00626614 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
+	B8DFC23F2106D6AC00626614 /* ScheduleChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleChartCell.swift; sourceTree = "<group>"; };
+	B8DFC2412106EC3500626614 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+	B8DFC246210710BF00626614 /* StoreCharCell_More.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCharCell_More.swift; sourceTree = "<group>"; };
+	B8FE6B7421074DEB00C471FB /* AddStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreViewController.swift; sourceTree = "<group>"; };
+	CA809CB3A8C0B1845755A6AE /* Pods-proc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proc.release.xcconfig"; path = "Pods/Target Support Files/Pods-proc/Pods-proc.release.xcconfig"; sourceTree = "<group>"; };
+	CE2034D60A2D3375CB5FB29D /* Pods_procTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_procTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B838070E20EDC00700A46B20 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A521E423DA2E2F45CCB29B6E /* Pods_proc.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B838072220EDC00900A46B20 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B838072D20EDC00900A46B20 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+	B838070E20EDC00700A46B20 /* Frameworks */ = {
+		isa = PBXFrameworksBuildPhase;
+		buildActionMask = 2147483647;
+		files = (
+			A521E423DA2E2F45CCB29B6E /* Pods_proc.framework in Frameworks */,
+		);
+		runOnlyForDeploymentPostprocessing = 0;
+	};
+	B838072220EDC00900A46B20 /* Frameworks */ = {
+		isa = PBXFrameworksBuildPhase;
+		buildActionMask = 2147483647;
+		files = (
+		);
+		runOnlyForDeploymentPostprocessing = 0;
+	};
+	B838072D20EDC00900A46B20 /* Frameworks */ = {
+		isa = PBXFrameworksBuildPhase;
+		buildActionMask = 2147483647;
+		files = (
+		);
+		runOnlyForDeploymentPostprocessing = 0;
+	};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		114066CE39B92452BC9B0F68 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				24DC7D3C9D0FCFFB0CBC4C28 /* Pods-proc.debug.xcconfig */,
-				CA809CB3A8C0B1845755A6AE /* Pods-proc.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		2502E014BC3F234B78868088 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				98437B6BEF1E17CDECD22727 /* Pods_proc.framework */,
-				CE2034D60A2D3375CB5FB29D /* Pods_procTests.framework */,
-				2F43A365F08E08E2C0A47016 /* Pods_procUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B8068A9F20FF3938003BA4CB /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
-		B838070820EDC00700A46B20 = {
-			isa = PBXGroup;
-			children = (
-				B838071320EDC00700A46B20 /* proc */,
-				B838072820EDC00900A46B20 /* procTests */,
-				B838073320EDC00900A46B20 /* procUITests */,
-				B838071220EDC00700A46B20 /* Products */,
-				B8068A9F20FF3938003BA4CB /* Recovered References */,
-				114066CE39B92452BC9B0F68 /* Pods */,
-				2502E014BC3F234B78868088 /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		B838071220EDC00700A46B20 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B838071120EDC00700A46B20 /* proc.app */,
-				B838072520EDC00900A46B20 /* procTests.xctest */,
-				B838073020EDC00900A46B20 /* procUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		B838071320EDC00700A46B20 /* proc */ = {
-			isa = PBXGroup;
-			children = (
-				B8DFC2452106EEAD00626614 /* Home */,
-				B8DFC2442106EE6600626614 /* Schedule */,
-				B8DFC2432106EE1300626614 /* Store */,
-				B838071620EDC00700A46B20 /* ViewController.swift */,
-				B838071820EDC00700A46B20 /* Main.storyboard */,
-				B851460B20EF4608000E6C4E /* CompleteViewController.swift */,
-				B838071B20EDC00900A46B20 /* Assets.xcassets */,
-				B838071D20EDC00900A46B20 /* LaunchScreen.storyboard */,
-				B838072020EDC00900A46B20 /* Info.plist */,
-				90CE556C2107342000E20EC7 /* AppDelegate.swift */,
-				B817E0A320FC900D00B2A37C /* Staff.storyboard */,
-			);
-			path = proc;
-			sourceTree = "<group>";
-		};
-		B838072820EDC00900A46B20 /* procTests */ = {
-			isa = PBXGroup;
-			children = (
-				B838072920EDC00900A46B20 /* procTests.swift */,
-				B838072B20EDC00900A46B20 /* Info.plist */,
-			);
-			path = procTests;
-			sourceTree = "<group>";
-		};
-		B838073320EDC00900A46B20 /* procUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B838073420EDC00900A46B20 /* procUITests.swift */,
-				B838073620EDC00900A46B20 /* Info.plist */,
-			);
-			path = procUITests;
-			sourceTree = "<group>";
-		};
-		B8DFC2432106EE1300626614 /* Store */ = {
-			isa = PBXGroup;
-			children = (
-				B817E0A620FC903200B2A37C /* Storechart.storyboard */,
-				90CE5570210875C900E20EC7 /* Radiobutton.swift */,
-				B8877110210072FD0096BB58 /* StoreInfoController.swift */,
-				B8B55B8320FF32A00028B233 /* StoreChartCell.swift */,
-				B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */,
-				B8DFC246210710BF00626614 /* StoreCharCell_More.swift */,
-				B8FE6B7421074DEB00C471FB /* AddStoreViewController.swift */,
-			);
-			path = Store;
-			sourceTree = "<group>";
-		};
-		B8DFC2442106EE6600626614 /* Schedule */ = {
-			isa = PBXGroup;
-			children = (
-				B817E0A120FC8FF400B2A37C /* Schedule.storyboard */,
-				B8DFC2412106EC3500626614 /* ScheduleViewController.swift */,
-				B8DFC23F2106D6AC00626614 /* ScheduleChartCell.swift */,
-				B8DFC23D2106D13B00626614 /* ScheduleTableViewController.swift */,
-				B8119A33210998DB00C0D6EE /* ScheduleAddViewController.swift */,
-			);
-			path = Schedule;
-			sourceTree = "<group>";
-		};
-		B8DFC2452106EEAD00626614 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				69EBD6F32100719C006B055B /* HomeViewController.swift */,
-				59CEA7A720FC81D700847485 /* Home.storyboard */,
+	114066CE39B92452BC9B0F68 /* Pods */ = {
+		isa = PBXGroup;
+		children = (
+			24DC7D3C9D0FCFFB0CBC4C28 /* Pods-proc.debug.xcconfig */,
+			CA809CB3A8C0B1845755A6AE /* Pods-proc.release.xcconfig */,
+		);
+		name = Pods;
+		sourceTree = "<group>";
+	};
+	2502E014BC3F234B78868088 /* Frameworks */ = {
+		isa = PBXGroup;
+		children = (
+			98437B6BEF1E17CDECD22727 /* Pods_proc.framework */,
+			CE2034D60A2D3375CB5FB29D /* Pods_procTests.framework */,
+			2F43A365F08E08E2C0A47016 /* Pods_procUITests.framework */,
+		);
+		name = Frameworks;
+		sourceTree = "<group>";
+	};
+	B8068A9F20FF3938003BA4CB /* Recovered References */ = {
+		isa = PBXGroup;
+		children = (
+		);
+		name = "Recovered References";
+		sourceTree = "<group>";
+	};
+	B838070820EDC00700A46B20 = {
+		isa = PBXGroup;
+		children = (
+			B838071320EDC00700A46B20 /* proc */,
+			B838072820EDC00900A46B20 /* procTests */,
+			B838073320EDC00900A46B20 /* procUITests */,
+			B838071220EDC00700A46B20 /* Products */,
+			B8068A9F20FF3938003BA4CB /* Recovered References */,
+			114066CE39B92452BC9B0F68 /* Pods */,
+			2502E014BC3F234B78868088 /* Frameworks */,
+		);
+		sourceTree = "<group>";
+	};
+	B838071220EDC00700A46B20 /* Products */ = {
+		isa = PBXGroup;
+		children = (
+			B838071120EDC00700A46B20 /* proc.app */,
+			B838072520EDC00900A46B20 /* procTests.xctest */,
+			B838073020EDC00900A46B20 /* procUITests.xctest */,
+		);
+		name = Products;
+		sourceTree = "<group>";
+	};
+	B838071320EDC00700A46B20 /* proc */ = {
+		isa = PBXGroup;
+		children = (
+			B8DFC2452106EEAD00626614 /* Home */,
+			B8DFC2442106EE6600626614 /* Schedule */,
+			B8DFC2432106EE1300626614 /* Store */,
+			B838071620EDC00700A46B20 /* ViewController.swift */,
+			B838071820EDC00700A46B20 /* Main.storyboard */,
+			B851460B20EF4608000E6C4E /* CompleteViewController.swift */,
+			B838071B20EDC00900A46B20 /* Assets.xcassets */,
+			B838071D20EDC00900A46B20 /* LaunchScreen.storyboard */,
+			B838072020EDC00900A46B20 /* Info.plist */,
+			90CE556C2107342000E20EC7 /* AppDelegate.swift */,
+			B817E0A320FC900D00B2A37C /* Staff.storyboard */,
+		);
+		path = proc;
+		sourceTree = "<group>";
+	};
+	B838072820EDC00900A46B20 /* procTests */ = {
+		isa = PBXGroup;
+		children = (
+			B838072920EDC00900A46B20 /* procTests.swift */,
+			B838072B20EDC00900A46B20 /* Info.plist */,
+		);
+		path = procTests;
+		sourceTree = "<group>";
+	};
+	B838073320EDC00900A46B20 /* procUITests */ = {
+		isa = PBXGroup;
+		children = (
+			B838073420EDC00900A46B20 /* procUITests.swift */,
+			B838073620EDC00900A46B20 /* Info.plist */,
+		);
+		path = procUITests;
+		sourceTree = "<group>";
+	};
+	B8DFC2432106EE1300626614 /* Store */ = {
+		isa = PBXGroup;
+		children = (
+			B817E0A620FC903200B2A37C /* Storechart.storyboard */,
+			90CE5570210875C900E20EC7 /* Radiobutton.swift */,
+			B8877110210072FD0096BB58 /* StoreInfoController.swift */,
+			B8B55B8320FF32A00028B233 /* StoreChartCell.swift */,
+			B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */,
+			B8DFC246210710BF00626614 /* StoreCharCell_More.swift */,
+			B8FE6B7421074DEB00C471FB /* AddStoreViewController.swift */,
+		);
+		path = Store;
+		sourceTree = "<group>";
+	};
+	B8DFC2442106EE6600626614 /* Schedule */ = {
+		isa = PBXGroup;
+		children = (
+			B817E0A120FC8FF400B2A37C /* Schedule.storyboard */,
+			B8DFC2412106EC3500626614 /* ScheduleViewController.swift */,
+			B8DFC23F2106D6AC00626614 /* ScheduleChartCell.swift */,
+			B8DFC23D2106D13B00626614 /* ScheduleTableViewController.swift */,
+			B8119A33210998DB00C0D6EE /* ScheduleAddViewController.swift */,
+		);
+		path = Schedule;
+		sourceTree = "<group>";
+	};
+	B8DFC2452106EEAD00626614 /* Home */ = {
+		isa = PBXGroup;
+		children = (
+			69EBD6F32100719C006B055B /* HomeViewController.swift */,
+			59CEA7A720FC81D700847485 /* Home.storyboard */,
 				B8BA08F22108397F009C961B /* HomeChartCell.swift */,
 				B8BA08F421083998009C961B /* HomeTableViewController.swift */,
 				B8119A2F2109763400C0D6EE /* HomeDateModel.swift */,
@@ -433,10 +429,8 @@
 				B8877111210072FD0096BB58 /* StoreInfoController.swift in Sources */,
 				90CE5571210875C900E20EC7 /* Radiobutton.swift in Sources */,
 				B8DFC2402106D6AC00626614 /* ScheduleChartCell.swift in Sources */,
-				B8BA08F32108397F009C961B /* HomeChartCell.swift in Sources */,
 				90CE556D2107342000E20EC7 /* AppDelegate.swift in Sources */,
 				B8B55B8420FF32A00028B233 /* StoreChartCell.swift in Sources */,
-				B8BA08F521083998009C961B /* HomeTableViewController.swift in Sources */,
 				69EBD6F42100719C006B055B /* HomeViewController.swift in Sources */,
 				B8B55B8020FF24C10028B233 /* StoreChartTableViewController.swift in Sources */,
 				B8FE6B7521074DEB00C471FB /* AddStoreViewController.swift in Sources */,
