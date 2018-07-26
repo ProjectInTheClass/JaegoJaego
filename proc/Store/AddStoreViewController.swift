@@ -9,7 +9,40 @@
 import Foundation
 import UIKit
 
-class AddStoreViewController:UIViewController, UITextFieldDelegate {
+class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let AddPikDate = UIPickerView()
+        
+        AddPikDate.delegate = self
+        
+        AddldlDatePiker.inputView = AddPikDate
+    }
+    
+     var myPickerData = [["2018","2019","2020","2021","2022","2023","2024","2025","2026","2027","2028","2029","2030"],["1","2","3","4","5","6","7","8","9","10","11","12"],
+        ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]]
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return myPickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return myPickerData[component].count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return myPickerData[component][row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let year = myPickerData[0][pickerView.selectedRow(inComponent: 0)]
+        let month = myPickerData[1][pickerView.selectedRow(inComponent: 1)]
+        let day = myPickerData[2][pickerView.selectedRow(inComponent: 2)]
+        AddldlDatePiker.text = year + "-" + month + "-" + day
+    }
+    
     
     @IBOutlet weak var AddlblName :UITextField!
     @IBOutlet weak var AddlblMany :UITextField!
@@ -19,9 +52,15 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var AddbtnFinish: UIButton! //완료
     
-    @IBOutlet weak var womanRadioButton: RadioButton!
-    @IBOutlet weak var manRadioButton: RadioButton!
+    //피커뷰 사용
+    @IBOutlet weak var AddldlDatePiker: UITextField!
     
+    
+    
+   // @IBOutlet weak var womanRadioButton: RadioButton!
+   // @IBOutlet weak var manRadioButton: RadioButton!
+    
+    /*
     //라디오 버튼
     override func awakeFromNib() {
         self.view.layoutIfNeeded()
@@ -29,13 +68,9 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate {
         womanRadioButton.isSelected = true
         manRadioButton.isSelected = false
     }
+    */
     
-    override func viewDidLoad() {
-        womanRadioButton?.alternateButton = [manRadioButton!]
-        manRadioButton?.alternateButton = [womanRadioButton!]
-    }
- 
-    
+  
     // 화면 아무곳 누르면 키보드 내려감
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         view.endEditing(true)
