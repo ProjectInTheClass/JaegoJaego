@@ -1,8 +1,11 @@
 import UIKit
-import Foundation
 
 class RadioButton: UIButton {
+    
     var alternateButton:Array<RadioButton>?
+    
+    let myColor = UIColor.purple
+    let myColor2 = UIColor.black
     
     override func awakeFromNib() {
         self.layer.cornerRadius = 5
@@ -34,9 +37,9 @@ class RadioButton: UIButton {
     override var isSelected: Bool {
         didSet {
             if isSelected {
-                //self.layer.borderColor = Color.turquoise.cgColor
+                self.layer.borderColor = myColor.cgColor
             } else {
-                //self.layer.borderColor = Color.grey_99.cgColor
+                self.layer.borderColor = myColor2.cgColor
             }
         }
     }

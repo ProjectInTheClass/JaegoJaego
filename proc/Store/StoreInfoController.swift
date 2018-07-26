@@ -43,12 +43,5 @@ class StoreInfoController : UIViewController {
     @IBAction func touchBack (_ sender: Any){
         self.navigationController?.popToRootViewController(animated: true)
     }
-/*
-    
-    var modelMusic = StoreModel()
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
- */
+
 }
