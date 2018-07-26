@@ -14,15 +14,7 @@ class ViewController: UIViewController /*, FSCalenderDelegrate, FSCalenderDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        /*
-        calender.cellshape = .Rectangle
-        calender.allowMultipleSelection = true
-        calender.clipsToBounds = true
-        
-        calender.delegate = self
-        calender.dataSource = self
-        */
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,22 +35,8 @@ class ViewController: UIViewController /*, FSCalenderDelegrate, FSCalenderDataSo
         print(calender)
     }
      */
-    /*
-    //달력 계산에 사용되는 연, 월, 일 정보들을 현재 시점으로 설정하는 함수
-    var year0=1
-    var month0=1
-    var day0=1
-    var weekday0=1
-    var lastdayOfMonthArray : [Int] = [1,2,3,4,5,6,7,8,9,10,11,12]
-    
-    mutating func giveCurrentDate(){
-        year0 = NSCalendar.current.component(.year, from: Date())
-        month0 = NSCalender.current.component(.month, from: Date())
-        day0 = NSCalender.current.component(.day, from: Date())
-        weekday0 = NSCalender.current.component(.weekday, from: Date())
 
-    }*/
+
     
     
 }
-
