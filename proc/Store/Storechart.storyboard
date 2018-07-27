@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="폐기목록-1" translatesAutoresizingMaskIntoConstraints="NO" id="o3w-3L-TwU">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="737"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="폐기목록-1" translatesAutoresizingMaskIntoConstraints="NO" id="o3w-3L-TwU">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPB-zf-CyF">
                                 <rect key="frame" x="0.0" y="108" width="416" height="579"/>
@@ -60,6 +59,12 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="o3w-3L-TwU" secondAttribute="bottom" id="7hs-9z-qcn"/>
+                            <constraint firstItem="o3w-3L-TwU" firstAttribute="top" secondItem="MfJ-wB-nNx" secondAttribute="top" id="RL0-2r-yry"/>
+                            <constraint firstItem="o3w-3L-TwU" firstAttribute="leading" secondItem="hdK-SS-gso" secondAttribute="leading" id="dNO-4I-rk5"/>
+                            <constraint firstAttribute="trailing" secondItem="o3w-3L-TwU" secondAttribute="trailing" id="fXf-85-ISE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hdK-SS-gso"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="재고목록" image="카테고리2" id="sJR-Gq-KZB"/>

@@ -2,7 +2,6 @@ import UIKit
 import Foundation
 
 
-
 class StoreChartTableViewController: UITableViewController {
 
     // 재고 기본

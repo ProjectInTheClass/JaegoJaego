@@ -5,8 +5,10 @@ use_frameworks!
 target 'proc' do
     pod 'JTAppleCalendar', '~> 7.0'
     pod 'FSCalendar'
+	pod 'ABMenuTableViewCell', '~> 2.0'
+	pod 'SWTableViewCell', '~> 0.3.7'
 
-post_install do |installer|
+ post_install do |installer|
 
     installer.pods_project.build_configurations.each do |config|
 

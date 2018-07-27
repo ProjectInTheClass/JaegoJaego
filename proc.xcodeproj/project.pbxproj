@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		59CEA7A820FC81D700847485 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59CEA7A720FC81D700847485 /* Home.storyboard */; };
 		692965C72109DF38000AD605 /* Storechart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 692965C62109DF38000AD605 /* Storechart.storyboard */; };
-		692965C9210AEE21000AD605 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692965C8210AEE21000AD605 /* StoreModel.swift */; };
+		6968C755210B052C00A6FA1A /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968C754210B052C00A6FA1A /* StoreModel.swift */; };
 		69EBD6F42100719C006B055B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EBD6F32100719C006B055B /* HomeViewController.swift */; };
 		90A5740D2109E18D008200C8 /* ScheduleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5740C2109E18D008200C8 /* ScheduleDataModel.swift */; };
 		90CE556D2107342000E20EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE556C2107342000E20EC7 /* AppDelegate.swift */; };
@@ -29,7 +29,6 @@
 		B838073520EDC00900A46B20 /* procUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838073420EDC00900A46B20 /* procUITests.swift */; };
 		B851460C20EF4608000E6C4E /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B851460B20EF4608000E6C4E /* CompleteViewController.swift */; };
 		B8B55B8020FF24C10028B233 /* StoreChartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */; };
-		B8C566BA210AC312001D470A /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C566B9210AC312001D470A /* StoreModel.swift */; };
 		B8C566BC210AC3A7001D470A /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C566BB210AC3A7001D470A /* ScheduleModel.swift */; };
 		B8DFC23E2106D13B00626614 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC23D2106D13B00626614 /* ScheduleTableViewController.swift */; };
 		B8DFC2402106D6AC00626614 /* ScheduleChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC23F2106D6AC00626614 /* ScheduleChartCell.swift */; };
@@ -61,7 +60,7 @@
 		2F43A365F08E08E2C0A47016 /* Pods_procUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_procUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59CEA7A720FC81D700847485 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		692965C62109DF38000AD605 /* Storechart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storechart.storyboard; sourceTree = "<group>"; };
-		692965C8210AEE21000AD605 /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
+		6968C754210B052C00A6FA1A /* StoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		69EBD6F32100719C006B055B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		90A5740C2109E18D008200C8 /* ScheduleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDataModel.swift; sourceTree = "<group>"; };
 		90CE556C2107342000E20EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,7 +86,6 @@
 		B838073620EDC00900A46B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B851460B20EF4608000E6C4E /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
 		B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartTableViewController.swift; sourceTree = "<group>"; };
-		B8C566B9210AC312001D470A /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		B8C566BB210AC3A7001D470A /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
 		B8DFC23D2106D13B00626614 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		B8DFC23F2106D6AC00626614 /* ScheduleChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleChartCell.swift; sourceTree = "<group>"; };
@@ -216,10 +214,9 @@
 				692965C62109DF38000AD605 /* Storechart.storyboard */,
 				90CE5570210875C900E20EC7 /* Radiobutton.swift */,
 				B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */,
+				6968C754210B052C00A6FA1A /* StoreModel.swift */,
 				B8DFC246210710BF00626614 /* StoreCharCell_More.swift */,
 				B8FE6B7421074DEB00C471FB /* AddStoreViewController.swift */,
-				692965C8210AEE21000AD605 /* StoreModel.swift */,
-				B8C566B9210AC312001D470A /* StoreModel.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -391,13 +388,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-proc/Pods-proc-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ABMenuTableViewCell/ABMenuTableViewCell.framework",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/SWTableViewCell/SWTableViewCell.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ABMenuTableViewCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWTableViewCell.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -433,7 +434,6 @@
 				B8F2B3522109FAAB008FC382 /* ScheduleLittleTableCell.swift in Sources */,
 				B8DFC247210710BF00626614 /* StoreCharCell_More.swift in Sources */,
 				B8DFC2422106EC3500626614 /* ScheduleViewController.swift in Sources */,
-				692965C9210AEE21000AD605 /* StoreModel.swift in Sources */,
 				B8DFC23E2106D13B00626614 /* ScheduleTableViewController.swift in Sources */,
 				B8119A34210998DB00C0D6EE /* ScheduleAddViewController.swift in Sources */,
 				B80B28F02109B9FB00413049 /* HomeTableViewController.swift in Sources */,
@@ -441,9 +441,9 @@
 				90CE5571210875C900E20EC7 /* Radiobutton.swift in Sources */,
 				90A5740D2109E18D008200C8 /* ScheduleDataModel.swift in Sources */,
 				B8DFC2402106D6AC00626614 /* ScheduleChartCell.swift in Sources */,
-				B8C566BA210AC312001D470A /* StoreModel.swift in Sources */,
 				B80B28EE2109B9CE00413049 /* HomeChartCell.swift in Sources */,
 				90CE556D2107342000E20EC7 /* AppDelegate.swift in Sources */,
+				6968C755210B052C00A6FA1A /* StoreModel.swift in Sources */,
 				69EBD6F42100719C006B055B /* HomeViewController.swift in Sources */,
 				B8B55B8020FF24C10028B233 /* StoreChartTableViewController.swift in Sources */,
 				B8FE6B7521074DEB00C471FB /* AddStoreViewController.swift in Sources */,

@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import SWTableViewCell
 
 class StoreChartCell_More : UITableViewCell {
     @IBOutlet weak var labelName:UILabel!
@@ -10,4 +11,9 @@ class StoreChartCell_More : UITableViewCell {
     @IBOutlet weak var labelMany:UILabel!
     @IBOutlet weak var labelTotalMany:UILabel!
     @IBOutlet weak var Call:UILabel!
+    
+    
+    
+    
+    
 }

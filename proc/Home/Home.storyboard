@@ -108,9 +108,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="홈틀-1" translatesAutoresizingMaskIntoConstraints="NO" id="DbW-fO-3fY">
-                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="홈틀-1" translatesAutoresizingMaskIntoConstraints="NO" id="DbW-fO-3fY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UcP-fX-ikl">
                                 <rect key="frame" x="39" y="165" width="336" height="213"/>
@@ -142,6 +141,12 @@
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DbW-fO-3fY" secondAttribute="trailing" id="Cqp-8q-X8q"/>
+                            <constraint firstAttribute="bottom" secondItem="DbW-fO-3fY" secondAttribute="bottom" id="Ewy-ge-Xzq"/>
+                            <constraint firstItem="DbW-fO-3fY" firstAttribute="leading" secondItem="Sqv-Oj-A4Q" secondAttribute="leading" id="GA6-Du-SXi"/>
+                            <constraint firstItem="DbW-fO-3fY" firstAttribute="top" secondItem="Xh6-4H-Ic7" secondAttribute="top" id="slV-JT-6wp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Sqv-Oj-A4Q"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="홈2" id="9Kt-Q7-bBT"/>
@@ -272,12 +277,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="홈예시-1" translatesAutoresizingMaskIntoConstraints="NO" id="KwJ-Wb-yqh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="홈예시-1" translatesAutoresizingMaskIntoConstraints="NO" id="KwJ-Wb-yqh">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="KwJ-Wb-yqh" secondAttribute="trailing" id="U1O-rP-HCw"/>
+                            <constraint firstItem="KwJ-Wb-yqh" firstAttribute="top" secondItem="y8Q-qw-cSW" secondAttribute="top" id="hMI-qH-cI6"/>
+                            <constraint firstItem="KwJ-Wb-yqh" firstAttribute="leading" secondItem="I7L-br-0rC" secondAttribute="leading" id="l1M-8P-DuN"/>
+                            <constraint firstItem="KwJ-Wb-yqh" firstAttribute="bottom" secondItem="I7L-br-0rC" secondAttribute="bottom" id="y9x-2G-563"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="I7L-br-0rC"/>
                     </view>
                 </viewController>
