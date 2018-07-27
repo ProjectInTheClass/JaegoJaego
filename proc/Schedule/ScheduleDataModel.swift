@@ -12,7 +12,8 @@ import UIKit
 struct Event { //이벤트
     var eventname: String? //제목
     var text: String? //내용
-    
+    var eventdate: Int? //날짜
+  
     
     // 이벤트 생성자
     init(eventname:String, text:String ){
