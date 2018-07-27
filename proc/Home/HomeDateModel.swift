@@ -1,9 +1,44 @@
 import UIKit
 import Foundation
 
+// 폐기 목록 데이터 타입 정의
+struct HomeThrowChart {
+    var processImage: String?
+    var name :String
+    var saveStyle : saveStyle
+    var many: Int = 1
+    var manyType: String
+    
+    init(name:String, many: Int, saveStyle:saveStyle, manyType:String){
+        self.name = name
+        self.many = many
+        self.saveStyle = saveStyle
+        self.manyType = manyType
+    }
+}
 
+// 폐기 데이터 배열 생성
+struct HomedisposalChart_Model {
+    var selectedIndex:Int = 0
+    var HomeThrowArray:Array <HomeThrowChart>
+    
+    init() {
+        self.HomeThrowArray = []
+        
+        var throwItem = HomeThrowChart(name: "바나나", many: 20, saveStyle: .Cold, manyType: "개수")
+        self.HomeThrowArray.append(throwItem)
+        
+        throwItem = HomeThrowChart(name: "아보카도", many: 10, saveStyle: .Cold, manyType: "박스")
+        self.HomeThrowArray.append(throwItem)
+        
+        // 수량 순으로 정렬
+        let sortedThrowItem = self.HomeThrowArray.sorted(by: { $0.many > $1.many})
+        HomeThrowArray = sortedThrowItem
+    }
+    
+}
 
-class HomeDateModel : UIViewController {
+class HomeDateModel {
   /** 오늘 날짜 출력하는 클래스
  */
     //오늘 날짜 구하는 함수. 년, 월, 일

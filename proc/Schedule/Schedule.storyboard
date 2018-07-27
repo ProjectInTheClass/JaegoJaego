@@ -22,37 +22,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NQT-Dy-mto" customClass="FSCalendar">
-                                <rect key="frame" x="20" y="63" width="374" height="355"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
-                                        <color key="value" red="0.77482873699999999" green="0.78450631270000004" blue="0.79219543150000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="dataSource" destination="lHW-kL-pfQ" id="9fh-5J-B3n"/>
-                                    <outlet property="delegate" destination="lHW-kL-pfQ" id="dYq-Sf-z8t"/>
-                                </connections>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wje-60-xuY">
-                                <rect key="frame" x="341" y="20" width="53" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="플러스기호(파랑)"/>
-                                <connections>
-                                    <segue destination="Q89-nJ-D2T" kind="show" id="GuM-UH-NgE"/>
-                                </connections>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="eOO-EQ-YLz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eOO-EQ-YLz">
                                 <rect key="frame" x="32" y="457" width="344" height="191"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.96042591333389282" green="0.97251349687576294" blue="0.9764670729637146" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="separatorColor" red="0.52506673336029053" green="0.74479097127914429" blue="0.79211026430130005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="sectionIndexBackgroundColor" red="0.96042591333389282" green="0.97251349687576294" blue="0.9764670729637146" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="sectionIndexTrackingBackgroundColor" red="0.96042591333389282" green="0.97251349687576294" blue="0.9764670729637146" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="littleScheduleCell" rowHeight="80" id="chL-Np-FCS" customClass="ScheduleLittleTableCell" customModule="proc" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.333333333333343" width="344" height="80"/>
+                                        <rect key="frame" x="0.0" y="28" width="344" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="chL-Np-FCS" id="TIa-2o-iir">
                                             <rect key="frame" x="0.0" y="0.0" width="344" height="79.666666666666671"/>
@@ -94,12 +70,37 @@
                                     <outlet property="delegate" destination="lHW-kL-pfQ" id="IVT-j8-QHf"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wje-60-xuY">
+                                <rect key="frame" x="341" y="20" width="53" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="플러스기호(파랑)"/>
+                                <connections>
+                                    <segue destination="Q89-nJ-D2T" kind="show" id="GuM-UH-NgE"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NQT-Dy-mto" customClass="FSCalendar">
+                                <rect key="frame" x="20" y="63" width="374" height="355"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                                        <color key="value" red="0.77482873699999999" green="0.78450631270000004" blue="0.79219543150000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="lHW-kL-pfQ" id="9fh-5J-B3n"/>
+                                    <outlet property="delegate" destination="lHW-kL-pfQ" id="dYq-Sf-z8t"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="w9D-oA-Okp"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="일정" image="메모2" id="bWj-fn-S9b"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="ourCalendar" destination="NQT-Dy-mto" id="syI-4U-Rts"/>
+                        <outlet property="table" destination="eOO-EQ-YLz" id="RYg-SW-j1T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="szD-x0-fPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
