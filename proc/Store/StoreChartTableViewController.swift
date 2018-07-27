@@ -2,6 +2,7 @@ import UIKit
 import Foundation
 
 
+
 class StoreChartTableViewController: UITableViewController {
 
     // 재고 기본
@@ -21,7 +22,7 @@ class StoreChartTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // 모델의 데이터 개수와 셀 개수 일치시키기
-        return self.modelStore.arrayList.count
+        return modelStore.arrayList.count
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -34,7 +35,7 @@ class StoreChartTableViewController: UITableViewController {
   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let info = self.modelStore.arrayList[indexPath.row]
+        let info = modelStore.arrayList[indexPath.row]
         
         let proccell:StoreChartCell_More = tableView.dequeueReusableCell(withIdentifier: "Cell2") as! StoreChartCell_More
         
@@ -55,16 +56,5 @@ class StoreChartTableViewController: UITableViewController {
         
        return proccell
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender:Any?){
-//        let cell = sender as! UITableViewCell
-//        let indexPath:IndexPath! = self.tableView.indexPath(for: cell)
-//        
-//        self.modelStore.selectedIndex = indexPath.row
-//        
-//        let segueStore = segue.destination as! StoreInfoController
-//        segueStore.modelStore = self.modelStore
-//    }
-
 
 }

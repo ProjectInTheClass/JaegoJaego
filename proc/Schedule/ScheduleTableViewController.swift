@@ -25,53 +25,6 @@ struct Colors {
 }
 
 
-
-// 일정 데이터 정의
-struct Schedule {
-    var title: String
-    var memo: String
-    var counts:Int = 1
-    var dates:Int
-    
-    init(title:String, memo:String, counts:Int, dates:Int) {
-        self.title = title
-        self.memo = memo
-        self.counts = counts
-        self.dates = dates
-    }
-}
-
-
-// 일정 배열 <일정 데이터>
-struct ScheduleModel {
-     var ScheduleArray:Array <Schedule>
-    
-    init(){
-        // 예약 시간에 따른 정렬 (1시  2시  5시 순)
-        // 순서에 따른 count 값
-        
-        self.ScheduleArray = []
-        var stock =  Schedule(title: "예약", memo:"태권도팀 30명", counts: 1, dates: 20180814)
-        self.ScheduleArray.append(stock)
-        stock =  Schedule(title: "예약", memo:"삼성전자 단체회식 40명", counts: 1, dates: 20180816)
-        self.ScheduleArray.append(stock)
-        stock =  Schedule(title: "메모", memo:"일반 8인", counts:  1, dates: 20180815)
-        self.ScheduleArray.append(stock)
-        stock =  Schedule(title: "어린이", memo:"12명", counts:  1, dates: 20180813)
-        self.ScheduleArray.append(stock)
-    
-        var sortedSchedule = self.ScheduleArray.sorted(by: { $0.title < $1.title} )
-        
-        for i in 0..<ScheduleArray.count {
-            sortedSchedule[i].counts += i
-        }
-         ScheduleArray = sortedSchedule
-    }
-
-
-}
-
-
 class ScheduleTableViewController : UITableViewController{
     static var ModelSchedule = ScheduleModel()
     
@@ -94,7 +47,7 @@ class ScheduleTableViewController : UITableViewController{
         ScheduleCell.scheduleTitle.text = scheduleInfo.title + " 시"
         ScheduleCell.scheduleMemo.text = scheduleInfo.memo
         ScheduleCell.scheduleMemo.textColor = UIColor.gray
-        ScheduleCell.scheduleCount.text = "No. " + String(scheduleInfo.counts)
+        //ScheduleCell.scheduleCount.text = "No. " + String(scheduleInfo.counts)
         
         return ScheduleCell
     }

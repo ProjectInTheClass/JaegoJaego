@@ -2,6 +2,8 @@ import UIKit
 import Foundation
 
 let temp = StoreModel()
+// store 모델 저장소
+let staticStoreModel = StoreModel()
 
 enum saveStyle : String {
     case Fresh = "실온"
@@ -62,3 +64,4 @@ class StoreModel {
         
     }
 }
+
