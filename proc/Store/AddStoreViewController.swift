@@ -9,6 +9,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     @IBOutlet weak var AddbtnSave: UIButton! //저장방법
     @IBOutlet weak var AddlblCall: UITextField!
     @IBOutlet weak var AddbtnFinish: UIButton! //완료
+    @IBOutlet weak var AddlblManyType: UITextField!
     
     // 경고
     @IBOutlet weak var WarlblName: UILabel!
@@ -25,7 +26,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     // 저장 방법 저장 배열
     let myPickerSave = ["실온", "냉동", "냉장"]
     
-    var addTemp = temp
+    var addTemp = StoreDatabase
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,6 +143,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         var ManyAdd:Int = Int(AddlblMany.text!)!
         var DateAdd:String = AddldlDatePiker.text!
         var CallAdd:String = AddlblCall.text!
+        var ManyTypeAdd:String = AddlblManyType.text!
         var SaveAdd:saveStyle = .Cold
             //AddlblSavePiker.text!
         var TtManyAdd:Int = (30 + ManyAdd)
@@ -150,7 +152,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         //시험용 배열 데이터 선언
         var addArrayList:Array<Store>
         
-        var addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd, saveStyle: SaveAdd, TotalMany: TtManyAdd, Call: CallAdd)
+        var addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd)
 
     
 

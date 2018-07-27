@@ -11,7 +11,7 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
     @IBOutlet weak var todayDate :UILabel?
     @IBOutlet weak var ourCalendar: FSCalendar!
     
-    let tablecell = model.ScheduleArray // 저장된 값들을 가지고 있는 배열
+    let tablecell = ScheduleDatabase.ScheduleArray // 저장된 값들을 가지고 있는 배열
     let formatter = DateFormatter()
     var selectedDate = ""
     
@@ -21,7 +21,7 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
 
         
-        formatter.dateFormat = "yyyyMMdd" //이건 너가 정하렴
+        formatter.dateFormat = "yyyyMMdd"
         selectedDate = formatter.string(from:date as Date)
         filteredData = tablecell.filter{ $0.dates == selectedDate }        // 달력과 같은 날짜를 filteredData 에 넣어주기
         table.reloadData()

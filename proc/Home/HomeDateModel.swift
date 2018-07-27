@@ -47,21 +47,11 @@ class HomeDateModel {
         let date = Date()
         let dateFormatter = DateFormatter()
         
-        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
+        dateFormatter.dateFormat = "dd"
         let stringDate = dateFormatter.string(from: date)
         return stringDate
         
     }
     
-    static func todayDateInfo() -> String {
-        let todaydate = Date()
-        let todayformatter = DateFormatter()
-        
-        todayformatter.dateFormat = "dd"
-        let stringToday = todayformatter.string(from: todaydate)
-        return stringToday
-    }
-    
-    let infoDate:String = HomeDateModel.dateInfo()
-    let infoToday:String = HomeDateModel.todayDateInfo()
+    let infoDate = HomeDateModel.dateInfo()
 }

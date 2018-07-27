@@ -26,7 +26,7 @@ struct Colors {
 
 
 class ScheduleTableViewController : UITableViewController{
-    static var ModelSchedule = ScheduleModel()
+    static var ModelSchedule = ScheduleDatabase
     
     // 출력하는 섹션 개수
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,6 +40,7 @@ class ScheduleTableViewController : UITableViewController{
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
         let scheduleInfo = ScheduleTableViewController.ModelSchedule.ScheduleArray[indexPath.row]
         let ScheduleCell:ScheduleChartCell = tableView.dequeueReusableCell(withIdentifier: "ScheduleCell") as! ScheduleChartCell
         

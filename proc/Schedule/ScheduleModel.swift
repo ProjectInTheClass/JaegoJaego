@@ -2,7 +2,7 @@ import UIKit
 import Foundation
 
 // 일정 데이터 저장소
-let model = ScheduleModel()
+let ScheduleDatabase = ScheduleModel()
 
 // 일정 데이터 정의
 struct Schedule {
@@ -19,6 +19,18 @@ struct Schedule {
     }
 }
 
+struct Event { //이벤트
+    var eventname: String? //제목
+    var text: String? //내용
+    var eventdate: Int? //날짜
+    
+    
+    // 이벤트 생성자
+    init(eventname:String, text:String ){
+        self.eventname = eventname
+        self.text = text
+    }
+}
 
 // 일정 배열 <일정 데이터>
 class ScheduleModel {

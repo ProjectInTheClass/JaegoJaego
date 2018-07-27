@@ -111,7 +111,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2018-8-8" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qte-OS-dc6">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="20180808" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qte-OS-dc6">
                                 <rect key="frame" x="83" y="298" width="155" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -206,6 +206,7 @@
                         <outlet property="AddbtnFinish" destination="ZYd-Yb-P3r" id="bnD-h4-Ad8"/>
                         <outlet property="AddlblCall" destination="Cog-F6-cWM" id="1yE-Bj-xfN"/>
                         <outlet property="AddlblMany" destination="M0k-E9-cHG" id="u5w-b0-SrJ"/>
+                        <outlet property="AddlblManyType" destination="Oic-yq-t69" id="Jvg-Vl-0OR"/>
                         <outlet property="AddlblName" destination="5Hy-oN-CMG" id="9B2-ki-vKg"/>
                         <outlet property="AddlblSavePiker" destination="7Xc-0W-ehN" id="Npf-Bf-vVD"/>
                         <outlet property="AddldlDatePiker" destination="Qte-OS-dc6" id="juN-tV-7u8"/>
@@ -386,6 +387,13 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="개수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USQ-dO-Laa">
+                                            <rect key="frame" x="337" y="27" width="38" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -393,6 +401,7 @@
                                     <outlet property="ChartImage" destination="cTp-hf-Rnp" id="Lwy-IR-kQQ"/>
                                     <outlet property="labelDownDate" destination="zpU-qe-oL3" id="sCy-1b-sJJ"/>
                                     <outlet property="labelMany" destination="9Cw-Ff-uY8" id="gwi-mG-BEu"/>
+                                    <outlet property="labelManyType" destination="USQ-dO-Laa" id="YCB-2r-Scf"/>
                                     <outlet property="labelName" destination="q9J-s5-1kp" id="vHA-Wt-uCS"/>
                                     <outlet property="labelSaveStyle" destination="WHX-xn-KXf" id="877-eJ-Fg2"/>
                                     <outlet property="labelTotalMany" destination="vOG-vG-32j" id="ynw-Hx-8cB"/>

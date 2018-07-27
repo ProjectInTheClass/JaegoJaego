@@ -13,20 +13,18 @@ import Foundation
 class HomeViewController: UIViewController {
     
     // 오늘의 날짜
-    @IBOutlet weak var labelDate :UILabel?
+    @IBOutlet weak var TodayDate :UILabel?
+
+    
     
     override func viewDidLoad() {
+    
+        let Today = HomeDateModel.dateInfo()
         
-        let infoDates = HomeDateModel.dateInfo()
-        let infoToday = HomeDateModel.todayDateInfo()
         
-        if let date:String = infoDates {
-            labelDate?.text = infoDates
-        }
-        if let today:String = infoToday {
-            
+        if let date:String = Today {
+            TodayDate?.text = Today
         }
     }
     
 }
-

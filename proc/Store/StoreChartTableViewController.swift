@@ -8,7 +8,9 @@ class StoreChartTableViewController: UITableViewController {
 
     
     // 재고 상세
-    var modelStore = temp
+    var modelStore = StoreDatabase
+    
+    
     override func viewDidLoad() {
 //        tableView.reloadData()
         super.viewDidLoad()
@@ -16,7 +18,7 @@ class StoreChartTableViewController: UITableViewController {
     
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,6 +46,7 @@ class StoreChartTableViewController: UITableViewController {
         proccell.labelDownDate.text = info.DownDate
         
         proccell.labelMany.text = String(info.many)
+        proccell.labelManyType.text = String(info.manytype)
         proccell.labelTotalMany.text = String(info.TotalMany)
         proccell.Call.text = info.Call
         
