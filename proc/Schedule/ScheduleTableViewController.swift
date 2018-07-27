@@ -26,26 +26,21 @@ struct Colors {
 
 
 
-
-enum scheduleStyle: String {
-    case reservation = "예약"
-    case event = "이벤트"
-}
-
 // 일정 데이터 정의
 struct Schedule {
-    var title: Int
+    var title: String
     var memo: String
-    var style: scheduleStyle
     var counts:Int = 1
+    var dates:Int
     
-    init(title:Int, memo:String,style:scheduleStyle, counts:Int) {
+    init(title:String, memo:String, counts:Int, dates:Int) {
         self.title = title
         self.memo = memo
-        self.style = style
         self.counts = counts
+        self.dates = dates
     }
 }
+
 
 // 일정 배열 <일정 데이터>
 struct ScheduleModel {
@@ -56,13 +51,13 @@ struct ScheduleModel {
         // 순서에 따른 count 값
         
         self.ScheduleArray = []
-        var stock =  Schedule(title: 14, memo:"태권도팀 30명", style: .reservation, counts: 1)
+        var stock =  Schedule(title: "예약", memo:"태권도팀 30명", counts: 1, dates: 20180814)
         self.ScheduleArray.append(stock)
-        stock =  Schedule(title: 17, memo:"삼성전자 단체회식 40명", style: .event, counts: 1)
+        stock =  Schedule(title: "예약", memo:"삼성전자 단체회식 40명", counts: 1, dates: 20180816)
         self.ScheduleArray.append(stock)
-        stock =  Schedule(title: 12, memo:"일반 8인", style: .reservation, counts:  1)
+        stock =  Schedule(title: "메모", memo:"일반 8인", counts:  1, dates: 20180815)
         self.ScheduleArray.append(stock)
-        stock =  Schedule(title: 11, memo:"12명", style: .event, counts:  1)
+        stock =  Schedule(title: "어린이", memo:"12명", counts:  1, dates: 20180813)
         self.ScheduleArray.append(stock)
     
         var sortedSchedule = self.ScheduleArray.sorted(by: { $0.title < $1.title} )
@@ -78,7 +73,7 @@ struct ScheduleModel {
 
 
 class ScheduleTableViewController : UITableViewController{
-    var ModelSchedule = ScheduleModel()
+    static var ModelSchedule = ScheduleModel()
     
     // 출력하는 섹션 개수
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -87,40 +82,27 @@ class ScheduleTableViewController : UITableViewController{
     
     // 모델의 데이터 개수와 셀 개수 일치시키기
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)->Int {
-        return self.ModelSchedule.ScheduleArray.count
+        return ScheduleTableViewController.ModelSchedule.ScheduleArray.count
         //self.ModelSchedule.ScheduleArray.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let scheduleInfo = self.ModelSchedule.ScheduleArray[indexPath.row]
+        let scheduleInfo = ScheduleTableViewController.ModelSchedule.ScheduleArray[indexPath.row]
         let ScheduleCell:ScheduleChartCell = tableView.dequeueReusableCell(withIdentifier: "ScheduleCell") as! ScheduleChartCell
         
         
-        ScheduleCell.scheduleTitle.text = String(scheduleInfo.title) + " 시"
+        ScheduleCell.scheduleTitle.text = scheduleInfo.title + " 시"
         ScheduleCell.scheduleMemo.text = scheduleInfo.memo
         ScheduleCell.scheduleMemo.textColor = UIColor.gray
-        ScheduleCell.scheduleEvent.text = scheduleInfo.style.rawValue
-        
-        
-        // 예약, 이벤트별 폰트 색상 변경
-        if scheduleInfo.style.rawValue == scheduleStyle.reservation.rawValue {
-            ScheduleCell.scheduleEvent.textColor = Colors.darkGreen
-        }else {
-            ScheduleCell.scheduleEvent.textColor = Colors.darkBlue
-        }
-        
-        
         ScheduleCell.scheduleCount.text = "No. " + String(scheduleInfo.counts)
-        
-        
         
         return ScheduleCell
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender:Any?){
-        let cell = sender as! UITableViewCell
-        let indexPath:IndexPath! = self.tableView.indexPath(for: cell)
-        let segueStore = segue.destination as! ScheduleTableViewController
-        segueStore.ModelSchedule = self.ModelSchedule
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender:Any?){
+//        let cell = sender as! UITableViewCell
+//        let indexPath:IndexPath! = self.tableView.indexPath(for: cell)
+//        let segueStore = segue.destination as! ScheduleTableViewController
+//        ScheduleTableViewController.segueStore.ModelSchedule = ScheduleTableViewController.ModelSchedule
+//    }
 }
