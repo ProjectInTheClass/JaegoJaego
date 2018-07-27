@@ -1,6 +1,9 @@
 import UIKit
 import Foundation
 
+// store 모델 저장소
+let staticStoreModel = StoreModel()
+
 enum saveStyle : String {
     case Fresh = "실온"
     case Cold = "냉장"

@@ -1,6 +1,7 @@
 import UIKit
 import Foundation
 
+// 일정 데이터 저장소
 let model = ScheduleModel()
 
 // 일정 데이터 정의

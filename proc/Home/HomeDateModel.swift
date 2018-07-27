@@ -18,7 +18,7 @@ struct HomeThrowChart {
 }
 
 // 폐기 데이터 배열 생성
-struct HomedisposalChart_Model {
+class HomedisposalChart_Model {
     var selectedIndex:Int = 0
     var HomeThrowArray:Array <HomeThrowChart>
     
