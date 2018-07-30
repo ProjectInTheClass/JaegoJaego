@@ -28,7 +28,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 날씨 피커뷰
+        // 날짜 피커뷰
         let AddPikDate = UIPickerView()
         AddPikDate.delegate = self
         AddPikDate.tag = 1
