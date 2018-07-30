@@ -5,18 +5,23 @@ import Foundation
 // store 모델 저장소
 var StoreDatabase = StoreModel()
 
+// 보관 방법
 enum saveStyle : String {
     case Fresh = "실온"
     case Cold = "냉장"
     case Ice = "냉동"
 }
 
-struct Store {
-    let name: String // 제품 이름
+// 재료 하나 정보
+class Store //: NSObject, NSCoding
+{
+    // 인스턴스 소문자로 변환
+    
+    var name: String // 제품 이름
     var UpDate:String? // 등록 날
-    let DownDate: String // 유통기한
+    var DownDate: String // 유통기한
     var many: Int = 0// 수량
-    var manytype :String // 단위
+    var manytype :String // 단위 = degree..
     var saveStyle: saveStyle // 보관 상태
     
     var Image: String? // 그래프 이미지
@@ -37,9 +42,36 @@ struct Store {
         self.Call = Call
         // 거래처와 이미지는 안받아도 됨, 전체 수량은 수량으로 계산
     }
+    
+    // 아카이브 코드
+//    func encode(with aCoder: NSCoder) {
+//        aCoder.encode(self.name, forKey: "name")
+//        aCoder.encode(self.UpDate, forKey: "UpDate")
+//        aCoder.encode(self.DownDate, forKey: "DownDate")
+//        aCoder.encode(self.many, forKey: "many")
+//        aCoder.encode(self.saveStyle, forKey: "saveStyle")
+//
+//        aCoder.encode(self.Image, forKey: "Image")
+//        aCoder.encode(self.TotalMany, forKey: "TotalMany")
+//        aCoder.encode(self.Call, forKey: "Call")
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        self.name = aDecoder.decodeObject(forKey: "name") as! String
+//        self.UpDate = aDecoder.decodeObject(forKey: "update") as! String
+//        self.DownDate = aDecoder.decodeObject(forKey: "DownDate") as! String
+//        self.many = Int(aDecoder.decodeInt64(forKey: "many"))
+//        self.manytype = aDecoder.decodeObject(forKey: "manytype") as! String
+//        //self.saveStyle = saveStyle(rawValue: aDecoder.decodeObject(forKey: "saveStyle") as! String)
+//
+//        self.Image = aDecoder.decodeObject(forKey: "Image") as! String
+//        self.TotalMany = TotalMany + many
+//        self.Call = aDecoder.decodeObject(forKey: "Call") as! String
+//    }
 }
 
-// 재고 상세 데이터 표시
+
+// 재고 ArrayList
 class StoreModel {
     
     var selectedIndex:Int = 0

@@ -36,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7fk-g2-hhg">
-                                <rect key="frame" x="43" y="541" width="327" height="102"/>
+                                <rect key="frame" x="43" y="541" width="327" height="97"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="zCw-9i-Sj1" kind="embed" id="itc-9z-7PF"/>
@@ -128,6 +128,8 @@ EBDtmYg
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.96042591333389282" green="0.97251349687576294" blue="0.9764670729637146" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
+                                    <outlet property="HomeStoreMany" destination="3yB-2J-1ZS" id="fQr-eh-z3x"/>
+                                    <outlet property="HomeStoreManytype" destination="ize-dH-Zn4" id="17j-ua-Rva"/>
                                     <outlet property="HomeStoreName" destination="K6W-9a-Ags" id="k0T-Ik-J3S"/>
                                     <outlet property="HomeStoreSaveStyle" destination="qw6-0h-GPW" id="o2T-NW-nKg"/>
                                 </connections>
@@ -147,8 +149,8 @@ EBDtmYg
         <scene sceneID="mBa-5W-aAf">
             <objects>
                 <tableViewController id="zCw-9i-Sj1" customClass="HomeScheduleTableViewController" customModule="proc" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wRF-ch-L1m">
-                        <rect key="frame" x="0.0" y="0.0" width="327" height="102"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wRF-ch-L1m">
+                        <rect key="frame" x="0.0" y="0.0" width="327" height="97"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.96042591333389282" green="0.97251349687576294" blue="0.9764670729637146" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="separatorColor" red="0.96042591333389282" green="0.97251349687576294" blue="0.9764670729637146" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -169,13 +171,6 @@ EBDtmYg
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="숫자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEv-7v-CXW">
-                                            <rect key="frame" x="279" y="11" width="28" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdC-Ou-jdg">
                                             <rect key="frame" x="26" y="11" width="159" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -187,7 +182,6 @@ EBDtmYg
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.96042591330000004" green="0.9725134969" blue="0.97646707300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
-                                    <outlet property="HomeScheduleCount" destination="PEv-7v-CXW" id="C2i-W0-ija"/>
                                     <outlet property="HomeScheduleMemo" destination="En7-KK-mVz" id="vFC-er-pWd"/>
                                     <outlet property="HomeScheduleTitle" destination="UdC-Ou-jdg" id="dSS-lE-kfF"/>
                                 </connections>

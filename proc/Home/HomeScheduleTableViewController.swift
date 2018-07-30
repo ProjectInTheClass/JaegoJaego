@@ -5,6 +5,10 @@ class HomeScheduleTableViewController : UITableViewController {
     
      let homeCallSchedule = ScheduleDatabase
     // 출력하는 섹션 개수
+    
+    let dateformatter = DateFormatter()
+    var sameDate = ""
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -20,6 +24,7 @@ class HomeScheduleTableViewController : UITableViewController {
         self.tableView.reloadData()
     }
     
+    
     // UITableViewController 의 요소와 정의한 데이터들 일치시키기
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
@@ -29,7 +34,8 @@ class HomeScheduleTableViewController : UITableViewController {
         
         homeScheduleCell.HomeScheduleTitle.text = homeScheduleInfo.title
         homeScheduleCell.HomeScheduleMemo.text = homeScheduleInfo.memo
-        homeScheduleCell.HomeScheduleCount.text = homeScheduleInfo.dates
+        
+        //homeScheduleCell.HomeScheduleCount.text = homeScheduleInfo.dates
         
         
         return homeScheduleCell

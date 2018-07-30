@@ -9,22 +9,14 @@
 
 import UIKit
 import Foundation
+import FSCalendar
 
 class HomeViewController: UIViewController {
     
     // 오늘의 날짜
     @IBOutlet weak var TodayDate :UILabel?
-
-    
     
     override func viewDidLoad() {
-    
-        let Today = HomeDateModel.dateInfo()
-        
-        
-        if let date:String = Today {
-            TodayDate?.text = Today
-        }
+
     }
-    
 }

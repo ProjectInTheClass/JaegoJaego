@@ -21,6 +21,7 @@
 		B8119A34210998DB00C0D6EE /* ScheduleAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8119A33210998DB00C0D6EE /* ScheduleAddViewController.swift */; };
 		B817E0A220FC8FF400B2A37C /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B817E0A120FC8FF400B2A37C /* Schedule.storyboard */; };
 		B817E0A420FC900D00B2A37C /* Staff.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B817E0A320FC900D00B2A37C /* Staff.storyboard */; };
+		B81ED696210EB224009DDC42 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ED695210EB224009DDC42 /* StoreViewController.swift */; };
 		B838071720EDC00700A46B20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838071620EDC00700A46B20 /* ViewController.swift */; };
 		B838071A20EDC00700A46B20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B838071820EDC00700A46B20 /* Main.storyboard */; };
 		B838071C20EDC00900A46B20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B838071B20EDC00900A46B20 /* Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		B8119A33210998DB00C0D6EE /* ScheduleAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddViewController.swift; sourceTree = "<group>"; };
 		B817E0A120FC8FF400B2A37C /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		B817E0A320FC900D00B2A37C /* Staff.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Staff.storyboard; sourceTree = "<group>"; };
+		B81ED695210EB224009DDC42 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		B838071120EDC00700A46B20 /* proc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = proc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B838071620EDC00700A46B20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B838071920EDC00700A46B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				B8DFC246210710BF00626614 /* StoreCharCell_More.swift */,
 				B8FE6B7421074DEB00C471FB /* AddStoreViewController.swift */,
 				B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */,
+				B81ED695210EB224009DDC42 /* StoreViewController.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				B8C566BE210B3BDB001D470A /* HomeScheduleTableViewController.swift in Sources */,
 				B851460C20EF4608000E6C4E /* CompleteViewController.swift in Sources */,
 				B8C566C0210B3E36001D470A /* HomeScheduleTableViewCell.swift in Sources */,
+				B81ED696210EB224009DDC42 /* StoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
