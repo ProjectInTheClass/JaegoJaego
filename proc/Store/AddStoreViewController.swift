@@ -10,12 +10,8 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     @IBOutlet weak var AddlblCall: UITextField!
     @IBOutlet weak var AddbtnFinish: UIButton! //완료
     @IBOutlet weak var AddlblManyType: UITextField!
+    @IBOutlet weak var AddlblUsAmount: UITextField!
     
-    // 경고
-    @IBOutlet weak var WarlblName: UILabel!
-    @IBOutlet weak var WarlblMany: UILabel!
-    @IBOutlet weak var WarlblDate: UILabel!
-    @IBOutlet weak var WarlblSave: UILabel!
     
     // 피커뷰 사용
     @IBOutlet weak var AddldlDatePiker: UITextField!
@@ -27,6 +23,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     let myPickerSave = ["실온", "냉동", "냉장"]
     
     var addTemp = StoreDatabase
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,6 +128,8 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         return true
     }
     
+
+  
     
 //버튼 클릭했을 때 함수
     @IBAction func saveAddInfoBtn(_ sender: AnyObject) {
@@ -147,33 +146,39 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         var SaveAdd:saveStyle = .Cold
             //AddlblSavePiker.text!
         var TtManyAdd:Int = (30 + ManyAdd)
-
+        var userAmountAdd:Int = Int(AddlblUsAmount.text!)!
         
         //시험용 배열 데이터 선언
         var addArrayList:Array<Store>
         
-        var addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd)
-
-    
-
-        if NameAdd == " " {
+      
+        
+        var arrayAdd:[Any] = [NameAdd ,  infoDateAdd, DateAdd, ManyAdd, ManyTypeAdd, SaveAdd, TtManyAdd, CallAdd, userAmountAdd]
+        
+        if arrayAdd.count < 8 {
+         
+        } else {
             
+            var addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd, manytype: ManyTypeAdd, saveStyle: SaveAdd, TotalMany: TtManyAdd, Call: CallAdd, userAmount : userAmountAdd)
+            
+            
+            
+            //        addArrayList.append(addStock)
+            //        for i in addArrayList{
+            //            if addArrayList[i] == " "{
+            //
+            //            }
+            //        }
+            
+            // 데이터 받기, 출력 확인
+            addTemp.arrayList.append(addStock)
+            
+            print("addStock = \(addStock)")
+            print("addtemp = \(addTemp.arrayList)")
+            self.dismiss(animated: true, completion: nil)
         }
         
         
-//        addArrayList.append(addStock)
-//        for i in addArrayList{
-//            if addArrayList[i] == " "{
-//                
-//            }
-//        }
-        
-        // 데이터 받기, 출력 확인
-        addTemp.arrayList.append(addStock)
-        
-        print("addStock = \(addStock)")
-        print("addtemp = \(addTemp.arrayList)")
-        self.dismiss(animated: true, completion: nil)
 
     }
 }

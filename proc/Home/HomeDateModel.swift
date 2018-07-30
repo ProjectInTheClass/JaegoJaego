@@ -52,6 +52,84 @@ class HomeDateModel {
         return stringDate
         
     }
-    
+
     let infoDate = HomeDateModel.dateInfo()
+    
+    
+// 오늘을 기준으로 -3, +3 날짜 구하기
+    
+    static func todayDateInfo() -> String {
+        let todaydate = Date()
+        let todayformatter = DateFormatter()
+        
+        
+        todayformatter.dateFormat = "dd"
+        let stringToday = todayformatter.string(from: todaydate)
+        return stringToday
+    }
+    
+    static func todayDateInfo1() -> String {
+        let todaydate = Date()
+        let todayformatter = DateFormatter()
+        let today1 = todaydate - 86400 * 3
+        
+        todayformatter.dateFormat = "dd"
+        let stringToday1 = todayformatter.string(from: today1)
+        return stringToday1
+    }
+    
+    static func todayDateInfo2() -> String {
+        let todaydate = Date()
+        let todayformatter = DateFormatter()
+        let today2 = todaydate - 86400 * 2
+        
+        todayformatter.dateFormat = "dd"
+        let stringToday2 = todayformatter.string(from: today2)
+        return stringToday2
+    }
+    
+    static func todayDateInfo3() -> String {
+        let todaydate = Date()
+        let todayformatter = DateFormatter()
+        let today3 = todaydate - 86400
+        
+        todayformatter.dateFormat = "dd"
+        let stringToday3 = todayformatter.string(from: today3)
+        return stringToday3
+    }
+    
+    static func todayDateInfo5() -> String {
+        let todaydate = Date()
+        let todayformatter = DateFormatter()
+        let today5 = todaydate + 86400
+        
+        todayformatter.dateFormat = "dd"
+        let stringToday5 = todayformatter.string(from: today5)
+        return stringToday5
+    }
+    
+    static func todayDateInfo6() -> String {
+        let todaydate = Date()
+        let todayformatter = DateFormatter()
+        let today6 = todaydate + 86400 * 2
+        
+        todayformatter.dateFormat = "dd"
+        let stringToday6 = todayformatter.string(from: today6)
+        return stringToday6
+    }
+    
+    
+    static func todayDateInfo7() -> String {
+        let todaydate = Date()
+        let todayformatter = DateFormatter()
+        let today7 = todaydate + 86400 * 3
+        
+        todayformatter.dateFormat = "dd"
+        let stringToday7 = todayformatter.string(from: today7)
+        return stringToday7
+    }
+    
+//////////////////////////////////////끝/////////////////////////////////////////
+    
+    
 }
