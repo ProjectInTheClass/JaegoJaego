@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		59CEA7A820FC81D700847485 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59CEA7A720FC81D700847485 /* Home.storyboard */; };
 		692965C72109DF38000AD605 /* Storechart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 692965C62109DF38000AD605 /* Storechart.storyboard */; };
-		6968C755210B052C00A6FA1A /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968C754210B052C00A6FA1A /* StoreModel.swift */; };
 		69EBD6F42100719C006B055B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EBD6F32100719C006B055B /* HomeViewController.swift */; };
 		90CE556D2107342000E20EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE556C2107342000E20EC7 /* AppDelegate.swift */; };
 		90CE5571210875C900E20EC7 /* Radiobutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE5570210875C900E20EC7 /* Radiobutton.swift */; };
@@ -17,11 +16,11 @@
 		AEF4D1D8210C727600950E46 /* StoreSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4D1D7210C727600950E46 /* StoreSearchTableViewController.swift */; };
 		B80B28EE2109B9CE00413049 /* HomeStoreChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80B28ED2109B9CE00413049 /* HomeStoreChartCell.swift */; };
 		B80B28F02109B9FB00413049 /* HomeStoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80B28EF2109B9FB00413049 /* HomeStoreTableViewController.swift */; };
-		B8119A302109763400C0D6EE /* HomeDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8119A2F2109763400C0D6EE /* HomeDateModel.swift */; };
 		B8119A34210998DB00C0D6EE /* ScheduleAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8119A33210998DB00C0D6EE /* ScheduleAddViewController.swift */; };
 		B817E0A220FC8FF400B2A37C /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B817E0A120FC8FF400B2A37C /* Schedule.storyboard */; };
 		B817E0A420FC900D00B2A37C /* Staff.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B817E0A320FC900D00B2A37C /* Staff.storyboard */; };
 		B81ED696210EB224009DDC42 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ED695210EB224009DDC42 /* StoreViewController.swift */; };
+		B81ED69A210F0C0C009DDC42 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ED699210F0C0C009DDC42 /* Database.swift */; };
 		B838071720EDC00700A46B20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838071620EDC00700A46B20 /* ViewController.swift */; };
 		B838071A20EDC00700A46B20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B838071820EDC00700A46B20 /* Main.storyboard */; };
 		B838071C20EDC00900A46B20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B838071B20EDC00900A46B20 /* Assets.xcassets */; };
@@ -30,7 +29,6 @@
 		B838073520EDC00900A46B20 /* procUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838073420EDC00900A46B20 /* procUITests.swift */; };
 		B851460C20EF4608000E6C4E /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B851460B20EF4608000E6C4E /* CompleteViewController.swift */; };
 		B8B55B8020FF24C10028B233 /* StoreChartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */; };
-		B8C566BC210AC3A7001D470A /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C566BB210AC3A7001D470A /* ScheduleModel.swift */; };
 		B8C566BE210B3BDB001D470A /* HomeScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C566BD210B3BDB001D470A /* HomeScheduleTableViewController.swift */; };
 		B8C566C0210B3E36001D470A /* HomeScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C566BF210B3E36001D470A /* HomeScheduleTableViewCell.swift */; };
 		B8DFC23E2106D13B00626614 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC23D2106D13B00626614 /* ScheduleTableViewController.swift */; };
@@ -63,7 +61,6 @@
 		2F43A365F08E08E2C0A47016 /* Pods_procUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_procUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59CEA7A720FC81D700847485 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		692965C62109DF38000AD605 /* Storechart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storechart.storyboard; sourceTree = "<group>"; };
-		6968C754210B052C00A6FA1A /* StoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		69EBD6F32100719C006B055B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		90CE556C2107342000E20EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90CE5570210875C900E20EC7 /* Radiobutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radiobutton.swift; sourceTree = "<group>"; };
@@ -71,11 +68,11 @@
 		AEF4D1D7210C727600950E46 /* StoreSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSearchTableViewController.swift; sourceTree = "<group>"; };
 		B80B28ED2109B9CE00413049 /* HomeStoreChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStoreChartCell.swift; sourceTree = "<group>"; };
 		B80B28EF2109B9FB00413049 /* HomeStoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStoreTableViewController.swift; sourceTree = "<group>"; };
-		B8119A2F2109763400C0D6EE /* HomeDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDateModel.swift; sourceTree = "<group>"; };
 		B8119A33210998DB00C0D6EE /* ScheduleAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddViewController.swift; sourceTree = "<group>"; };
 		B817E0A120FC8FF400B2A37C /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		B817E0A320FC900D00B2A37C /* Staff.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Staff.storyboard; sourceTree = "<group>"; };
 		B81ED695210EB224009DDC42 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		B81ED699210F0C0C009DDC42 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		B838071120EDC00700A46B20 /* proc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = proc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B838071620EDC00700A46B20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B838071920EDC00700A46B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,7 +87,6 @@
 		B838073620EDC00900A46B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B851460B20EF4608000E6C4E /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
 		B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartTableViewController.swift; sourceTree = "<group>"; };
-		B8C566BB210AC3A7001D470A /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
 		B8C566BD210B3BDB001D470A /* HomeScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScheduleTableViewController.swift; sourceTree = "<group>"; };
 		B8C566BF210B3E36001D470A /* HomeScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		B8DFC23D2106D13B00626614 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +188,7 @@
 				B838072020EDC00900A46B20 /* Info.plist */,
 				90CE556C2107342000E20EC7 /* AppDelegate.swift */,
 				B817E0A320FC900D00B2A37C /* Staff.storyboard */,
+				B81ED699210F0C0C009DDC42 /* Database.swift */,
 			);
 			path = proc;
 			sourceTree = "<group>";
@@ -220,7 +217,6 @@
 				692965C62109DF38000AD605 /* Storechart.storyboard */,
 				AEF4D1D7210C727600950E46 /* StoreSearchTableViewController.swift */,
 				90CE5570210875C900E20EC7 /* Radiobutton.swift */,
-				6968C754210B052C00A6FA1A /* StoreModel.swift */,
 				B8DFC246210710BF00626614 /* StoreCharCell_More.swift */,
 				B8FE6B7421074DEB00C471FB /* AddStoreViewController.swift */,
 				B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */,
@@ -233,7 +229,6 @@
 			isa = PBXGroup;
 			children = (
 				B817E0A120FC8FF400B2A37C /* Schedule.storyboard */,
-				B8C566BB210AC3A7001D470A /* ScheduleModel.swift */,
 				B8DFC23F2106D6AC00626614 /* ScheduleChartCell.swift */,
 				B8F2B3512109FAAB008FC382 /* ScheduleLittleTableCell.swift */,
 				B8DFC2412106EC3500626614 /* ScheduleViewController.swift */,
@@ -247,7 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				59CEA7A720FC81D700847485 /* Home.storyboard */,
-				B8119A2F2109763400C0D6EE /* HomeDateModel.swift */,
 				B80B28ED2109B9CE00413049 /* HomeStoreChartCell.swift */,
 				B8C566BF210B3E36001D470A /* HomeScheduleTableViewCell.swift */,
 				69EBD6F32100719C006B055B /* HomeViewController.swift */,
@@ -439,7 +433,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8119A302109763400C0D6EE /* HomeDateModel.swift in Sources */,
 				B8F2B3522109FAAB008FC382 /* ScheduleLittleTableCell.swift in Sources */,
 				B8DFC247210710BF00626614 /* StoreCharCell_More.swift in Sources */,
 				B8DFC2422106EC3500626614 /* ScheduleViewController.swift in Sources */,
@@ -452,15 +445,14 @@
 				AEF4D1D8210C727600950E46 /* StoreSearchTableViewController.swift in Sources */,
 				B80B28EE2109B9CE00413049 /* HomeStoreChartCell.swift in Sources */,
 				90CE556D2107342000E20EC7 /* AppDelegate.swift in Sources */,
-				6968C755210B052C00A6FA1A /* StoreModel.swift in Sources */,
 				69EBD6F42100719C006B055B /* HomeViewController.swift in Sources */,
 				B8B55B8020FF24C10028B233 /* StoreChartTableViewController.swift in Sources */,
 				B8FE6B7521074DEB00C471FB /* AddStoreViewController.swift in Sources */,
-				B8C566BC210AC3A7001D470A /* ScheduleModel.swift in Sources */,
 				B8C566BE210B3BDB001D470A /* HomeScheduleTableViewController.swift in Sources */,
 				B851460C20EF4608000E6C4E /* CompleteViewController.swift in Sources */,
 				B8C566C0210B3E36001D470A /* HomeScheduleTableViewCell.swift in Sources */,
 				B81ED696210EB224009DDC42 /* StoreViewController.swift in Sources */,
+				B81ED69A210F0C0C009DDC42 /* Database.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

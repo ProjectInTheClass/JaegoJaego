@@ -19,6 +19,15 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate {
         alarm2.text = " "
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        view.endEditing(true)
+    }
+    
+    //키보드 엔터키 누르면 키보드 내려감
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     @IBAction func complete(_ sender: AnyObject) {
         
@@ -27,7 +36,7 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate {
         var text = textV.text!
         
         
-        
+        // 빈칸 처리문
         if( eventname == ""){
             alarm1.text = "값이 없습니다"
         }
@@ -50,8 +59,7 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate {
         func complete (_ sender: AnyObject) {
         // 값 받는 코드
 
-        self.dismiss(animated: true, completion: nil)
-
+            self.dismiss(animated: true, completion: nil)
         }
 
     }

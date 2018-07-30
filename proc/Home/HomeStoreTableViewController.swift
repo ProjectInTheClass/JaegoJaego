@@ -35,9 +35,6 @@ class HomeStoreTableViewController : UITableViewController {
        
         HomeStorecell.HomeStoreName.text = HomeStoreInfo.name
         HomeStorecell.HomeStoreSaveStyle.text = HomeStoreInfo.saveStyle.rawValue
-        //HomeStorecell.HomeStoreMany.text = String(HomeStoreInfo.many)
-        //HomeStorecell.HomeStoreManytype.text = String(HomeStoreInfo.manytype)
-
         HomeStorecell.HomeStoreMany.text = String(HomeStoreInfo.many)
         HomeStorecell.HomeStoreManytype.text = HomeStoreInfo.manytype
 

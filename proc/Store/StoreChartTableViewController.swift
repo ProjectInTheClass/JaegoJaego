@@ -20,12 +20,13 @@ class StoreChartTableViewController: UITableViewController {
     
     // 재고 상세
     var modelStore = StoreDatabase
-    
+    var infoDateAdd:String = HomeDateModel.dateInfo()
     var dataFilePath: String?
+    
     override func viewDidLoad() {
         //        tableView.reloadData()
         super.viewDidLoad()
-        // 아카이브 코드
+//        // 아카이브 코드
 //        let fileManager = FileManager.default
 //        let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, userDomainMask, true)
 //        let docsDir = dirPath[0] as NSString
@@ -46,9 +47,10 @@ class StoreChartTableViewController: UITableViewController {
     }
     
 //    @IBAction func saveData(_ sender: Any){
-//        let user = Store(name: name.text! , UpDate: infoDate2, DownDate:"2018년 07월 22일", many: 20, manytype:"통", saveStyle: .Cold, TotalMany:80, Call:"010-1111-2222" )
+//        let user = Store(name: labelName.text! , UpDate: labelUpDate!, DownDate: labelDownDate!, many: Int(labelMany!), manytype: labelManyType!, saveStyle: labelSaveStyle!, TotalMany: Int(labelTotalMany!), Call: Call!, userAmount: <#Int#> )
+//        NSKeyedArchiver.archiveRootObject(user, toFile: dataFilePath!)
 //    }
-    
+//
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -64,22 +66,13 @@ class StoreChartTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-
+    // 재고 삭제 코드
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         modelStore.arrayList.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
         print("modelstore = \(modelStore.arrayList)")
         print("stockbase = \(StoreDatabase.arrayList)")
     }
-    
-
-//    // 재고 삭제 코드
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath){
-//        // 데이터를 삭제
-//        modelStore.arrayList.remove(at: indexPath.row)
-//        // 테이블 뷰에서 셀 삭제
-//        tableView.deleteRows(at: [indexPath], with: .automatic)
-//    }
   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -101,7 +94,7 @@ class StoreChartTableViewController: UITableViewController {
             proccell.ChartImage.image = UIImage(named: image2)
         }
         
-        //tableView.reloadData()
+      // tableView.reloadData()
         
         return proccell
     }
