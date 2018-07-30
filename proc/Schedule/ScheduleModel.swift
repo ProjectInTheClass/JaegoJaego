@@ -40,7 +40,7 @@ class ScheduleModel {
         // 예약 시간에 따른 정렬 (1시  2시  5시 순)
         // 순서에 따른 count 값
         
-        let stock1 =  Schedule(title: "예약", memo:"태권도팀 30명", dates: "20180814")
+        let stock1 =  Schedule(title: "예약", memo:"태권도팀 30명", dates: "20180730")
         let stock2 =  Schedule(title: "예약", memo:"삼성전자 단체회식 40명", dates: "20180816")
         let stock3 =  Schedule(title: "메모", memo:"일반 8인", dates: "20180815")
         let stock4 =  Schedule(title: "어린이", memo:"12명", dates: "20180813")
