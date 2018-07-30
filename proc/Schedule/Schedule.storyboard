@@ -113,12 +113,11 @@
                                     <outlet property="delegate" destination="lHW-kL-pfQ" id="dYq-Sf-z8t"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7h-lS-y9I">
-                                <rect key="frame" x="346" y="401" width="60" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7h-lS-y9I">
+                                <rect key="frame" x="320" y="601" width="78" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.71351522842639592" green="0.71351522842639592" blue="0.71351522842639592" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.023120241116751261" green="0.023120241116751261" blue="0.023120241116751261" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="추가"/>
+                                <state key="normal" image="플러스기호(파랑)"/>
                                 <connections>
                                     <segue destination="bb2-Kr-ebP" kind="show" id="koA-qW-qRW"/>
                                 </connections>
@@ -170,27 +169,26 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4H-SW-sjm">
-                                <rect key="frame" x="135" y="139" width="228" height="21"/>
+                                <rect key="frame" x="135" y="145" width="228" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.7537079632" green="0.15201896779999999" blue="0.052646364350000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fz6-8T-hOd">
-                                <rect key="frame" x="111" y="212" width="239" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.7537079632" green="0.15201896779999999" blue="0.052646364350000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nh1-ha-3yk">
-                                <rect key="frame" x="192" y="445" width="30" height="30"/>
+                                <rect key="frame" x="89" y="438" width="234" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="확인"/>
                                 <connections>
                                     <action selector="complete:" destination="bb2-Kr-ebP" eventType="touchUpInside" id="fBE-3b-3wJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fz6-8T-hOd">
+                                <rect key="frame" x="135" y="216" width="239" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.7537079632" green="0.15201896779999999" blue="0.052646364350000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -346,5 +344,6 @@
         <image name="메모2" width="54" height="51"/>
         <image name="일정추가ui-2" width="1041" height="1853"/>
         <image name="캘린더 일정-1" width="3125" height="5559"/>
+        <image name="플러스기호(파랑)" width="117" height="117"/>
     </resources>
 </document>
