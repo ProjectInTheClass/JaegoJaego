@@ -22,27 +22,27 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPB-zf-CyF">
-                                <rect key="frame" x="0.0" y="54" width="416" height="633"/>
+                                <rect key="frame" x="0.0" y="107" width="416" height="580"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="lCz-0o-ZEK" kind="embed" id="URq-Mz-s7y"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3h-oL-pLo">
-                                <rect key="frame" x="361" y="108" width="53" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="플러스기호(파랑)"/>
-                                <connections>
-                                    <segue destination="A6X-rX-MY3" kind="presentation" id="4e8-aS-skT"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foT-GE-Ueb">
-                                <rect key="frame" x="0.0" y="54" width="119" height="52"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.81598984771573602" green="0.81598984771573602" blue="0.81598984771573602" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="검색"/>
                                 <connections>
                                     <segue destination="4km-T0-SrU" kind="show" animates="NO" id="t4C-tH-ryM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3h-oL-pLo">
+                                <rect key="frame" x="321" y="601" width="78" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="플러스기호(파랑)"/>
+                                <connections>
+                                    <segue destination="A6X-rX-MY3" kind="presentation" id="4e8-aS-skT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,7 +56,6 @@
                         <viewLayoutGuide key="safeArea" id="hdK-SS-gso"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="재고목록" image="카테고리2" id="vMn-Cb-5jr"/>
-                    <navigationItem key="navigationItem" id="Acv-nN-yuq"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="5f0-Xc-H2Q" id="Qr3-8V-kpu"/>
@@ -127,7 +126,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UPG-UN-gsi">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UPG-UN-gsi">
                                 <rect key="frame" x="83" y="430" width="147" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -228,7 +227,7 @@
             <objects>
                 <tableViewController id="lCz-0o-ZEK" customClass="StoreChartTableViewController" customModule="proc" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="225" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YhB-Ac-3Cj">
-                        <rect key="frame" x="0.0" y="0.0" width="416" height="633"/>
+                        <rect key="frame" x="0.0" y="0.0" width="416" height="580"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.88806253670000002" green="0.95675450559999997" blue="0.97253412009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="sectionIndexBackgroundColor" red="0.88806253670000002" green="0.95675450559999997" blue="0.97253412009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -465,7 +464,7 @@
             <objects>
                 <viewController id="gJb-Lg-PGl" customClass="StoreInfoController" customModule="proc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jLC-TV-8qz">
-                        <rect key="frame" x="0.0" y="0.0" width="416" height="633"/>
+                        <rect key="frame" x="0.0" y="0.0" width="416" height="580"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vr1-vg-VPd">
