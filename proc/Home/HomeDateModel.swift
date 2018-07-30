@@ -3,10 +3,11 @@ import Foundation
 
 // 폐기 목록 데이터 타입 정의
 struct HomeThrowChart {
+    
     var processImage: String?
     var name :String
     var saveStyle : saveStyle
-    var many: Int = 1
+    var many: Int = 0
     var manyType: String
     
     init(name:String, many: Int, saveStyle:saveStyle, manyType:String){

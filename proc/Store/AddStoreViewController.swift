@@ -131,6 +131,8 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
 
   
     
+    
+    
 //버튼 클릭했을 때 함수
     @IBAction func saveAddInfoBtn(_ sender: AnyObject) {
         
@@ -150,8 +152,14 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         
         //시험용 배열 데이터 선언
         var addArrayList:Array<Store>
-        
-      
+
+    
+        var addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd, userAmount: userAmountAdd)
+    
+
+        if NameAdd == " " {
+            
+        }
         
         var arrayAdd:[Any] = [NameAdd ,  infoDateAdd, DateAdd, ManyAdd, ManyTypeAdd, SaveAdd, TtManyAdd, CallAdd, userAmountAdd]
         
@@ -177,8 +185,5 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
             print("addtemp = \(addTemp.arrayList)")
             self.dismiss(animated: true, completion: nil)
         }
-        
-        
-
     }
 }
