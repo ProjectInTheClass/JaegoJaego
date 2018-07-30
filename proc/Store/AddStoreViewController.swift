@@ -153,7 +153,6 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         var addArrayList:Array<Store>
         
         var addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd)
-
     
 
         if NameAdd == " " {
@@ -171,8 +170,10 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         // 데이터 받기, 출력 확인
         addTemp.arrayList.append(addStock)
         
-        print("addStock = \(addStock)")
-        print("addtemp = \(addTemp.arrayList)")
+        /*
+        print("addstock = \(addTemp.arrayList)")
+        print(".. = \(StoreDatabase.arrayList)")
+ */
         self.dismiss(animated: true, completion: nil)
 
     }

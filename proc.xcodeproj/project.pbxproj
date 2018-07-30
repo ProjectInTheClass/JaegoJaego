@@ -14,6 +14,7 @@
 		90CE556D2107342000E20EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE556C2107342000E20EC7 /* AppDelegate.swift */; };
 		90CE5571210875C900E20EC7 /* Radiobutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE5570210875C900E20EC7 /* Radiobutton.swift */; };
 		A521E423DA2E2F45CCB29B6E /* Pods_proc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98437B6BEF1E17CDECD22727 /* Pods_proc.framework */; };
+		AEF4D1D8210C727600950E46 /* StoreSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4D1D7210C727600950E46 /* StoreSearchTableViewController.swift */; };
 		B80B28EE2109B9CE00413049 /* HomeStoreChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80B28ED2109B9CE00413049 /* HomeStoreChartCell.swift */; };
 		B80B28F02109B9FB00413049 /* HomeStoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80B28EF2109B9FB00413049 /* HomeStoreTableViewController.swift */; };
 		B8119A302109763400C0D6EE /* HomeDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8119A2F2109763400C0D6EE /* HomeDateModel.swift */; };
@@ -66,6 +67,7 @@
 		90CE556C2107342000E20EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90CE5570210875C900E20EC7 /* Radiobutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radiobutton.swift; sourceTree = "<group>"; };
 		98437B6BEF1E17CDECD22727 /* Pods_proc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_proc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEF4D1D7210C727600950E46 /* StoreSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSearchTableViewController.swift; sourceTree = "<group>"; };
 		B80B28ED2109B9CE00413049 /* HomeStoreChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStoreChartCell.swift; sourceTree = "<group>"; };
 		B80B28EF2109B9FB00413049 /* HomeStoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStoreTableViewController.swift; sourceTree = "<group>"; };
 		B8119A2F2109763400C0D6EE /* HomeDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDateModel.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				692965C62109DF38000AD605 /* Storechart.storyboard */,
+				AEF4D1D7210C727600950E46 /* StoreSearchTableViewController.swift */,
 				90CE5570210875C900E20EC7 /* Radiobutton.swift */,
 				6968C754210B052C00A6FA1A /* StoreModel.swift */,
 				B8DFC246210710BF00626614 /* StoreCharCell_More.swift */,
@@ -443,6 +446,7 @@
 				B838071720EDC00700A46B20 /* ViewController.swift in Sources */,
 				90CE5571210875C900E20EC7 /* Radiobutton.swift in Sources */,
 				B8DFC2402106D6AC00626614 /* ScheduleChartCell.swift in Sources */,
+				AEF4D1D8210C727600950E46 /* StoreSearchTableViewController.swift in Sources */,
 				B80B28EE2109B9CE00413049 /* HomeStoreChartCell.swift in Sources */,
 				90CE556D2107342000E20EC7 /* AppDelegate.swift in Sources */,
 				6968C755210B052C00A6FA1A /* StoreModel.swift in Sources */,

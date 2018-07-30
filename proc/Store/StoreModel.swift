@@ -3,7 +3,7 @@ import Foundation
 
 
 // store 모델 저장소
-let StoreDatabase = StoreModel()
+var StoreDatabase = StoreModel()
 
 enum saveStyle : String {
     case Fresh = "실온"
@@ -41,11 +41,26 @@ struct Store {
 
 // 재고 상세 데이터 표시
 class StoreModel {
+    
     var selectedIndex:Int = 0
     var arrayList:Array<Store>
     
+    //정보저장 배열
+    var name_array:Array<String> = []
+    var image_array:Array<String?> = []
+    var update_array:Array<String?> = []
+    var downdate_array:Array<String> = []
+    var many_array:Array<Int> = []
+    var manytype_array:Array<String> = []
+    var saveStyle_array:Array<saveStyle> = []
+    var totalmany_array:Array<Int> = []
+    var call_array:Array<String> = []
+    
+    
+    
     // 들어온 날짜 = 당일 날짜
     var infoDate2:String = HomeDateModel.dateInfo()
+    
     
     init(){
         
@@ -55,14 +70,42 @@ class StoreModel {
         var stock = Store(name:"새우", UpDate: infoDate2, DownDate:"2018년 07월 22일", many: 20, manytype:"통", saveStyle: .Cold, TotalMany:80, Call:"010-1111-2222" )
         stock.Image = "그래프"
         self.arrayList.append(stock)
+        self.name_array.append(stock.name)
+        self.image_array.append(stock.Image)
+        self.update_array.append(stock.UpDate)
+        self.downdate_array.append(stock.DownDate)
+        self.many_array.append(stock.many)
+        self.manytype_array.append(stock.manytype)
+        self.saveStyle_array.append(stock.saveStyle)
+        self.totalmany_array.append(stock.TotalMany)
+        self.call_array.append(stock.Call!)
         
+    
         stock = Store(name:"레몬",  UpDate: infoDate2, DownDate:"2018년 07월 21일", many: 5, manytype: "개",saveStyle: .Cold, TotalMany:20, Call:"010-4444-4444")
         stock.Image = "그래프"
         self.arrayList.append(stock)
+        self.name_array.append(stock.name)
+        self.image_array.append(stock.Image)
+        self.update_array.append(stock.UpDate)
+        self.downdate_array.append(stock.DownDate)
+        self.many_array.append(stock.many)
+        self.manytype_array.append(stock.manytype)
+        self.saveStyle_array.append(stock.saveStyle)
+        self.totalmany_array.append(stock.TotalMany)
+        self.call_array.append(stock.Call!)
         
         stock = Store(name:"아보카도",  UpDate: infoDate2, DownDate:"2018년 07월 22일",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332")
         stock.Image = "그래프"
         self.arrayList.append(stock)
+        self.name_array.append(stock.name)
+        self.image_array.append(stock.Image)
+        self.update_array.append(stock.UpDate)
+        self.downdate_array.append(stock.DownDate)
+        self.many_array.append(stock.many)
+        self.manytype_array.append(stock.manytype)
+        self.saveStyle_array.append(stock.saveStyle)
+        self.totalmany_array.append(stock.TotalMany)
+        self.call_array.append(stock.Call!)
         
     }
 }

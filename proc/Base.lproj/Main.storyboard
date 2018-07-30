@@ -45,13 +45,13 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bmy-hQ-zKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3113" y="3096"/>
+            <point key="canvasLocation" x="2661" y="3293"/>
         </scene>
         <!--Home-->
         <scene sceneID="84o-Ev-0UX">
             <objects>
                 <viewControllerPlaceholder storyboardName="Home" id="UbP-W8-qE6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="fAm-2u-943"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="3-1" id="fAm-2u-943"/>
                     <navigationItem key="navigationItem" id="598-qx-26W"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jw4-eV-9La" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -62,7 +62,7 @@
         <scene sceneID="jsZ-iu-Bar">
             <objects>
                 <viewControllerPlaceholder storyboardName="Storechart" id="C58-Ba-pIg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="t4W-wT-bXx"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="3-1" id="t4W-wT-bXx"/>
                     <navigationItem key="navigationItem" id="yo3-Hm-Iz0"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7A9-xd-d3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -73,7 +73,7 @@
         <scene sceneID="uSe-Gy-1Ky">
             <objects>
                 <viewControllerPlaceholder storyboardName="Schedule" id="OEG-TF-8pK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="bk1-bN-u7i"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="3-1" id="bk1-bN-u7i"/>
                     <navigationItem key="navigationItem" id="iY9-0g-X8F"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Us2-n8-djw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2586,7 +2586,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8mL-bJ-73I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2629" y="2133"/>
+            <point key="canvasLocation" x="2626" y="2021"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FXz-R5-hME">
@@ -2808,6 +2808,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="3-1" width="152" height="155"/>
         <image name="calenderImg" width="650" height="558"/>
         <image name="circle2" width="23" height="23"/>
         <image name="clipIcon" width="1600" height="1600"/>

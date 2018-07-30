@@ -10,96 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--홈-->
-        <scene sceneID="FqU-Zl-ZkR">
-            <objects>
-                <viewController id="wx6-iA-i8m" customClass="HomeViewCtroller" customModule="proc" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4Ob-di-WXw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="공지재곰-1" translatesAutoresizingMaskIntoConstraints="NO" id="DyL-oM-PZb">
-                                <rect key="frame" x="-24" y="400" width="357" height="195"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="달력-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ah7-Ni-qpp">
-                                <rect key="frame" x="-24" y="486" width="461" height="222"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiJ-TI-0EB">
-                                <rect key="frame" x="134" y="509" width="23" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="예약 30명 - 서울여자대학교 5팀 - 노원고등학교 6팀" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Z1y-PK-KRg">
-                                <rect key="frame" x="34" y="561" width="316" height="102"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDS-xI-BkW">
-                                <rect key="frame" x="74" y="509" width="22" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liO-Ch-8mf">
-                                <rect key="frame" x="20" y="509" width="23" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIt-t5-mA2">
-                                <rect key="frame" x="255" y="507" width="26" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTz-hF-dhK">
-                                <rect key="frame" x="317" y="509" width="22" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="19" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUF-wD-gf2">
-                                <rect key="frame" x="195" y="508" width="23" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPY-wW-wm8">
-                                <rect key="frame" x="369" y="509" width="25" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="재고 임박, 유통임박 표시" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jX7-Kf-Zvr">
-                                <rect key="frame" x="20" y="136" width="374" height="302"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                        <viewLayoutGuide key="safeArea" id="Sh6-rJ-G44"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="홈" selectedImage="홈2" id="huf-Na-pNt"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pnj-gv-kMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-29" y="-377"/>
-        </scene>
         <!--Title-->
         <scene sceneID="CPf-vR-Na9">
             <objects>
@@ -149,7 +59,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sqv-Oj-A4Q"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="홈" image="홈2" id="9Kt-Q7-bBT"/>
+                    <tabBarItem key="tabBarItem" title="홈" id="9Kt-Q7-bBT">
+                        <string key="image" base64-UTF8="YES">
+EBDtmYg
+</string>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Title" id="EvH-SW-cYi"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -199,7 +113,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="통계" translatesAutoresizingMaskIntoConstraints="NO" id="V0G-I5-gVU">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="그래프" translatesAutoresizingMaskIntoConstraints="NO" id="V0G-I5-gVU">
                                             <rect key="frame" x="20" y="8" width="41" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -289,39 +203,14 @@
             </objects>
             <point key="canvasLocation" x="1261.5942028985507" y="89.673913043478265"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="gct-gA-zzJ">
-            <objects>
-                <viewController id="MiW-fJ-lLb" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="y8Q-qw-cSW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="홈예시-1" translatesAutoresizingMaskIntoConstraints="NO" id="KwJ-Wb-yqh">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="KwJ-Wb-yqh" secondAttribute="trailing" id="U1O-rP-HCw"/>
-                            <constraint firstItem="KwJ-Wb-yqh" firstAttribute="top" secondItem="y8Q-qw-cSW" secondAttribute="top" id="hMI-qH-cI6"/>
-                            <constraint firstItem="KwJ-Wb-yqh" firstAttribute="leading" secondItem="I7L-br-0rC" secondAttribute="leading" id="l1M-8P-DuN"/>
-                            <constraint firstItem="KwJ-Wb-yqh" firstAttribute="bottom" secondItem="I7L-br-0rC" secondAttribute="bottom" id="y9x-2G-563"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="I7L-br-0rC"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4uh-9W-ewA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="597" y="-377"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="공지재곰-1" width="4267" height="4267"/>
-        <image name="달력-1" width="3300" height="1604"/>
-        <image name="통계" width="550" height="596"/>
-        <image name="홈2" width="34" height="30"/>
-        <image name="홈예시-1" width="1041" height="1853"/>
+        <image width="16" height="16">
+            <string key="name" base64-UTF8="YES">
+EBDtmYg
+</string>
+        </image>
+        <image name="그래프" width="924" height="720"/>
         <image name="홈틀-1" width="1041" height="1853"/>
     </resources>
 </document>

@@ -74,8 +74,11 @@
                                 <rect key="frame" x="20" y="63" width="374" height="355"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
-                                        <color key="value" red="0.77482873699999999" green="0.78450631270000004" blue="0.79219543150000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="eventDefaultColor">
+                                        <color key="value" red="0.64855314399999997" green="0.3339568074" blue="0.79303526879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="eventSelectionColor">
+                                        <color key="value" red="0.64855314399999997" green="0.3339568074" blue="0.79303526879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -101,7 +104,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w9D-oA-Okp"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="일정" image="메모2" id="bWj-fn-S9b"/>
+                    <tabBarItem key="tabBarItem" title="일정" image="일정" id="bWj-fn-S9b"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="ourCalendar" destination="NQT-Dy-mto" id="syI-4U-Rts"/>
@@ -311,7 +314,7 @@
     <resources>
         <image name="blueCircle" width="33" height="33"/>
         <image name="greenCircle" width="33" height="33"/>
-        <image name="메모2" width="54" height="51"/>
+        <image name="일정" width="16" height="16"/>
         <image name="일정추가ui-2" width="1041" height="1853"/>
         <image name="캘린더 일정-1" width="3125" height="5559"/>
     </resources>

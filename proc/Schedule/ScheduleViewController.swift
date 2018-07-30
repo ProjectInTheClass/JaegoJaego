@@ -14,10 +14,16 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
     let tablecell = ScheduleDatabase.ScheduleArray // 저장된 값들을 가지고 있는 배열
     let formatter = DateFormatter()
     var selectedDate = ""
-    
+    let image = UIImage(named: "3-1")
+
     
     var filteredData: [Schedule] = [] // 달력과 메모 연결
-   
+    
+    // FSCalendarDataSource
+
+    
+    ///
+    
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
 
         
