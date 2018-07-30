@@ -129,7 +129,13 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     }
     
 
-  
+
+    @IBAction func closeBtn(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    
+    }
+    
     
     
     

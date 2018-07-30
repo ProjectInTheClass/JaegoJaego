@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		59CEA7A820FC81D700847485 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59CEA7A720FC81D700847485 /* Home.storyboard */; };
 		692965C72109DF38000AD605 /* Storechart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 692965C62109DF38000AD605 /* Storechart.storyboard */; };
+		6968C755210B052C00A6FA1A /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968C754210B052C00A6FA1A /* StoreModel.swift */; };
+		6968C757210F0C0300A6FA1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6968C756210F0C0200A6FA1A /* Assets.xcassets */; };
 		69EBD6F42100719C006B055B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EBD6F32100719C006B055B /* HomeViewController.swift */; };
 		90CE556D2107342000E20EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE556C2107342000E20EC7 /* AppDelegate.swift */; };
 		90CE5571210875C900E20EC7 /* Radiobutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE5570210875C900E20EC7 /* Radiobutton.swift */; };
@@ -23,7 +25,6 @@
 		B81ED69A210F0C0C009DDC42 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ED699210F0C0C009DDC42 /* Database.swift */; };
 		B838071720EDC00700A46B20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838071620EDC00700A46B20 /* ViewController.swift */; };
 		B838071A20EDC00700A46B20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B838071820EDC00700A46B20 /* Main.storyboard */; };
-		B838071C20EDC00900A46B20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B838071B20EDC00900A46B20 /* Assets.xcassets */; };
 		B838071F20EDC00900A46B20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B838071D20EDC00900A46B20 /* LaunchScreen.storyboard */; };
 		B838072A20EDC00900A46B20 /* procTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838072920EDC00900A46B20 /* procTests.swift */; };
 		B838073520EDC00900A46B20 /* procUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838073420EDC00900A46B20 /* procUITests.swift */; };
@@ -61,6 +62,8 @@
 		2F43A365F08E08E2C0A47016 /* Pods_procUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_procUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59CEA7A720FC81D700847485 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		692965C62109DF38000AD605 /* Storechart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storechart.storyboard; sourceTree = "<group>"; };
+		6968C754210B052C00A6FA1A /* StoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
+		6968C756210F0C0200A6FA1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69EBD6F32100719C006B055B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		90CE556C2107342000E20EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90CE5570210875C900E20EC7 /* Radiobutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radiobutton.swift; sourceTree = "<group>"; };
@@ -76,7 +79,6 @@
 		B838071120EDC00700A46B20 /* proc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = proc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B838071620EDC00700A46B20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B838071920EDC00700A46B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B838071B20EDC00900A46B20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B838071E20EDC00900A46B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B838072020EDC00900A46B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B838072520EDC00900A46B20 /* procTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = procTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,10 +182,9 @@
 				B8DFC2452106EEAD00626614 /* Home */,
 				B8DFC2442106EE6600626614 /* Schedule */,
 				B8DFC2432106EE1300626614 /* Store */,
-				B838071620EDC00700A46B20 /* ViewController.swift */,
 				B838071820EDC00700A46B20 /* Main.storyboard */,
 				B851460B20EF4608000E6C4E /* CompleteViewController.swift */,
-				B838071B20EDC00900A46B20 /* Assets.xcassets */,
+				6968C756210F0C0200A6FA1A /* Assets.xcassets */,
 				B838071D20EDC00900A46B20 /* LaunchScreen.storyboard */,
 				B838072020EDC00900A46B20 /* Info.plist */,
 				90CE556C2107342000E20EC7 /* AppDelegate.swift */,
@@ -219,6 +220,7 @@
 				90CE5570210875C900E20EC7 /* Radiobutton.swift */,
 				B8DFC246210710BF00626614 /* StoreCharCell_More.swift */,
 				B8FE6B7421074DEB00C471FB /* AddStoreViewController.swift */,
+				B838071620EDC00700A46B20 /* ViewController.swift */,
 				B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */,
 				B81ED695210EB224009DDC42 /* StoreViewController.swift */,
 			);
@@ -360,8 +362,8 @@
 				B838071F20EDC00900A46B20 /* LaunchScreen.storyboard in Resources */,
 				B817E0A420FC900D00B2A37C /* Staff.storyboard in Resources */,
 				59CEA7A820FC81D700847485 /* Home.storyboard in Resources */,
-				B838071C20EDC00900A46B20 /* Assets.xcassets in Resources */,
 				B838071A20EDC00700A46B20 /* Main.storyboard in Resources */,
+				6968C757210F0C0300A6FA1A /* Assets.xcassets in Resources */,
 				692965C72109DF38000AD605 /* Storechart.storyboard in Resources */,
 				B817E0A220FC8FF400B2A37C /* Schedule.storyboard in Resources */,
 			);
