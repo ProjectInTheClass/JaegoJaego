@@ -149,6 +149,14 @@
                                     <action selector="saveAddInfoBtn:" destination="A6X-rX-MY3" eventType="touchUpInside" id="9Gn-V8-Aue"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIz-Sv-Qum">
+                                <rect key="frame" x="347" y="94" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="닫기버튼"/>
+                                <connections>
+                                    <action selector="closeBtn:" destination="A6X-rX-MY3" eventType="touchUpInside" id="G2a-vd-vVC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -565,6 +573,7 @@
     </scenes>
     <resources>
         <image name="그래프" width="924" height="720"/>
+        <image name="닫기버튼" width="143" height="140"/>
         <image name="재고추가UI-1" width="1041" height="1853"/>
         <image name="재고추가창버튼-1" width="623" height="169"/>
         <image name="카테고리2" width="29" height="25"/>

@@ -68,8 +68,8 @@ class StoreChartTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         modelStore.arrayList.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
-        print("modelstore = \(modelStore.arrayList)")
-        print("stockbase = \(StoreDatabase.arrayList)")
+//        print("modelstore = \(modelStore.arrayList)")
+//        print("stockbase = \(StoreDatabase.arrayList)")
     }
     
 

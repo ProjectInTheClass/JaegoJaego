@@ -20,6 +20,11 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate {
     }
     
     
+    @IBAction func closeBtn(_ sender: UIButton) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func complete(_ sender: AnyObject) {
         
         

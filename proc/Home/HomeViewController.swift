@@ -55,5 +55,5 @@ class HomeViewController: UIViewController {
         dayLbl7?.text = infoToday7
         
 
-    }
+}
 }
