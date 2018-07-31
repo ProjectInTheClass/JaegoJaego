@@ -204,6 +204,13 @@
                                     <action selector="closeBtn:" destination="bb2-Kr-ebP" eventType="touchUpInside" id="hxd-gy-gBa"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqJ-ZB-bhM">
+                                <rect key="frame" x="135" y="334" width="211" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.97470704659999996" green="0.21506032850000001" blue="0.32833832429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -215,8 +222,10 @@
                         <viewLayoutGuide key="safeArea" id="Gbi-o0-meT"/>
                     </view>
                     <connections>
+                        <outlet property="AddldlDatePiker" destination="yX4-KB-VnQ" id="fOE-Zp-jcK"/>
                         <outlet property="alarm1" destination="U4H-SW-sjm" id="kGn-uz-cvf"/>
                         <outlet property="alarm2" destination="Fz6-8T-hOd" id="svb-xr-yRI"/>
+                        <outlet property="alarm3" destination="zqJ-ZB-bhM" id="L5t-lf-ef8"/>
                         <outlet property="name" destination="4kk-ct-3Ii" id="Cmc-UY-kgK"/>
                         <outlet property="okbutton" destination="nh1-ha-3yk" id="ccT-Kp-Wdl"/>
                         <outlet property="textV" destination="2hR-nS-Yxg" id="jys-LW-4AY"/>
