@@ -187,8 +187,8 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
             // 데이터 받기, 출력 확인
             addTemp.arrayList.append(addStock)
             
-            print("addStock = \(addStock)")
-            print("addtemp = \(addTemp.arrayList)")
+            print("addStock -> addTemp.arrayList = \(addStock)")
+            print("addtemp : StoreDataBase = \(addTemp.arrayList)")
             self.dismiss(animated: true, completion: nil)
         }
     }

@@ -42,6 +42,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="재고목록" id="eoa-TK-OhQ">
                         <barButtonItem key="rightBarButtonItem" title="재료 추가" id="deU-7q-nF8">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="A6X-rX-MY3" kind="show" id="CY9-UI-Wpn"/>
                             </connections>
