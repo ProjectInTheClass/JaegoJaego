@@ -84,11 +84,13 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     
     // 재고 삭제 코드
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        
-//        var deleteName = searchfilterData[indexPath.row].name
+
+        
+        var deleteName = searchfilterData[indexPath.row]
 //        //lfind(location_name_array.arrayList, "\(deleteName[deleteName])")
 //      //  let indexofA = location_name_array.arrayList.index
-//
+
+ //       location_name_array.arrayList.index(of: deleteName.name)
 ////        let indexOfdelete = location_name_array.arrayList[Store].indexOf{$0 == deleteName}
 //
 //        var filterItem:[Store] = location_name_array.arrayList.filter{ $0 == deleteName.name }

@@ -144,14 +144,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="수량" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yB-2J-1ZS">
-                                            <rect key="frame" x="214" y="18" width="28" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="단위" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ize-dH-Zn4">
-                                            <rect key="frame" x="252" y="18" width="28" height="20"/>
+                                            <rect key="frame" x="214" y="18" width="128" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
@@ -173,7 +166,6 @@
                                 <color key="backgroundColor" red="0.96042591333389282" green="0.97251349687576294" blue="0.9764670729637146" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <outlet property="HomeStoreMany" destination="3yB-2J-1ZS" id="fQr-eh-z3x"/>
-                                    <outlet property="HomeStoreManytype" destination="ize-dH-Zn4" id="17j-ua-Rva"/>
                                     <outlet property="HomeStoreName" destination="K6W-9a-Ags" id="k0T-Ik-J3S"/>
                                     <outlet property="HomeStoreSaveStyle" destination="qw6-0h-GPW" id="o2T-NW-nKg"/>
                                 </connections>
@@ -187,7 +179,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tpb-sD-Wtg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2017" y="-377"/>
+            <point key="canvasLocation" x="2016.6666666666667" y="-377.44565217391306"/>
         </scene>
         <!--Home Schedule Table View Controller-->
         <scene sceneID="mBa-5W-aAf">

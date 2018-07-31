@@ -32,11 +32,12 @@ class HomeStoreTableViewController : UITableViewController {
         
         let HomeStoreInfo = self.homeCallStore.arrayList[indexPath.row]
         let HomeStorecell: HomeStoreChartCell = tableView.dequeueReusableCell(withIdentifier: "HStoreCell") as! HomeStoreChartCell
-       
+        let storeManyDegree:String = " " + HomeStoreInfo.manytype
+        
         HomeStorecell.HomeStoreName.text = HomeStoreInfo.name
         HomeStorecell.HomeStoreSaveStyle.text = HomeStoreInfo.saveStyle.rawValue
-        HomeStorecell.HomeStoreMany.text = String(HomeStoreInfo.many)
-        HomeStorecell.HomeStoreManytype.text = HomeStoreInfo.manytype
+        HomeStorecell.HomeStoreMany.text = String(HomeStoreInfo.many) + storeManyDegree
+        //HomeStorecell.HomeStoreManytype.text = HomeStoreInfo.manytype
 
         
         

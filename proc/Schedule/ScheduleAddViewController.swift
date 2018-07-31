@@ -58,11 +58,7 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
         textField.resignFirstResponder()
         return true
     }
-<<<<<<< HEAD
     
-=======
-
->>>>>>> 2fdc399d18f3aefc6916a7604a5d73a4612c1268
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         return myPickerDate[component][row]
@@ -79,11 +75,6 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
     }
     
     // 피커뷰 함수 끝
-<<<<<<< HEAD
-=======
-
->>>>>>> 2fdc399d18f3aefc6916a7604a5d73a4612c1268
-    
     @IBAction func closeBtn(_ sender: UIButton) {
         
         self.dismiss(animated: true, completion: nil)
@@ -126,14 +117,8 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
 
         func complete (_ sender: AnyObject) {
         // 값 받는 코드
-<<<<<<< HEAD
-            self.dismiss(animated: true, completion: nil)
-=======
-
             self.dismiss(animated: true, completion: nil)
 
-    
->>>>>>> 2fdc399d18f3aefc6916a7604a5d73a4612c1268
         }
 
     }
