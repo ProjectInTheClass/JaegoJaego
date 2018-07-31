@@ -48,7 +48,6 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
         return myPickerDate[component].count
         
     }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         view.endEditing(true)
     }
@@ -75,8 +74,6 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
     }
     
     // 피커뷰 함수 끝
-
-    
     @IBAction func closeBtn(_ sender: UIButton) {
         
         self.dismiss(animated: true, completion: nil)
@@ -124,7 +121,7 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
 
             self.dismiss(animated: true, completion: nil)
 
-    
+
         }
 
     }

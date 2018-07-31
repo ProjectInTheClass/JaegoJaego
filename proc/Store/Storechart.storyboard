@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4mH-iz-GFh">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,14 @@
             <objects>
                 <viewController title="재고재고" id="4mH-iz-GFh" customClass="StoreViewController" customModule="proc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MfJ-wB-nNx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="화면" translatesAutoresizingMaskIntoConstraints="NO" id="o3w-3L-TwU">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPB-zf-CyF">
-                                <rect key="frame" x="0.0" y="64" width="416" height="628"/>
+                                <rect key="frame" x="0.0" y="64" width="377" height="559"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="lCz-0o-ZEK" kind="embed" id="URq-Mz-s7y"/>
@@ -44,7 +44,7 @@
                         <barButtonItem key="rightBarButtonItem" title="재료 추가" id="deU-7q-nF8">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="A6X-rX-MY3" kind="show" id="CY9-UI-Wpn"/>
+                                <segue destination="A6X-rX-MY3" kind="presentation" id="CY9-UI-Wpn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -64,18 +64,18 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="643.47826086956525" y="-504.61956521739137"/>
+            <point key="canvasLocation" x="642.39999999999998" y="-505.09745127436287"/>
         </scene>
         <!--Add Store View Controller-->
         <scene sceneID="w8q-5Q-o6R">
             <objects>
                 <viewController id="A6X-rX-MY3" customClass="AddStoreViewController" customModule="proc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VUe-H3-hAv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="재고추가UI-1" translatesAutoresizingMaskIntoConstraints="NO" id="vee-Zc-oPD">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="20" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M0k-E9-cHG">
                                 <rect key="frame" x="83" y="175" width="85" height="30"/>
@@ -175,7 +175,7 @@
             <objects>
                 <viewController id="4km-T0-SrU" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jXw-8l-TAD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="폐기목록-1" translatesAutoresizingMaskIntoConstraints="NO" id="JSh-tf-r8W">
@@ -183,7 +183,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVt-GD-MG4">
-                                <rect key="frame" x="0.0" y="53" width="414" height="634"/>
+                                <rect key="frame" x="0.0" y="-16" width="375" height="634"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="QLj-cX-UhM" kind="embed" id="fp3-Pe-rga"/>
@@ -204,7 +204,7 @@
             <objects>
                 <viewController id="iLy-AB-pEm" customClass="ScannerViewController" customModule="proc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="abO-p9-N0D">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="바코드 찍는 창" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxE-UI-Z6P">
@@ -228,25 +228,25 @@
             <objects>
                 <tableViewController id="lCz-0o-ZEK" customClass="StoreChartTableViewController" customModule="proc" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="225" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YhB-Ac-3Cj">
-                        <rect key="frame" x="0.0" y="0.0" width="416" height="628"/>
+                        <rect key="frame" x="0.0" y="0.0" width="377" height="559"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.88806253670000002" green="0.95675450559999997" blue="0.97253412009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="sectionIndexBackgroundColor" red="0.88806253670000002" green="0.95675450559999997" blue="0.97253412009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="0.88806253670000002" green="0.95675450559999997" blue="0.97253412009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="prominent" id="dWx-67-aAO">
-                            <rect key="frame" x="0.0" y="0.0" width="416" height="56"/>
+                            <rect key="frame" x="0.0" y="0.0" width="377" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.8901960784313725" green="0.95686274509803926" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="tintColor" red="0.89019607840000003" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <color key="barTintColor" red="0.8901960784313725" green="0.95686274509803926" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="barTintColor" red="0.94233743047355956" green="0.94015842211432799" blue="0.95203442258883253" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell2IngredientBig" rowHeight="229" id="7L7-x6-9kE" customClass="StoreChartCell_More" customModule="proc" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="84" width="416" height="229"/>
+                                <rect key="frame" x="0.0" y="84" width="377" height="229"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7L7-x6-9kE" id="eLh-ay-UMH" customClass="StoreChartCell_More" customModule="proc" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="416" height="228.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="377" height="228.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="그래프" translatesAutoresizingMaskIntoConstraints="NO" id="cTp-hf-Rnp">
@@ -388,11 +388,11 @@
             <objects>
                 <tableViewController id="QLj-cX-UhM" customClass="StoreSearchTableViewController" customModule="proc" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CLY-Mg-Wzm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="634"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="634"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="wnt-kc-0Wd">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
@@ -401,10 +401,10 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" rowHeight="228" id="1hi-Af-8Lb" customClass="StoreChartCell_More" customModule="proc" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="84" width="414" height="228"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="228"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1hi-Af-8Lb" id="K97-vo-AKj">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="227.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="227.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -436,7 +436,7 @@
             <objects>
                 <viewController id="gJb-Lg-PGl" customClass="StoreInfoController" customModule="proc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jLC-TV-8qz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vr1-vg-VPd">
@@ -537,6 +537,6 @@
         <image name="재고추가창버튼-1" width="623" height="169"/>
         <image name="카테고리2" width="29" height="25"/>
         <image name="폐기목록-1" width="3125" height="5559"/>
-        <image name="화면" width="1041" height="1853"/>
+        <image name="화면" width="1562" height="2779"/>
     </resources>
 </document>
