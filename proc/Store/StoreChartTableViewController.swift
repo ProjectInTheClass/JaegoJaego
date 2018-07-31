@@ -21,7 +21,6 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     @IBOutlet weak var Call:UILabel!
     
     // 재고 상세
-    var modelStore = StoreDatabase
     var infoDateAdd:String = HomeDateModel.dateInfo()
     var dataFilePath: String?
     
@@ -71,13 +70,15 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
 //    }
 //
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 1
     }
     
 
     
     override func viewDidAppear(_ animated: Bool) {
+        searchfilterData = location_name_array.arrayList
         self.tableView.reloadData()
+        
         super.viewDidAppear(animated)
        
     }
@@ -95,9 +96,10 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
 //
 //        var filterItem:[Store] = location_name_array.arrayList.filter{ $0 == deleteName.name }
        // print("filterItem : \(filterItem)")
-        print("locaionArray : \(location_name_array.arrayList)")
+        print("StoreTableController - locaionArray : \(location_name_array.arrayList)")
         searchfilterData.remove(at: indexPath.row)
-        //location_name_array.arrayList.remove(at: indexPath.row)
+
+        location_name_array.arrayList.remove(at: indexPath.row)
 
         
         
@@ -106,7 +108,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
 //            location_name_array.arrayList.remove(at: indexPath.row)
 //        }
         tableView.deleteRows(at: [indexPath], with: .automatic)
-        
+        print("StoreTableController - remove data : \(indexPath)")
         self.tableView.reloadData()
 //        print("modelstore = \(modelStore.arrayList)")
 //        print("stockbase = \(StoreDatabase.arrayList)")
@@ -125,6 +127,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         location_table.tableHeaderView = searchbar
         location_table.estimatedSectionHeaderHeight = 50
         searchbar.delegate = self // searchbar 이벤트 처리
+        self.tableView.reloadData()
         super.viewDidLoad()
         //        // 아카이브 코드
         //        let fileManager = FileManager.default
@@ -151,7 +154,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         let info = searchfilterData[indexPath.row]
         //let info = location_name_array[indexPath.row]
         let proccell:StoreChartCell_More = tableView.dequeueReusableCell(withIdentifier: "Cell2IngredientBig") as! StoreChartCell_More
-        print("\(info.name)")
+
         // searchbar
    //     proccell.labelName.text = self.searchfilterData[searchRow]
         

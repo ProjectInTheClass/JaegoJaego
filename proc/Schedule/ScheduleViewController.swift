@@ -11,23 +11,30 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
     @IBOutlet weak var todayDate :UILabel?
     @IBOutlet weak var ourCalendar: FSCalendar!
     
-    let tablecell = ScheduleDatabase.ScheduleArray // 저장된 값들을 가지고 있는 배열
+    let tablecell = ScheduleDatabase // 저장된 값들을 가지고 있는 배열
     let formatter = DateFormatter()
+   
     var selectedDate = ""
     let image = UIImage(named: "3-1")
 
     
     var filteredData: [Schedule] = [] // 달력과 메모 연결
     
+    func dateformatting() -> String{
+        let formatterdate = Date()
+        formatter.dateFormat = "yyyyMMdd"
+        
+        let todayDate = formatter.string(from: formatterdate)
+        return todayDate
+    }
+    
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         formatter.dateFormat = "yyyyMMdd"
         selectedDate = formatter.string(from:date as Date)
-        filteredData = tablecell.filter{ $0.dates == selectedDate }        // 달력과 같은 날짜를 filteredData 에 넣어주기
+        filteredData = tablecell.ScheduleArray.filter{ $0.memodates == selectedDate }        // 달력과 같은 날짜를 filteredData 에 넣어주기
         table.reloadData()
 
     }
-
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -44,21 +51,49 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
 
         let tableNewCell = tableView.dequeueReusableCell(withIdentifier: "littleScheduleCell") as! ScheduleLittleTableCell
 
-        print(filteredData)
-        tableNewCell.littleTitle.text = "제목 : " + filteredData[indexPath.row].title
-        tableNewCell.littleMemo.text = "메모 : " + filteredData[indexPath.row].memo
-        tableNewCell.littleNumber.text = String(indexPath.row + 1)
+      //  print("filteredData = \(filteredData)")
+        tableNewCell.littlememo.text = filteredData[indexPath.row].memotitle
+        tableNewCell.littletime.text = filteredData[indexPath.row].memotime
         // 날짜는 당일로 들어가니 따로 넣지 않음
         
         return tableNewCell
     }
-
+    
+    // 삭제
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        _ = tablecell.ScheduleArray[indexPath.row]
+        
+        filteredData.remove(at: indexPath.row)
+        
+       // print("scheduleDataBase = \(ScheduleDatabase.ScheduleArray) \n")
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+        tableView.reloadData()
+        
+    }
+    func setNavigationBar(){
+        let bar:UINavigationBar! =  self.navigationController?.navigationBar
+        bar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        bar.shadowImage = UIImage()
+        bar.backgroundColor = UIColor.clear
+    }
 
     override func viewDidLoad() {
+        table.reloadData()
+        self.setNavigationBar()
         super.viewDidLoad()
     }
 
-    
+    override func viewDidAppear(_ animated: Bool) {
+        selectedDate = dateformatting()
+        filteredData = tablecell.ScheduleArray.filter{ $0.memodates == selectedDate }
+        // proc.Schedule(memotitle: "예약 4팀", memotime: "5 pm", memodates: "20180803"),
+        // proc.Schedule(memotitle: "t", memotime: "testing", memodates: "G")]
+
+        //print("viewDidAppear filteredData = \(filteredData)")
+        self.table.reloadData()
+        super.viewDidAppear(animated)
+    }
 
     
     

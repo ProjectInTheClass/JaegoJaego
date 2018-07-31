@@ -153,26 +153,19 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         let ManyTypeAdd:String = AddlblManyType.text!
         let SaveAdd:saveStyle = .Cold
             //AddlblSavePiker.text!
+
         let TtManyAdd:Int = (30 + ManyAdd)
-        //var userAmountAdd:Int = Int(AddlblUsAmount.text!)!
         
         //시험용 배열 데이터 선언
         var _:Array<Store>
 
     
+
         _ = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd)
+
+        let addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd)
     
-        
-        let arrayAdd:[Any] = [NameAdd ,  infoDateAdd, DateAdd, ManyAdd, ManyTypeAdd, SaveAdd, TtManyAdd, CallAdd]
-        
-        if arrayAdd.count < 8 {
-         
-        } else {
-            
-            let addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd, manytype: ManyTypeAdd, saveStyle: SaveAdd, TotalMany: TtManyAdd, Call: CallAdd)
-            
-            
-            
+
             //        addArrayList.append(addStock)
             //        for i in addArrayList{
             //            if addArrayList[i] == " "{
@@ -183,9 +176,10 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
             // 데이터 받기, 출력 확인
             addTemp.arrayList.append(addStock)
             
-            print("addStock -> addTemp.arrayList = \(addStock)")
-            print("addtemp : StoreDataBase = \(addTemp.arrayList)")
+            print("AddViewController - addStock -> addTemp.arrayList = \(addStock)")
+            print("AddViewController - addtemp : StoreDataBase = \(addTemp.arrayList)")
+            print("AddViewController - stockdatabase : \(StoreDatabase.arrayList)")
             self.dismiss(animated: true, completion: nil)
-        }
+      
     }
 }

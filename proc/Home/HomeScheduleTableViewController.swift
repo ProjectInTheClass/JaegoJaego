@@ -32,8 +32,8 @@ class HomeScheduleTableViewController : UITableViewController {
         let homeScheduleCell: HomeScheduleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "HScheduleCell") as! HomeScheduleTableViewCell
        
         
-        homeScheduleCell.HomeScheduleTitle.text = homeScheduleInfo.title
-        homeScheduleCell.HomeScheduleMemo.text = homeScheduleInfo.memo
+        homeScheduleCell.HomeScheduleTitle.text = homeScheduleInfo.memotitle
+        homeScheduleCell.HomeScheduleMemo.text = homeScheduleInfo.memodates
         
         //homeScheduleCell.HomeScheduleCount.text = homeScheduleInfo.dates
         

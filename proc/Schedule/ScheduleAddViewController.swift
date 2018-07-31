@@ -3,13 +3,14 @@ import Foundation
 
 class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
   
-    var eventArray : [Event] = []
+
     //@IBOutlet weak var btnComplete:UIButton!
     
     let scheduleModel = ScheduleDatabase
-  
+    let AddPikDate = UIPickerView()
+    var pickerrealdate = ""
     @IBOutlet weak var name: UITextField!
-    @IBOutlet weak var textV: UITextView!
+    @IBOutlet weak var textV: UITextField!
     @IBOutlet weak var okbutton: UIButton!
     
     @IBOutlet weak var alarm1: UILabel!
@@ -19,34 +20,41 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
     @IBOutlet weak var AddldlDatePiker: UITextField!
     
     // 날짜 데이터 저장 배열
-    let myPickerDate = [["2018","2019","2020","2021","2022","2023","2024","2025","2026","2027","2028","2029","2030"],["1","2","3","4","5","6","7","8","9","10","11","12"],["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]]
+    let myPickerDate = [["2018","2019","2020","2021","2022","2023","2024","2025","2026","2027","2028","2029","2030"],["01","02","03","04","05","06","07","08","09","10","11","12"],["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]]
     // 저장 방법 저장 배열
     let myPickerSave = ["실온", "냉동", "냉장"]
     
+    func dateformatting() -> String{
+        let formatter = DateFormatter()
+        let formatterdate = Date()
+        formatter.dateFormat = "yyyy - MM - dd"
+        
+        let todayDate = formatter.string(from: formatterdate)
+        return todayDate
+    }
+    
     override func viewDidLoad() {
+        AddldlDatePiker.placeholder = "" + dateformatting()
+        name.placeholder = "내용을 입력해주세요."
         super.viewDidLoad()
         alarm1.text = " "
         alarm2.text = " "
         alarm3.text = " "
         
         // 날짜 피커뷰
-        let AddPikDate = UIPickerView()
+        
         AddPikDate.delegate = self
         AddldlDatePiker.inputView = AddPikDate
-    
+        AddPikDate.backgroundColor = UIColor.white
     }
     
     // 피커뷰 함수 시작
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-      
-            return myPickerDate.count
-
+        return myPickerDate.count
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
         return myPickerDate[component].count
-        
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         view.endEditing(true)
@@ -69,27 +77,30 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
         let year = myPickerDate[0][pickerView.selectedRow(inComponent: 0)]
         let month = myPickerDate[1][pickerView.selectedRow(inComponent: 1)]
         let day = myPickerDate[2][pickerView.selectedRow(inComponent: 2)]
-        AddldlDatePiker.text = year + "-" + month + "-" + day
+        AddldlDatePiker.text = year + " - " + month + " - " + day
         
+        if AddldlDatePiker.text != nil {
+            pickerrealdate = year + month + day
+        }
     }
     
+    
+
+  
     // 피커뷰 함수 끝
-
-
-
     @IBAction func closeBtn(_ sender: UIButton) {
-        
+        navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func complete(_ sender: AnyObject) {
         
-        var DateAdd:String = AddldlDatePiker.text!
+        let DateAdd:String = pickerrealdate //AddldlDatePiker.text!
         
-        var eventname = name.text!
-        var text = textV.text!
-        
-        
+        let eventname = name.text!
+        let eventtextV = textV.text!
+        //let text = textV.text!
+
         // 빈칸 처리문
         if( eventname == ""){
             alarm1.text = "값이 없습니다"
@@ -97,7 +108,7 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
         else{
             alarm1.text = " "
         }
-        if( text == ""){
+        if( eventtextV == ""){
             alarm2.text = "값이 없습니다"
         }
         else{
@@ -109,22 +120,14 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
         else{
             alarm3.text = "  "
         }
-        if( eventname != "" && text != "" && DateAdd != "" ){
-            
-            scheduleModel.ScheduleArray.append(Schedule(title: eventname, memo: text, dates: DateAdd))
-            print(scheduleModel.ScheduleArray)
+        if( eventname != "" && eventtextV != "" && DateAdd != "" ){
+            scheduleModel.ScheduleArray.append(Schedule(memotitle: eventname, memotime: eventtextV, memodates: DateAdd))
+            print("scheduleDatabase \(ScheduleDatabase.ScheduleArray)")
+            navigationController?.popViewController(animated: true)
             self.dismiss(animated: true, completion: nil)
-        }
-
-
-        func complete (_ sender: AnyObject) {
-        // 값 받는 코드
-            self.dismiss(animated: true, completion: nil)
-
-
-
         }
 
     }
+    
 
 }

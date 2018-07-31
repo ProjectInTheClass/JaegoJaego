@@ -7,7 +7,26 @@ import UIKit
 //
 //class Database {
 //
-//}
+//
+
+
+/* 색상 지정 클래스 */
+
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        let newRed = CGFloat(red)/255
+        let newGreen = CGFloat(green)/255
+        let newBlue = CGFloat(blue)/255
+        
+        self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
+    }
+}
+
+struct Colors {
+    static var darkGreen = UIColor(red: 46, green: 204, blue: 113)
+    static var darkBlue = UIColor(red: 52, green: 152, blue: 219)
+}
+
 
 
 /* 홈 데이터 - HomeDateModel */
@@ -157,29 +176,17 @@ let ScheduleDatabase = ScheduleModel()
 
 // 일정 데이터 정의
 struct Schedule {
-    var title: String
-    var memo: String
-    //  var counts:Int = 1
-    var dates:String
-    
-    init(title:String, memo:String, dates: String) {
-        self.title = title
-        self.memo = memo
-        //    self.counts = counts
-        self.dates = dates
-    }
-}
+    var memotitle: String // 메모
+    var memotime: String // 시간
+    var memodates: String // 달력과 비교할 날짜
 
-struct Event { //이벤트
-    var eventname: String? //제목
-    var text: String? //내용
-    var eventdate: Int? //날짜
+    //  var counts:Int 는 셀의 개수로 넣음
     
     
-    // 이벤트 생성자
-    init(eventname:String, text:String ){
-        self.eventname = eventname
-        self.text = text
+    init(memotitle:String, memotime:String, memodates:String) {
+        self.memotitle = memotitle
+        self.memotime = memotime
+        self.memodates = memodates 
     }
 }
 
@@ -190,11 +197,11 @@ class ScheduleModel {
     init(){
         // 예약 시간에 따른 정렬 (1시  2시  5시 순)
         // 순서에 따른 count 값
-        let stock1 =  Schedule(title: "예약", memo:"태권도팀 30명", dates: "20180730")
-        let stock2 =  Schedule(title: "예약", memo:"삼성전자 단체회식 40명", dates: "20180816")
-        let stock3 =  Schedule(title: "메모", memo:"일반 8인", dates: "20180815")
-        let stock4 =  Schedule(title: "어린이", memo:"12명", dates: "20180813")
-        self.ScheduleArray += [stock1, stock2, stock3, stock4]
+        let stock1 =  Schedule(memotitle: "예약 2팀",memotime: "2 pm", memodates:"20180731")
+        let stock2 =  Schedule(memotitle: "예약 4팀",memotime: "5 pm", memodates:"20180803")
+        let stock3 =  Schedule(memotitle: "예약 5팀",memotime: "9 am", memodates:"20180804")
+        let stock4 =  Schedule(memotitle: "예약 7팀",memotime: "11 am", memodates:"20180805")
+        self.ScheduleArray += [stock1, stock2, stock3, stock4, stock1, stock2]
         
     }
     
@@ -244,7 +251,9 @@ class Store// : NSObject, NSCoding
         
         self.TotalMany = TotalMany + many
         self.Call = Call
-        //self.userAmount = userAmount
+
+
+
         // 거래처와 이미지는 안받아도 됨, 전체 수량은 수량으로 계산
     }
     
@@ -312,15 +321,14 @@ class StoreModel //: Equatable
 //            arrayList += defaultData()
 //        }
         
-        self.arrayList = []
-        
-        
-                var stock = Store(name:"새우", UpDate: infoDate2, DownDate:"18.07.06", many: 20, manytype:"통", saveStyle: .Cold, TotalMany:80, Call:"010-1111-2222")
+                var stock = Store(name:"새우", UpDate: infoDate2, DownDate:"18.07.06", many: 20, manytype:"통", saveStyle: .Cold, TotalMany:80, Call:"010-1111-2222" )
                 stock.Image = "그래프(빨)"
                 self.arrayList.append(stock)
+        
                 stock = Store(name:"레몬",  UpDate: infoDate2, DownDate:"18.07.21", many: 5, manytype: "개",saveStyle: .Cold, TotalMany:20, Call:"010-4444-4444")
                 stock.Image = "그래프(주황)"
                 self.arrayList.append(stock)
+        
                 stock = Store(name:"아보카도",  UpDate: infoDate2, DownDate:"18.07.22",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332")
                 stock.Image = "그래프(초록)"
                 self.arrayList.append(stock)
