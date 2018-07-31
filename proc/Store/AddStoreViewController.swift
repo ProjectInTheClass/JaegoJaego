@@ -142,7 +142,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
 //버튼 클릭했을 때 함수
     @IBAction func saveAddInfoBtn(_ sender: AnyObject) {
         
-        // 오류 처리문
+        // 오류 처리문 추가해야함
         var infoDateAdd:String = HomeDateModel.dateInfo()
         
         

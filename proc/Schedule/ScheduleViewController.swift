@@ -19,14 +19,7 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
     
     var filteredData: [Schedule] = [] // 달력과 메모 연결
     
-    // FSCalendarDataSource
-
-    
-    ///
-    
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-
-        
         formatter.dateFormat = "yyyyMMdd"
         selectedDate = formatter.string(from:date as Date)
         filteredData = tablecell.filter{ $0.dates == selectedDate }        // 달력과 같은 날짜를 filteredData 에 넣어주기
@@ -49,25 +42,18 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
 
-        
-        //let tableNewInfo = filteredData[indexPath.row]
         let tableNewCell = tableView.dequeueReusableCell(withIdentifier: "littleScheduleCell") as! ScheduleLittleTableCell
-        
-        //var temp = self.calendar
+
         print(filteredData)
         tableNewCell.littleTitle.text = "제목 : " + filteredData[indexPath.row].title
         tableNewCell.littleMemo.text = "메모 : " + filteredData[indexPath.row].memo
         tableNewCell.littleNumber.text = String(indexPath.row + 1)
-       // tableNewCell.littleNumber.text = String(tableNewInfo.counts)
         // 날짜는 당일로 들어가니 따로 넣지 않음
         
         return tableNewCell
     }
 
 
-
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
