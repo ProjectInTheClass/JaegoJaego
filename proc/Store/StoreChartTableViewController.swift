@@ -53,7 +53,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
 //        // 모델의 데이터 개수와 셀 개수 일치시키기
 //        return modelStore.arrayList.count
 //    }
-    override func tableView(_ tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchfilterData.count
     }
     
@@ -71,7 +71,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
 //    }
 //
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 4
     }
     
 
@@ -86,7 +86,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 
         
-        var deleteName = searchfilterData[indexPath.row]
+        _ = searchfilterData[indexPath.row]
 //        //lfind(location_name_array.arrayList, "\(deleteName[deleteName])")
 //      //  let indexofA = location_name_array.arrayList.index
 
@@ -97,11 +97,10 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
        // print("filterItem : \(filterItem)")
         print("locaionArray : \(location_name_array.arrayList)")
         searchfilterData.remove(at: indexPath.row)
-        
-       
-        
-        location_name_array.arrayList.remove(at: indexPath.row)
+        //location_name_array.arrayList.remove(at: indexPath.row)
 
+        
+        
 //        if location_name_array.arrayList == searchfilterData[indexPath.row].name {
 //            searchfilterData[indexPath.row]
 //            location_name_array.arrayList.remove(at: indexPath.row)

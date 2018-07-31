@@ -190,7 +190,6 @@ class ScheduleModel {
     init(){
         // 예약 시간에 따른 정렬 (1시  2시  5시 순)
         // 순서에 따른 count 값
-        
         let stock1 =  Schedule(title: "예약", memo:"태권도팀 30명", dates: "20180730")
         let stock2 =  Schedule(title: "예약", memo:"삼성전자 단체회식 40명", dates: "20180816")
         let stock3 =  Schedule(title: "메모", memo:"일반 8인", dates: "20180815")
@@ -231,11 +230,11 @@ class Store// : NSObject, NSCoding
     var Image: String? // 그래프 이미지
     var TotalMany:Int = 0 // 전체 수량
     var Call:String? // 거래처
-    var userAmount:Int? // 유저가 등록하는 알람수량
+    //var userAmount:Int? // 유저가 등록하는 알람수량
     
     
     // 재고 상세 데이터 생성자
-    init(name:String, UpDate:String, DownDate:String, many:Int, manytype:String, saveStyle:saveStyle,  TotalMany:Int, Call:String?, userAmount:Int){
+    init(name:String, UpDate:String, DownDate:String, many:Int, manytype:String, saveStyle:saveStyle,  TotalMany:Int, Call:String?){
         self.name = name
         self.UpDate = UpDate
         self.DownDate = DownDate
@@ -245,7 +244,7 @@ class Store// : NSObject, NSCoding
         
         self.TotalMany = TotalMany + many
         self.Call = Call
-        self.userAmount = userAmount
+        //self.userAmount = userAmount
         // 거래처와 이미지는 안받아도 됨, 전체 수량은 수량으로 계산
     }
     
@@ -316,13 +315,13 @@ class StoreModel //: Equatable
         self.arrayList = []
         
         
-                var stock = Store(name:"새우", UpDate: infoDate2, DownDate:"18.07.06", many: 20, manytype:"통", saveStyle: .Cold, TotalMany:80, Call:"010-1111-2222", userAmount: 30 )
+                var stock = Store(name:"새우", UpDate: infoDate2, DownDate:"18.07.06", many: 20, manytype:"통", saveStyle: .Cold, TotalMany:80, Call:"010-1111-2222")
                 stock.Image = "그래프(빨)"
                 self.arrayList.append(stock)
-                stock = Store(name:"레몬",  UpDate: infoDate2, DownDate:"18.07.21", many: 5, manytype: "개",saveStyle: .Cold, TotalMany:20, Call:"010-4444-4444", userAmount: 30)
+                stock = Store(name:"레몬",  UpDate: infoDate2, DownDate:"18.07.21", many: 5, manytype: "개",saveStyle: .Cold, TotalMany:20, Call:"010-4444-4444")
                 stock.Image = "그래프(주황)"
                 self.arrayList.append(stock)
-                stock = Store(name:"아보카도",  UpDate: infoDate2, DownDate:"18.07.22",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332", userAmount: 30)
+                stock = Store(name:"아보카도",  UpDate: infoDate2, DownDate:"18.07.22",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332")
                 stock.Image = "그래프(초록)"
                 self.arrayList.append(stock)
         

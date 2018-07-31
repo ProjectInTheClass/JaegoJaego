@@ -143,37 +143,33 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     @IBAction func saveAddInfoBtn(_ sender: AnyObject) {
         
         // 오류 처리문 추가해야함
-        var infoDateAdd:String = HomeDateModel.dateInfo()
+        let infoDateAdd:String = HomeDateModel.dateInfo()
         
         
-        var NameAdd:String = AddlblName.text!
-        var ManyAdd:Int = Int(AddlblMany.text!)!
-        var DateAdd:String = AddldlDatePiker.text!
-        var CallAdd:String = AddlblCall.text!
-        var ManyTypeAdd:String = AddlblManyType.text!
-        var SaveAdd:saveStyle = .Cold
+        let NameAdd:String = AddlblName.text!
+        let ManyAdd:Int = Int(AddlblMany.text!)!
+        let DateAdd:String = AddldlDatePiker.text!
+        let CallAdd:String = AddlblCall.text!
+        let ManyTypeAdd:String = AddlblManyType.text!
+        let SaveAdd:saveStyle = .Cold
             //AddlblSavePiker.text!
-        var TtManyAdd:Int = (30 + ManyAdd)
-        var userAmountAdd:Int = Int(AddlblUsAmount.text!)!
+        let TtManyAdd:Int = (30 + ManyAdd)
+        //var userAmountAdd:Int = Int(AddlblUsAmount.text!)!
         
         //시험용 배열 데이터 선언
-        var addArrayList:Array<Store>
+        var _:Array<Store>
 
     
-        var addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd, userAmount: userAmountAdd)
+        _ = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd)
     
-
-        if NameAdd == " " {
-            
-        }
         
-        var arrayAdd:[Any] = [NameAdd ,  infoDateAdd, DateAdd, ManyAdd, ManyTypeAdd, SaveAdd, TtManyAdd, CallAdd, userAmountAdd]
+        let arrayAdd:[Any] = [NameAdd ,  infoDateAdd, DateAdd, ManyAdd, ManyTypeAdd, SaveAdd, TtManyAdd, CallAdd]
         
         if arrayAdd.count < 8 {
          
         } else {
             
-            var addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd, manytype: ManyTypeAdd, saveStyle: SaveAdd, TotalMany: TtManyAdd, Call: CallAdd, userAmount : userAmountAdd)
+            let addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd, manytype: ManyTypeAdd, saveStyle: SaveAdd, TotalMany: TtManyAdd, Call: CallAdd)
             
             
             
