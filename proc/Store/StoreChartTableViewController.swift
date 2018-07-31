@@ -21,7 +21,6 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     @IBOutlet weak var Call:UILabel!
     
     // 재고 상세
-    var modelStore = StoreDatabase
     var infoDateAdd:String = HomeDateModel.dateInfo()
     var dataFilePath: String?
     
@@ -77,6 +76,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
 
     
     override func viewDidAppear(_ animated: Bool) {
+        searchfilterData = location_name_array.arrayList
         self.tableView.reloadData()
         super.viewDidAppear(animated)
        
@@ -107,7 +107,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
 //            location_name_array.arrayList.remove(at: indexPath.row)
 //        }
         tableView.deleteRows(at: [indexPath], with: .automatic)
-        
+        print("remove data : \(indexPath)")
         self.tableView.reloadData()
 //        print("modelstore = \(modelStore.arrayList)")
 //        print("stockbase = \(StoreDatabase.arrayList)")
@@ -126,6 +126,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         location_table.tableHeaderView = searchbar
         location_table.estimatedSectionHeaderHeight = 50
         searchbar.delegate = self // searchbar 이벤트 처리
+        self.tableView.reloadData()
         super.viewDidLoad()
         //        // 아카이브 코드
         //        let fileManager = FileManager.default

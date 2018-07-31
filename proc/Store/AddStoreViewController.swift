@@ -154,29 +154,15 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         var SaveAdd:saveStyle = .Cold
             //AddlblSavePiker.text!
         var TtManyAdd:Int = (30 + ManyAdd)
-        var userAmountAdd:Int = Int(AddlblUsAmount.text!)!
+       // var userAmountAdd:Int = Int(AddlblUsAmount.text!)!
         
         //시험용 배열 데이터 선언
         var addArrayList:Array<Store>
 
     
-        var addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd, userAmount: userAmountAdd)
+        var addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd)
     
 
-        if NameAdd == " " {
-            
-        }
-        
-        var arrayAdd:[Any] = [NameAdd ,  infoDateAdd, DateAdd, ManyAdd, ManyTypeAdd, SaveAdd, TtManyAdd, CallAdd, userAmountAdd]
-        
-        if arrayAdd.count < 8 {
-         
-        } else {
-            
-            var addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd, manytype: ManyTypeAdd, saveStyle: SaveAdd, TotalMany: TtManyAdd, Call: CallAdd, userAmount : userAmountAdd)
-            
-            
-            
             //        addArrayList.append(addStock)
             //        for i in addArrayList{
             //            if addArrayList[i] == " "{
@@ -187,9 +173,10 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
             // 데이터 받기, 출력 확인
             addTemp.arrayList.append(addStock)
             
-            print("addStock -> addTemp.arrayList = \(addStock)")
-            print("addtemp : StoreDataBase = \(addTemp.arrayList)")
+            print("add - addStock -> addTemp.arrayList = \(addStock)")
+            print("add -addtemp : StoreDataBase = \(addTemp.arrayList)")
+        print("add - stockdatabase : \(StoreDatabase.arrayList)")
             self.dismiss(animated: true, completion: nil)
-        }
+      
     }
 }
