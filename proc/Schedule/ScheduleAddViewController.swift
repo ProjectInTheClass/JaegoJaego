@@ -48,7 +48,6 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
         return myPickerDate[component].count
         
     }
-
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         view.endEditing(true)
     }
