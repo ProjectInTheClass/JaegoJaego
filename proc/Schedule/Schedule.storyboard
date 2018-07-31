@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="캘린더 일정-1" translatesAutoresizingMaskIntoConstraints="NO" id="6lX-bl-Q9P">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="화면" translatesAutoresizingMaskIntoConstraints="NO" id="6lX-bl-Q9P">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eOO-EQ-YLz">
@@ -70,8 +70,17 @@
                                     <outlet property="delegate" destination="lHW-kL-pfQ" id="IVT-j8-QHf"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7h-lS-y9I">
+                                <rect key="frame" x="320" y="601" width="78" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.023120241116751261" green="0.023120241116751261" blue="0.023120241116751261" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="플러스기호(파랑)"/>
+                                <connections>
+                                    <segue destination="bb2-Kr-ebP" kind="show" id="koA-qW-qRW"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NQT-Dy-mto" customClass="FSCalendar">
-                                <rect key="frame" x="20" y="112" width="374" height="305"/>
+                                <rect key="frame" x="10" y="78" width="388" height="317"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="eventDefaultColor">
@@ -113,15 +122,6 @@
                                     <outlet property="delegate" destination="lHW-kL-pfQ" id="dYq-Sf-z8t"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7h-lS-y9I">
-                                <rect key="frame" x="320" y="601" width="78" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.023120241116751261" green="0.023120241116751261" blue="0.023120241116751261" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" image="플러스기호(파랑)"/>
-                                <connections>
-                                    <segue destination="bb2-Kr-ebP" kind="show" id="koA-qW-qRW"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -370,5 +370,6 @@
         <image name="일정추가ui-2" width="1041" height="1853"/>
         <image name="캘린더 일정-1" width="3125" height="5559"/>
         <image name="플러스기호(파랑)" width="117" height="117"/>
+        <image name="화면" width="1041" height="1853"/>
     </resources>
 </document>
