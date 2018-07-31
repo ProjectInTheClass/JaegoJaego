@@ -25,7 +25,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     var infoDateAdd:String = HomeDateModel.dateInfo()
     var dataFilePath: String?
     
-    var location_name_array = StoreDatabase.arrayList //[String]() // 원본(위치정보)를 가지는 배열
+    var location_name_array = StoreDatabase //[String]() // 원본(위치정보)를 가지는 배열
     var searchfilterData:[Store] = [] // 필터링된 결과를 저장할 배열
 
  
@@ -33,7 +33,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     // searchbar 관련 메소드
     func searchBar(_ searchbar: UISearchBar, textDidChange searchText:String){
         
-        searchfilterData = searchText.isEmpty ? location_name_array : location_name_array.filter{ $0.name.range(of: searchText) != nil}
+        searchfilterData = searchText.isEmpty ? location_name_array.arrayList : location_name_array.arrayList.filter{ $0.name.range(of: searchText) != nil}
         location_table.reloadData() // 필터링한 데이터를 테이블뷰로 설정
     }
     
@@ -84,16 +84,36 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     
     // 재고 삭제 코드
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        
+//        var deleteName = searchfilterData[indexPath.row].name
+//        //lfind(location_name_array.arrayList, "\(deleteName[deleteName])")
+//      //  let indexofA = location_name_array.arrayList.index
+//
+////        let indexOfdelete = location_name_array.arrayList[Store].indexOf{$0 == deleteName}
+//
+//        var filterItem:[Store] = location_name_array.arrayList.filter{ $0 == deleteName.name }
+       // print("filterItem : \(filterItem)")
+        print("locaionArray : \(location_name_array.arrayList)")
         searchfilterData.remove(at: indexPath.row)
+        
+       
+        
+        location_name_array.arrayList.remove(at: indexPath.row)
+
+//        if location_name_array.arrayList == searchfilterData[indexPath.row].name {
+//            searchfilterData[indexPath.row]
+//            location_name_array.arrayList.remove(at: indexPath.row)
+//        }
         tableView.deleteRows(at: [indexPath], with: .automatic)
-        location_name_array = searchfilterData
+        
+        self.tableView.reloadData()
 //        print("modelstore = \(modelStore.arrayList)")
 //        print("stockbase = \(StoreDatabase.arrayList)")
     }
     override func viewDidLoad() {
         //tableView.reloadData()
-        
-        searchfilterData = location_name_array // searchfilterData = [proc.Store,proc.Store,proc.Store]
+        //location_name_array.arrayList = StoreDatabase.arrayList
+        searchfilterData = location_name_array.arrayList // searchfilterData = [proc.Store,proc.Store,proc.Store]
         
         
         // search bar
@@ -130,7 +150,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         let info = searchfilterData[indexPath.row]
         //let info = location_name_array[indexPath.row]
         let proccell:StoreChartCell_More = tableView.dequeueReusableCell(withIdentifier: "Cell2IngredientBig") as! StoreChartCell_More
-        print("hi")
+        print("\(info.name)")
         // searchbar
    //     proccell.labelName.text = self.searchfilterData[searchRow]
         
