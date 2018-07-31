@@ -129,7 +129,7 @@ class HomeDateModel {
 // 폐기 데이터 배열 생성
 class HomedisposalChart_Model {
     var selectedIndex:Int = 0
-    var HomeThrowArray:Array <HomeThrowChart>
+    var HomeThrowArray:[HomeThrowChart]
     
     init() {
         self.HomeThrowArray = []
@@ -283,7 +283,7 @@ class Store// : NSObject, NSCoding
 
 class StoreModel {
     var selectedIndex:Int = 0
-    var arrayList:Array<Store> = []
+    var arrayList:[Store] = []
     
     var filePath:String { get {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory , .userDomainMask, true).first!
