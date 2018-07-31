@@ -84,11 +84,13 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     
     // 재고 삭제 코드
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        
-//        var deleteName = searchfilterData[indexPath.row].name
+
+        
+        var deleteName = searchfilterData[indexPath.row]
 //        //lfind(location_name_array.arrayList, "\(deleteName[deleteName])")
 //      //  let indexofA = location_name_array.arrayList.index
-//
+
+ //       location_name_array.arrayList.index(of: deleteName.name)
 ////        let indexOfdelete = location_name_array.arrayList[Store].indexOf{$0 == deleteName}
 //
 //        var filterItem:[Store] = location_name_array.arrayList.filter{ $0 == deleteName.name }
@@ -157,13 +159,13 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         // cell
         proccell.labelName.text = info.name
         proccell.labelSaveStyle.text = info.saveStyle.rawValue
-        proccell.labelUpDate.text = info.UpDate
+        proccell.labelUpDate.text =  info.UpDate
         proccell.labelDownDate.text = info.DownDate
         
         proccell.labelMany.text = String(info.many)
         proccell.labelManyType.text = String(info.manytype)
         proccell.labelTotalMany.text = String(info.TotalMany)
-        proccell.Call.text = info.Call
+//        proccell.Call.text = info.Call
         
         if let image2 = info.Image {
             proccell.ChartImage.image = UIImage(named: image2)

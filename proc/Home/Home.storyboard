@@ -135,14 +135,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="수량" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yB-2J-1ZS">
-                                            <rect key="frame" x="278" y="18" width="28" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="단위" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ize-dH-Zn4">
-                                            <rect key="frame" x="314" y="18" width="28" height="20"/>
+                                            <rect key="frame" x="278" y="18" width="59" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
@@ -163,7 +156,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="HomeStoreMany" destination="3yB-2J-1ZS" id="fQr-eh-z3x"/>
-                                    <outlet property="HomeStoreManytype" destination="ize-dH-Zn4" id="17j-ua-Rva"/>
                                     <outlet property="HomeStoreName" destination="K6W-9a-Ags" id="k0T-Ik-J3S"/>
                                     <outlet property="HomeStoreSaveStyle" destination="qw6-0h-GPW" id="o2T-NW-nKg"/>
                                 </connections>
@@ -177,7 +169,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tpb-sD-Wtg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2017" y="-377"/>
+            <point key="canvasLocation" x="2015.2" y="-378.26086956521743"/>
         </scene>
         <!--Home Schedule Table View Controller-->
         <scene sceneID="mBa-5W-aAf">

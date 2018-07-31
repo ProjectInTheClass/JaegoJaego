@@ -57,7 +57,7 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
         textField.resignFirstResponder()
         return true
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         return myPickerDate[component][row]
@@ -116,10 +116,8 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
 
         func complete (_ sender: AnyObject) {
         // 값 받는 코드
-
             self.dismiss(animated: true, completion: nil)
 
-            self.dismiss(animated: true, completion: nil)
 
 
         }
