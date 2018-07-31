@@ -157,13 +157,13 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         // cell
         proccell.labelName.text = info.name
         proccell.labelSaveStyle.text = info.saveStyle.rawValue
-        proccell.labelUpDate.text = info.UpDate
+        proccell.labelUpDate.text =  info.UpDate
         proccell.labelDownDate.text = info.DownDate
         
         proccell.labelMany.text = String(info.many)
         proccell.labelManyType.text = String(info.manytype)
         proccell.labelTotalMany.text = String(info.TotalMany)
-        proccell.Call.text = info.Call
+//        proccell.Call.text = info.Call
         
         if let image2 = info.Image {
             proccell.ChartImage.image = UIImage(named: image2)
