@@ -281,7 +281,13 @@ class Store// : NSObject, NSCoding
 
 // 재고 ArrayList
 
-class StoreModel {
+class StoreModel //: Equatable
+{
+//    static func == (lhs: StoreModel, rhs: StoreModel) -> Bool {
+//        lhs.key == rhs.key
+//    }
+    
+    let key =  Date().timeIntervalSince1970
     var selectedIndex:Int = 0
     var arrayList:[Store] = []
     

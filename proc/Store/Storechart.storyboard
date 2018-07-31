@@ -40,8 +40,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="재고목록" image="카테고리2" id="vMn-Cb-5jr"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="eoa-TK-OhQ">
-                        <barButtonItem key="rightBarButtonItem" title="추가" id="deU-7q-nF8">
+                    <navigationItem key="navigationItem" title="재고목록" id="eoa-TK-OhQ">
+                        <barButtonItem key="rightBarButtonItem" title="재료 추가" id="deU-7q-nF8">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="A6X-rX-MY3" kind="presentation" id="CY9-UI-Wpn"/>

@@ -75,7 +75,8 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
     
     // 피커뷰 함수 끝
 
-    
+
+
     @IBAction func closeBtn(_ sender: UIButton) {
         
         self.dismiss(animated: true, completion: nil)
@@ -120,6 +121,9 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
         // 값 받는 코드
 
             self.dismiss(animated: true, completion: nil)
+
+            self.dismiss(animated: true, completion: nil)
+
 
         }
 
