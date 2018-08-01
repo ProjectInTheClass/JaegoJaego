@@ -88,7 +88,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     // searchbar 관련 메소드
     func searchBar(_ searchbar: UISearchBar, textDidChange searchText:String){
         
-        searchfilterData = searchText.isEmpty ? location_name_array.arrayList : location_name_array.arrayList.filter{ $0.name.range(of: searchText) != nil}
+        searchfilterData = searchText.isEmpty ? array00ToTrash : array00ToTrash.filter{ $0.name.range(of: searchText) != nil}
         location_table.reloadData() // 필터링한 데이터를 테이블뷰로 설정
         
         

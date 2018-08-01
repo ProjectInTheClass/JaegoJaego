@@ -22,7 +22,10 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     @IBOutlet weak var AddlblUpDatePiker: UITextField! // 등록일
     
     // 날짜 데이터 저장 배열
-    let myPickerDate = [["2018","2019","2020","2021","2022","2023","2024","2025","2026","2027","2028","2029","2030"],["1","2","3","4","5","6","7","8","9","10","11","12"],["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]]
+    let myPickerDate = [["18","19","20","21","22","23","24","25","26","27","28","29","30"],["01","02","03","04","05","06","07","08","09","10","11","12"],["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]]
+    
+    
+    
     // 저장 방법 저장 배열
     let myPickerSave = ["실온", "냉동", "냉장"]
     
@@ -119,7 +122,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
             let year = myPickerDate[0][pickerView.selectedRow(inComponent: 0)]
             let month = myPickerDate[1][pickerView.selectedRow(inComponent: 1)]
             let day = myPickerDate[2][pickerView.selectedRow(inComponent: 2)]
-            AddldlDatePiker2.text = year + "-" + month + "-" + day
+            AddldlDatePiker2.text = year + "." + month + "." + day
             pickerrealdate = year + month + day
             
             if AddldlDatePiker2.text != nil {
@@ -135,7 +138,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
             let year = myPickerDate[0][pickerView.selectedRow(inComponent: 0)]
             let month = myPickerDate[1][pickerView.selectedRow(inComponent: 1)]
             let day = myPickerDate[2][pickerView.selectedRow(inComponent: 2)]
-            AddlblUpDatePiker.text = year + "-" + month + "-" + day
+            AddlblUpDatePiker.text = year + "." + month + "." + day
         }
      
     }
