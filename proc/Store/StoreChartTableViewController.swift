@@ -24,6 +24,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     var infoDateAdd:String = HomeDateModel.dateInfo()
     var dataFilePath: String?
     
+    
     // 유통기간 배열들을 담은 빅배열
     //var arrayBig:[Store] = []
 
@@ -161,7 +162,34 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         return rValue
     }
     
-
+// 전화걸기 함수
+    @IBAction func phoenCallBtn(_ sender: UIButton) {
+        let cell = sender.superview?.superview as! UITableViewCell
+        let indexPath = self.tableView.indexPath(for: cell)
+        
+        
+        if location_name_array.arrayList[(indexPath?.row)!].Call != nil {
+            var temp = location_name_array.arrayList[(indexPath?.row)!].Call!
+            print("temp = \(temp)")
+            
+            if let phoneCallURL = URL(string: "tel://\(temp)") {
+                
+                let application:UIApplication = UIApplication.shared
+                
+                if (application.canOpenURL(phoneCallURL)) {
+                    
+                    application.open(phoneCallURL, options: [:], completionHandler: nil)
+                    
+                }
+                
+            }
+            
+        }
+        
+        
+        
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var arrayStore:[Store]!
         
@@ -187,7 +215,6 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         proccell.labelSaveStyle.text = store.saveStyle.rawValue
         proccell.labelUpDate.text =  store.UpDate
         proccell.labelDownDate.text = store.DownDate
-        
         proccell.labelMany.text = String(store.many)
         proccell.labelManyType.text = String(store.manytype)
         proccell.labelTotalMany.text = String(store.TotalMany)

@@ -179,7 +179,7 @@ struct Schedule :Equatable {
     var memotitle: String // 메모
     var memotime: String // 시간
     var memodates: String // 달력과 비교할 날짜
-
+	
     //  var counts:Int 는 셀의 개수로 넣음
     let key =  Date().timeIntervalSince1970
     
@@ -380,7 +380,7 @@ class StoreModel
     
     // 들어온 날짜 = 당일 날짜
     
-    
+
     init(){
         // if NSFileManager.defaultManager().fileExistsAtPath(self.filePath)
 //        if FileManager.default.fileExists(atPath: self.filePath){
@@ -393,7 +393,7 @@ class StoreModel
 //            arrayList += defaultData()
 //        }
         
-        var stock = Store(name:"새우", UpDate:"18.8.01", DownDate:"18.08.06", many: 20, manytype:"통", saveStyle: .Cold, TotalMany:80, Call:"010-1111-2222")
+        var stock = Store(name:"새우", UpDate:"18.8.01", DownDate:"18.08.06", many: 20, manytype:"통", saveStyle: .Cold, TotalMany:80, Call:"010-7730-7152")
         stock.Image = "그래프(빨)"
         self.arrayList.append(stock)
         
