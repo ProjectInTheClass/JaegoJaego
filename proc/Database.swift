@@ -179,7 +179,7 @@ struct Schedule :Equatable {
     var memotitle: String // 메모
     var memotime: String // 시간
     var memodates: String // 달력과 비교할 날짜
-
+	
     //  var counts:Int 는 셀의 개수로 넣음
     let key =  Date().timeIntervalSince1970
     
