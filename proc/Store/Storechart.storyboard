@@ -307,14 +307,18 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXY-Qj-828">
-                                            <rect key="frame" x="306" y="30" width="51" height="51"/>
+                                            <rect key="frame" x="305" y="30" width="51" height="51"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="전화아이콘-1"/>
+                                            <connections>
+                                                <action selector="phoenCallBtn:" destination="lCz-0o-ZEK" eventType="touchUpInside" id="5bH-BC-7Ml"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="CallBtn" destination="gXY-Qj-828" id="flj-9M-4dB"/>
                                     <outlet property="ChartImage" destination="cTp-hf-Rnp" id="Lwy-IR-kQQ"/>
                                     <outlet property="labelDownDate" destination="zpU-qe-oL3" id="sCy-1b-sJJ"/>
                                     <outlet property="labelMany" destination="9Cw-Ff-uY8" id="gwi-mG-BEu"/>
