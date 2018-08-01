@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="캘린더 일정-1" translatesAutoresizingMaskIntoConstraints="NO" id="6lX-bl-Q9P">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="임시UI-1" translatesAutoresizingMaskIntoConstraints="NO" id="6lX-bl-Q9P">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NQT-Dy-mto" customClass="FSCalendar">
@@ -120,7 +120,7 @@
                         <viewLayoutGuide key="safeArea" id="w9D-oA-Okp"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="일정" image="메모2" id="bWj-fn-S9b"/>
-                    <navigationItem key="navigationItem" title="일정" id="czD-Tj-yH5">
+                    <navigationItem key="navigationItem" id="czD-Tj-yH5">
                         <barButtonItem key="rightBarButtonItem" title="일정 등록" id="4mf-UE-fcN">
                             <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -367,8 +367,9 @@
         <image name="greenCircle" width="33" height="33"/>
         <image name="schedulestaffimg" width="7" height="42"/>
         <image name="닫기버튼" width="143" height="140"/>
-        <image name="메모2" width="54" height="51"/>
+        <image name="메모2" width="27" height="26"/>
         <image name="일정추가ui-2" width="1562" height="2779"/>
+        <image name="임시UI-1" width="1562" height="2779"/>
         <image name="재고추가창버튼-1" width="623" height="169"/>
         <image name="캘린더 일정-1" width="3125" height="5559"/>
     </resources>

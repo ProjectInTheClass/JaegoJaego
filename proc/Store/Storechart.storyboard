@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="화면" translatesAutoresizingMaskIntoConstraints="NO" id="o3w-3L-TwU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="임시UI-1" translatesAutoresizingMaskIntoConstraints="NO" id="o3w-3L-TwU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPB-zf-CyF">
@@ -386,11 +386,11 @@
     <resources>
         <image name="그래프(빨)" width="378" height="394"/>
         <image name="닫기버튼" width="143" height="140"/>
+        <image name="임시UI-1" width="1562" height="2779"/>
         <image name="재고추가UI-1" width="1562" height="2779"/>
         <image name="재고추가창버튼-1" width="623" height="169"/>
         <image name="전화아이콘-1" width="227" height="228"/>
-        <image name="카테고리2" width="29" height="25"/>
+        <image name="카테고리2" width="21" height="28"/>
         <image name="폐기목록-1" width="3125" height="5559"/>
-        <image name="화면" width="1562" height="2779"/>
     </resources>
 </document>
