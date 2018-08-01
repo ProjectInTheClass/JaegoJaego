@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="임시UI-1" translatesAutoresizingMaskIntoConstraints="NO" id="o3w-3L-TwU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uiBack" translatesAutoresizingMaskIntoConstraints="NO" id="o3w-3L-TwU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPB-zf-CyF">
@@ -75,7 +75,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="재고추가UI-1" translatesAutoresizingMaskIntoConstraints="NO" id="vee-Zc-oPD">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddJaego" translatesAutoresizingMaskIntoConstraints="NO" id="vee-Zc-oPD">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="수량을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M0k-E9-cHG">
@@ -109,7 +109,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIz-Sv-Qum">
                                 <rect key="frame" x="318" y="58" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="닫기버튼"/>
+                                <state key="normal" image="closeBtn"/>
                                 <connections>
                                     <action selector="closeBtn:" destination="A6X-rX-MY3" eventType="touchUpInside" id="G2a-vd-vVC"/>
                                 </connections>
@@ -124,7 +124,7 @@
                             <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYd-Yb-P3r">
                                 <rect key="frame" x="75" y="539" width="222" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="완료" backgroundImage="재고추가창버튼-1">
+                                <state key="normal" title="완료" backgroundImage="AddBtn">
                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -232,7 +232,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="그래프(빨)" translatesAutoresizingMaskIntoConstraints="NO" id="cTp-hf-Rnp">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graph_red" translatesAutoresizingMaskIntoConstraints="NO" id="cTp-hf-Rnp">
                                             <rect key="frame" x="16" y="22" width="65" height="61"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -309,7 +309,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXY-Qj-828">
                                             <rect key="frame" x="305" y="30" width="51" height="51"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="전화아이콘-1"/>
+                                            <state key="normal" image="callIcon"/>
                                             <connections>
                                                 <action selector="phoenCallBtn:" destination="lCz-0o-ZEK" eventType="touchUpInside" id="5bH-BC-7Ml"/>
                                             </connections>
@@ -404,13 +404,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AddBtn" width="623" height="169"/>
+        <image name="AddJaego" width="1562" height="2779"/>
         <image name="addBtn-1" width="223" height="223"/>
-        <image name="그래프(빨)" width="378" height="394"/>
-        <image name="닫기버튼" width="143" height="140"/>
-        <image name="임시UI-1" width="1562" height="2779"/>
-        <image name="재고추가UI-1" width="1562" height="2779"/>
-        <image name="재고추가창버튼-1" width="623" height="169"/>
-        <image name="전화아이콘-1" width="227" height="228"/>
+        <image name="callIcon" width="227" height="228"/>
+        <image name="closeBtn" width="143" height="140"/>
+        <image name="graph_red" width="567" height="592"/>
+        <image name="uiBack" width="1562" height="2779"/>
         <image name="카테고리2" width="21" height="28"/>
         <image name="폐기목록-1" width="3125" height="5559"/>
     </resources>

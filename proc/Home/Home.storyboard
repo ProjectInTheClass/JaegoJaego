@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="홈2-1" translatesAutoresizingMaskIntoConstraints="NO" id="DbW-fO-3fY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_back" translatesAutoresizingMaskIntoConstraints="NO" id="DbW-fO-3fY">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YE2-Cf-JTU">
@@ -143,7 +143,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="그래프(빨)" translatesAutoresizingMaskIntoConstraints="NO" id="V0G-I5-gVU">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graph_red" translatesAutoresizingMaskIntoConstraints="NO" id="V0G-I5-gVU">
                                             <rect key="frame" x="20" y="8" width="41" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -227,8 +227,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="그래프(빨)" width="378" height="394"/>
+        <image name="graph_red" width="567" height="592"/>
+        <image name="home_back" width="1562" height="2779"/>
         <image name="홈2" width="16" height="16"/>
-        <image name="홈2-1" width="1562" height="2779"/>
     </resources>
 </document>
