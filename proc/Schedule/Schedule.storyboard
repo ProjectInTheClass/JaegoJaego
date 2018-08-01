@@ -110,6 +110,14 @@
                                     <outlet property="delegate" destination="lHW-kL-pfQ" id="IVT-j8-QHf"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udB-5c-Hbg">
+                                <rect key="frame" x="292" y="536" width="71" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="addBtn-1"/>
+                                <connections>
+                                    <segue destination="bb2-Kr-ebP" kind="presentation" id="Z3W-em-a1N"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -121,14 +129,7 @@
                         <viewLayoutGuide key="safeArea" id="w9D-oA-Okp"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="일정" image="메모2" id="bWj-fn-S9b"/>
-                    <navigationItem key="navigationItem" id="czD-Tj-yH5">
-                        <barButtonItem key="rightBarButtonItem" title="일정 등록" id="4mf-UE-fcN">
-                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="bb2-Kr-ebP" kind="show" id="Mif-7a-Ue2"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="czD-Tj-yH5"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -149,7 +150,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="일정추가ui-2" translatesAutoresizingMaskIntoConstraints="NO" id="Y2q-KL-awC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4kk-ct-3Ii">
                                 <rect key="frame" x="53" y="143" width="281" height="30"/>
@@ -364,6 +365,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addBtn-1" width="223" height="223"/>
         <image name="blueCircle" width="33" height="33"/>
         <image name="greenCircle" width="33" height="33"/>
         <image name="schedulestaffimg" width="24" height="123"/>

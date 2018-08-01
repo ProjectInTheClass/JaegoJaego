@@ -28,6 +28,14 @@
                                     <segue destination="lCz-0o-ZEK" kind="embed" id="URq-Mz-s7y"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxj-pt-EXw">
+                                <rect key="frame" x="290" y="535" width="71" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="addBtn-1"/>
+                                <connections>
+                                    <segue destination="A6X-rX-MY3" kind="presentation" id="UZf-x8-W7s"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -40,14 +48,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="재고목록" image="카테고리2" id="vMn-Cb-5jr"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="eoa-TK-OhQ">
-                        <barButtonItem key="rightBarButtonItem" title="추가" id="deU-7q-nF8">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <segue destination="A6X-rX-MY3" kind="presentation" id="CY9-UI-Wpn"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="eoa-TK-OhQ"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -99,7 +100,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="실온" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Xc-0W-ehN">
-                                <rect key="frame" x="207" y="281" width="109" height="30"/>
+                                <rect key="frame" x="207" y="378" width="109" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -114,7 +115,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12313" borderStyle="roundedRect" placeholder="번호를 입력하시오" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cog-F6-cWM">
-                                <rect key="frame" x="56" y="378" width="260" height="30"/>
+                                <rect key="frame" x="56" y="378" width="111" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -138,6 +139,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rws-eR-o7o">
+                                <rect key="frame" x="207" y="281" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -155,6 +163,7 @@
                         <outlet property="AddlblManyType" destination="Oic-yq-t69" id="Jvg-Vl-0OR"/>
                         <outlet property="AddlblName" destination="5Hy-oN-CMG" id="9B2-ki-vKg"/>
                         <outlet property="AddlblSavePiker" destination="7Xc-0W-ehN" id="Npf-Bf-vVD"/>
+                        <outlet property="AddlblUpDatePiker" destination="Rws-eR-o7o" id="9AG-Q7-j6Z"/>
                         <outlet property="AddldlDatePiker" destination="Qte-OS-dc6" id="juN-tV-7u8"/>
                     </connections>
                 </viewController>
@@ -201,7 +210,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" id="dWx-67-aAO">
+                        <searchBar key="tableHeaderView" contentMode="redraw" misplaced="YES" searchBarStyle="minimal" id="dWx-67-aAO">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -385,6 +394,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addBtn-1" width="223" height="223"/>
         <image name="그래프(빨)" width="378" height="394"/>
         <image name="닫기버튼" width="143" height="140"/>
         <image name="임시UI-1" width="1562" height="2779"/>
