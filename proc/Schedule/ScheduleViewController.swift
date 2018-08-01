@@ -31,7 +31,9 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         formatter.dateFormat = "yyyyMMdd"
         selectedDate = formatter.string(from:date as Date)
+        
         filteredData = tablecell.ScheduleArray.filter{ $0.memodates == selectedDate }        // 달력과 같은 날짜를 filteredData 에 넣어주기
+        
         table.reloadData()
 
     }
@@ -50,7 +52,13 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
         
 
         let tableNewCell = tableView.dequeueReusableCell(withIdentifier: "littleScheduleCell") as! ScheduleLittleTableCell
-
+        print("tablenewcell = \(tableNewCell.littlememo )")
+        
+//        if tableNewCell.littlememo.text == filteredData[indexPath.row].memotitle {
+//            let emptyschedule = Schedule(memotitle: "등록된 일정이 없습니다.", memotime: "", memodates: "")
+//            tablecell.ScheduleArray = [emptyschedule]
+//        }
+        
       //  print("filteredData = \(filteredData)")
         tableNewCell.littlememo.text = filteredData[indexPath.row].memotitle
         tableNewCell.littletime.text = filteredData[indexPath.row].memotime
@@ -62,11 +70,13 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
     // 삭제
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
-        _ = tablecell.ScheduleArray[indexPath.row]
+        var temp = tablecell.ScheduleArray[indexPath.row]
+        
+        let indexofA = tablecell.ScheduleArray.index(of: temp)
         
         filteredData.remove(at: indexPath.row)
-        
-       // print("scheduleDataBase = \(ScheduleDatabase.ScheduleArray) \n")
+        tablecell.ScheduleArray.remove(at: indexofA!)
+
         tableView.deleteRows(at: [indexPath], with: .automatic)
         tableView.reloadData()
         
@@ -87,8 +97,7 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
     override func viewDidAppear(_ animated: Bool) {
         selectedDate = dateformatting()
         filteredData = tablecell.ScheduleArray.filter{ $0.memodates == selectedDate }
-        // proc.Schedule(memotitle: "예약 4팀", memotime: "5 pm", memodates: "20180803"),
-        // proc.Schedule(memotitle: "t", memotime: "testing", memodates: "G")]
+        
 
         //print("viewDidAppear filteredData = \(filteredData)")
         self.table.reloadData()
