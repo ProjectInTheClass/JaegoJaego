@@ -35,6 +35,19 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 툴바
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneClick))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelClick))
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+
         
         
         // 날짜 피커뷰
@@ -43,6 +56,12 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         AddPikDate.tag = 1
         AddldlDatePiker2.inputView = AddPikDate
         AddPikDate.backgroundColor = UIColor.white
+        AddPikDate.selectRow( 1 , inComponent: 1, animated: true)
+        AddPikDate.showsSelectionIndicator = true
+        
+        AddldlDatePiker2.inputAccessoryView = toolBar
+        
+       
 
         // 저장 피커뷰
         let SavePikView = UIPickerView()
@@ -50,6 +69,8 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         SavePikView.tag = 2
         AddlblSavePiker.inputView = SavePikView
         SavePikView.backgroundColor = UIColor.white
+        
+        AddlblSavePiker.inputAccessoryView = toolBar
 
         //등록날
         let AddPikUpDate = UIPickerView()
@@ -57,9 +78,26 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         AddPikUpDate.tag = 3
         AddlblUpDatePiker.inputView = AddPikUpDate
         AddPikUpDate.backgroundColor = UIColor.white
+        
+        AddlblUpDatePiker.inputAccessoryView = toolBar
 
     }
+    
+    
 // 피커뷰 함수 시작
+
+    @objc func doneClick() {
+        
+        AddldlDatePiker2.resignFirstResponder()
+        AddlblSavePiker.resignFirstResponder()
+        AddlblUpDatePiker.resignFirstResponder()
+    }
+    @objc func cancelClick() {
+        AddldlDatePiker2.resignFirstResponder()
+        AddlblSavePiker.resignFirstResponder()
+        AddlblUpDatePiker.resignFirstResponder()
+    }
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
         if pickerView.tag == 1 {
