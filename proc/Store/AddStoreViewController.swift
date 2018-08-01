@@ -11,10 +11,11 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     @IBOutlet weak var AddbtnFinish: UIButton! //완료
     @IBOutlet weak var AddlblManyType: UITextField!
     @IBOutlet weak var AddlblUsAmount: UITextField!
+    @IBOutlet weak var AddlblWriteday : UITextField! // 들여온 날짜
     
     
     // 피커뷰 사용
-    @IBOutlet weak var AddldlDatePiker: UITextField!
+    @IBOutlet weak var AddldlDatePiker2: UITextField!
     @IBOutlet weak var AddlblSavePiker: UITextField!
     
     // 날짜 데이터 저장 배열
@@ -23,23 +24,27 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     let myPickerSave = ["실온", "냉동", "냉장"]
     
     var addTemp = StoreDatabase
-    
+    var pickerrealdate = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        AddlblWriteday.placeholder = "" + HomeDateModel.dateInfo()
+        
         
         // 날짜 피커뷰
         let AddPikDate = UIPickerView()
         AddPikDate.delegate = self
         AddPikDate.tag = 1
-        AddldlDatePiker.inputView = AddPikDate
+        AddldlDatePiker2.inputView = AddPikDate
+        AddPikDate.backgroundColor = UIColor.white
         
         // 저장 피커뷰
         let SavePikView = UIPickerView()
         SavePikView.delegate = self
         SavePikView.tag = 2
         AddlblSavePiker.inputView = SavePikView
-        
+        SavePikView.backgroundColor = UIColor.white
     }
 // 피커뷰 함수 시작
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -86,11 +91,18 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
+        AddlblWriteday.text = HomeDateModel.dateInfo()
+        
         if pickerView.tag == 1 {
             let year = myPickerDate[0][pickerView.selectedRow(inComponent: 0)]
             let month = myPickerDate[1][pickerView.selectedRow(inComponent: 1)]
             let day = myPickerDate[2][pickerView.selectedRow(inComponent: 2)]
-            AddldlDatePiker.text = year + "-" + month + "-" + day
+            AddldlDatePiker2.text = year + "-" + month + "-" + day
+            pickerrealdate = year + month + day
+            
+            if AddldlDatePiker2.text != nil {
+                pickerrealdate = year + month + day
+            }
         }
         
         if pickerView.tag == 2 {
@@ -148,7 +160,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         
         let NameAdd:String = AddlblName.text!
         let ManyAdd:Int = Int(AddlblMany.text!)!
-        let DateAdd:String = AddldlDatePiker.text!
+        let DateAdd:String = AddldlDatePiker2.text!
         let CallAdd:String = AddlblCall.text!
         let ManyTypeAdd:String = AddlblManyType.text!
         let SaveAdd:saveStyle = .Cold
@@ -161,7 +173,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
 
     
 
-        _ = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd)
+        _ = Store(name: NameAdd, UpDate: infoDateAdd , DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd)
 
         let addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd)
     

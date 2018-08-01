@@ -78,7 +78,7 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
         tablecell.ScheduleArray.remove(at: indexofA!)
 
         tableView.deleteRows(at: [indexPath], with: .automatic)
-        tableView.reloadData()
+        table.reloadData()
         
     }
     func setNavigationBar(){

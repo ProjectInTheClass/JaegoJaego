@@ -11,5 +11,6 @@ class StoreChartCell_More : UITableViewCell {
     @IBOutlet weak var labelMany:UILabel!
     @IBOutlet weak var labelManyType:UILabel!
     @IBOutlet weak var labelTotalMany:UILabel!
+    @IBOutlet weak var labelWriteDay: UILabel!
     @IBOutlet weak var Call:UILabel!
 }
