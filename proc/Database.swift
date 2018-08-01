@@ -175,13 +175,17 @@ class HomedisposalChart_Model {
 let ScheduleDatabase = ScheduleModel()
 
 // 일정 데이터 정의
-struct Schedule {
+struct Schedule :Equatable {
     var memotitle: String // 메모
     var memotime: String // 시간
     var memodates: String // 달력과 비교할 날짜
 
     //  var counts:Int 는 셀의 개수로 넣음
+    let key =  Date().timeIntervalSince1970
     
+    static func == (lhs: Schedule  , rhs: Schedule) -> Bool {
+        return lhs.key == rhs.key
+    }
     
     init(memotitle:String, memotime:String, memodates:String) {
         self.memotitle = memotitle
@@ -197,7 +201,7 @@ class ScheduleModel {
     init(){
         // 예약 시간에 따른 정렬 (1시  2시  5시 순)
         // 순서에 따른 count 값
-        let stock1 =  Schedule(memotitle: "예약 2팀",memotime: "2 pm", memodates:"20180731")
+        let stock1 =  Schedule(memotitle: "예약 2팀",memotime: "2 pm", memodates:"20180801")
         let stock2 =  Schedule(memotitle: "예약 4팀",memotime: "5 pm", memodates:"20180803")
         let stock3 =  Schedule(memotitle: "예약 5팀",memotime: "9 am", memodates:"20180804")
         let stock4 =  Schedule(memotitle: "예약 7팀",memotime: "11 am", memodates:"20180805")
@@ -223,8 +227,12 @@ enum saveStyle : String {
 }
 
 // 재료 하나 정보
-class Store// : NSObject, NSCoding
+class Store :Equatable //: NSObject, NSCoding
 {
+
+
+    
+   
     // 인스턴스 소문자로 변환
     
     var name: String // 제품 이름
@@ -238,6 +246,11 @@ class Store// : NSObject, NSCoding
     var TotalMany:Int = 0 // 전체 수량
     var Call:String? // 거래처
     //var userAmount:Int? // 유저가 등록하는 알람수량
+    let key =  Date().timeIntervalSince1970
+    
+    static func == (lhs: Store, rhs: Store) -> Bool {
+        return lhs.key == rhs.key
+    }
     
     
     // 재고 상세 데이터 생성자
@@ -251,7 +264,6 @@ class Store// : NSObject, NSCoding
         
         self.TotalMany = TotalMany + many
         self.Call = Call
-
 
 
         // 거래처와 이미지는 안받아도 됨, 전체 수량은 수량으로 계산
@@ -295,7 +307,7 @@ class StoreModel //: Equatable
 //        lhs.key == rhs.key
 //    }
     
-    let key =  Date().timeIntervalSince1970
+    
     var selectedIndex:Int = 0
     var arrayList:[Store] = []
     
@@ -321,7 +333,7 @@ class StoreModel //: Equatable
 //            arrayList += defaultData()
 //        }
         
-                var stock = Store(name:"새우", UpDate: infoDate2, DownDate:"18.07.06", many: 20, manytype:"통", saveStyle: .Cold, TotalMany:80, Call:"010-1111-2222" )
+        var stock = Store(name:"새우", UpDate: infoDate2, DownDate:"18.07.06", many: 20, manytype:"통", saveStyle: .Cold, TotalMany:80, Call:"010-1111-2222")
                 stock.Image = "그래프(빨)"
                 self.arrayList.append(stock)
         
@@ -329,7 +341,7 @@ class StoreModel //: Equatable
                 stock.Image = "그래프(주황)"
                 self.arrayList.append(stock)
         
-                stock = Store(name:"아보카도",  UpDate: infoDate2, DownDate:"18.07.22",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332")
+                stock = Store(name:"아보카도",  UpDate: infoDate2, DownDate:"18.07.22",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332" )
                 stock.Image = "그래프(초록)"
                 self.arrayList.append(stock)
         
@@ -338,15 +350,4 @@ class StoreModel //: Equatable
 //        NSKeyedArchiver.archiveRootObject(self.arrayList, toFile: self.filePath)
 //    }
 //
-//    func defaultData() -> Array<Store>{
-//        var stock = Store(name:"새우", UpDate: infoDate2, DownDate:"2018년 07월 22일", many: 20, manytype:"통", saveStyle: .Cold, TotalMany:80, Call:"010-1111-2222", userAmount: 30 )
-//        stock.Image = "그래프"
-//        self.arrayList.append(stock)
-//        stock = Store(name:"레몬",  UpDate: infoDate2, DownDate:"2018년 07월 21일", many: 5, manytype: "개",saveStyle: .Cold, TotalMany:20, Call:"010-4444-4444", userAmount: 30)
-//        stock.Image = "그래프"
-//        self.arrayList.append(stock)
-//        stock = Store(name:"아보카도",  UpDate: infoDate2, DownDate:"2018년 07월 22일",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332", userAmount: 30)
-//        stock.Image = "그래프"
-//        self.arrayList.append(stock)
-//    }
 }
