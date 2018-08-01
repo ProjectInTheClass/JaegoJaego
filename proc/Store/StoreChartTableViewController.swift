@@ -28,8 +28,10 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     //var arrayBig:[Store] = []
 
     var location_name_array = StoreDatabase //[String]() // 원본(위치정보)를 가지는 배열
-    var searchfilterData:[Store] = [] // 필터링된 결과를 저장할 배열
-
+    var searchfilterData0:[Store] = [] // 필터링된 결과를 저장할 배열
+    var searchfilterData1:[Store] = []
+    var searchfilterData2:[Store] = []
+    var searchfilterData3:[Store] = []
     
     // 재고 목록 4가지 확보 필요.
     var array00ToTrash:[Store] = StoreDatabase.storesUntilDate(fromDays: 0, toDays: 1)
@@ -42,10 +44,12 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         
         //arrayBig = array00ToTrash + array01Today + array02D3 + array03D7
         //StoreDatabase.arrayList = arrayBig
-        print("location_name_array.arrayList = \(location_name_array.arrayList) \n")
-        searchfilterData = location_name_array.arrayList
-        print("searchfilterdata = \(searchfilterData) \n")
-        
+
+        searchfilterData0 = array00ToTrash
+        searchfilterData1 = array01Today
+        searchfilterData2 = array02D3
+        searchfilterData3 = array03D7
+
         // search bar
         location_table.dataSource = self
         location_table.delegate = self
@@ -78,7 +82,10 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        searchfilterData = location_name_array.arrayList
+        searchfilterData0 = array00ToTrash
+        searchfilterData1 = array01Today
+        searchfilterData2 = array02D3
+        searchfilterData3 = array03D7
         self.tableView.reloadData()
         
         super.viewDidAppear(animated)
@@ -88,10 +95,16 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     // searchbar 관련 메소드
     func searchBar(_ searchbar: UISearchBar, textDidChange searchText:String){
         
-        searchfilterData = searchText.isEmpty ? array00ToTrash : array00ToTrash.filter{ $0.name.range(of: searchText) != nil}
+        searchfilterData0 = searchText.isEmpty ? array00ToTrash : array00ToTrash.filter{ $0.name.range(of: searchText) != nil}
+        searchfilterData1 = searchText.isEmpty ? array01Today : array01Today.filter{ $0.name.range(of: searchText) != nil}
+        searchfilterData2 = searchText.isEmpty ? array02D3 : array02D3.filter{ $0.name.range(of: searchText) != nil}
+        searchfilterData3 = searchText.isEmpty ? array03D7 : array03D7.filter{ $0.name.range(of: searchText) != nil}
+        
+        print("searchFilterData0 = \(searchfilterData0)")
+        print("searchFilterData1 = \(searchfilterData1)")
+        print("searchFilterData2 = \(searchfilterData2)")
+        print("searchFilterData3 = \(searchfilterData3)")
         location_table.reloadData() // 필터링한 데이터를 테이블뷰로 설정
-        
-        
     }
 
     
@@ -113,13 +126,13 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         
         switch section {
         case 0 :
-            return "폐기 물품  -  \(array00ToTrash.count) 개"
+            return "폐기 물품  -  \(searchfilterData0.count) 개"
         case 1 :
-            return "당일 마감  -  \(array01Today.count) 개"
+            return "당일 마감  -  \(searchfilterData1.count) 개"
         case 2 :
-            return "3일 이상  -  \(array02D3.count) 개"
+            return "3일 이상  -  \(searchfilterData2.count) 개"
         default:
-            return "7일 이상  -  \(array03D7.count) 개 "
+            return "7일 이상  -  \(searchfilterData3.count) 개 "
         }
     }
 
@@ -134,13 +147,13 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         
         switch section {
         case 0:
-            rValue =  self.array00ToTrash.count
+            rValue =  self.searchfilterData0.count
         case 1:
-            rValue =  self.array01Today.count
+            rValue =  self.searchfilterData1.count
         case 2:
-            rValue =  self.array02D3.count
+            rValue =  self.searchfilterData2.count
         default:
-            rValue =  self.array03D7.count
+            rValue =  self.searchfilterData3.count
         }
         return rValue
     }
@@ -150,16 +163,16 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         var arrayStore:[Store]!
         
         if indexPath.section == 0 {
-            arrayStore =  array00ToTrash
+            arrayStore =  searchfilterData0
         }
         else if indexPath.section == 1 {
-            arrayStore = array01Today
+            arrayStore = searchfilterData1
         }
         else if indexPath.section == 2 {
-            arrayStore =  array02D3
+            arrayStore =  searchfilterData2
         }
         else if indexPath.section == 3 {
-            arrayStore =  array03D7
+            arrayStore =  searchfilterData3
         }
         
         let store = arrayStore[indexPath.row]
@@ -210,15 +223,40 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     
     // 재고 삭제 코드
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-
-        let temp = searchfilterData[indexPath.section]
-        let indexofA = location_name_array.arrayList.index(of: temp)
-
-        searchfilterData.remove(at: indexPath.row)
-        location_name_array.arrayList.remove(at: indexofA!)
         
-        tableView.deleteRows(at: [indexPath], with: .automatic)
-        self.tableView.reloadData()
+        var arrayStore:[Store]!
+        
+        if indexPath.section == 0 {
+            arrayStore =  array00ToTrash
+        }
+        else if indexPath.section == 1 {
+            arrayStore = array01Today
+        }
+        else if indexPath.section == 2 {
+            arrayStore =  array02D3
+        }
+        else if indexPath.section == 3 {
+            arrayStore =  array03D7
+        }
+        
+        let store = arrayStore[indexPath.row]
+//
+//        let temp0 = searchfilterData0[indexPath.section]
+//        let temp1 = searchfilterData1[indexPath.section]
+//        let temp2 = searchfilterData2[indexPath.section]
+//        let temp3 = searchfilterData3[indexPath.section]
+//
+////
+//        let indexofA = location_name_array.arrayList.index(of: temp0)
+//        let indexofB = location_name_array.arrayList.index(of: temp1)
+//        let indexofC = location_name_array.arrayList.index(of: temp2)
+//        let indexofD = location_name_array.arrayList.index(of: temp3)
+
+//        searchfilterData0.remove(at: indexPath.row)
+//        location_name_array.arrayList.remove(at: indexofA!)
+//
+//        tableView.deleteRows(at: [indexPath], with: .automatic)
+//        self.tableView.reloadData()
 
     }
 
