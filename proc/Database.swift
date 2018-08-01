@@ -234,7 +234,7 @@ class Store :Equatable //: NSObject, NSCoding
     var name: String // 제품 이름
     var UpDate: String  // 등록 날 -
     var DownDate: String // 유통기한
-    var untilDate:String? // 남은 기간
+    var untilDate: Int // 남은 기간 일자 (day)
     
     var many: Int = 0// 수량
     var manytype :String // 단위 = degree..
@@ -251,34 +251,52 @@ class Store :Equatable //: NSObject, NSCoding
         return lhs.key == rhs.key
     }
 
-    func dateformater(downdate:String) {
+    // 남은 기간 계산하기
+    func dateFormater(downdate:String) -> Int {
         
        let dateformatter = DateFormatter()
         // = update
         dateformatter.dateFormat = "yy-MM-dd"
         
-        var datenow = Date() // 오늘의 날짜
+        let datenow = Date() // 오늘의 날짜
         // Date -> 문자열
-        var datenowstring = dateformatter.string(from: datenow) // datanowstring = string
+        let datenowstring = dateformatter.string(from: datenow) // datanowstring = string
         
         // 문자열 -> Date
-        var dateTemp:Date = dateformatter.date(from: datenowstring)! // datetemp = Date?
-        var dateDate:Date = dateformatter.date(from: downdate)! //dateDate = Date?
-
-        
-        var dateformat = dateDate.timeIntervalSince1970 - dateTemp.timeIntervalSince1970
+        let dateTemp:Date = dateformatter.date(from: datenowstring)! // datetemp = Date?
+        let dateDate:Date = dateformatter.date(from: downdate)! //dateDate = Date?
+        // 유통기간 - 오늘날
+        let dateformat = dateDate.timeIntervalSince1970 - dateTemp.timeIntervalSince1970
         let between = Date.init(timeIntervalSince1970: dateformat) // dateformat = Date
         print(between)
         
-//        dateformat = String(dateformat)
         // Date -> 문자열
-        let dateStr = dateformatter.string(from: between) //dateStr = string
-        self.untilDate = dateStr
         
+        let interval = dateformat
+        
+//        let formatter = DateComponentsFormatter()
+//        formatter.allowedUnits = [.day]
+//        formatter.unitsStyle = .positional
+        
+        let days = Int(interval / 24 / 60 / 60)
+        
+//        let formattedString = formatter.string(from: TimeInterval(interval))!
+//        print(formattedString)
+//
+//        dateformatter.dateFormat = "dd"
+//        let dateStr = dateformatter.string(from: between) //dateStr = string
+
+        
+        
+        return days
 //        intervalformatter.dateStyle = .full
 //        intervalformatter.timeStyle = .full
 
         //let string = intervalformatter.stringFromDate(fromDate as Date, toDate: DownDate)
+    }
+    
+    func updateUntilDate(){
+        self.untilDate = dateFormater(downdate: DownDate)
     }
    
     // 재고 상세 데이터 생성자
@@ -294,7 +312,23 @@ class Store :Equatable //: NSObject, NSCoding
         self.TotalMany = TotalMany + many
         self.Call = Call
 
-
+        
+        
+//        var name: String // 제품 이름
+//        var UpDate: String  // 등록 날 -
+//        var DownDate: String // 유통기한
+//        var untilDate: Int // 남은 기간 일자 (day)
+//
+//        var many: Int = 0// 수량
+//        var manytype :String // 단위 = degree..
+//        var saveStyle: saveStyle // 보관 상태
+//
+//        var Image: String? // 그래프 이미지
+//        var TotalMany:Int = 0 // 전체 수량
+//        var Call:String? // 거래처
+        
+        untilDate = 0
+        untilDate = self.dateFormater(downdate: DownDate)
         // 거래처와 이미지는 안받아도 됨, 전체 수량은 수량으로 계산
     }
     
@@ -330,16 +364,13 @@ class Store :Equatable //: NSObject, NSCoding
 
 // 재고 ArrayList
 
-class StoreModel //: Equatable
+class StoreModel
 {
-//    static func == (lhs: StoreModel, rhs: StoreModel) -> Bool {
-//        lhs.key == rhs.key
-//    }
-    
+
     var sectionNum: Int = 0
     var selectedIndex:Int = 0
-    var arrayList:[Store] = []
 
+    var arrayList:[Store] = []
     
     var filePath:String { get {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory , .userDomainMask, true).first!
@@ -363,18 +394,63 @@ class StoreModel //: Equatable
 //        }
         
         var stock = Store(name:"새우", UpDate:"18.8.01", DownDate:"18.08.06", many: 20, manytype:"통", saveStyle: .Cold, TotalMany:80, Call:"010-1111-2222")
-                stock.Image = "그래프(빨)"
-                self.arrayList.append(stock)
+        stock.Image = "그래프(빨)"
+        self.arrayList.append(stock)
         
-                stock = Store(name:"레몬",  UpDate:"18.7.31", DownDate:"18.08.3", many: 5, manytype: "개",saveStyle: .Cold, TotalMany:20, Call:"010-4444-4444")
-                stock.Image = "그래프(주황)"
-                self.arrayList.append(stock)
+        stock = Store(name:"레몬",  UpDate:"18.7.31", DownDate:"18.08.3", many: 5, manytype: "개",saveStyle: .Cold, TotalMany:20, Call:"010-4444-4444")
+        stock.Image = "그래프(주황)"
+        self.arrayList.append(stock)
         
-                stock = Store(name:"아보카도",  UpDate:"18.7.30", DownDate:"18.08.4",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332" )
-                stock.Image = "그래프(초록)"
-                self.arrayList.append(stock)
+        stock = Store(name:"아보카도",  UpDate:"18.7.30", DownDate:"18.08.4",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332" )
+        stock.Image = "그래프(초록)"
+        self.arrayList.append(stock)
         
+        stock = Store(name:"아보카도",  UpDate:"18.7.30", DownDate:"18.9.4",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332" )
+        stock.Image = "그래프(초록)"
+        self.arrayList.append(stock)
+        
+        stock = Store(name:"아보카도",  UpDate:"18.7.30", DownDate:"18.10.4",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332" )
+        stock.Image = "그래프(초록)"
+        self.arrayList.append(stock)
+        
+        stock = Store(name:"아보카도",  UpDate:"18.7.20", DownDate:"18.7.30",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332" )
+        stock.Image = "그래프(초록)"
+        self.arrayList.append(stock)
     }
+    /**
+     저장된 목록에서 유통기한 남은 일자를 기준으로 목록을 새로 뽑아준다.
+     */
+    func storesUntilDate(fromDays:Int, toDays:Int?) -> [Store]{
+        var arrayReturn = [Store]()
+        
+        for s in arrayList {
+            s.updateUntilDate()
+            
+            // 유통기한 세이프
+            if s.untilDate >= fromDays {  //  && s.untilDate < toDays { // 남은 잘짜가 맞으면.
+               
+                if let toD = toDays {
+                    //유통기간 7일 이하인 것
+                    if s.untilDate < toD {
+                        arrayReturn.append(s)
+                    }
+                }
+                // 유통기한 7일 이상인 것
+                else {
+                    arrayReturn.append(s)
+                }
+            }
+            // 폐기 물품
+            else {
+                
+            }
+         
+        }
+        return arrayReturn
+    }
+    
+    
+    
 //    func save() {
 //        NSKeyedArchiver.archiveRootObject(self.arrayList, toFile: self.filePath)
 //    }
