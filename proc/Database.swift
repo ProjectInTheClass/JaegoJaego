@@ -426,9 +426,17 @@ class StoreModel
         for s in arrayList {
             s.updateUntilDate()
             
+            // 폐기 물품
+            if fromDays < 0 {
+                if s.untilDate < 0{
+                    arrayReturn.append(s)
+                    
+                }
+              continue
+            }
+            
             // 유통기한 세이프
             if s.untilDate >= fromDays {  //  && s.untilDate < toDays { // 남은 잘짜가 맞으면.
-               
                 if let toD = toDays {
                     //유통기간 7일 이하인 것
                     if s.untilDate < toD {
@@ -439,10 +447,6 @@ class StoreModel
                 else {
                     arrayReturn.append(s)
                 }
-            }
-            // 폐기 물품
-            else {
-                
             }
          
         }

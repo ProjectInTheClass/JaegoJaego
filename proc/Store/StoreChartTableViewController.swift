@@ -40,7 +40,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     var array03D7:[Store] = []
     
     func updateArraysFromModel() {
-        array00ToTrash = StoreDatabase.storesUntilDate(fromDays: 0, toDays: 1)
+        array00ToTrash = StoreDatabase.storesUntilDate(fromDays: -1, toDays: 1)
         array01Today = StoreDatabase.storesUntilDate(fromDays: 1, toDays: 3)
         array02D3 = StoreDatabase.storesUntilDate(fromDays: 3, toDays: 7)
         array03D7 = StoreDatabase.storesUntilDate(fromDays: 7, toDays: nil)
