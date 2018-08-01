@@ -273,26 +273,9 @@ class Store :Equatable //: NSObject, NSCoding
         // Date -> 문자열
         
         let interval = dateformat
-        
-//        let formatter = DateComponentsFormatter()
-//        formatter.allowedUnits = [.day]
-//        formatter.unitsStyle = .positional
-        
         let days = Int(interval / 24 / 60 / 60)
         
-//        let formattedString = formatter.string(from: TimeInterval(interval))!
-//        print(formattedString)
-//
-//        dateformatter.dateFormat = "dd"
-//        let dateStr = dateformatter.string(from: between) //dateStr = string
-
-        
-        
         return days
-//        intervalformatter.dateStyle = .full
-//        intervalformatter.timeStyle = .full
-
-        //let string = intervalformatter.stringFromDate(fromDate as Date, toDate: DownDate)
     }
     
     func updateUntilDate(){
@@ -417,6 +400,7 @@ class StoreModel
         stock.Image = "그래프(초록)"
         self.arrayList.append(stock)
     }
+    
     /**
      저장된 목록에서 유통기한 남은 일자를 기준으로 목록을 새로 뽑아준다.
      */
@@ -451,6 +435,37 @@ class StoreModel
          
         }
         return arrayReturn
+    }
+    
+    
+    /**
+     저장된 목록에서 수량 / 전체수량을 계산해서 기준에 맞는 목록을 뽑는다.
+     */
+    func storesManyFilteredTotalMany(stock:Store) -> [Store]{
+        var manyfilter = [Store]()
+        
+        var temp:Double = Double(stock.many / stock.TotalMany)
+        
+        // 전체수량은 수량보다 작으면 안됨
+        if stock.TotalMany - stock.many > 0 {
+            if temp > 0 && temp <= 0.25 {
+                stock.Image = "그래프(빨)"
+            }
+            else if temp > 0.25 && temp <= 0.5 {
+                stock.Image = "그래프(주황)"
+            }
+            else if temp > 0.5 && temp <= 0.75 {
+                stock.Image = "그래프(초록)"
+            }
+            else if temp > 0.75 && temp <= 1 {
+                stock.Image = "그래프(파랑)"
+            }
+        }
+        else {
+            stock.Image = "그래프(0%)"
+        }
+        
+        return manyfilter
     }
     
     
