@@ -47,30 +47,28 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         self.searchbar.resignFirstResponder()
     }
     
-    
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // 모델의 데이터 개수와 셀 개수 일치시키기
-//        return modelStore.arrayList.count
-//    }
+    //table section 설정
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0 :
+            return "폐기 물품"
+        case 1 :
+            return "당일 마감"
+        case 2 :
+            return "3일 이상"
+        default:
+            return "7일 이상"
+        }
+    }
+
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchfilterData.count
     }
     
-//    func refresh(_ sender:AnyObject){
-//        print("refreshing table")
-//        self.location_name_array.removeAll()
-//        load_location_data();
-//    }
-//
-//
-    
-//    @IBAction func saveData(_ sender: Any){
-//        let user = Store(name: labelName.text! , UpDate: labelUpDate!, DownDate: labelDownDate!, many: Int(labelMany!), manytype: labelManyType!, saveStyle: labelSaveStyle!, TotalMany: Int(labelTotalMany!), Call: Call!, userAmount: <#Int#> )
-//        NSKeyedArchiver.archiveRootObject(user, toFile: dataFilePath!)
-//    }
-//
+
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
     
 
@@ -87,7 +85,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 
         
-        var temp = searchfilterData[indexPath.row]
+        let temp = searchfilterData[indexPath.row]
         let indexofA = location_name_array.arrayList.index(of: temp)
 
         searchfilterData.remove(at: indexPath.row)
@@ -98,6 +96,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         self.tableView.reloadData()
 
     }
+
     override func viewDidLoad() {
 
         searchfilterData = location_name_array.arrayList
@@ -113,6 +112,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         searchbar.delegate = self // searchbar 이벤트 처리
         self.tableView.reloadData()
         super.viewDidLoad()
+        
         //        // 아카이브 코드
         //        let fileManager = FileManager.default
         //        let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, userDomainMask, true)
@@ -136,12 +136,8 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let info = searchfilterData[indexPath.row]
-        //let info = location_name_array[indexPath.row]
         let proccell:StoreChartCell_More = tableView.dequeueReusableCell(withIdentifier: "Cell2IngredientBig") as! StoreChartCell_More
 
-        // searchbar
-   //     proccell.labelName.text = self.searchfilterData[searchRow]
-        
         // cell
         proccell.labelName.text = info.name
         proccell.labelSaveStyle.text = info.saveStyle.rawValue
@@ -159,17 +155,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         
         return proccell
     }
+    
 }
 
-//    func tableView(_ tableView: UITableView!, cellForRowAt indexPath: IndexPath) -> UITableViewCell! {
-//
-//        let searchRow = modelStore.arrayList[indexPath.row]
-//
-//        let searchCell:StoreChartCell_More = tableView.dequeueReusableCell(withIdentifier: "Cell2IngredientBig") as! StoreChartCell_More
-//
-//        proccell.location_name_label?.text = self.searchfilterData[searchRow]
-////        proccell.location_view_button?.tag = searchRow // 태그 등록
-//
-//        return searchCell
-//    }
-//}
+

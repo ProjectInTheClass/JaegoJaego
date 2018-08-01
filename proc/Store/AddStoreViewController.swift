@@ -13,10 +13,13 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     @IBOutlet weak var AddlblUsAmount: UITextField!
     
     
+    @IBOutlet weak var AddlblWriteday : UITextField! // 들여온 날짜
+    
+    
     // 피커뷰 사용
-    @IBOutlet weak var AddldlDatePiker: UITextField!
-    @IBOutlet weak var AddlblSavePiker: UITextField!
-    @IBOutlet weak var AddlblUpDatePiker: UITextField!
+    @IBOutlet weak var AddldlDatePiker2: UITextField! // 유통기한 피커
+    @IBOutlet weak var AddlblSavePiker: UITextField! // 저장방법
+    @IBOutlet weak var AddlblUpDatePiker: UITextField! // 등록일
     
     // 날짜 데이터 저장 배열
     let myPickerDate = [["2018","2019","2020","2021","2022","2023","2024","2025","2026","2027","2028","2029","2030"],["1","2","3","4","5","6","7","8","9","10","11","12"],["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]]
@@ -24,31 +27,34 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     let myPickerSave = ["실온", "냉동", "냉장"]
     
     var addTemp = StoreDatabase
-    
+    var pickerrealdate = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         // 날짜 피커뷰
         let AddPikDate = UIPickerView()
         AddPikDate.delegate = self
         AddPikDate.tag = 1
-        AddldlDatePiker.inputView = AddPikDate
+        AddldlDatePiker2.inputView = AddPikDate
         AddPikDate.backgroundColor = UIColor.white
-        
+
         // 저장 피커뷰
         let SavePikView = UIPickerView()
         SavePikView.delegate = self
         SavePikView.tag = 2
         AddlblSavePiker.inputView = SavePikView
         SavePikView.backgroundColor = UIColor.white
-        
+
+        //등록날
         let AddPikUpDate = UIPickerView()
         AddPikUpDate.delegate = self
         AddPikUpDate.tag = 3
         AddlblUpDatePiker.inputView = AddPikUpDate
         AddPikUpDate.backgroundColor = UIColor.white
-        
+
     }
 // 피커뷰 함수 시작
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -107,11 +113,18 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
+       
+        
         if pickerView.tag == 1 {
             let year = myPickerDate[0][pickerView.selectedRow(inComponent: 0)]
             let month = myPickerDate[1][pickerView.selectedRow(inComponent: 1)]
             let day = myPickerDate[2][pickerView.selectedRow(inComponent: 2)]
-            AddldlDatePiker.text = year + "-" + month + "-" + day
+            AddldlDatePiker2.text = year + "-" + month + "-" + day
+            pickerrealdate = year + month + day
+            
+            if AddldlDatePiker2.text != nil {
+                pickerrealdate = year + month + day
+            }
         }
         
         if pickerView.tag == 2 {
@@ -175,7 +188,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         
         let NameAdd:String = AddlblName.text!
         let ManyAdd:Int = Int(AddlblMany.text!)!
-        let DateAdd:String = AddldlDatePiker.text!
+        let DateAdd:String = AddldlDatePiker2.text!
         let CallAdd:String = AddlblCall.text!
         let ManyTypeAdd:String = AddlblManyType.text!
         let SaveAdd:saveStyle = .Cold
@@ -188,7 +201,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
 
     
 
-        _ = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd)
+        _ = Store(name: NameAdd, UpDate: infoDateAdd , DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd)
 
         let addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd)
     

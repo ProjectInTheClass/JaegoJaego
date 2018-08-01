@@ -229,15 +229,13 @@ enum saveStyle : String {
 // 재료 하나 정보
 class Store :Equatable //: NSObject, NSCoding
 {
-
-
-    
-   
     // 인스턴스 소문자로 변환
     
     var name: String // 제품 이름
-    var UpDate:String? // 등록 날
+    var UpDate: String  // 등록 날 -
     var DownDate: String // 유통기한
+    var untilDate:String? // 남은 기간
+    
     var many: Int = 0// 수량
     var manytype :String // 단위 = degree..
     var saveStyle: saveStyle // 보관 상태
@@ -246,18 +244,49 @@ class Store :Equatable //: NSObject, NSCoding
     var TotalMany:Int = 0 // 전체 수량
     var Call:String? // 거래처
     //var userAmount:Int? // 유저가 등록하는 알람수량
+    
     let key =  Date().timeIntervalSince1970
     
     static func == (lhs: Store, rhs: Store) -> Bool {
         return lhs.key == rhs.key
     }
-    
-    
+
+    func dateformater(downdate:String) {
+        
+       let dateformatter = DateFormatter()
+        // = update
+        dateformatter.dateFormat = "yy-MM-dd"
+        
+        var datenow = Date() // 오늘의 날짜
+        // Date -> 문자열
+        var datenowstring = dateformatter.string(from: datenow) // datanowstring = string
+        
+        // 문자열 -> Date
+        var dateTemp:Date = dateformatter.date(from: datenowstring)! // datetemp = Date?
+        var dateDate:Date = dateformatter.date(from: downdate)! //dateDate = Date?
+
+        
+        var dateformat = dateDate.timeIntervalSince1970 - dateTemp.timeIntervalSince1970
+        let between = Date.init(timeIntervalSince1970: dateformat) // dateformat = Date
+        print(between)
+        
+//        dateformat = String(dateformat)
+        // Date -> 문자열
+        let dateStr = dateformatter.string(from: between) //dateStr = string
+        self.untilDate = dateStr
+        
+//        intervalformatter.dateStyle = .full
+//        intervalformatter.timeStyle = .full
+
+        //let string = intervalformatter.stringFromDate(fromDate as Date, toDate: DownDate)
+    }
+   
     // 재고 상세 데이터 생성자
     init(name:String, UpDate:String, DownDate:String, many:Int, manytype:String, saveStyle:saveStyle,  TotalMany:Int, Call:String?){
         self.name = name
         self.UpDate = UpDate
         self.DownDate = DownDate
+        
         self.many = many
         self.manytype = manytype
         self.saveStyle = saveStyle
@@ -307,9 +336,10 @@ class StoreModel //: Equatable
 //        lhs.key == rhs.key
 //    }
     
-    
+    var sectionNum: Int = 0
     var selectedIndex:Int = 0
     var arrayList:[Store] = []
+
     
     var filePath:String { get {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory , .userDomainMask, true).first!
@@ -318,7 +348,6 @@ class StoreModel //: Equatable
     
     
     // 들어온 날짜 = 당일 날짜
-    var infoDate2:String = HomeDateModel.dateInfo()
     
     
     init(){
@@ -333,15 +362,15 @@ class StoreModel //: Equatable
 //            arrayList += defaultData()
 //        }
         
-        var stock = Store(name:"새우", UpDate: infoDate2, DownDate:"18.07.06", many: 20, manytype:"통", saveStyle: .Cold, TotalMany:80, Call:"010-1111-2222")
+        var stock = Store(name:"새우", UpDate:"18.8.01", DownDate:"18.08.06", many: 20, manytype:"통", saveStyle: .Cold, TotalMany:80, Call:"010-1111-2222")
                 stock.Image = "그래프(빨)"
                 self.arrayList.append(stock)
         
-                stock = Store(name:"레몬",  UpDate: infoDate2, DownDate:"18.07.21", many: 5, manytype: "개",saveStyle: .Cold, TotalMany:20, Call:"010-4444-4444")
+                stock = Store(name:"레몬",  UpDate:"18.7.31", DownDate:"18.08.3", many: 5, manytype: "개",saveStyle: .Cold, TotalMany:20, Call:"010-4444-4444")
                 stock.Image = "그래프(주황)"
                 self.arrayList.append(stock)
         
-                stock = Store(name:"아보카도",  UpDate: infoDate2, DownDate:"18.07.22",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332" )
+                stock = Store(name:"아보카도",  UpDate:"18.7.30", DownDate:"18.08.4",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332" )
                 stock.Image = "그래프(초록)"
                 self.arrayList.append(stock)
         
