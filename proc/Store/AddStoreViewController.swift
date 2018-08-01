@@ -11,12 +11,15 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     @IBOutlet weak var AddbtnFinish: UIButton! //완료
     @IBOutlet weak var AddlblManyType: UITextField!
     @IBOutlet weak var AddlblUsAmount: UITextField!
+    
+    
     @IBOutlet weak var AddlblWriteday : UITextField! // 들여온 날짜
     
     
     // 피커뷰 사용
-    @IBOutlet weak var AddldlDatePiker2: UITextField!
-    @IBOutlet weak var AddlblSavePiker: UITextField!
+    @IBOutlet weak var AddldlDatePiker2: UITextField! // 유통기한 피커
+    @IBOutlet weak var AddlblSavePiker: UITextField! // 저장방법
+    @IBOutlet weak var AddlblUpDatePiker: UITextField! // 등록일
     
     // 날짜 데이터 저장 배열
     let myPickerDate = [["2018","2019","2020","2021","2022","2023","2024","2025","2026","2027","2028","2029","2030"],["1","2","3","4","5","6","7","8","9","10","11","12"],["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]]
@@ -29,7 +32,6 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        AddlblWriteday.placeholder = "" + HomeDateModel.dateInfo()
         
         
         // 날짜 피커뷰
@@ -38,13 +40,21 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         AddPikDate.tag = 1
         AddldlDatePiker2.inputView = AddPikDate
         AddPikDate.backgroundColor = UIColor.white
-        
+
         // 저장 피커뷰
         let SavePikView = UIPickerView()
         SavePikView.delegate = self
         SavePikView.tag = 2
         AddlblSavePiker.inputView = SavePikView
         SavePikView.backgroundColor = UIColor.white
+
+        //등록날
+        let AddPikUpDate = UIPickerView()
+        AddPikUpDate.delegate = self
+        AddPikUpDate.tag = 3
+        AddlblUpDatePiker.inputView = AddPikUpDate
+        AddPikUpDate.backgroundColor = UIColor.white
+
     }
 // 피커뷰 함수 시작
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -55,6 +65,10 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         
         if pickerView.tag == 2 {
             return 1
+        }
+        
+        if pickerView.tag == 3 {
+            return myPickerDate.count
         }
         
         return 0
@@ -68,6 +82,10 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         
         if pickerView.tag == 2 {
             return myPickerSave.count
+        }
+        
+        if pickerView.tag == 3 {
+            return myPickerDate[component].count
         }
         
         return 0
@@ -84,6 +102,10 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
             return myPickerSave[row]
         }
         
+        if pickerView.tag == 3 {
+            return myPickerDate[component][row]
+        }
+        
         return nil
         
        
@@ -91,7 +113,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        AddlblWriteday.text = HomeDateModel.dateInfo()
+       
         
         if pickerView.tag == 1 {
             let year = myPickerDate[0][pickerView.selectedRow(inComponent: 0)]
@@ -109,6 +131,12 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
            AddlblSavePiker.text = myPickerSave[row]
         }
         
+        if pickerView.tag == 3 {
+            let year = myPickerDate[0][pickerView.selectedRow(inComponent: 0)]
+            let month = myPickerDate[1][pickerView.selectedRow(inComponent: 1)]
+            let day = myPickerDate[2][pickerView.selectedRow(inComponent: 2)]
+            AddlblUpDatePiker.text = year + "-" + month + "-" + day
+        }
      
     }
     
@@ -155,7 +183,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     @IBAction func saveAddInfoBtn(_ sender: AnyObject) {
         
         // 오류 처리문 추가해야함
-        let infoDateAdd:String = HomeDateModel.dateInfo()
+        let infoDateAdd:String = AddlblUpDatePiker.text!
         
         
         let NameAdd:String = AddlblName.text!

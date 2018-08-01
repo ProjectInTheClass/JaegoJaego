@@ -2860,7 +2860,7 @@
         <image name="레몬" width="133" height="85"/>
         <image name="립" width="258" height="173"/>
         <image name="마요네즈" width="196" height="196"/>
-        <image name="메모2" width="54" height="51"/>
+        <image name="메모2" width="27" height="26"/>
         <image name="보르도소스" width="113" height="160"/>
         <image name="사장곰" width="949" height="943"/>
         <image name="사천버터" width="200" height="200"/>
@@ -2872,12 +2872,12 @@
         <image name="어린잎" width="590" height="393"/>
         <image name="직원곰" width="949" height="919"/>
         <image name="청피망" width="213" height="213"/>
-        <image name="카테고리2" width="29" height="25"/>
+        <image name="카테고리2" width="21" height="28"/>
         <image name="커뮤니티아이콘" width="29" height="29"/>
         <image name="크러스트" width="166" height="166"/>
         <image name="포스트잇" width="494" height="438"/>
         <image name="허니머스타드" width="111" height="130"/>
-        <image name="홈2" width="34" height="30"/>
+        <image name="홈2" width="28" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="RLq-zd-Mgh"/>

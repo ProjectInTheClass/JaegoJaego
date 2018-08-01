@@ -234,8 +234,7 @@ class Store :Equatable //: NSObject, NSCoding
     var name: String // 제품 이름
     var UpDate: String  // 등록 날 -
     var DownDate: String // 유통기한
-//    var infoDate2:String = HomeDateModel.dateInfo()
-    let untildate:String = HomeDateModel.dateInfo()// 유통기한 - 오늘날
+    var untilDate:String? // 남은 기간
     
     var many: Int = 0// 수량
     var manytype :String // 단위 = degree..
@@ -252,7 +251,7 @@ class Store :Equatable //: NSObject, NSCoding
         return lhs.key == rhs.key
     }
 
-    func dateformater(downdate:String) -> String {
+    func dateformater(downdate:String) {
         
        let dateformatter = DateFormatter()
         // = update
@@ -274,19 +273,20 @@ class Store :Equatable //: NSObject, NSCoding
 //        dateformat = String(dateformat)
         // Date -> 문자열
         let dateStr = dateformatter.string(from: between) //dateStr = string
-
-        return dateStr
+        self.untilDate = dateStr
+        
 //        intervalformatter.dateStyle = .full
 //        intervalformatter.timeStyle = .full
 
         //let string = intervalformatter.stringFromDate(fromDate as Date, toDate: DownDate)
     }
-    
+   
     // 재고 상세 데이터 생성자
     init(name:String, UpDate:String, DownDate:String, many:Int, manytype:String, saveStyle:saveStyle,  TotalMany:Int, Call:String?){
         self.name = name
         self.UpDate = UpDate
         self.DownDate = DownDate
+        
         self.many = many
         self.manytype = manytype
         self.saveStyle = saveStyle
