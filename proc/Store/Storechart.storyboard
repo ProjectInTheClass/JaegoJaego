@@ -51,6 +51,7 @@
                     <navigationItem key="navigationItem" id="eoa-TK-OhQ"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="5f0-Xc-H2Q" id="Qr3-8V-kpu"/>
                     </connections>
@@ -65,7 +66,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="642.39999999999998" y="-505.09745127436287"/>
+            <point key="canvasLocation" x="810" y="-91"/>
         </scene>
         <!--Add Store View Controller-->
         <scene sceneID="w8q-5Q-o6R">
@@ -215,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s1W-7R-RMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1557.5999999999999" y="262.21889055472263"/>
+            <point key="canvasLocation" x="2796" y="297"/>
         </scene>
         <!--Stock Detail View Controller-->
         <scene sceneID="nSo-Y6-l3p">
@@ -315,7 +316,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ZN-AK-p7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="640.79999999999995" y="971.96401799100454"/>
+            <point key="canvasLocation" x="695" y="1170"/>
         </scene>
         <!--Store Chart Table View Controller-->
         <scene sceneID="pTK-Qu-4Z2">
@@ -327,7 +328,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" misplaced="YES" searchBarStyle="minimal" showsCancelButton="YES" id="dWx-67-aAO">
+                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" showsCancelButton="YES" id="dWx-67-aAO">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -407,14 +408,6 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXY-Qj-828">
-                                            <rect key="frame" x="305" y="30" width="51" height="51"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="callingIcon-1"/>
-                                            <connections>
-                                                <action selector="phoenCallBtn:" destination="lCz-0o-ZEK" eventType="touchUpInside" id="5bH-BC-7Ml"/>
-                                            </connections>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18.07.27" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpU-qe-oL3">
                                             <rect key="frame" x="179" y="47" width="84" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -426,11 +419,16 @@
                                             <rect key="frame" x="248" y="17" width="27" height="26"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXY-Qj-828">
+                                            <rect key="frame" x="283" y="14" width="92" height="79"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="callingIcon-1"/>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <outlet property="CallBtn" destination="gXY-Qj-828" id="flj-9M-4dB"/>
+                                    <outlet property="CallBtn" destination="gXY-Qj-828" id="dcy-FJ-rcO"/>
                                     <outlet property="ChartImage" destination="cTp-hf-Rnp" id="Lwy-IR-kQQ"/>
                                     <outlet property="labelDownDate" destination="zpU-qe-oL3" id="sCy-1b-sJJ"/>
                                     <outlet property="labelMany" destination="9Cw-Ff-uY8" id="gwi-mG-BEu"/>
@@ -439,7 +437,7 @@
                                     <outlet property="labelSaveStyle" destination="Klo-Qh-jhl" id="SZ3-kd-8ar"/>
                                     <outlet property="labelTotalMany" destination="vOG-vG-32j" id="ynw-Hx-8cB"/>
                                     <outlet property="labelUpDate" destination="Oa8-8f-Kcr" id="ftR-rj-DHi"/>
-                                    <segue destination="oMW-yq-745" kind="presentation" id="W1w-ZI-8B0"/>
+                                    <segue destination="oMW-yq-745" kind="presentation" identifier="" id="W1w-ZI-8B0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -449,6 +447,7 @@
                             <outlet property="delegate" destination="lCz-0o-ZEK" id="Gwe-o9-yng"/>
                         </connections>
                     </tableView>
+                    <size key="freeformSize" width="375" height="559"/>
                     <connections>
                         <outlet property="location_table" destination="YhB-Ac-3Cj" id="oAF-cM-h04"/>
                         <outlet property="searchDisplayController" destination="Jeo-KK-d4e" id="eQa-2h-9uI"/>
@@ -465,7 +464,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="640.79999999999995" y="277.51124437781112"/>
+            <point key="canvasLocation" x="5.5999999999999996" y="-505.09745127436287"/>
         </scene>
         <!--Store Search Table View Controller-->
         <scene sceneID="Slg-yR-hyO">
@@ -475,7 +474,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="634"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" misplaced="YES" id="wnt-kc-0Wd">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="wnt-kc-0Wd">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>

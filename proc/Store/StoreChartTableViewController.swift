@@ -207,32 +207,32 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     
     
     /** 전화걸기 함수 */
-    @IBAction func phoenCallBtn(_ sender: UIButton) {
-        let cell = sender.superview?.superview as! UITableViewCell
-        let indexPath = self.tableView.indexPath(for: cell)
-    
-        
-        if location_name_array.arrayList[(indexPath?.row)!].Call != nil {
-            let temp = location_name_array.arrayList[(indexPath?.row)!].Call!
-            
-            if let phoneCallURL = URL(string: "tel://\(temp)") {
-                
-                let application:UIApplication = UIApplication.shared
-                
-                if (application.canOpenURL(phoneCallURL)) {
-                    
-                    application.open(phoneCallURL, options: [:], completionHandler: nil)
-                    
-                }
-                
-            }
-            
-        }
-        
-        
-        
-    }
-    
+//    @IBAction func phoenCallBtn(_ sender: UIButton) {
+//        let cell = sender.superview?.superview as! UITableViewCell
+//        let indexPath = self.tableView.indexPath(for: cell)
+//    
+//        
+//        if location_name_array.arrayList[(indexPath?.row)!].Call != nil {
+//            let temp = location_name_array.arrayList[(indexPath?.row)!].Call!
+//            
+//            if let phoneCallURL = URL(string: "tel://\(temp)") {
+//                
+//                let application:UIApplication = UIApplication.shared
+//                
+//                if (application.canOpenURL(phoneCallURL)) {
+//                    
+//                    application.open(phoneCallURL, options: [:], completionHandler: nil)
+//                    
+//                }
+//                
+//            }
+//            
+//       }
+//
+//
+//
+//    }
+//
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var arrayStore:[Store]!
