@@ -93,7 +93,8 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         AddPikUpDate.backgroundColor = UIColor.white
         
         AddlblUpDatePiker.inputAccessoryView = toolBar
-
+        
+        
     }
     
     
@@ -225,9 +226,8 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
 
 
     @IBAction func closeBtn(_ sender: Any) {
-        
         self.dismiss(animated: true, completion: nil)
-    
+        
     }
     
     
@@ -320,6 +320,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
             self.dismiss(animated: true, completion: nil)
             
         }
-      
+        addTemp.sameStoreMany()
+        super.viewDidLoad()
     }
 }

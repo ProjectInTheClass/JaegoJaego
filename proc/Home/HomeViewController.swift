@@ -28,6 +28,8 @@ class HomeViewController: UIViewController {
     
     
     override func viewDidLoad() {
+
+      
     
         let Today = HomeDateModel.dateInfo()
         
@@ -53,7 +55,7 @@ class HomeViewController: UIViewController {
         dayLbl5?.text = infoToday5
         dayLbl6?.text = infoToday6
         dayLbl7?.text = infoToday7
-        
+     
 
 }
 }

@@ -188,8 +188,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         
         
         if location_name_array.arrayList[(indexPath?.row)!].Call != nil {
-            var temp = location_name_array.arrayList[(indexPath?.row)!].Call!
-            print("temp = \(temp)")
+            let temp = location_name_array.arrayList[(indexPath?.row)!].Call!
             
             if let phoneCallURL = URL(string: "tel://\(temp)") {
                 
@@ -226,7 +225,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
             arrayStore =  searchfilterData3//.sorted(by: {$0.DownDate > $1.DownDate })
         }
         
-//        arrayStore.sorted(by: {$0.DownDate < $1.DownDate})
+
         print("arrayStore sort : \(arrayStore)")
         let store = arrayStore[indexPath.row]
         
@@ -282,7 +281,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
             let store = searchfilterData0[indexPath.row]
             let indexofA = location_name_array.arrayList.index(of: store)
             
-            print("removing data0 = \(searchfilterData0)")
+            //print("removing data0 = \(searchfilterData0)")
             searchfilterData0.remove(at: indexPath.row)
             location_name_array.arrayList.remove(at: indexofA!)
             tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -292,7 +291,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
             let store = searchfilterData1[indexPath.row]
             let indexofA = location_name_array.arrayList.index(of: store)
             
-            print("removing data1 = \(searchfilterData1)")
+           // print("removing data1 = \(searchfilterData1)")
             searchfilterData1.remove(at: indexPath.row)
             location_name_array.arrayList.remove(at: indexofA!)
             tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -303,7 +302,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
             let store = searchfilterData2[indexPath.row]
             let indexofA = location_name_array.arrayList.index(of: store)
             
-            print("removing data2 = \(searchfilterData2)")
+            //print("removing data2 = \(searchfilterData2)")
             searchfilterData2.remove(at: indexPath.row)
             location_name_array.arrayList.remove(at: indexofA!)
             tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -314,14 +313,14 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
             let store = searchfilterData3[indexPath.row]
             let indexofA = location_name_array.arrayList.index(of: store)
             
-            print("removing data3 = \(searchfilterData3)")
+            //print("removing data3 = \(searchfilterData3)")
             searchfilterData3.remove(at: indexPath.row)
             location_name_array.arrayList.remove(at: indexofA!)
             tableView.deleteRows(at: [indexPath], with: .automatic)
             self.tableView.reloadData()
         }
     
-    print("after remove localdata = \(location_name_array.arrayList)")
+  // print("after remove localdata = \(location_name_array.arrayList)")
         location_name_array.sameStoreMany()
        self.tableView.reloadData()
 
