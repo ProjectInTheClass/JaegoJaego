@@ -99,11 +99,11 @@ input, select, textarea {
 	}
 
 	body {
-        background: #187fc4; /* Old browsers */
-        background: -moz-linear-gradient(top, #187fc4 0%, #63c6c7 51%, #d5eff2 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, #187fc4 0%,#63c6c7 51%,#d5eff2 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, #187fc4 0%,#63c6c7 51%,#d5eff2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#187fc4', endColorstr='#d5eff2',GradientType=0 ); /* IE6-9 */
+        background: #275975; /* Old browsers */
+        background: -moz-linear-gradient(top, #275975 0%, #75c0cc 51%, #d5eff2 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #275975 0%,#75c0cc 51%,#d5eff2 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #275975 0%,#75c0cc 51%,#d5eff2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#275975', endColorstr='#d5eff2',GradientType=0 ); /* IE6-9 */
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {

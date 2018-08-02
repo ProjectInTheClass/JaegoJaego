@@ -354,7 +354,7 @@ class StoreModel
     var selectedIndex:Int = 0
 
     var arrayList:[Store] = []
-    
+   
     var filePath:String { get {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory , .userDomainMask, true).first!
         return documentDirectory + fileName
