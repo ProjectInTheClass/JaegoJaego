@@ -203,7 +203,7 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
         }
         if( eventname != "" && TimeAdd != "" && DateAdd != "" ){
             scheduleModel.ScheduleArray.append(Schedule(memotitle: eventname, memotime: TimeAdd, memodates: DateAdd))
-            print("scheduleDatabase \(ScheduleDatabase.ScheduleArray)")
+
             navigationController?.popViewController(animated: true)
             self.dismiss(animated: true, completion: nil)
         }

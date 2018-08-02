@@ -27,27 +27,6 @@ struct Colors {
     static var darkBlue = UIColor(red: 52, green: 152, blue: 219)
 }
 
-
-
-/* 홈 데이터 - HomeDateModel */
-
-// 폐기 목록 데이터 타입 정의
-//struct HomeThrowChart {
-//
-//    var processImage: String?
-//    var name :String
-//    var saveStyle : saveStyle
-//    var many: Int = 0
-//    var manyType: String
-//    
-//    init(name:String, many: Int, saveStyle:saveStyle, manyType:String){
-//        self.name = name
-//        self.many = many
-//        self.saveStyle = saveStyle
-//        self.manyType = manyType
-//    }
-//}
-
 class HomeDateModel {
     /** 오늘 날짜 출력하는 클래스
      */
@@ -64,108 +43,7 @@ class HomeDateModel {
     }
     
     let infoDate = HomeDateModel.dateInfo()
-    
-    
-    // 오늘을 기준으로 -3, +3 날짜 구하기
-    
-    static func todayDateInfo() -> String {
-        let todaydate = Date()
-        let todayformatter = DateFormatter()
-        
-        
-        todayformatter.dateFormat = "dd"
-        let stringToday = todayformatter.string(from: todaydate)
-        return stringToday
-        
-    }
-    
-    static func todayDateInfo1() -> String {
-        let todaydate = Date()
-        let todayformatter = DateFormatter()
-        let today1 = todaydate - 86400 * 3
-        
-        todayformatter.dateFormat = "dd"
-        let stringToday1 = todayformatter.string(from: today1)
-        return stringToday1
-    }
-    
-    static func todayDateInfo2() -> String {
-        let todaydate = Date()
-        let todayformatter = DateFormatter()
-        let today2 = todaydate - 86400 * 2
-        
-        todayformatter.dateFormat = "dd"
-        let stringToday2 = todayformatter.string(from: today2)
-        return stringToday2
-    }
-    
-    static func todayDateInfo3() -> String {
-        let todaydate = Date()
-        let todayformatter = DateFormatter()
-        let today3 = todaydate - 86400
-        
-        todayformatter.dateFormat = "dd"
-        let stringToday3 = todayformatter.string(from: today3)
-        return stringToday3
-    }
-    
-    static func todayDateInfo5() -> String {
-        let todaydate = Date()
-        let todayformatter = DateFormatter()
-        let today5 = todaydate + 86400
-        
-        todayformatter.dateFormat = "dd"
-        let stringToday5 = todayformatter.string(from: today5)
-        return stringToday5
-    }
-    
-    static func todayDateInfo6() -> String {
-        let todaydate = Date()
-        let todayformatter = DateFormatter()
-        let today6 = todaydate + 86400 * 2
-        
-        todayformatter.dateFormat = "dd"
-        let stringToday6 = todayformatter.string(from: today6)
-        return stringToday6
-    }
-    
-    
-    static func todayDateInfo7() -> String {
-        let todaydate = Date()
-        let todayformatter = DateFormatter()
-        let today7 = todaydate + 86400 * 3
-        
-        todayformatter.dateFormat = "dd"
-        let stringToday7 = todayformatter.string(from: today7)
-        return stringToday7
-    }
-    
-    //////////////////////////////////////끝/////////////////////////////////////////
-    
-    
 }
-
-// 폐기 데이터 배열 생성
-//class HomedisposalChart_Model {
-//    var selectedIndex:Int = 0
-//    var HomeThrowArray:[HomeThrowChart]
-//
-//    init() {
-//        self.HomeThrowArray = []
-//
-//        var throwItem = HomeThrowChart(name: "바나나", many: 20, saveStyle: .Cold, manyType: "개수")
-//        self.HomeThrowArray.append(throwItem)
-//        
-//        throwItem = HomeThrowChart(name: "아보카도", many: 10, saveStyle: .Cold, manyType: "박스")
-//        self.HomeThrowArray.append(throwItem)
-//
-//        // 수량 순으로 정렬
-//        let sortedThrowItem = self.HomeThrowArray.sorted(by: { $0.many > $1.many})
-//        HomeThrowArray = sortedThrowItem
-//    }
-//
-//}
-
 
 
 
@@ -327,21 +205,6 @@ class Store :Equatable //: NSObject, NSCoding
         
         self.Call = Call
         
-        
-        
-//        var name: String // 제품 이름
-//        var UpDate: String  // 등록 날 -
-//        var DownDate: String // 유통기한
-//        var untilDate: Int // 남은 기간 일자 (day)
-//
-//        var many: Int = 0// 수량
-//        var manytype :String // 단위 = degree..
-//        var saveStyle: saveStyle // 보관 상태
-//
-//        var Image: String? // 그래프 이미지
-//        var TotalMany:Int = 0 // 전체 수량
-//        var Call:String? // 거래처
-        
         TotalMany += many
         untilDate = 0
         untilDate = self.dateFormater(downdate: DownDate)
@@ -398,16 +261,6 @@ class StoreModel
     
 
     init(){
-        // if NSFileManager.defaultManager().fileExistsAtPath(self.filePath)
-//        if FileManager.default.fileExists(atPath: self.filePath){
-//            // read
-//            var unarchArray: <# Type #> = NSKeyedUnarchiver.unarchiveObject(withFile: self.filePath) as? [Store] {
-//                arrayList += unarchArray
-//            }
-//        } else{
-//            //create
-//            arrayList += defaultData()
-//        }
         arrayList = []
         var stock = Store(name:"새우", UpDate:"18.8.01", DownDate:"18.08.06", many: 20, manytype:"통", saveStyle: .Cold, Call:"010-7730-7152")
         self.arrayList.append(stock)
@@ -523,10 +376,6 @@ class StoreModel
         return arrayReturn
     }
     
-    
-    /**
-     저장된 목록에서 수량 / 전체수량을 계산해서 기준에 맞는 이미지를 넣는다.
-     */
 
     
     
