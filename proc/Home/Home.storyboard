@@ -95,24 +95,21 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="보관방법" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qw6-0h-GPW">
-                                            <rect key="frame" x="169" y="18" width="64" height="21"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wG5" translatesAutoresizingMaskIntoConstraints="NO" id="V0G-I5-gVU">
+                                            <rect key="frame" x="20" y="8" width="41" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wG5" translatesAutoresizingMaskIntoConstraints="NO" id="V0G-I5-gVU">
-                                            <rect key="frame" x="18" y="5" width="42" height="41"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frozen" translatesAutoresizingMaskIntoConstraints="NO" id="wFf-2o-H5w">
+                                            <rect key="frame" x="203" y="15" width="25" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
+                                    <outlet property="HomeStoreImage" destination="wFf-2o-H5w" id="AaM-lB-dEI"/>
                                     <outlet property="HomeStoreMany" destination="3yB-2J-1ZS" id="fQr-eh-z3x"/>
                                     <outlet property="HomeStoreName" destination="K6W-9a-Ags" id="k0T-Ik-J3S"/>
-                                    <outlet property="HomeStoreSaveStyle" destination="qw6-0h-GPW" id="o2T-NW-nKg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -188,6 +185,7 @@
     </scenes>
     <resources>
         <image name="Home-1" width="1562" height="2779"/>
+        <image name="frozen" width="711" height="713"/>
         <image name="gaegom_skyblue" width="605" height="596"/>
         <image name="home" width="28" height="25"/>
         <image name="schedulestaffimg" width="24" height="123"/>

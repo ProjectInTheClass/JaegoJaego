@@ -101,9 +101,9 @@ let fileName = "StoreBranchData.brch"
 
 // 보관 방법
 enum saveStyle : String {
-    case Fresh = "실온"
-    case Cold = "냉장"
-    case Ice = "냉동"
+    case Fresh = "room"
+    case Cold = "cold"
+    case Ice = "frozen"
 }
 
 // 재료 하나 정보
@@ -203,6 +203,7 @@ class Store : Equatable
         self.many = many
         self.manytype = manytype
         self.saveStyle = saveStyle
+        self.saveImage = saveStyle.rawValue
         
         self.Call = Call
         

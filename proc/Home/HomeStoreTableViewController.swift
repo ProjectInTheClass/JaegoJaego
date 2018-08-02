@@ -49,7 +49,8 @@ class HomeStoreTableViewController : UITableViewController {
         let storeManyDegree:String = " " + HomeStoreInfo.manytype
         
         HomeStorecell.HomeStoreName.text = HomeStoreInfo.name
-        HomeStorecell.HomeStoreSaveStyle.text = HomeStoreInfo.saveStyle.rawValue
+         //proccell.ChartImage.image = UIImage(named: image2)
+        HomeStorecell.HomeStoreImage.image = UIImage(named: HomeStoreInfo.saveStyle.rawValue)
         HomeStorecell.HomeStoreMany.text = String(HomeStoreInfo.many) + " / \(HomeStoreInfo.TotalMany)" + storeManyDegree 
         //HomeStorecell.HomeStoreManytype.text = HomeStoreInfo.manytype
 
