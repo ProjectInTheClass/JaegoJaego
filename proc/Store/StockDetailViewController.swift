@@ -26,7 +26,13 @@ class StockDetailViewController: UIViewController {
     @IBOutlet weak var num: UITextField!
   
     @IBOutlet weak var completebutton: UIButton!
-   
+    
+    
+    
+    @IBAction func closeBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func Completebut(_ sender: Any) {
         let store = stockDetail.arrayList[stockDetail.selectedIndex]
         
