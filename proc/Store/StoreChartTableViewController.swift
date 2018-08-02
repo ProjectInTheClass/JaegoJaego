@@ -4,6 +4,8 @@ import Foundation
 // search 바 포함
 class StoreChartTableViewController: UITableViewController, UISearchBarDelegate {
     
+    var storemodel = StoreDatabase
+    
     // 재고 기본
 
     @IBOutlet weak var location_table: UITableView!
@@ -48,6 +50,46 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         array02D3 = StoreDatabase.storesUntilDate(fromDays: 3, toDays: 7)
         array03D7 = StoreDatabase.storesUntilDate(fromDays: 7, toDays: nil)
     
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        /*       // 화면 전환하기 전에 있는 소스
+         segue.source
+         // 타겟
+         segue.destination
+         // segue는 모두 identifier를 가지고 있고 이를 이프문을 이용해서 구분해 줌
+         segue.identifier
+         */
+        // 기본적으로 UIViewController로 상속 -> 캐스팅을 해주어야함(PlayerViewController로)
+        // destination에 PlayerViewController가 있다는 선언 없을 시에는 앱이 죽음
+        // ? => vcPlayer가 Optional로 선언 -> if let으로 확인 해야함
+        let viewcell = sender as! UITableViewCell // sender를 cell로 다운 캐스팅
+        let indexPath:IndexPath! = self.tableView.indexPath(for: viewcell)
+        var store:Store?
+        
+        switch indexPath.section {
+        case 0:
+            store = self.searchfilterData0[indexPath.row]
+        case 1:
+            store = self.searchfilterData1[indexPath.row]
+        case 2:
+            store = self.searchfilterData2[indexPath.row]
+        case 3:
+            store = self.searchfilterData3[indexPath.row]
+        default:
+            store = nil
+        }
+        
+        let singleIndex = self.storemodel.arrayList.index(of: store!)!
+        
+        self.storemodel.selectedIndex = singleIndex
+        
+//        let info = segue.destination as! StockDetailViewController
+        
+//        info.stockDetail = self.storemodel
+//
+        
         
     }
 
@@ -325,6 +367,8 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
        self.tableView.reloadData()
 
     }
+    
+    
 
     
 }

@@ -205,7 +205,9 @@ class ScheduleModel {
         let stock2 =  Schedule(memotitle: "예약 4팀",memotime: "5 pm", memodates:"20180803")
         let stock3 =  Schedule(memotitle: "예약 5팀",memotime: "9 am", memodates:"20180804")
         let stock4 =  Schedule(memotitle: "예약 7팀",memotime: "11 am", memodates:"20180805")
-        self.ScheduleArray += [stock1, stock2, stock3, stock4, stock1, stock2]
+        let stock5 =  Schedule(memotitle: "예약 4팀",memotime: "5 pm", memodates:"20180802")
+        let stock6 =  Schedule(memotitle: "예약 5팀",memotime: "9 am", memodates:"20180802")
+        self.ScheduleArray += [stock1, stock2, stock3, stock4, stock1, stock2, stock5, stock6]
         
     }
     
@@ -239,6 +241,7 @@ class Store :Equatable //: NSObject, NSCoding
     var many: Int = 0// 수량
     var manytype :String // 단위 = degree..
     var saveStyle: saveStyle // 보관 상태
+    var saveImage: String? //보관상태 이미지
     
     var Image: String? // 그래프 이미지
     var TotalMany:Int = 0 // 전체 수량
@@ -384,7 +387,7 @@ class StoreModel
     var selectedIndex:Int = 0
 
     var arrayList:[Store] = []
-    
+   
     var filePath:String { get {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory , .userDomainMask, true).first!
         return documentDirectory + fileName
