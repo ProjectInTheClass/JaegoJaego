@@ -7,11 +7,10 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     var storemodel = StoreDatabase
     
     // 재고 기본
-
     @IBOutlet weak var location_table: UITableView!
     @IBOutlet weak var searchbar : UISearchBar!
     
-
+    
     @IBOutlet weak var labelName:UILabel!
     @IBOutlet weak var labelSaveStyle:UILabel!
     @IBOutlet weak var ChartImage:UIImageView!
@@ -24,7 +23,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     
     var infoDateAdd:String = HomeDateModel.dateInfo()
     var dataFilePath: String?
-
+    
     var location_name_array = StoreDatabase
     
     // 재고 목록 4가지
@@ -78,7 +77,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         let singleIndex = self.storemodel.arrayList.index(of: store!)!
         self.storemodel.selectedIndex = singleIndex
     }
-
+    
     
     
     override func viewDidLoad() {
@@ -115,7 +114,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     }
     
     override func viewDidAppear(_ animated: Bool) {
-
+        
         super.viewDidAppear(animated)
         
         updateArraysFromModel()
@@ -126,7 +125,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         searchfilterData3 = array03D7.sorted(by: {$0.DownDate < $1.DownDate })
         
         self.tableView.reloadData()
-
+        
     }
     
     // searchbar 관련 메소드
@@ -136,7 +135,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         searchfilterData1 = searchText.isEmpty ? array01Today : array01Today.filter{ $0.name.range(of: searchText) != nil}
         searchfilterData2 = searchText.isEmpty ? array02D3 : array02D3.filter{ $0.name.range(of: searchText) != nil}
         searchfilterData3 = searchText.isEmpty ? array03D7 : array03D7.filter{ $0.name.range(of: searchText) != nil}
-
+        
         location_table.reloadData() // 필터링한 데이터를 테이블뷰로 설정
     }
     
@@ -146,7 +145,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         searchbar.text = ""
         searchbar.resignFirstResponder()
     }
-  
+    
     
     //table section 설정
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -177,12 +176,12 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
             return "7일 이상  : \(searchfilterData3.count) 개 "
         }
     }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         
         return 5
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         var rValue = 0
@@ -210,7 +209,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     @IBAction func phoenCallBtn(_ sender: UIButton) {
         let cell = sender.superview?.superview as! UITableViewCell
         let indexPath = self.tableView.indexPath(for: cell)
-    
+        
         
         if location_name_array.arrayList[(indexPath?.row)!].Call != nil {
             let temp = location_name_array.arrayList[(indexPath?.row)!].Call!
@@ -250,12 +249,12 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
             arrayStore =  searchfilterData3
         }
         
-
+        
         print("arrayStore sort : \(arrayStore)")
         let store = arrayStore[indexPath.row]
         
         let proccell:StoreChartCell_More = tableView.dequeueReusableCell(withIdentifier: "Cell2IngredientBig") as! StoreChartCell_More
-
+        
         // cell
         proccell.labelName.text = store.name
         proccell.labelSaveStyle.text = store.saveStyle.rawValue
@@ -264,7 +263,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         proccell.labelMany.text = String(store.many)
         proccell.labelManyType.text = String(store.manytype)
         proccell.labelTotalMany.text = String(store.TotalMany)
-      
+        
         
         if let image2 = store.Image {
             proccell.ChartImage.image = UIImage(named: image2)
@@ -277,19 +276,20 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     /** 재고 삭제 코드 */
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
-//
-//
-//        for i in 0..<storemodel.arraynumList.count{
-//            if (storemodel.arraynumList[i] == 0){
-//                let storearray = storemodel.arrayList[indexPath.row]
-//                let indexofA = location_name_array.arrayList.index(of: storearray)
-//
-//                storemodel.arrayList.remove(at: indexPath.row)
-//                location_name_array.arrayList.remove(at: indexofA!)
-//                tableView.deleteRows(at: [indexPath], with: .automatic)
-//                self.tableView.reloadData()
-//            }
-//        }
+        
+        //
+        //
+        //        for i in 0..<storemodel.arraynumList.count{
+        //            if (storemodel.arraynumList[i] == 0){
+        //                let storearray = storemodel.arrayList[indexPath.row]
+        //                let indexofA = location_name_array.arrayList.index(of: storearray)
+        //
+        //                storemodel.arrayList.remove(at: indexPath.row)
+        //                location_name_array.arrayList.remove(at: indexofA!)
+        //                tableView.deleteRows(at: [indexPath], with: .automatic)
+        //                self.tableView.reloadData()
+        //            }
+        //        }
         if indexPath.section == 1 {
             
             let store = searchfilterData0[indexPath.row]
@@ -310,7 +310,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
             self.tableView.reloadData()
         }
         else if indexPath.section == 3 {
-
+            
             let store = searchfilterData2[indexPath.row]
             let indexofA = location_name_array.arrayList.index(of: store)
             
@@ -323,18 +323,16 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
             
             let store = searchfilterData3[indexPath.row]
             let indexofA = location_name_array.arrayList.index(of: store)
-
+            
             
             searchfilterData3.remove(at: indexPath.row)
             location_name_array.arrayList.remove(at: indexofA!)
             tableView.deleteRows(at: [indexPath], with: .automatic)
             self.tableView.reloadData()
         }
-
+        
         location_name_array.sameStoreMany()
-       self.tableView.reloadData()
-
+        self.tableView.reloadData()
+        
     }
 }
-
-
