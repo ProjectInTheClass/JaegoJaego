@@ -26,7 +26,6 @@
 		B817E0A420FC900D00B2A37C /* Staff.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B817E0A320FC900D00B2A37C /* Staff.storyboard */; };
 		B81ED696210EB224009DDC42 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ED695210EB224009DDC42 /* StoreViewController.swift */; };
 		B81ED69A210F0C0C009DDC42 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ED699210F0C0C009DDC42 /* Database.swift */; };
-		B838071720EDC00700A46B20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838071620EDC00700A46B20 /* ViewController.swift */; };
 		B838071A20EDC00700A46B20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B838071820EDC00700A46B20 /* Main.storyboard */; };
 		B838071F20EDC00900A46B20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B838071D20EDC00900A46B20 /* LaunchScreen.storyboard */; };
 		B838072A20EDC00900A46B20 /* procTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838072920EDC00900A46B20 /* procTests.swift */; };
@@ -82,7 +81,6 @@
 		B81ED695210EB224009DDC42 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		B81ED699210F0C0C009DDC42 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		B838071120EDC00700A46B20 /* proc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = proc.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B838071620EDC00700A46B20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B838071920EDC00700A46B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B838071E20EDC00900A46B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B838072020EDC00900A46B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -236,7 +234,6 @@
 				90CE5570210875C900E20EC7 /* Radiobutton.swift */,
 				B8DFC246210710BF00626614 /* StoreCharCell_More.swift */,
 				B8FE6B7421074DEB00C471FB /* AddStoreViewController.swift */,
-				B838071620EDC00700A46B20 /* ViewController.swift */,
 				B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */,
 				B81ED695210EB224009DDC42 /* StoreViewController.swift */,
 			);
@@ -460,7 +457,6 @@
 				B8119A34210998DB00C0D6EE /* ScheduleAddViewController.swift in Sources */,
 				610558102112AB4400E3175C /* StockDetailViewController.swift in Sources */,
 				B80B28F02109B9FB00413049 /* HomeStoreTableViewController.swift in Sources */,
-				B838071720EDC00700A46B20 /* ViewController.swift in Sources */,
 				90CE5571210875C900E20EC7 /* Radiobutton.swift in Sources */,
 				B8DFC2402106D6AC00626614 /* ScheduleChartCell.swift in Sources */,
 				B80B28EE2109B9CE00413049 /* HomeStoreChartCell.swift in Sources */,

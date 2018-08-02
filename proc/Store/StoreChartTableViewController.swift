@@ -85,11 +85,10 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         
         self.storemodel.selectedIndex = singleIndex
         
-        let info = segue.destination as! StockDetailViewController
+//        let info = segue.destination as! StockDetailViewController
         
-        // 메인 컨트롤러에 있는 모델 뮤직을 담아줌
-        info.stockDetail = self.storemodel
-        
+//        info.stockDetail = self.storemodel
+//
         
         
     }
@@ -129,13 +128,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     }
     
     override func viewDidAppear(_ animated: Bool) {
-    
-        
-//        searchfilterData0 = array00ToTrash.sorted(by: {$0.DownDate > $1.DownDate })
-//        searchfilterData1 = array01Today.sorted(by: {$0.DownDate > $1.DownDate })
-//        searchfilterData2 = array02D3.sorted(by: {$0.DownDate > $1.DownDate })
-//        searchfilterData3 = array03D7.sorted(by: {$0.DownDate > $1.DownDate })
-//
+
         super.viewDidAppear(animated)
         
         updateArraysFromModel()
@@ -322,7 +315,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     }
     
     
-    // 재고 삭제 코드
+    /** 재고 삭제 코드 */
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         
@@ -370,7 +363,8 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
             self.tableView.reloadData()
         }
     
-        print("after remove localdata = \(location_name_array.arrayList)")
+    print("after remove localdata = \(location_name_array.arrayList)")
+        location_name_array.sameStoreMany()
        self.tableView.reloadData()
 
     }

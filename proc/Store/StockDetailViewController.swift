@@ -7,28 +7,58 @@
 //
 
 import UIKit
+//var coredata = StoreDatabase
+var stockDetail = StoreDatabase
 
 class StockDetailViewController: UIViewController {
     
-    var stockDetail:StoreModel!
+//    var temp = location_name_array.arrayList[(indexPath?.row)!].many!
+//    var temp2 = location_name_array.arrayList[(indexPath?.row)!].!
+    
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var save: UILabel!
     @IBOutlet weak var day1: UILabel!
     @IBOutlet weak var day2: UILabel!
-    @IBOutlet weak var num: UILabel!
+    @IBOutlet weak var graimage: UIImageView!
     
+    @IBOutlet weak var num: UITextField!
+    @IBOutlet weak var totalnum: UITextField!
+    @IBOutlet weak var completebutton: UIButton!
+   
+    @IBAction func Completebut(_ sender: Any) {
+        let store = stockDetail.arrayList[stockDetail.selectedIndex]
+        
+        store.many = Int(self.num.text!)!
+        
+        stockDetail.sameStoreMany()
+        
+        self.navigationController?.popViewController(animated: true)
+        
+//        if coredata.arrayList[(indexPath?.row)!].many != nil {
+//            var temp = location_name_array.arrayList[(indexPath?.row)!].Call!
+//            print("temp = \(temp)")
+//
+//
+////    }
+//        if coredata.arrayList[IndexPath].many != nil {
+//            var temp = coredata.arrayList[(IndexPath)]
+//        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let infoStock = stockDetail.arrayList[stockDetail.selectedIndex]
         
+        graimage.image = UIImage(named: infoStock.Image!)
         name.text = infoStock.name
-        //save.text = String(infoStock.saveStyle)
         day1.text = infoStock.UpDate
         day2.text = infoStock.DownDate
+        
         num.text = String(infoStock.many)
+        totalnum.text = String(infoStock.TotalMany)
 
         // Do any additional setup after loading the view.
     }

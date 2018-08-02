@@ -339,10 +339,10 @@ class Store :Equatable //: NSObject, NSCoding
 //        var Image: String? // 그래프 이미지
 //        var TotalMany:Int = 0 // 전체 수량
 //        var Call:String? // 거래처
+        
         TotalMany += many
         untilDate = 0
         untilDate = self.dateFormater(downdate: DownDate)
-        // 거래처와 이미지는 안받아도 됨, 전체 수량은 수량으로 계산
         storesManyFilteredTotalMany()
     }
     
