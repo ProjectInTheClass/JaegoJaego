@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="재고재고런치-1" translatesAutoresizingMaskIntoConstraints="NO" id="bJG-9u-SHT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jaegoLunch" translatesAutoresizingMaskIntoConstraints="NO" id="bJG-9u-SHT">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                         </subviews>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="재고재고런치-1" width="1725" height="3066"/>
+        <image name="jaegoLunch" width="1725" height="3066"/>
     </resources>
 </document>

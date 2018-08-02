@@ -15,6 +15,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     
     @IBOutlet weak var AddlblWriteday : UITextField! // 들여온 날짜
     
+    @IBOutlet weak var alarmLbl: UILabel!
     
     // 피커뷰 사용
     @IBOutlet weak var AddldlDatePiker2: UITextField! // 유통기한 피커
@@ -29,12 +30,37 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     // 저장 방법 저장 배열
     let myPickerSave = ["실온", "냉동", "냉장"]
     
+    func dateformatting() -> String{
+        let formatter = DateFormatter()
+        let formatterdate = Date()
+        formatter.dateFormat = "yy.MM.dd"
+        
+        let todayDate = formatter.string(from: formatterdate)
+        return todayDate
+    }
+    
+    
     var addTemp = StoreDatabase
     var pickerrealdate = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        alarmLbl.text = " "
+        
+        // 툴바
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneClick))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelClick))
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+
         
         
         // 날짜 피커뷰
@@ -43,6 +69,12 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         AddPikDate.tag = 1
         AddldlDatePiker2.inputView = AddPikDate
         AddPikDate.backgroundColor = UIColor.white
+        AddPikDate.selectRow( 1 , inComponent: 1, animated: true)
+        AddPikDate.showsSelectionIndicator = true
+        
+        AddldlDatePiker2.inputAccessoryView = toolBar
+        
+       
 
         // 저장 피커뷰
         let SavePikView = UIPickerView()
@@ -50,6 +82,8 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         SavePikView.tag = 2
         AddlblSavePiker.inputView = SavePikView
         SavePikView.backgroundColor = UIColor.white
+        
+        AddlblSavePiker.inputAccessoryView = toolBar
 
         //등록날
         let AddPikUpDate = UIPickerView()
@@ -57,9 +91,26 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         AddPikUpDate.tag = 3
         AddlblUpDatePiker.inputView = AddPikUpDate
         AddPikUpDate.backgroundColor = UIColor.white
+        
+        AddlblUpDatePiker.inputAccessoryView = toolBar
 
     }
+    
+    
 // 피커뷰 함수 시작
+
+    @objc func doneClick() {
+        
+        AddldlDatePiker2.resignFirstResponder()
+        AddlblSavePiker.resignFirstResponder()
+        AddlblUpDatePiker.resignFirstResponder()
+    }
+    @objc func cancelClick() {
+        AddldlDatePiker2.resignFirstResponder()
+        AddlblSavePiker.resignFirstResponder()
+        AddlblUpDatePiker.resignFirstResponder()
+    }
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
         if pickerView.tag == 1 {
@@ -186,43 +237,86 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     @IBAction func saveAddInfoBtn(_ sender: AnyObject) {
         
         // 오류 처리문 추가해야함
-        let infoDateAdd:String = AddlblUpDatePiker.text!
+        var infoDateAdd:String = AddlblUpDatePiker.text! // 등록일
         
         
         let NameAdd:String = AddlblName.text!
-        let ManyAdd:Int = Int(AddlblMany.text!)!
-        let DateAdd:String = AddldlDatePiker2.text!
+        var ManyAdd:Int = 10
+        var ManyTxt:String = AddlblMany.text!
+        var DateAdd:String = AddldlDatePiker2.text! // 유통기한
         let CallAdd:String = AddlblCall.text!
         let ManyTypeAdd:String = AddlblManyType.text!
-        let SaveAdd:saveStyle = .Cold
+        var SaveAdd:saveStyle = .Cold
             //AddlblSavePiker.text!
-
+        let SaveTxt:String = AddlblSavePiker.text!
+        
         let TtManyAdd:Int = (30 + ManyAdd)
         
         //시험용 배열 데이터 선언
         var _:Array<Store>
 
-    
 
         _ = Store(name: NameAdd, UpDate: infoDateAdd , DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd)
 
-        let addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd)
-    
 
-            //        addArrayList.append(addStock)
-            //        for i in addArrayList{
-            //            if addArrayList[i] == " "{
-            //
-            //            }
-            //        }
+        if NameAdd == "" {
+            alarmLbl.text = "내용을 입력해 주세요"
+        }
+        else{
+            alarmLbl.text = " "
+        }
+        if ManyTypeAdd == "" {
+            alarmLbl.text = "내용을 입력해 주세요"
+        }
+        else{
+            alarmLbl.text = " "
+        }
+        if DateAdd == "" {
+            DateAdd = dateformatting()
+        }
+        else{
+            alarmLbl.text = " "
+        }
+        if infoDateAdd == "" {
+            infoDateAdd = dateformatting()
+        }
+        else{
+            alarmLbl.text = " "
+        }
+        if CallAdd == "" {
+            alarmLbl.text = "내용을 입력해 주세요"
+        }
+        else{
+            alarmLbl.text = " "
+        }
+        if( NameAdd != "" && DateAdd != "" && ManyTypeAdd != "" &&  DateAdd != "" && infoDateAdd != "" && CallAdd != ""  ){
+        
+            if SaveTxt == "실온"{
+                
+                SaveAdd = saveStyle.Fresh
+                
+            } else if SaveTxt == "냉장" {
+                
+                SaveAdd = saveStyle.Cold
+                
+            } else if SaveTxt == "냉동" {
+                
+                SaveAdd = saveStyle.Ice
+            }
+        
+            if ManyTxt != ""{
+                
+                ManyAdd = Int(ManyTxt)!
+                
+            }
             
-            // 데이터 받기, 출력 확인
-            addTemp.arrayList.append(addStock)
-            
-            print("AddViewController - addStock -> addTemp.arrayList = \(addStock)")
+            addTemp.arrayList.append(Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd))
+        
             print("AddViewController - addtemp : StoreDataBase = \(addTemp.arrayList)")
             print("AddViewController - stockdatabase : \(StoreDatabase.arrayList)")
             self.dismiss(animated: true, completion: nil)
+            
+        }
       
     }
 }

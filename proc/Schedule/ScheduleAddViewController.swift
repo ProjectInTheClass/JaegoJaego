@@ -29,7 +29,7 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
     func dateformatting() -> String{
         let formatter = DateFormatter()
         let formatterdate = Date()
-        formatter.dateFormat = "yyyy - MM - dd"
+        formatter.dateFormat = "yy.MM.dd"
         
         let todayDate = formatter.string(from: formatterdate)
         return todayDate
@@ -43,11 +43,27 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
         alarm2.text = " "
         alarm3.text = " "
         
+        // 툴바
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneClick))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelClick))
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+
+        
         // 날짜 피커뷰
         AddPikDate.delegate = self
         AddPikDate.tag = 1
         AddldlDatePiker.inputView = AddPikDate
         AddPikDate.backgroundColor = UIColor.white
+        
+        AddldlDatePiker.inputAccessoryView = toolBar
         
         // 시간 피커뷰
         let TimePikView = UIPickerView()
@@ -55,9 +71,25 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
         TimePikView.tag = 2
         AddlblTimePicker.inputView = TimePikView
         TimePikView.backgroundColor = UIColor.white
+        
+        AddlblTimePicker.inputAccessoryView = toolBar
+        
+        
     }
     
     // 피커뷰 함수 시작
+    
+    @objc func doneClick() {
+        
+        AddldlDatePiker.resignFirstResponder()
+        AddlblTimePicker.resignFirstResponder()
+        
+    }
+    @objc func cancelClick() {
+        AddldlDatePiker.resignFirstResponder()
+        AddlblTimePicker.resignFirstResponder()
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         if pickerView.tag == 1 {
             return myPickerDate.count
@@ -144,7 +176,7 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
     
     @IBAction func complete(_ sender: AnyObject) {
         
-        let DateAdd:String = pickerrealdate //AddldlDatePiker.text!
+        var DateAdd:String = pickerrealdate //AddldlDatePiker.text!
         let TimeAdd:String = pickerTimerealdate
 
         
@@ -164,7 +196,7 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
             alarm2.text = "  "
         }
         if( DateAdd == ""){
-            alarm3.text = "값이 없습니다"
+            DateAdd = dateformatting()
         }
         else{
             alarm3.text = "  "
