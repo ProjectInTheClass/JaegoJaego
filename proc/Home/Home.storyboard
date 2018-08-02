@@ -95,7 +95,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graph_4-1" translatesAutoresizingMaskIntoConstraints="NO" id="V0G-I5-gVU">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wG5" translatesAutoresizingMaskIntoConstraints="NO" id="V0G-I5-gVU">
                                             <rect key="frame" x="20" y="8" width="41" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -187,8 +187,8 @@
         <image name="Home-1" width="1562" height="2779"/>
         <image name="frozen" width="711" height="713"/>
         <image name="gaegom_skyblue" width="605" height="596"/>
-        <image name="graph_4-1" width="430" height="452"/>
         <image name="home" width="28" height="25"/>
         <image name="schedulestaffimg" width="24" height="123"/>
+        <image name="wG5" width="209" height="194"/>
     </resources>
 </document>
