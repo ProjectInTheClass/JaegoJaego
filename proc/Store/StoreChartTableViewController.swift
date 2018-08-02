@@ -278,6 +278,19 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         
+//
+//
+//        for i in 0..<storemodel.arraynumList.count{
+//            if (storemodel.arraynumList[i] == 0){
+//                let storearray = storemodel.arrayList[indexPath.row]
+//                let indexofA = location_name_array.arrayList.index(of: storearray)
+//
+//                storemodel.arrayList.remove(at: indexPath.row)
+//                location_name_array.arrayList.remove(at: indexofA!)
+//                tableView.deleteRows(at: [indexPath], with: .automatic)
+//                self.tableView.reloadData()
+//            }
+//        }
         if indexPath.section == 1 {
             
             let store = searchfilterData0[indexPath.row]
@@ -311,6 +324,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
             
             let store = searchfilterData3[indexPath.row]
             let indexofA = location_name_array.arrayList.index(of: store)
+
             
             searchfilterData3.remove(at: indexPath.row)
             location_name_array.arrayList.remove(at: indexofA!)

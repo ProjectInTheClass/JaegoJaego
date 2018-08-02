@@ -251,6 +251,7 @@ class StoreModel
     var selectedIndex:Int = 0
 
     var arrayList:[Store] = []
+    var arraynumList:[Int] = [] //수량 0이 될때 셀 삭제할때 쓰는 배열
    
     var filePath:String { get {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory , .userDomainMask, true).first!
@@ -265,29 +266,40 @@ class StoreModel
         arrayList = []
         var stock = Store(name:"새우", UpDate:"18.8.01", DownDate:"18.08.06", many: 20, manytype:"통", saveStyle: .Cold, Call:"010-7730-7152")
         self.arrayList.append(stock)
+        self.arraynumList.append(stock.many)
         
         stock = Store(name:"레몬",  UpDate:"18.7.31", DownDate:"18.08.03", many: 5, manytype: "개",saveStyle: .Cold,  Call:"010-4444-4444")
         self.arrayList.append(stock)
+        self.arraynumList.append(stock.many)
         
         stock = Store(name:"아보카도",  UpDate:"18.7.30", DownDate:"18.08.04",many: 15, manytype:"개", saveStyle: .Fresh,  Call:"010-3333-2332" )
 
         self.arrayList.append(stock)
+        self.arraynumList.append(stock.many)
         
         stock = Store(name:"젤리",  UpDate:"18.7.30", DownDate:"18.11.5",many: 15, manytype:"개", saveStyle: .Fresh, Call:"010-3333-2332" )
         self.arrayList.append(stock)
+        self.arraynumList.append(stock.many)
         
         stock = Store(name:"망고",  UpDate:"18.7.30", DownDate:"18.10.7",many: 15, manytype:"개", saveStyle: .Fresh,  Call:"010-3333-2332" )
         self.arrayList.append(stock)
+        self.arraynumList.append(stock.many)
         
         stock = Store(name:"아보카도",  UpDate:"18.7.20", DownDate:"18.7.30",many: 15, manytype:"개", saveStyle: .Fresh,  Call:"010-3333-2332" )
         self.arrayList.append(stock)
+        self.arraynumList.append(stock.many)
+        
         stock = Store(name:"새우", UpDate:"18.8.01", DownDate:"18.08.04", many: 20, manytype:"통", saveStyle: .Cold, Call:"010-7730-7152")
         self.arrayList.append(stock)
+        self.arraynumList.append(stock.many)
         
         stock = Store(name:"새우", UpDate:"18.8.01", DownDate:"18.08.05", many: 20, manytype:"통", saveStyle: .Cold, Call:"010-7730-7152")
         self.arrayList.append(stock)
+        self.arraynumList.append(stock.many)
+        
         stock = Store(name:"새우", UpDate:"18.8.01", DownDate:"18.08.05", many: 5, manytype:"통", saveStyle: .Cold, Call:"010-7730-7152")
         self.arrayList.append(stock)
+        self.arraynumList.append(stock.many)
         
 
     }
