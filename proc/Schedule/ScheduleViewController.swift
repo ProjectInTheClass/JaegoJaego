@@ -52,13 +52,7 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
 
         let tableNewCell = tableView.dequeueReusableCell(withIdentifier: "littleScheduleCell") as! ScheduleLittleTableCell
         print("tablenewcell = \(tableNewCell.littlememo )")
-        
-//        if tableNewCell.littlememo.text == filteredData[indexPath.row].memotitle {
-//            let emptyschedule = Schedule(memotitle: "등록된 일정이 없습니다.", memotime: "", memodates: "")
-//            tablecell.ScheduleArray = [emptyschedule]
-//        }
-        
-      //  print("filteredData = \(filteredData)")
+     
         tableNewCell.littlememo.text = filteredData[indexPath.row].memotitle
         tableNewCell.littletime.text = filteredData[indexPath.row].memotime
         // 날짜는 당일로 들어가니 따로 넣지 않음
