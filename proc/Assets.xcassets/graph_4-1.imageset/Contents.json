@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "box_close_img.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "graph_4-1.png",
       "scale" : "2x"
     },
     {

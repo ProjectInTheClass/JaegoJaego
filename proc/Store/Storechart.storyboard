@@ -385,7 +385,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graph_red" translatesAutoresizingMaskIntoConstraints="NO" id="cTp-hf-Rnp">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graph_1-1" translatesAutoresizingMaskIntoConstraints="NO" id="cTp-hf-Rnp">
                                             <rect key="frame" x="16" y="22" width="65" height="61"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -562,8 +562,9 @@
         <image name="addBtn-1" width="223" height="223"/>
         <image name="callIcon" width="227" height="228"/>
         <image name="closeBtn" width="143" height="140"/>
-        <image name="graph_red" width="567" height="592"/>
+        <image name="graph_1-1" width="430" height="452"/>
         <image name="plus" width="1562" height="2779"/>
+
         <image name="uiBack" width="1562" height="2779"/>
         <image name="카테고리2" width="21" height="28"/>
     </resources>
