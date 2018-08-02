@@ -7,18 +7,21 @@ class HomeStoreTableViewController : UITableViewController {
     // 스케줄 데이터, 재고 데이터 가져오기
     var homeCallStore = StoreDatabase
     
-    var ThrowArrayModel = HomedisposalChart_Model()
     //데이터 모델 선언
     
-    
+    var homeStoreFilterByMany = [Store]()
     // 출력하는 섹션 개수
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+//    func ready () {
+//        var tep =  homeCallStore.arrayList
+//    }
+    
     // 모델의 데이터 개수와 셀 개수 일치시키기
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.ThrowArrayModel.HomeThrowArray.count
+        return homeCallStore.arrayList.count
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -48,9 +51,9 @@ class HomeStoreTableViewController : UITableViewController {
         let cell = sender as! UITableViewCell
         let indexPath:IndexPath! = self.tableView.indexPath(for: cell)
         
-        self.ThrowArrayModel.selectedIndex = indexPath.row
+        homeCallStore.selectedIndex = indexPath.row
         
         let segueHome = segue.destination as! HomeStoreTableViewController
-        segueHome.ThrowArrayModel = self.ThrowArrayModel
+       // segueHome.homeCallStore.arrayList = self.homeCallStore
     }
 }

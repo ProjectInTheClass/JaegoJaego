@@ -32,21 +32,21 @@ struct Colors {
 /* 홈 데이터 - HomeDateModel */
 
 // 폐기 목록 데이터 타입 정의
-struct HomeThrowChart {
-    
-    var processImage: String?
-    var name :String
-    var saveStyle : saveStyle
-    var many: Int = 0
-    var manyType: String
-    
-    init(name:String, many: Int, saveStyle:saveStyle, manyType:String){
-        self.name = name
-        self.many = many
-        self.saveStyle = saveStyle
-        self.manyType = manyType
-    }
-}
+//struct HomeThrowChart {
+//
+//    var processImage: String?
+//    var name :String
+//    var saveStyle : saveStyle
+//    var many: Int = 0
+//    var manyType: String
+//    
+//    init(name:String, many: Int, saveStyle:saveStyle, manyType:String){
+//        self.name = name
+//        self.many = many
+//        self.saveStyle = saveStyle
+//        self.manyType = manyType
+//    }
+//}
 
 class HomeDateModel {
     /** 오늘 날짜 출력하는 클래스
@@ -146,25 +146,25 @@ class HomeDateModel {
 }
 
 // 폐기 데이터 배열 생성
-class HomedisposalChart_Model {
-    var selectedIndex:Int = 0
-    var HomeThrowArray:[HomeThrowChart]
-    
-    init() {
-        self.HomeThrowArray = []
-        
-        var throwItem = HomeThrowChart(name: "바나나", many: 20, saveStyle: .Cold, manyType: "개수")
-        self.HomeThrowArray.append(throwItem)
-        
-        throwItem = HomeThrowChart(name: "아보카도", many: 10, saveStyle: .Cold, manyType: "박스")
-        self.HomeThrowArray.append(throwItem)
-        
-        // 수량 순으로 정렬
-        let sortedThrowItem = self.HomeThrowArray.sorted(by: { $0.many > $1.many})
-        HomeThrowArray = sortedThrowItem
-    }
-    
-}
+//class HomedisposalChart_Model {
+//    var selectedIndex:Int = 0
+//    var HomeThrowArray:[HomeThrowChart]
+//
+//    init() {
+//        self.HomeThrowArray = []
+//
+//        var throwItem = HomeThrowChart(name: "바나나", many: 20, saveStyle: .Cold, manyType: "개수")
+//        self.HomeThrowArray.append(throwItem)
+//        
+//        throwItem = HomeThrowChart(name: "아보카도", many: 10, saveStyle: .Cold, manyType: "박스")
+//        self.HomeThrowArray.append(throwItem)
+//
+//        // 수량 순으로 정렬
+//        let sortedThrowItem = self.HomeThrowArray.sorted(by: { $0.many > $1.many})
+//        HomeThrowArray = sortedThrowItem
+//    }
+//
+//}
 
 
 
@@ -251,6 +251,8 @@ class Store :Equatable //: NSObject, NSCoding
         return lhs.key == rhs.key
     }
 
+   
+    
     // 남은 기간 계산하기
     func dateFormater(downdate:String) -> Int {
         
@@ -278,12 +280,40 @@ class Store :Equatable //: NSObject, NSCoding
         return days
     }
     
+    /** 그래프 이미지 변경기
+     */
+    func storesManyFilteredTotalMany() {
+        
+        let temp:Double = Double(self.many) / Double(self.TotalMany)
+        
+        // 전체수량은 수량보다 작으면 안됨
+        if self.TotalMany - self.many >= 0 {
+            
+            if temp > 0 && temp <= 0.25 {
+                self.Image = "graph_red"
+            }
+            else if temp > 0.25 && temp <= 0.5 {
+                self.Image = "graph_orange"
+            }
+            else if temp > 0.5 && temp <= 0.75 {
+                self.Image = "graph_green"
+            }
+            else if temp > 0.75 && temp <= 1 {
+                self.Image = "graph_blue"
+            }
+        }
+        else {
+            self.Image = "graph_0"
+        }
+        
+    }
+    
     func updateUntilDate(){
         self.untilDate = dateFormater(downdate: DownDate)
     }
    
     // 재고 상세 데이터 생성자
-    init(name:String, UpDate:String, DownDate:String, many:Int, manytype:String, saveStyle:saveStyle,  TotalMany:Int, Call:String?){
+    init(name:String, UpDate:String, DownDate:String, many:Int, manytype:String, saveStyle:saveStyle,  Call:String?){
         self.name = name
         self.UpDate = UpDate
         self.DownDate = DownDate
@@ -292,9 +322,8 @@ class Store :Equatable //: NSObject, NSCoding
         self.manytype = manytype
         self.saveStyle = saveStyle
         
-        self.TotalMany = TotalMany + many
         self.Call = Call
-
+        
         
         
 //        var name: String // 제품 이름
@@ -310,9 +339,10 @@ class Store :Equatable //: NSObject, NSCoding
 //        var TotalMany:Int = 0 // 전체 수량
 //        var Call:String? // 거래처
         
+        TotalMany += many
         untilDate = 0
         untilDate = self.dateFormater(downdate: DownDate)
-        // 거래처와 이미지는 안받아도 됨, 전체 수량은 수량으로 계산
+        storesManyFilteredTotalMany()
     }
     
     // 아카이브 코드
@@ -375,31 +405,65 @@ class StoreModel
 //            //create
 //            arrayList += defaultData()
 //        }
-        
-        var stock = Store(name:"새우", UpDate:"18.8.01", DownDate:"18.08.06", many: 20, manytype:"통", saveStyle: .Cold, TotalMany:80, Call:"010-7730-7152")
-        stock.Image = "graph_red"
+        arrayList = []
+        var stock = Store(name:"새우", UpDate:"18.8.01", DownDate:"18.08.06", many: 20, manytype:"통", saveStyle: .Cold, Call:"010-7730-7152")
         self.arrayList.append(stock)
         
-        stock = Store(name:"레몬",  UpDate:"18.7.31", DownDate:"18.08.3", many: 5, manytype: "개",saveStyle: .Cold, TotalMany:20, Call:"010-4444-4444")
-        stock.Image = "graph_orange"
+        stock = Store(name:"레몬",  UpDate:"18.7.31", DownDate:"18.08.03", many: 5, manytype: "개",saveStyle: .Cold,  Call:"010-4444-4444")
         self.arrayList.append(stock)
         
-        stock = Store(name:"아보카도",  UpDate:"18.7.30", DownDate:"18.08.4",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332" )
-        stock.Image = "graph_green"
+        stock = Store(name:"아보카도",  UpDate:"18.7.30", DownDate:"18.08.04",many: 15, manytype:"개", saveStyle: .Fresh,  Call:"010-3333-2332" )
+
         self.arrayList.append(stock)
         
-        stock = Store(name:"아보카도",  UpDate:"18.7.30", DownDate:"18.9.4",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332" )
-        stock.Image = "graph_green"
+        stock = Store(name:"젤리",  UpDate:"18.7.30", DownDate:"18.11.5",many: 15, manytype:"개", saveStyle: .Fresh, Call:"010-3333-2332" )
         self.arrayList.append(stock)
         
-        stock = Store(name:"아보카도",  UpDate:"18.7.30", DownDate:"18.10.4",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332" )
-        stock.Image = "graph_green"
+        stock = Store(name:"망고",  UpDate:"18.7.30", DownDate:"18.10.7",many: 15, manytype:"개", saveStyle: .Fresh,  Call:"010-3333-2332" )
         self.arrayList.append(stock)
         
-        stock = Store(name:"아보카도",  UpDate:"18.7.20", DownDate:"18.7.30",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332" )
-        stock.Image = "graph_green"
+        stock = Store(name:"아보카도",  UpDate:"18.7.20", DownDate:"18.7.30",many: 15, manytype:"개", saveStyle: .Fresh,  Call:"010-3333-2332" )
         self.arrayList.append(stock)
+        stock = Store(name:"새우", UpDate:"18.8.01", DownDate:"18.08.04", many: 20, manytype:"통", saveStyle: .Cold, Call:"010-7730-7152")
+        self.arrayList.append(stock)
+        
+        stock = Store(name:"새우", UpDate:"18.8.01", DownDate:"18.08.05", many: 20, manytype:"통", saveStyle: .Cold, Call:"010-7730-7152")
+        self.arrayList.append(stock)
+        
+
     }
+    
+    
+    /**
+     전체수량 계산기
+     */
+    func sameStoreMany() {
+        var dicTotal = [String:Int]()
+        
+        // 1. 각 제품별 총 합계를 구해서 딕에 담기.
+        for store in self.arrayList {
+            var total = store.many
+            
+            if let totalCount = dicTotal[store.name] {
+                total = totalCount + store.many
+            }
+            dicTotal[store.name] = total
+        }
+        // 2. 각 스토어 전체 합계를 업데이트.
+        for store in self.arrayList {
+            store.TotalMany = dicTotal[store.name]!
+            store.storesManyFilteredTotalMany()
+        }
+        
+    }
+    
+    /**
+     수량 / 전체수량 = 1/4 인 목록 추출기
+     */
+    func showLessManyItem() {
+        
+    }
+    
     
     /**
      저장된 목록에서 유통기한 남은 일자를 기준으로 목록을 새로 뽑아준다.
@@ -439,34 +503,9 @@ class StoreModel
     
     
     /**
-     저장된 목록에서 수량 / 전체수량을 계산해서 기준에 맞는 목록을 뽑는다.
+     저장된 목록에서 수량 / 전체수량을 계산해서 기준에 맞는 이미지를 넣는다.
      */
-    func storesManyFilteredTotalMany(stock:Store) -> [Store]{
-        var manyfilter = [Store]()
-        
-        var temp:Double = Double(stock.many / stock.TotalMany)
-        
-        // 전체수량은 수량보다 작으면 안됨
-        if stock.TotalMany - stock.many > 0 {
-            if temp > 0 && temp <= 0.25 {
-                stock.Image = "graph_red"
-            }
-            else if temp > 0.25 && temp <= 0.5 {
-                stock.Image = "graph_orange"
-            }
-            else if temp > 0.5 && temp <= 0.75 {
-                stock.Image = "graph_green"
-            }
-            else if temp > 0.75 && temp <= 1 {
-                stock.Image = "graph_blue"
-            }
-        }
-        else {
-            stock.Image = "graph_0"
-        }
-        
-        return manyfilter
-    }
+
     
     
     

@@ -248,16 +248,19 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         let ManyTypeAdd:String = AddlblManyType.text!
         var SaveAdd:saveStyle = .Cold
             //AddlblSavePiker.text!
+
+        let TtManyAdd:Int = Int(ManyTxt)!
         let SaveTxt:String = AddlblSavePiker.text!
-        
-        let TtManyAdd:Int = (30 + ManyAdd)
+
         
         //시험용 배열 데이터 선언
         var _:Array<Store>
 
 
-        _ = Store(name: NameAdd, UpDate: infoDateAdd , DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd)
+        _ = Store(name: NameAdd, UpDate: infoDateAdd , DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  Call: CallAdd)
 
+
+        let addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  Call: CallAdd)
 
         if NameAdd == "" {
             alarmLbl.text = "내용을 입력해 주세요"
@@ -310,7 +313,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
                 
             }
             
-            addTemp.arrayList.append(Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd))
+            addTemp.arrayList.append(Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  Call: CallAdd))
         
             print("AddViewController - addtemp : StoreDataBase = \(addTemp.arrayList)")
             print("AddViewController - stockdatabase : \(StoreDatabase.arrayList)")

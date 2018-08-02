@@ -41,10 +41,13 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     var array03D7:[Store] = []
     
     func updateArraysFromModel() {
+
+        
         array00ToTrash = StoreDatabase.storesUntilDate(fromDays: -1, toDays: 1)
         array01Today = StoreDatabase.storesUntilDate(fromDays: 1, toDays: 3)
         array02D3 = StoreDatabase.storesUntilDate(fromDays: 3, toDays: 7)
         array03D7 = StoreDatabase.storesUntilDate(fromDays: 7, toDays: nil)
+    
         
     }
 
@@ -58,6 +61,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         location_table.tableHeaderView = searchbar
         location_table.estimatedSectionHeaderHeight = 50
         searchbar.delegate = self // searchbar 이벤트 처리
+        location_name_array.sameStoreMany()
         self.tableView.reloadData()
         super.viewDidLoad()
         
@@ -82,15 +86,17 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+
         super.viewDidAppear(animated)
         
         updateArraysFromModel()
         
-        searchfilterData0 = array00ToTrash
-        searchfilterData1 = array01Today
-        searchfilterData2 = array02D3
-        searchfilterData3 = array03D7
+        
+        
+        searchfilterData0 = array00ToTrash.sorted(by: {$0.DownDate < $1.DownDate })
+        searchfilterData1 = array01Today.sorted(by: {$0.DownDate < $1.DownDate })
+        searchfilterData2 = array02D3.sorted(by: {$0.DownDate < $1.DownDate })
+        searchfilterData3 = array03D7.sorted(by: {$0.DownDate < $1.DownDate })
         
         self.tableView.reloadData()
 
@@ -203,22 +209,25 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         
     }
     
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var arrayStore:[Store]!
         
         if indexPath.section == 0 {
-            arrayStore =  searchfilterData0
+            arrayStore =  searchfilterData0//.sorted(by: {$0.DownDate > $1.DownDate })
         }
         else if indexPath.section == 1 {
-            arrayStore = searchfilterData1
+            arrayStore = searchfilterData1//.sorted(by: {$0.DownDate > $1.DownDate })
         }
         else if indexPath.section == 2 {
-            arrayStore =  searchfilterData2
+            arrayStore =  searchfilterData2//.sorted(by: {$0.DownDate > $1.DownDate })
         }
         else if indexPath.section == 3 {
-            arrayStore =  searchfilterData3
+            arrayStore =  searchfilterData3//.sorted(by: {$0.DownDate > $1.DownDate })
         }
         
+//        arrayStore.sorted(by: {$0.DownDate < $1.DownDate})
+        print("arrayStore sort : \(arrayStore)")
         let store = arrayStore[indexPath.row]
         
         let proccell:StoreChartCell_More = tableView.dequeueReusableCell(withIdentifier: "Cell2IngredientBig") as! StoreChartCell_More
@@ -264,7 +273,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     }
     
     
-    // 재고 삭제 코드
+    /** 재고 삭제 코드 */
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         
@@ -312,7 +321,8 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
             self.tableView.reloadData()
         }
     
-        print("after remove localdata = \(location_name_array.arrayList)")
+    print("after remove localdata = \(location_name_array.arrayList)")
+        location_name_array.sameStoreMany()
        self.tableView.reloadData()
 
     }
