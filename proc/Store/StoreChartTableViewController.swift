@@ -277,6 +277,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     /** 재고 삭제 코드 */
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
+        
 //
 //
 //        for i in 0..<storemodel.arraynumList.count{

@@ -259,8 +259,8 @@
                                 <color key="textColor" red="0.97470704659999996" green="0.21506032850000001" blue="0.32833832429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9E6-Z4-Vm6">
-                                <rect key="frame" x="31" y="117" width="102" height="101"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wG2" translatesAutoresizingMaskIntoConstraints="NO" id="9E6-Z4-Vm6">
+                                <rect key="frame" x="23" y="109" width="110" height="109"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3g-fu-g5L">
@@ -546,6 +546,7 @@
         <image name="closeBtn" width="143" height="140"/>
         <image name="editUI-1" width="1562" height="2779"/>
         <image name="uiBack" width="1562" height="2779"/>
+        <image name="wG2" width="209" height="244"/>
         <image name="카테고리2" width="21" height="28"/>
     </resources>
 </document>
