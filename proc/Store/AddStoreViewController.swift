@@ -235,16 +235,16 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         let SaveAdd:saveStyle = .Cold
             //AddlblSavePiker.text!
 
-        let TtManyAdd:Int = (30 + ManyAdd)
+        let TtManyAdd:Int = ManyAdd
         
         //시험용 배열 데이터 선언
         var _:Array<Store>
 
     
 
-        _ = Store(name: NameAdd, UpDate: infoDateAdd , DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd)
+        _ = Store(name: NameAdd, UpDate: infoDateAdd , DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  Call: CallAdd)
 
-        let addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  TotalMany: TtManyAdd, Call: CallAdd)
+        let addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  Call: CallAdd)
     
 
             //        addArrayList.append(addStock)

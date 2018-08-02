@@ -2808,7 +2808,7 @@
         <scene sceneID="2sg-iB-u2I">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wf0-aB-1WJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="재고목록" image="카테고리2" id="t4W-wT-bXx"/>
+                    <tabBarItem key="tabBarItem" title="재고목록" image="catagory" id="t4W-wT-bXx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c1p-bF-55B">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -2827,7 +2827,7 @@
         <scene sceneID="nxe-4G-S8B">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mhm-wK-eXx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="일정" image="메모2" id="bk1-bN-u7i"/>
+                    <tabBarItem key="tabBarItem" title="일정" image="memo" id="bk1-bN-u7i"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UL8-Qw-PRR">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -2846,10 +2846,12 @@
     <resources>
         <image name="3-1" width="152" height="155"/>
         <image name="calenderImg" width="650" height="558"/>
+        <image name="catagory" width="21" height="28"/>
         <image name="circle2" width="23" height="23"/>
         <image name="clipIcon" width="1600" height="1600"/>
         <image name="ice" width="1018" height="994"/>
         <image name="mainImg" width="377" height="479"/>
+        <image name="memo" width="27" height="26"/>
         <image name="pencil" width="900" height="899"/>
         <image name="tempImg" width="180" height="180"/>
         <image name="xImg" width="20" height="20"/>
