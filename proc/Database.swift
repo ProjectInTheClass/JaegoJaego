@@ -107,8 +107,9 @@ enum saveStyle : String {
 }
 
 // 재료 하나 정보
-class Store :Equatable //: NSObject, NSCoding
+class Store : Equatable
 {
+    
     // 인스턴스 소문자로 변환
     
     var name: String // 제품 이름
