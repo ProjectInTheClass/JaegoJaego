@@ -259,8 +259,8 @@
                                 <color key="textColor" red="0.97470704659999996" green="0.21506032850000001" blue="0.32833832429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9E6-Z4-Vm6">
-                                <rect key="frame" x="31" y="117" width="102" height="101"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wG2" translatesAutoresizingMaskIntoConstraints="NO" id="9E6-Z4-Vm6">
+                                <rect key="frame" x="23" y="109" width="110" height="109"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3g-fu-g5L">
@@ -302,7 +302,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Sp-ZV-rWF">
-                                <rect key="frame" x="334" y="96" width="18" height="17"/>
+                                <rect key="frame" x="325" y="97" width="25" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="closeBtn"/>
                                 <connections>
@@ -366,10 +366,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graph_1-1" translatesAutoresizingMaskIntoConstraints="NO" id="cTp-hf-Rnp">
-                                            <rect key="frame" x="16" y="22" width="65" height="61"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Cw-Ff-uY8">
                                             <rect key="frame" x="121" y="69" width="65" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -429,7 +425,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXY-Qj-828">
                                             <rect key="frame" x="305" y="30" width="51" height="51"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="callIcon"/>
+                                            <state key="normal" image="callingIcon-1"/>
                                             <connections>
                                                 <action selector="phoenCallBtn:" destination="lCz-0o-ZEK" eventType="touchUpInside" id="5bH-BC-7Ml"/>
                                             </connections>
@@ -447,6 +443,10 @@
                                             <color key="textColor" red="0.97470704659999996" green="0.21506032850000001" blue="0.32833832429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="cTp-hf-Rnp">
+                                            <rect key="frame" x="13" y="21" width="73" height="68"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -538,14 +538,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1" width="209" height="244"/>
         <image name="AddBtn" width="623" height="169"/>
         <image name="AddJaego" width="1562" height="2779"/>
         <image name="addBtn-1" width="223" height="223"/>
-        <image name="callIcon" width="227" height="228"/>
+        <image name="callingIcon-1" width="248" height="257"/>
         <image name="closeBtn" width="143" height="140"/>
         <image name="editUI-1" width="1562" height="2779"/>
-        <image name="graph_1-1" width="430" height="452"/>
         <image name="uiBack" width="1562" height="2779"/>
+        <image name="wG2" width="209" height="244"/>
         <image name="카테고리2" width="21" height="28"/>
     </resources>
 </document>

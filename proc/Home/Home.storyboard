@@ -95,10 +95,6 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graph_4-1" translatesAutoresizingMaskIntoConstraints="NO" id="V0G-I5-gVU">
-                                            <rect key="frame" x="20" y="8" width="41" height="40"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="보관방법" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qw6-0h-GPW">
                                             <rect key="frame" x="169" y="18" width="64" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -106,6 +102,10 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wG5" translatesAutoresizingMaskIntoConstraints="NO" id="V0G-I5-gVU">
+                                            <rect key="frame" x="18" y="5" width="42" height="41"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -189,8 +189,8 @@
     <resources>
         <image name="Home-1" width="1562" height="2779"/>
         <image name="gaegom_skyblue" width="605" height="596"/>
-        <image name="graph_4-1" width="430" height="452"/>
         <image name="home" width="28" height="25"/>
         <image name="schedulestaffimg" width="24" height="123"/>
+        <image name="wG5" width="209" height="194"/>
     </resources>
 </document>
