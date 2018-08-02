@@ -429,6 +429,8 @@ class StoreModel
         
         stock = Store(name:"새우", UpDate:"18.8.01", DownDate:"18.08.05", many: 20, manytype:"통", saveStyle: .Cold, Call:"010-7730-7152")
         self.arrayList.append(stock)
+        stock = Store(name:"새우", UpDate:"18.8.01", DownDate:"18.08.05", many: 5, manytype:"통", saveStyle: .Cold, Call:"010-7730-7152")
+        self.arrayList.append(stock)
         
 
     }
@@ -458,10 +460,27 @@ class StoreModel
     }
     
     /**
-     수량 / 전체수량 = 1/4 인 목록 추출기
+     수량 / 전체수량 = 0.75/1 ~ 1/1 인 목록 추출기
      */
-    func showLessManyItem() {
+    func showLessManyItem() -> [Store] {
+        var arrayLessItem = [Store]()
+        var temp :Double
         
+        sameStoreMany()
+        
+        for item in self.arrayList {
+            temp = Double(item.many) / Double(item.TotalMany)
+            print("many : \(item.many), totalmany : \(item.TotalMany)")
+//
+//            if temp <= 0.25 {
+//                 arrayLessItem.append(item)
+//            }
+            
+            if temp >= 0.75 && temp <= 1 {
+                arrayLessItem.append(item)
+            }
+        }
+        return arrayLessItem
     }
     
     
