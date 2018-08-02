@@ -227,7 +227,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     @IBAction func phoenCallBtn(_ sender: UIButton) {
         let cell = sender.superview?.superview as! UITableViewCell
         let indexPath = self.tableView.indexPath(for: cell)
-        
+    
         
         if location_name_array.arrayList[(indexPath?.row)!].Call != nil {
             let temp = location_name_array.arrayList[(indexPath?.row)!].Call!
