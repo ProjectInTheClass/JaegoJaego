@@ -241,6 +241,7 @@ class Store :Equatable //: NSObject, NSCoding
     var many: Int = 0// 수량
     var manytype :String // 단위 = degree..
     var saveStyle: saveStyle // 보관 상태
+    var saveImage: String? //보관상태 이미지
     
     var Image: String? // 그래프 이미지
     var TotalMany:Int = 0 // 전체 수량
@@ -386,7 +387,7 @@ class StoreModel
     var selectedIndex:Int = 0
 
     var arrayList:[Store] = []
-    
+   
     var filePath:String { get {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory , .userDomainMask, true).first!
         return documentDirectory + fileName
