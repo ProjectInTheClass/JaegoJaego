@@ -12,10 +12,10 @@ var stockDetail = StoreDatabase
 
 class StockDetailViewController: UIViewController {
     
-//    var temp = location_name_array.arrayList[(indexPath?.row)!].many!
-//    var temp2 = location_name_array.arrayList[(indexPath?.row)!].!
+    //    var temp = location_name_array.arrayList[(indexPath?.row)!].many!
+    //    var temp2 = location_name_array.arrayList[(indexPath?.row)!].!
     
-
+    
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var save: UILabel!
     @IBOutlet weak var day1: UILabel!
@@ -24,7 +24,7 @@ class StockDetailViewController: UIViewController {
     @IBOutlet weak var totalnum: UILabel!
     
     @IBOutlet weak var num: UITextField!
-  
+    
     @IBOutlet weak var completebutton: UIButton!
     
     
@@ -35,41 +35,48 @@ class StockDetailViewController: UIViewController {
     
     @IBAction func Completebut(_ sender: Any) {
         let store = stockDetail.arrayList[stockDetail.selectedIndex]
-// proc.Store = (Store)
-//        store.many = store.many - Int(self.num.text!)!
+        // proc.Store = (Store)
+        //        store.many = store.many - Int(self.num.text!)!
         
         // 해당 재고 수량을 넘어선 개수를 입력하면 숫자가 바뀌지 못하게 막음
-        if store.many - Int(self.num.text!)! <= 0 {
-            if store.many - Int(self.num.text!)! == 0 {
+        if (store.many - Int(self.num.text!)! <= 0) {
+           
+            if (store.many - Int(self.num.text!)! == 0) {
                 stockDetail.arrayList.remove(at: stockDetail.arrayList.index(of: store)!)
             }
+            
             print("Not allowed")
         }
-        else {
-           store.many = store.many - Int(self.num.text!)!
-         //   stockDetail.arrayList.remove(at: store)
-//            let store = searchfilterData0[indexPath.row]
-//            let indexofA = location_name_array.arrayList.index(of: store)
-//
-//            //print("removing data0 = \(searchfilterData0)")
-//            searchfilterData0.remove(at: indexPath.row)
-//            location_name_array.arrayList.remove(at: indexofA!)
-//            tableView.deleteRows(at: [indexPath], with: .automatic)
-//            self.tableView.reloadData()
-        }
-       stockDetail.sameStoreMany()
-        
-        self.navigationController?.popViewController(animated: true)
-        
-//        if coredata.arrayList[(indexPath?.row)!].many != nil {
-//            var temp = location_name_array.arrayList[(indexPath?.row)!].Call!
-//            print("temp = \(temp)")
-//
-//
-////    }
-//        if coredata.arrayList[IndexPath].many != nil {
-//            var temp = coredata.arrayList[(IndexPath)]
+            
+//        else if store.many - Int(self.num.text!)! == 0 {
+//            stockDetail.arrayList.remove(at: stockDetail.arrayList.index(of: store)!)
 //        }
+//
+        else {
+            store.many = store.many - Int(self.num.text!)!
+            //   stockDetail.arrayList.remove(at: store)
+            //            let store = searchfilterData0[indexPath.row]
+            //            let indexofA = location_name_array.arrayList.index(of: store)
+            //
+            //            //print("removing data0 = \(searchfilterData0)")
+            //            searchfilterData0.remove(at: indexPath.row)
+            //            location_name_array.arrayList.remove(at: indexofA!)
+            //            tableView.deleteRows(at: [indexPath], with: .automatic)
+            //            self.tableView.reloadData()
+        }
+        stockDetail.sameStoreMany()
+        
+        self.dismiss(animated: true, completion: nil)
+        
+        //        if coredata.arrayList[(indexPath?.row)!].many != nil {
+        //            var temp = location_name_array.arrayList[(indexPath?.row)!].Call!
+        //            print("temp = \(temp)")
+        //
+        //
+        ////    }
+        //        if coredata.arrayList[IndexPath].many != nil {
+        //            var temp = coredata.arrayList[(IndexPath)]
+        //        }
         
     }
     
@@ -82,30 +89,30 @@ class StockDetailViewController: UIViewController {
         name.text = infoStock.name
         day1.text = infoStock.UpDate
         day2.text = infoStock.DownDate
-    
+        
         
         //num.text = String(infoStock.many)
         totalnum.text = String(infoStock.TotalMany)
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 //

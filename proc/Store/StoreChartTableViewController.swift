@@ -63,13 +63,13 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         var store:Store?
         
         switch indexPath.section {
-        case 0:
-            store = self.searchfilterData0[indexPath.row]
         case 1:
-            store = self.searchfilterData1[indexPath.row]
+            store = self.searchfilterData0[indexPath.row]
         case 2:
-            store = self.searchfilterData2[indexPath.row]
+            store = self.searchfilterData1[indexPath.row]
         case 3:
+            store = self.searchfilterData2[indexPath.row]
+        case 4:
             store = self.searchfilterData3[indexPath.row]
         default:
             store = nil
@@ -290,7 +290,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
 //                self.tableView.reloadData()
 //            }
 //        }
-        if indexPath.section == 0 {
+        if indexPath.section == 1 {
             
             let store = searchfilterData0[indexPath.row]
             let indexofA = location_name_array.arrayList.index(of: store)
@@ -300,7 +300,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
             tableView.deleteRows(at: [indexPath], with: .automatic)
             self.tableView.reloadData()
         }
-        else if indexPath.section == 1 {
+        else if indexPath.section == 2 {
             let store = searchfilterData1[indexPath.row]
             let indexofA = location_name_array.arrayList.index(of: store)
             
@@ -309,7 +309,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
             tableView.deleteRows(at: [indexPath], with: .automatic)
             self.tableView.reloadData()
         }
-        else if indexPath.section == 2 {
+        else if indexPath.section == 3 {
 
             let store = searchfilterData2[indexPath.row]
             let indexofA = location_name_array.arrayList.index(of: store)
@@ -319,7 +319,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
             tableView.deleteRows(at: [indexPath], with: .automatic)
             self.tableView.reloadData()
         }
-        else if indexPath.section == 3 {
+        else if indexPath.section == 4 {
             
             let store = searchfilterData3[indexPath.row]
             let indexofA = location_name_array.arrayList.index(of: store)

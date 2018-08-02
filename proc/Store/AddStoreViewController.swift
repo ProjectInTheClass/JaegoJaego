@@ -314,13 +314,10 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
             }
             
             addTemp.arrayList.append(Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  Call: CallAdd))
-<<<<<<< HEAD
             addTemp.arraynumList.append(ManyAdd)
         
             print("AddViewController - addtemp : StoreDataBase = \(addTemp.arrayList)")
             print("AddViewController - stockdatabase : \(StoreDatabase.arrayList)")
-=======
->>>>>>> d4365a824480b9d34b3433bbef180104200b9485
             self.dismiss(animated: true, completion: nil)
             
         }
