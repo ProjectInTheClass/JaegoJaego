@@ -85,8 +85,9 @@ class ScheduleModel {
         let stock4 =  Schedule(memotitle: "예약 7팀",memotime: "11:00 am", memodates:"20180809")
         let stock5 =  Schedule(memotitle: "예약 4팀",memotime: "05:00 pm", memodates:"20180822")
         let stock6 =  Schedule(memotitle: "예약 5팀",memotime: "09:30 am", memodates:"20180814")
-        self.ScheduleArray += [stock1, stock2, stock3, stock4, stock1, stock2, stock5, stock6]
-        self.dateArray += [stock1.memodates,stock2.memodates,stock3.memodates,stock4.memodates,stock5.memodates,stock6.memodates,stock1.memodates,stock2.memodates]
+        let stock7 =  Schedule(memotitle: "예약 2팀",memotime: "02:20 pm", memodates:"20180802")
+        self.ScheduleArray += [stock1, stock2, stock3, stock4, stock5, stock6,stock7]
+        self.dateArray += [stock1.memodates,stock2.memodates,stock3.memodates,stock4.memodates,stock5.memodates,stock6.memodates,stock7.memodates]
     }
     
 }

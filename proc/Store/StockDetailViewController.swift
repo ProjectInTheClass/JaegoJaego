@@ -17,7 +17,7 @@ class StockDetailViewController: UIViewController {
     
     
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var save: UILabel!
+    @IBOutlet weak var save: UIImageView!
     @IBOutlet weak var day1: UILabel!
     @IBOutlet weak var day2: UILabel!
     @IBOutlet weak var graimage: UIImageView!
@@ -89,7 +89,7 @@ class StockDetailViewController: UIViewController {
         name.text = infoStock.name
         day1.text = infoStock.UpDate
         day2.text = infoStock.DownDate
-        
+        save.image = UIImage(named: infoStock.saveStyle.rawValue)
         
         //num.text = String(infoStock.many)
         totalnum.text = String(infoStock.TotalMany)

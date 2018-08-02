@@ -60,19 +60,6 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
         return 0
     }
     
-//
-//    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyyMMdd"
-//        dateFormatter.locale = Locale.init(identifier: "")
-//
-//        for dateStr in dates {
-//            if (dateFormatter.string(from: date) == dateStr) {
-//                return 1
-//            }
-//        }
-//        return 0
-//    }
     
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
@@ -80,7 +67,7 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
         selectedDate = formatter.string(from:date as Date)
        
         filteredData = tablecell.ScheduleArray.filter{ $0.memodates == selectedDate }        // 달력과 같은 날짜를 filteredData 에 넣어주기
-//        datesWithEvent = tablecell.ScheduleArray.split(separator: memodate)
+
         table.reloadData()
 
     }

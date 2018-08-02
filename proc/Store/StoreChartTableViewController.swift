@@ -258,7 +258,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
 
         // cell
         proccell.labelName.text = store.name
-        proccell.labelSaveStyle.text = store.saveStyle.rawValue
+        proccell.labelSaveStyle.image = UIImage(named: store.saveStyle.rawValue)
         proccell.labelUpDate.text =  store.UpDate
         proccell.labelDownDate.text = store.DownDate
         proccell.labelMany.text = String(store.many)
