@@ -86,13 +86,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     }
     
     override func viewDidAppear(_ animated: Bool) {
-    
-        
-//        searchfilterData0 = array00ToTrash.sorted(by: {$0.DownDate > $1.DownDate })
-//        searchfilterData1 = array01Today.sorted(by: {$0.DownDate > $1.DownDate })
-//        searchfilterData2 = array02D3.sorted(by: {$0.DownDate > $1.DownDate })
-//        searchfilterData3 = array03D7.sorted(by: {$0.DownDate > $1.DownDate })
-//
+
         super.viewDidAppear(animated)
         
         updateArraysFromModel()
@@ -279,7 +273,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     }
     
     
-    // 재고 삭제 코드
+    /** 재고 삭제 코드 */
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         
@@ -327,7 +321,8 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
             self.tableView.reloadData()
         }
     
-        print("after remove localdata = \(location_name_array.arrayList)")
+    print("after remove localdata = \(location_name_array.arrayList)")
+        location_name_array.sameStoreMany()
        self.tableView.reloadData()
 
     }
