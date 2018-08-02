@@ -21,15 +21,16 @@ class StockDetailViewController: UIViewController {
     @IBOutlet weak var day1: UILabel!
     @IBOutlet weak var day2: UILabel!
     @IBOutlet weak var graimage: UIImageView!
+    @IBOutlet weak var totalnum: UILabel!
     
     @IBOutlet weak var num: UITextField!
-    @IBOutlet weak var totalnum: UITextField!
+  
     @IBOutlet weak var completebutton: UIButton!
    
     @IBAction func Completebut(_ sender: Any) {
         let store = stockDetail.arrayList[stockDetail.selectedIndex]
         
-        store.many = Int(self.num.text!)!
+        store.many = store.many - Int(self.num.text!)!
         
         stockDetail.sameStoreMany()
         
@@ -57,7 +58,7 @@ class StockDetailViewController: UIViewController {
         day1.text = infoStock.UpDate
         day2.text = infoStock.DownDate
         
-        num.text = String(infoStock.many)
+        //num.text = String(infoStock.many)
         totalnum.text = String(infoStock.TotalMany)
 
         // Do any additional setup after loading the view.
