@@ -290,16 +290,16 @@ class Store :Equatable //: NSObject, NSCoding
         if self.TotalMany - self.many >= 0 {
             
             if temp > 0 && temp <= 0.25 {
-                self.Image = "graph_red"
+                self.Image = "graph_1-1"
             }
             else if temp > 0.25 && temp <= 0.5 {
-                self.Image = "graph_orange"
+                self.Image = "graph_2-1"
             }
             else if temp > 0.5 && temp <= 0.75 {
-                self.Image = "graph_green"
+                self.Image = "graph_3-1"
             }
             else if temp > 0.75 && temp <= 1 {
-                self.Image = "graph_blue"
+                self.Image = "graph_4-1"
             }
         }
         else {
