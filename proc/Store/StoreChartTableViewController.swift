@@ -130,17 +130,30 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         
         switch section {
         case 0 :
+            if searchfilterData0.count == 0 {
+                return "폐기 물품"
+            }
             return "폐기 물품  -  \(searchfilterData0.count) 개"
         case 1 :
+            if searchfilterData1.count == 0 {
+                return "당일 마감 물품"
+            }
             return "당일 마감  -  \(searchfilterData1.count) 개"
         case 2 :
+            if searchfilterData2.count == 0 {
+                return "3일 이상 물품"
+            }
             return "3일 이상  -  \(searchfilterData2.count) 개"
         default:
+            if searchfilterData3.count == 0 {
+                return "7일 이상 물품"
+            }
             return "7일 이상  -  \(searchfilterData3.count) 개 "
         }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
+        
         return 4
     }
 
