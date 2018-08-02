@@ -30,7 +30,6 @@ class HomeStoreTableViewController : UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("homeStoreFilterByMany = \(homeStoreFilterByMany) \n")
         self.tableView.reloadData()
     }
     
@@ -38,9 +37,7 @@ class HomeStoreTableViewController : UITableViewController {
      부족한 수량을 보여주기
      */
     func showLowStoresAtHome() {
-       
         homeStoreFilterByMany = homeCallStore.showLessManyItem()
-        print("show : \(homeCallStore.arrayList)")
     }
     
     
@@ -60,13 +57,4 @@ class HomeStoreTableViewController : UITableViewController {
         return HomeStorecell
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let cell = sender as! UITableViewCell
-//        let indexPath:IndexPath! = self.tableView.indexPath(for: cell)
-//
-//        homeCallStore.selectedIndex = indexPath.row
-//        
-//        let segueHome = segue.destination as! HomeStoreTableViewController
-//        segueHome.homeCallStore.arrayList = self.homeCallStore
-//    }
 }

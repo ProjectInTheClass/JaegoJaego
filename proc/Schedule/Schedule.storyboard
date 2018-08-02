@@ -66,36 +66,40 @@
                                 </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="49" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eOO-EQ-YLz">
-                                <rect key="frame" x="25" y="403" width="327" height="187"/>
+                                <rect key="frame" x="16" y="391" width="349" height="207"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.96042591330000004" green="0.9725134969" blue="0.97646707300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="littleScheduleCell" rowHeight="49" id="chL-Np-FCS" customClass="ScheduleLittleTableCell" customModule="proc" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="327" height="49"/>
+                                        <rect key="frame" x="0.0" y="28" width="349" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="chL-Np-FCS" id="TIa-2o-iir">
-                                            <rect key="frame" x="0.0" y="0.0" width="327" height="48.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="48.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="03:10 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E13-aG-M09">
-                                                    <rect key="frame" x="8" y="6" width="75" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="메모" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4NT-fB-FXl">
-                                                    <rect key="frame" x="98" y="8" width="224" height="32"/>
+                                                    <rect key="frame" x="131" y="8" width="208" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="schedulestaffimg" translatesAutoresizingMaskIntoConstraints="NO" id="gNE-d6-yjX">
-                                                    <rect key="frame" x="85" y="8" width="11" height="32"/>
+                                                    <rect key="frame" x="114" y="8" width="11" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gaegom_skyblue" translatesAutoresizingMaskIntoConstraints="NO" id="njx-a5-rt1">
+                                                    <rect key="frame" x="11" y="15" width="19" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="03:10 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E13-aG-M09">
+                                                    <rect key="frame" x="34" y="7" width="76" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -371,6 +375,7 @@
         <image name="addBtn-1" width="223" height="223"/>
         <image name="blueCircle" width="33" height="33"/>
         <image name="closeBtn" width="143" height="140"/>
+        <image name="gaegom_skyblue" width="605" height="596"/>
         <image name="greenCircle" width="33" height="33"/>
         <image name="memo" width="27" height="26"/>
         <image name="schedulestaffimg" width="24" height="123"/>

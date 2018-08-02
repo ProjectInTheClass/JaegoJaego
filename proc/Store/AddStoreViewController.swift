@@ -212,7 +212,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     */
     
   
-    // 화면 아무곳 누르면 키보드 내려감
+    //화면 아무곳 누르면 키보드 내려감
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         view.endEditing(true)
     }
@@ -224,7 +224,9 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     }
     
 
-
+    /**
+     닫기 버튼
+     */
     @IBAction func closeBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         
@@ -233,7 +235,9 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     
     
     
-//버튼 클릭했을 때 함수
+    /**
+     완료 버튼 클릭했을 때
+     */
     @IBAction func saveAddInfoBtn(_ sender: AnyObject) {
         
         // 오류 처리문 추가해야함
@@ -242,23 +246,19 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         
         let NameAdd:String = AddlblName.text!
         var ManyAdd:Int = 10
-        var ManyTxt:String = AddlblMany.text!
+        let ManyTxt:String = AddlblMany.text!
         var DateAdd:String = AddldlDatePiker2.text! // 유통기한
         let CallAdd:String = AddlblCall.text!
         let ManyTypeAdd:String = AddlblManyType.text!
         var SaveAdd:saveStyle = .Cold
-            //AddlblSavePiker.text!
 
-        let TtManyAdd:Int = Int(ManyTxt)!
+        let _:Int = Int(ManyTxt)!
         let SaveTxt:String = AddlblSavePiker.text!
-
         
         //시험용 배열 데이터 선언
         var _:Array<Store>
 
-
         _ = Store(name: NameAdd, UpDate: infoDateAdd , DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  Call: CallAdd)
-
 
         let addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  Call: CallAdd)
 
@@ -314,10 +314,13 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
             }
             
             addTemp.arrayList.append(Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  Call: CallAdd))
+<<<<<<< HEAD
             addTemp.arraynumList.append(ManyAdd)
         
             print("AddViewController - addtemp : StoreDataBase = \(addTemp.arrayList)")
             print("AddViewController - stockdatabase : \(StoreDatabase.arrayList)")
+=======
+>>>>>>> d4365a824480b9d34b3433bbef180104200b9485
             self.dismiss(animated: true, completion: nil)
             
         }
