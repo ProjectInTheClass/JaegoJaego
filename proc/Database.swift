@@ -377,27 +377,27 @@ class StoreModel
 //        }
         
         var stock = Store(name:"새우", UpDate:"18.8.01", DownDate:"18.08.06", many: 20, manytype:"통", saveStyle: .Cold, TotalMany:80, Call:"010-7730-7152")
-        stock.Image = "그래프(빨)"
+        stock.Image = "graph_red"
         self.arrayList.append(stock)
         
         stock = Store(name:"레몬",  UpDate:"18.7.31", DownDate:"18.08.3", many: 5, manytype: "개",saveStyle: .Cold, TotalMany:20, Call:"010-4444-4444")
-        stock.Image = "그래프(주황)"
+        stock.Image = "graph_orange"
         self.arrayList.append(stock)
         
         stock = Store(name:"아보카도",  UpDate:"18.7.30", DownDate:"18.08.4",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332" )
-        stock.Image = "그래프(초록)"
+        stock.Image = "graph_green"
         self.arrayList.append(stock)
         
         stock = Store(name:"아보카도",  UpDate:"18.7.30", DownDate:"18.9.4",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332" )
-        stock.Image = "그래프(초록)"
+        stock.Image = "graph_green"
         self.arrayList.append(stock)
         
         stock = Store(name:"아보카도",  UpDate:"18.7.30", DownDate:"18.10.4",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332" )
-        stock.Image = "그래프(초록)"
+        stock.Image = "graph_green"
         self.arrayList.append(stock)
         
         stock = Store(name:"아보카도",  UpDate:"18.7.20", DownDate:"18.7.30",many: 15, manytype:"개", saveStyle: .Fresh, TotalMany:30, Call:"010-3333-2332" )
-        stock.Image = "그래프(초록)"
+        stock.Image = "graph_green"
         self.arrayList.append(stock)
     }
     
@@ -449,20 +449,20 @@ class StoreModel
         // 전체수량은 수량보다 작으면 안됨
         if stock.TotalMany - stock.many > 0 {
             if temp > 0 && temp <= 0.25 {
-                stock.Image = "그래프(빨)"
+                stock.Image = "graph_red"
             }
             else if temp > 0.25 && temp <= 0.5 {
-                stock.Image = "그래프(주황)"
+                stock.Image = "graph_orange"
             }
             else if temp > 0.5 && temp <= 0.75 {
-                stock.Image = "그래프(초록)"
+                stock.Image = "graph_green"
             }
             else if temp > 0.75 && temp <= 1 {
-                stock.Image = "그래프(파랑)"
+                stock.Image = "graph_blue"
             }
         }
         else {
-            stock.Image = "그래프(0%)"
+            stock.Image = "graph_0"
         }
         
         return manyfilter
