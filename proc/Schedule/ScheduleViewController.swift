@@ -63,8 +63,7 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
     // 삭제
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
-        var temp = tablecell.ScheduleArray[indexPath.row]
-        
+        let temp = tablecell.ScheduleArray[indexPath.row]
         let indexofA = tablecell.ScheduleArray.index(of: temp)
         
         filteredData.remove(at: indexPath.row)
@@ -91,8 +90,6 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
         selectedDate = dateformatting()
         filteredData = tablecell.ScheduleArray.filter{ $0.memodates == selectedDate }
         
-
-        //print("viewDidAppear filteredData = \(filteredData)")
         self.table.reloadData()
         super.viewDidAppear(animated)
     }

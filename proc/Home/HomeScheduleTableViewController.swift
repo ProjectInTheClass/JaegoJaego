@@ -40,24 +40,13 @@ class HomeScheduleTableViewController : UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
         let homeScheduleCell:HomeScheduleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "HScheduleCell") as! HomeScheduleTableViewCell
-       print("filterdata = \(filterdata) \n")
+
         homeScheduleCell.HomeScheduleTitle.text = filterdata[indexPath.row].memotitle
         homeScheduleCell.HomeScheduleMemo.text = filterdata[indexPath.row].memotime
         // 날짜는 당일로 들어가니 따로 넣지 않음
         
         return homeScheduleCell
 
-//        let homeScheduleInfo = self.homeCallSchedule.ScheduleArray[indexPath.row]
-//        let homeScheduleCell: HomeScheduleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "HScheduleCell") as! HomeScheduleTableViewCell
-//
-//
-//        homeScheduleCell.HomeScheduleTitle.text = homeScheduleInfo.memotitle
-//        homeScheduleCell.HomeScheduleMemo.text = homeScheduleInfo.memodates
-        
-        //homeScheduleCell.HomeScheduleCount.text = homeScheduleInfo.dates
-        
-        
-        //return homeScheduleCell
     }
     
 }

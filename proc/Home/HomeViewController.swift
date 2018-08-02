@@ -8,7 +8,6 @@
     // 오늘의 날짜
     @IBOutlet weak var TodayDate :UILabel?
 
-
    
     func dateformatting() -> String{
         let formatter = DateFormatter()
@@ -23,10 +22,7 @@
     
     
     override func viewDidLoad() {
-
         TodayDate?.text! = dateformatting()
-
-    
     }
 }
 
