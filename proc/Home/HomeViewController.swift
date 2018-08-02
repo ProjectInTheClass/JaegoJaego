@@ -39,44 +39,44 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var dayBut7: UIButton!
     
 
-    @IBAction func button(_ sender: UIButton) {
-        switch sender.tag {
-        case 0:
-            tdate = HomeDateModel.todayDateInfo1()
-        case 1:
-            tdate = HomeDateModel.todayDateInfo2()
-        case 2:
-            tdate = HomeDateModel.todayDateInfo3()
-        case 3:
-            tdate = HomeDateModel.dateInfo()
-        case 4:
-            tdate = HomeDateModel.todayDateInfo5()
-        case 5:
-            tdate = HomeDateModel.todayDateInfo6()
-        case 6:
-            tdate = HomeDateModel.todayDateInfo7()
-        default:
-            print("!")
-        }
-        performSegue(withIdentifier: "buttonevent", sender: sender)
-    }
-
-    
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-
-        //let cell = sender as! UITableViewCell
-        //        let indexPath:IndexPath! = self.tableView.indexPath(for: cell)
-        //
-        //        self.ThrowArrayModel.selectedIndex = indexPath.row
-        //
-        let view = segue.destination as! HomeScheduleTableViewController
-        view.sameDate = tdate
-
-    }
-    
+//    @IBAction func button(_ sender: UIButton) {
+//        switch sender.tag {
+//        case 0:
+//            tdate = HomeDateModel.todayDateInfo1()
+//        case 1:
+//            tdate = HomeDateModel.todayDateInfo2()
+//        case 2:
+//            tdate = HomeDateModel.todayDateInfo3()
+//        case 3:
+//            tdate = HomeDateModel.dateInfo()
+//        case 4:
+//            tdate = HomeDateModel.todayDateInfo5()
+//        case 5:
+//            tdate = HomeDateModel.todayDateInfo6()
+//        case 6:
+//            tdate = HomeDateModel.todayDateInfo7()
+//        default:
+//            print("!")
+//        }
+//        performSegue(withIdentifier: "buttonevent", sender: sender)
+//    }
+//
+//    
+//    
+//    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//
+//        //let cell = sender as! UITableViewCell
+//        //        let indexPath:IndexPath! = self.tableView.indexPath(for: cell)
+//        //
+//        //        self.ThrowArrayModel.selectedIndex = indexPath.row
+//        //
+//        let view = segue.destination as! HomeScheduleTableViewController
+//        view.sameDate = tdate
+//
+//    }
+//    
     
     
     override func viewDidLoad() {

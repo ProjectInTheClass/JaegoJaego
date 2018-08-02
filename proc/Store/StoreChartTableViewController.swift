@@ -43,10 +43,13 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     var array03D7:[Store] = []
     
     func updateArraysFromModel() {
+
+        
         array00ToTrash = StoreDatabase.storesUntilDate(fromDays: -1, toDays: 1)
         array01Today = StoreDatabase.storesUntilDate(fromDays: 1, toDays: 3)
         array02D3 = StoreDatabase.storesUntilDate(fromDays: 3, toDays: 7)
         array03D7 = StoreDatabase.storesUntilDate(fromDays: 7, toDays: nil)
+    
         
     }
     
@@ -101,6 +104,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         location_table.tableHeaderView = searchbar
         location_table.estimatedSectionHeaderHeight = 50
         searchbar.delegate = self // searchbar 이벤트 처리
+        location_name_array.sameStoreMany()
         self.tableView.reloadData()
         super.viewDidLoad()
         
@@ -125,15 +129,23 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     }
     
     override func viewDidAppear(_ animated: Bool) {
+    
         
+//        searchfilterData0 = array00ToTrash.sorted(by: {$0.DownDate > $1.DownDate })
+//        searchfilterData1 = array01Today.sorted(by: {$0.DownDate > $1.DownDate })
+//        searchfilterData2 = array02D3.sorted(by: {$0.DownDate > $1.DownDate })
+//        searchfilterData3 = array03D7.sorted(by: {$0.DownDate > $1.DownDate })
+//
         super.viewDidAppear(animated)
         
         updateArraysFromModel()
         
-        searchfilterData0 = array00ToTrash
-        searchfilterData1 = array01Today
-        searchfilterData2 = array02D3
-        searchfilterData3 = array03D7
+        
+        
+        searchfilterData0 = array00ToTrash.sorted(by: {$0.DownDate < $1.DownDate })
+        searchfilterData1 = array01Today.sorted(by: {$0.DownDate < $1.DownDate })
+        searchfilterData2 = array02D3.sorted(by: {$0.DownDate < $1.DownDate })
+        searchfilterData3 = array03D7.sorted(by: {$0.DownDate < $1.DownDate })
         
         self.tableView.reloadData()
 
@@ -173,17 +185,30 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         
         switch section {
         case 0 :
+            if searchfilterData0.count == 0 {
+                return "폐기 물품"
+            }
             return "폐기 물품  -  \(searchfilterData0.count) 개"
         case 1 :
+            if searchfilterData1.count == 0 {
+                return "당일 마감 물품"
+            }
             return "당일 마감  -  \(searchfilterData1.count) 개"
         case 2 :
+            if searchfilterData2.count == 0 {
+                return "3일 이상 물품"
+            }
             return "3일 이상  -  \(searchfilterData2.count) 개"
         default:
+            if searchfilterData3.count == 0 {
+                return "7일 이상 물품"
+            }
             return "7일 이상  -  \(searchfilterData3.count) 개 "
         }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
+        
         return 4
     }
 
@@ -233,22 +258,25 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         
     }
     
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var arrayStore:[Store]!
         
         if indexPath.section == 0 {
-            arrayStore =  searchfilterData0
+            arrayStore =  searchfilterData0//.sorted(by: {$0.DownDate > $1.DownDate })
         }
         else if indexPath.section == 1 {
-            arrayStore = searchfilterData1
+            arrayStore = searchfilterData1//.sorted(by: {$0.DownDate > $1.DownDate })
         }
         else if indexPath.section == 2 {
-            arrayStore =  searchfilterData2
+            arrayStore =  searchfilterData2//.sorted(by: {$0.DownDate > $1.DownDate })
         }
         else if indexPath.section == 3 {
-            arrayStore =  searchfilterData3
+            arrayStore =  searchfilterData3//.sorted(by: {$0.DownDate > $1.DownDate })
         }
         
+//        arrayStore.sorted(by: {$0.DownDate < $1.DownDate})
+        print("arrayStore sort : \(arrayStore)")
         let store = arrayStore[indexPath.row]
         
         let proccell:StoreChartCell_More = tableView.dequeueReusableCell(withIdentifier: "Cell2IngredientBig") as! StoreChartCell_More

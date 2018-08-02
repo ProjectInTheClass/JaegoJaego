@@ -29,7 +29,7 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
     func dateformatting() -> String{
         let formatter = DateFormatter()
         let formatterdate = Date()
-        formatter.dateFormat = "yyyy - MM - dd"
+        formatter.dateFormat = "yy.MM.dd"
         
         let todayDate = formatter.string(from: formatterdate)
         return todayDate
@@ -176,7 +176,7 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
     
     @IBAction func complete(_ sender: AnyObject) {
         
-        let DateAdd:String = pickerrealdate //AddldlDatePiker.text!
+        var DateAdd:String = pickerrealdate //AddldlDatePiker.text!
         let TimeAdd:String = pickerTimerealdate
 
         
@@ -196,7 +196,7 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
             alarm2.text = "  "
         }
         if( DateAdd == ""){
-            alarm3.text = "값이 없습니다"
+            DateAdd = dateformatting()
         }
         else{
             alarm3.text = "  "
