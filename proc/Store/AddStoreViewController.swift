@@ -314,6 +314,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
             }
             
             addTemp.arrayList.append(Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  Call: CallAdd))
+            addTemp.arraynumList.append(ManyAdd)
         
             print("AddViewController - addtemp : StoreDataBase = \(addTemp.arrayList)")
             print("AddViewController - stockdatabase : \(StoreDatabase.arrayList)")

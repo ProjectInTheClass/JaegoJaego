@@ -29,10 +29,29 @@ class StockDetailViewController: UIViewController {
    
     @IBAction func Completebut(_ sender: Any) {
         let store = stockDetail.arrayList[stockDetail.selectedIndex]
+// proc.Store = (Store)
+//        store.many = store.many - Int(self.num.text!)!
         
-        store.many = store.many - Int(self.num.text!)!
-        
-        stockDetail.sameStoreMany()
+        // 해당 재고 수량을 넘어선 개수를 입력하면 숫자가 바뀌지 못하게 막음
+        if store.many - Int(self.num.text!)! <= 0 {
+            if store.many - Int(self.num.text!)! == 0 {
+                stockDetail.arrayList.remove(at: stockDetail.arrayList.index(of: store)!)
+            }
+            print("Not allowed")
+        }
+        else {
+           store.many = store.many - Int(self.num.text!)!
+         //   stockDetail.arrayList.remove(at: store)
+//            let store = searchfilterData0[indexPath.row]
+//            let indexofA = location_name_array.arrayList.index(of: store)
+//
+//            //print("removing data0 = \(searchfilterData0)")
+//            searchfilterData0.remove(at: indexPath.row)
+//            location_name_array.arrayList.remove(at: indexofA!)
+//            tableView.deleteRows(at: [indexPath], with: .automatic)
+//            self.tableView.reloadData()
+        }
+       stockDetail.sameStoreMany()
         
         self.navigationController?.popViewController(animated: true)
         
@@ -57,6 +76,7 @@ class StockDetailViewController: UIViewController {
         name.text = infoStock.name
         day1.text = infoStock.UpDate
         day2.text = infoStock.DownDate
+    
         
         //num.text = String(infoStock.many)
         totalnum.text = String(infoStock.TotalMany)
