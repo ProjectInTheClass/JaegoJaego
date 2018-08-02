@@ -94,7 +94,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sqv-Oj-A4Q"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="홈" image="홈2" id="9Kt-Q7-bBT"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="home" id="9Kt-Q7-bBT"/>
                     <navigationItem key="navigationItem" title="Title" id="EvH-SW-cYi"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -228,7 +228,7 @@
     </scenes>
     <resources>
         <image name="graph_red" width="567" height="592"/>
+        <image name="home" width="28" height="25"/>
         <image name="home_back" width="1562" height="2779"/>
-        <image name="홈2" width="16" height="16"/>
     </resources>
 </document>
