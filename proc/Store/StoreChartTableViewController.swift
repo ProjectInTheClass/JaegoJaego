@@ -136,11 +136,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         searchfilterData1 = searchText.isEmpty ? array01Today : array01Today.filter{ $0.name.range(of: searchText) != nil}
         searchfilterData2 = searchText.isEmpty ? array02D3 : array02D3.filter{ $0.name.range(of: searchText) != nil}
         searchfilterData3 = searchText.isEmpty ? array03D7 : array03D7.filter{ $0.name.range(of: searchText) != nil}
-        
-        print("searchFilterData0 = \(searchfilterData0)")
-        print("searchFilterData1 = \(searchfilterData1)")
-        print("searchFilterData2 = \(searchfilterData2)")
-        print("searchFilterData3 = \(searchfilterData3)")
+
         location_table.reloadData() // 필터링한 데이터를 테이블뷰로 설정
     }
     
@@ -158,31 +154,33 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         
         switch section {
         case 0 :
+            return "전체수량  : \(location_name_array.arrayList.count) 개"
+        case 1 :
             if searchfilterData0.count == 0 {
                 return "폐기 물품"
             }
-            return "폐기 물품  -  \(searchfilterData0.count) / \(location_name_array.arrayList.count) 개"
-        case 1 :
+            return "폐기 물품  : \(searchfilterData0.count) 개"
+        case 2 :
             if searchfilterData1.count == 0 {
                 return "당일 마감 물품"
             }
-            return "당일 마감  -  \(searchfilterData1.count) / \(location_name_array.arrayList.count) 개"
-        case 2 :
+            return "당일 마감  : \(searchfilterData1.count) 개"
+        case 3 :
             if searchfilterData2.count == 0 {
                 return "3일 이상 물품"
             }
-            return "3일 이상  -  \(searchfilterData2.count) / \(location_name_array.arrayList.count) 개"
+            return "3일 이상  : \(searchfilterData2.count) 개"
         default:
             if searchfilterData3.count == 0 {
                 return "7일 이상 물품"
             }
-            return "7일 이상  -  \(searchfilterData3.count) / \(location_name_array.arrayList.count) 개 "
+            return "7일 이상  : \(searchfilterData3.count) 개 "
         }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 4
+        return 5
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -190,14 +188,18 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         var rValue = 0
         
         switch section {
-        case 0:
-            rValue =  self.searchfilterData0.count
+        case 0 :
+            rValue = 0
         case 1:
-            rValue =  self.searchfilterData1.count
+            rValue =  self.searchfilterData0.count
         case 2:
+            rValue =  self.searchfilterData1.count
+        case 3:
             rValue =  self.searchfilterData2.count
-        default:
+        case 4:
             rValue =  self.searchfilterData3.count
+        default:
+            rValue = 0
         }
         return rValue
     }
@@ -235,16 +237,16 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var arrayStore:[Store]!
         
-        if indexPath.section == 0 {
+        if indexPath.section == 1 {
             arrayStore =  searchfilterData0
         }
-        else if indexPath.section == 1 {
+        else if indexPath.section == 2 {
             arrayStore = searchfilterData1
         }
-        else if indexPath.section == 2 {
+        else if indexPath.section == 3 {
             arrayStore =  searchfilterData2
         }
-        else if indexPath.section == 3 {
+        else if indexPath.section == 4 {
             arrayStore =  searchfilterData3
         }
         
