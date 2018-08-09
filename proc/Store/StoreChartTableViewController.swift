@@ -145,6 +145,7 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchbar.text = ""
         searchbar.resignFirstResponder()
+        self.tableView.reloadData()
     }
   
     
@@ -154,26 +155,14 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         
         switch section {
         case 0 :
-            return "전체수량  : \(location_name_array.arrayList.count) 개"
+            return "전체 수량  : \(location_name_array.arrayList.count) 개"
         case 1 :
-            if searchfilterData0.count == 0 {
-                return "폐기 물품"
-            }
             return "폐기 물품  : \(searchfilterData0.count) 개"
         case 2 :
-            if searchfilterData1.count == 0 {
-                return "당일 마감 물품"
-            }
             return "당일 마감  : \(searchfilterData1.count) 개"
         case 3 :
-            if searchfilterData2.count == 0 {
-                return "3일 이상 물품"
-            }
             return "3일 이상  : \(searchfilterData2.count) 개"
         default:
-            if searchfilterData3.count == 0 {
-                return "7일 이상 물품"
-            }
             return "7일 이상  : \(searchfilterData3.count) 개 "
         }
     }
@@ -207,32 +196,32 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     
     
     /** 전화걸기 함수 */
-//    @IBAction func phoenCallBtn(_ sender: UIButton) {
-//        let cell = sender.superview?.superview as! UITableViewCell
-//        let indexPath = self.tableView.indexPath(for: cell)
-//    
-//        
-//        if location_name_array.arrayList[(indexPath?.row)!].Call != nil {
-//            let temp = location_name_array.arrayList[(indexPath?.row)!].Call!
-//            
-//            if let phoneCallURL = URL(string: "tel://\(temp)") {
-//                
-//                let application:UIApplication = UIApplication.shared
-//                
-//                if (application.canOpenURL(phoneCallURL)) {
-//                    
-//                    application.open(phoneCallURL, options: [:], completionHandler: nil)
-//                    
-//                }
-//                
-//            }
-//            
-//       }
-//
-//
-//
-//    }
-//
+    @IBAction func phoenCallBtn(_ sender: UIButton) {
+        let cell = sender.superview?.superview as! UITableViewCell
+        let indexPath = self.tableView.indexPath(for: cell)
+    
+        
+        if location_name_array.arrayList[(indexPath?.row)!].Call != nil {
+            let temp = location_name_array.arrayList[(indexPath?.row)!].Call!
+            
+            if let phoneCallURL = URL(string: "tel://\(temp)") {
+                
+                let application:UIApplication = UIApplication.shared
+                
+                if (application.canOpenURL(phoneCallURL)) {
+                    
+                    application.open(phoneCallURL, options: [:], completionHandler: nil)
+                    
+                }
+                
+            }
+            
+       }
+
+
+
+    }
+
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var arrayStore:[Store]!
@@ -261,9 +250,9 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         proccell.labelSaveStyle.image = UIImage(named: store.saveStyle.rawValue)
         proccell.labelUpDate.text =  store.UpDate
         proccell.labelDownDate.text = store.DownDate
-        proccell.labelMany.text = String(store.many)
-        proccell.labelManyType.text = String(store.manytype)
-        proccell.labelTotalMany.text = String(store.TotalMany)
+        proccell.labelMany.text = String(store.many) + String(store.manytype)
+        //proccell.labelManyType.text = String(store.manytype)
+        proccell.labelTotalMany.text = String(store.TotalMany) + String(store.manytype)
       
         
         if let image2 = store.Image {
