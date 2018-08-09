@@ -45,7 +45,7 @@ class StockDetailViewController: UIViewController {
                 stockDetail.arrayList.remove(at: stockDetail.arrayList.index(of: store)!)
             }
             
-            print("Not allowed")
+            print("가진 재고 수량을 넘었습니다.")
         }
             
 //        else if store.many - Int(self.num.text!)! == 0 {

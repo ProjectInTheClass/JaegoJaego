@@ -341,11 +341,6 @@ class StoreModel
         
         for item in self.arrayList {
             temp = Double(item.many) / Double(item.TotalMany)
-            print("many : \(item.many), totalmany : \(item.TotalMany)")
-//
-//            if temp <= 0.25 {
-//                 arrayLessItem.append(item)
-//            }
             
             if temp >= 0.75 && temp <= 1 {
                 arrayLessItem.append(item)

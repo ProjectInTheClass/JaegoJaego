@@ -68,7 +68,7 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
        
         filteredData = tablecell.ScheduleArray.filter{ $0.memodates == selectedDate }        // 달력과 같은 날짜를 filteredData 에 넣어주기
 
-        table.reloadData()
+        self.table.reloadData()
 
     }
     
@@ -88,7 +88,6 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
         
 
         let tableNewCell = tableView.dequeueReusableCell(withIdentifier: "littleScheduleCell") as! ScheduleLittleTableCell
-        print("tablenewcell = \(tableNewCell.littlememo )")
      
         tableNewCell.littlememo.text = filteredData[indexPath.row].memotitle
         tableNewCell.littletime.text = filteredData[indexPath.row].memotime
@@ -128,7 +127,6 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
         selectedDate = dateformatting()
         filteredData = tablecell.ScheduleArray.filter{ $0.memodates == selectedDate }
         
-        print("filteredData = \(filteredData)")
 //        if filteredData != nil {
 //           datesWithEvent = tablecell.ScheduleArray.filter({$0.memodates == selectedDate})
 //        }

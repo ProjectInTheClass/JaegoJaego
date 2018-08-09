@@ -240,7 +240,6 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         }
         
 
-        print("arrayStore sort : \(arrayStore)")
         let store = arrayStore[indexPath.row]
         
         let proccell:StoreChartCell_More = tableView.dequeueReusableCell(withIdentifier: "Cell2IngredientBig") as! StoreChartCell_More
