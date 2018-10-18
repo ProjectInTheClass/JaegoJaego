@@ -1,21 +1,16 @@
-
-
-//import JTAppleCalendar
 import UIKit
 import Foundation
 import FSCalendar
 
 class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendarDelegate, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var table: UITableView!
-    @IBOutlet weak var todayDate :UILabel?
+    @IBOutlet weak var calendar_table: UITableView!
     @IBOutlet weak var ourCalendar: FSCalendar!
     
     let tablecell = ScheduleDatabase // 저장된 값들을 가지고 있는 배열
     let formatter = DateFormatter()
    
     var selectedDate = ""
-    let image = UIImage(named: "3-1")
 
     var datesWithEvent = ScheduleDatabase.dateArray
     var filteredData: [Schedule] = [] // 달력과 메모 연결
@@ -23,7 +18,7 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
     func dateformatting() -> String{
         let formatterdate = Date()
         formatter.dateFormat = "yyyyMMdd"
-        
+
         let todayDate = formatter.string(from: formatterdate)
         return todayDate
     }
@@ -34,7 +29,7 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
 //    dateFormatter.dateFormat = "yyyyMMdd"
 //    dateFormatter.locale = Locale.init(identifier: "fa_IR")
 //
-//    for dateStr in dates{
+//    for dateStr in date{
 //        if(dateFormatter.string(from: date) == dateStr)
 //            {
 //                cell.eventIndicator.numberOfEvents = 1
@@ -43,11 +38,11 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
 //            }
 //        }
 //    }
-//
-//
+
+
     
     fileprivate lazy var dateFormatter2: DateFormatter = {
-        let formatter = DateFormatter()
+        //let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMdd"
         return formatter
     }()
@@ -61,15 +56,12 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
     }
     
     
-    
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         formatter.dateFormat = "yyyyMMdd"
         selectedDate = formatter.string(from:date as Date)
-       
         filteredData = tablecell.ScheduleArray.filter{ $0.memodates == selectedDate }        // 달력과 같은 날짜를 filteredData 에 넣어주기
-
-        self.table.reloadData()
-
+        
+        self.calendar_table.reloadData()
     }
     
     
@@ -80,20 +72,16 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredData.count
     }
-    
    
 
     //셀 핸들링
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-
-        let tableNewCell = tableView.dequeueReusableCell(withIdentifier: "littleScheduleCell") as! ScheduleLittleTableCell
-     
+        let tableNewCell = tableView.dequeueReusableCell(withIdentifier: "littleScheduleCell" ,for:indexPath) as! ScheduleLittleTableCell
         tableNewCell.littlememo.text = filteredData[indexPath.row].memotitle
         tableNewCell.littletime.text = filteredData[indexPath.row].memotime
-        
+        tableNewCell.littlestack.image = UIImage(named: "schedulestaffimg")
+        tableNewCell.littleJaegom.image = UIImage(named: "gaegom_skyblue")
         // 날짜는 당일로 들어가니 따로 넣지 않음
-        
         return tableNewCell
     }
     
@@ -107,7 +95,7 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
         tablecell.ScheduleArray.remove(at: indexofA!)
 
         tableView.deleteRows(at: [indexPath], with: .automatic)
-        table.reloadData()
+        self.calendar_table.reloadData()
         
     }
     func setNavigationBar(){
@@ -117,27 +105,31 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
         bar.backgroundColor = UIColor.clear
     }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    
     override func viewDidLoad() {
-        table.reloadData()
+        //self.table.reloadData()
         self.setNavigationBar()
         super.viewDidLoad()
+        calendar_table.dataSource = self
+        calendar_table.delegate = self
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         selectedDate = dateformatting()
         filteredData = tablecell.ScheduleArray.filter{ $0.memodates == selectedDate }
-        
+//
 //        if filteredData != nil {
 //           datesWithEvent = tablecell.ScheduleArray.filter({$0.memodates == selectedDate})
 //        }
-        self.table.reloadData()
-        super.viewDidAppear(animated)
+        
+        calendar_table.reloadData()
     }
-
-    
-    
-    
-
-    
     
 }

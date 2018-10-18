@@ -12,6 +12,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     @IBOutlet weak var AddlblManyType: UITextField!
     @IBOutlet weak var AddlblUsAmount: UITextField!
     
+    // ERROR 오토레이아웃 적용 - 배경 텍스트 지운 배경 이미지만 필요, 오토레이아웃 시 겹침E
     
     @IBOutlet weak var AddlblWriteday : UITextField! // 들여온 날짜
     
@@ -168,8 +169,6 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-       
-        
         if pickerView.tag == 1 {
             let year = myPickerDate[0][pickerView.selectedRow(inComponent: 0)]
             let month = myPickerDate[1][pickerView.selectedRow(inComponent: 1)]
@@ -314,7 +313,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
             }
             
             addTemp.arrayList.append(Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  Call: CallAdd))
-            addTemp.arraynumList.append(ManyAdd)
+            //addTemp.arraynumList.append(ManyAdd)
         
             self.dismiss(animated: true, completion: nil)
             

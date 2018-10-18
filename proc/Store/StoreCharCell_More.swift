@@ -1,6 +1,6 @@
 import Foundation
 import UIKit
-import SWTableViewCell
+//import SWTableViewCell
 
 class StoreChartCell_More : UITableViewCell {
     @IBOutlet weak var labelName:UILabel!

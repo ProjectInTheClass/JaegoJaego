@@ -399,7 +399,7 @@ static CGFloat const kHighlightAnimationDuration = 0.45; // value obtained throu
     
     [UIView animateWithDuration:(animated? kAnimationDuration : .0)
                      animations:^{
-                         _rightMenuView.frame = menuNewFrame;
+                         self->_rightMenuView.frame = menuNewFrame;
                          
                          [self layoutIfNeeded];
                      }
