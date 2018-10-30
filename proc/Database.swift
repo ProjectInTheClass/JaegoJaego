@@ -78,13 +78,13 @@ class ScheduleModel {
     init(){
         // 예약 시간에 따른 정렬 (1시  2시  5시 순)
         // 순서에 따른 count 값
-        let stock1 =  Schedule(memotitle: "예약 2팀",memotime: "02:40 pm", memodates:"20181019")
-        let stock2 =  Schedule(memotitle: "예약 4팀",memotime: "05:30 pm", memodates:"20181018")
-        let stock3 =  Schedule(memotitle: "예약 5팀",memotime: "09:20 am", memodates:"20181017")
-        let stock4 =  Schedule(memotitle: "예약 7팀",memotime: "11:00 am", memodates:"20181016")
-        let stock5 =  Schedule(memotitle: "예약 4팀",memotime: "05:00 pm", memodates:"20181016")
-        let stock6 =  Schedule(memotitle: "예약 5팀",memotime: "09:30 am", memodates:"20181015")
-        let stock7 =  Schedule(memotitle: "예약 2팀",memotime: "02:20 pm", memodates:"20181014")
+        let stock1 =  Schedule(memotitle: "예약 2팀",memotime: "02:40 pm", memodates:"20181027")
+        let stock2 =  Schedule(memotitle: "예약 4팀",memotime: "05:30 pm", memodates:"20181027")
+        let stock3 =  Schedule(memotitle: "예약 5팀",memotime: "09:20 am", memodates:"20181028")
+        let stock4 =  Schedule(memotitle: "예약 7팀",memotime: "11:00 am", memodates:"20181029")
+        let stock5 =  Schedule(memotitle: "예약 4팀",memotime: "05:00 pm", memodates:"20181030")
+        let stock6 =  Schedule(memotitle: "예약 5팀",memotime: "09:30 am", memodates:"20181026")
+        let stock7 =  Schedule(memotitle: "예약 2팀",memotime: "02:20 pm", memodates:"20181024")
         self.ScheduleArray += [stock1, stock2, stock3, stock4, stock5, stock6,stock7]
         self.dateArray += [stock1.memodates,stock2.memodates,stock3.memodates,stock4.memodates,stock5.memodates,stock6.memodates,stock7.memodates]
     }

@@ -23,7 +23,7 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
         return todayDate
     }
     
-//   func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at position: FSCalendarMonthPosition){
+//    func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at position: FSCalendarMonthPosition){
 //
 //    let dateFormatter = DateFormatter()
 //    dateFormatter.dateFormat = "yyyyMMdd"
@@ -87,7 +87,6 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
     
     // 삭제
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
         let temp = tablecell.ScheduleArray[indexPath.row]
         let indexofA = tablecell.ScheduleArray.index(of: temp)
         
@@ -104,15 +103,8 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
         bar.shadowImage = UIImage()
         bar.backgroundColor = UIColor.clear
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     
     override func viewDidLoad() {
-        //self.table.reloadData()
         self.setNavigationBar()
         super.viewDidLoad()
         calendar_table.dataSource = self

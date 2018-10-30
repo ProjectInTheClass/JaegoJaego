@@ -77,7 +77,7 @@
                             </view>
                             <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eOO-EQ-YLz">
                                 <rect key="frame" x="13" y="395" width="349" height="200"/>
-                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.34509803921568627" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eOO-EQ-YLz" secondAttribute="height" multiplier="349:200" id="aH3-Pk-gkJ"/>
                                 </constraints>
@@ -179,21 +179,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="szD-x0-fPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1194.4000000000001" y="209.14542728635683"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="AZl-Lf-iKp">
-            <objects>
-                <viewController id="xC2-SE-r7q" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xBA-ZJ-sce">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="BpC-fW-OeM"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mwb-kB-DZy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-386" y="939"/>
         </scene>
         <!--Schedule Add View Controller-->
         <scene sceneID="gxI-t9-tFh">

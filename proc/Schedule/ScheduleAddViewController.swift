@@ -80,7 +80,6 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
     // 피커뷰 함수 시작
     
     @objc func doneClick() {
-        
         AddldlDatePiker.resignFirstResponder()
         AddlblTimePicker.resignFirstResponder()
         
@@ -144,7 +143,6 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
         }
         
         if pickerView.tag == 2 {
-            
             let hour = myPickerTime[0][pickerView.selectedRow(inComponent: 0)]
             let minute = myPickerTime[1][pickerView.selectedRow(inComponent: 1)]
             let selAMPM = myPickerTime[2][pickerView.selectedRow(inComponent: 2)]
@@ -204,6 +202,7 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
         if( eventname != "" && TimeAdd != "" && DateAdd != "" ){
             scheduleModel.ScheduleArray.append(Schedule(memotitle: eventname, memotime: TimeAdd, memodates: DateAdd))
             scheduleModel.dateArray.append(DateAdd)
+            
             navigationController?.popViewController(animated: true)
             self.dismiss(animated: true, completion: nil)
         }
