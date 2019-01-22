@@ -77,7 +77,7 @@
                             </view>
                             <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eOO-EQ-YLz">
                                 <rect key="frame" x="13" y="395" width="349" height="200"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.34509803921568627" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eOO-EQ-YLz" secondAttribute="height" multiplier="349:200" id="aH3-Pk-gkJ"/>
                                 </constraints>
@@ -126,7 +126,7 @@
                                                 <constraint firstItem="gNE-d6-yjX" firstAttribute="leading" secondItem="E13-aG-M09" secondAttribute="trailing" constant="6" id="qyA-6z-bFc"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="editingAccessoryView" destination="TIa-2o-iir" id="lPg-jG-Oei"/>
                                             <outlet property="littleJaegom" destination="njx-a5-rt1" id="k8L-aP-POi"/>
@@ -296,6 +296,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gbi-o0-meT"/>
                     </view>
+                    <navigationItem key="navigationItem" id="84R-ca-cEc"/>
                     <connections>
                         <outlet property="AddlblTimePicker" destination="LLY-0T-2h8" id="fna-N6-dvC"/>
                         <outlet property="AddldlDatePiker" destination="yX4-KB-VnQ" id="fOE-Zp-jcK"/>

@@ -23,21 +23,20 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
         return todayDate
     }
     
-//    func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at position: FSCalendarMonthPosition){
-//
-//    let dateFormatter = DateFormatter()
-//    dateFormatter.dateFormat = "yyyyMMdd"
-//    dateFormatter.locale = Locale.init(identifier: "fa_IR")
-//
-//    for dateStr in date{
-//        if(dateFormatter.string(from: date) == dateStr)
-//            {
-//                cell.eventIndicator.numberOfEvents = 1
-//                cell.eventIndicator.isHidden = false
-//                cell.eventIndicator.color = UIColor.blue
-//            }
-//        }
-//    }
+    func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at position: FSCalendarMonthPosition){
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        dateFormatter.locale = Locale.init(identifier: "fa_IR")
+
+        for dateStr in datesWithEvent{
+            if(dateFormatter.string(from: date) == dateStr){
+                cell.eventIndicator.numberOfEvents = 1
+                cell.eventIndicator.isHidden = false
+                cell.eventIndicator.color = UIColor.blue
+            }
+        }
+    }
 
 
     
@@ -59,7 +58,7 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         formatter.dateFormat = "yyyyMMdd"
         selectedDate = formatter.string(from:date as Date)
-        filteredData = tablecell.ScheduleArray.filter{ $0.memodates == selectedDate }        // 달력과 같은 날짜를 filteredData 에 넣어주기
+        filteredData = tablecell.ScheduleArray.filter{ $0.memodates == selectedDate } // 달력과 같은 날짜를 filteredData 에 넣어주기
         
         self.calendar_table.reloadData()
     }
@@ -95,7 +94,6 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
 
         tableView.deleteRows(at: [indexPath], with: .automatic)
         self.calendar_table.reloadData()
-        
     }
     func setNavigationBar(){
         let bar:UINavigationBar! =  self.navigationController?.navigationBar
@@ -107,21 +105,17 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
     override func viewDidLoad() {
         self.setNavigationBar()
         super.viewDidLoad()
+        calendar_table.reloadData()
         calendar_table.dataSource = self
         calendar_table.delegate = self
-        
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         selectedDate = dateformatting()
         filteredData = tablecell.ScheduleArray.filter{ $0.memodates == selectedDate }
-//
-//        if filteredData != nil {
-//           datesWithEvent = tablecell.ScheduleArray.filter({$0.memodates == selectedDate})
-//        }
-        
+
         calendar_table.reloadData()
+        ourCalendar.reloadData()
     }
-    
 }

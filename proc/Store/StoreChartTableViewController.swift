@@ -11,17 +11,6 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     @IBOutlet weak var location_table: UITableView!
     @IBOutlet weak var searchbar : UISearchBar!
     
-
-    @IBOutlet weak var labelName:UILabel!
-    @IBOutlet weak var labelSaveStyle:UILabel!
-    @IBOutlet weak var ChartImage:UIImageView!
-    @IBOutlet weak var labelUpDate:UILabel!
-    @IBOutlet weak var labelDownDate:UILabel!
-    @IBOutlet weak var labelMany:UILabel!
-    @IBOutlet weak var labelManyType:UILabel!
-    @IBOutlet weak var labelTotalMany:UILabel!
-    @IBOutlet weak var Call:UILabel!
-    
     var infoDateAdd:String = HomeDateModel.dateInfo()
     var dataFilePath: String?
 
@@ -151,8 +140,6 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     
     //table section 설정
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        
         switch section {
         case 0 :
             return "전체 수량  : \(location_name_array.arrayList.count) 개"
@@ -168,7 +155,6 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 5
     }
 

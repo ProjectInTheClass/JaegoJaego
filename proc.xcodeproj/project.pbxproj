@@ -17,7 +17,21 @@
 		6968C757210F0C0300A6FA1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6968C756210F0C0200A6FA1A /* Assets.xcassets */; };
 		69EBD6F42100719C006B055B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EBD6F32100719C006B055B /* HomeViewController.swift */; };
 		90CE556D2107342000E20EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE556C2107342000E20EC7 /* AppDelegate.swift */; };
-		90CE5571210875C900E20EC7 /* Radiobutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE5570210875C900E20EC7 /* Radiobutton.swift */; };
+		9B03EEAB21F6F2F10081752B /* Member.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B03EEAA21F6F2F10081752B /* Member.storyboard */; };
+		9B03EEAF21F6F3A60081752B /* MemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B03EEAE21F6F3A60081752B /* MemberVC.swift */; };
+		9B03EEB121F6FF1A0081752B /* stockListDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B03EEB021F6FF1A0081752B /* stockListDateCell.swift */; };
+		9B03EEB321F6FF3E0081752B /* stockListWriterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B03EEB221F6FF3E0081752B /* stockListWriterCell.swift */; };
+		9B03EEB521F6FF730081752B /* stockListStockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B03EEB421F6FF730081752B /* stockListStockCell.swift */; };
+		9B03EEB721F6FFD70081752B /* StockListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B03EEB621F6FFD70081752B /* StockListVC.swift */; };
+		9BA3F83F21F59885008577BB /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F83E21F59885008577BB /* extension.swift */; };
+		9BA3F84121F59987008577BB /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F84021F59987008577BB /* ToastView.swift */; };
+		9BA3F84321F59F77008577BB /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F84221F59F77008577BB /* Store.swift */; };
+		9BA3F84521F59F9D008577BB /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F84421F59F9D008577BB /* Home.swift */; };
+		9BA3F84721F59FB7008577BB /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F84621F59FB7008577BB /* Schedule.swift */; };
+		9BA3F84921F5BC5D008577BB /* StoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F84821F5BC5D008577BB /* StoreVC.swift */; };
+		9BDC1D0A21F7183C00DDA9B4 /* newStockCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC1D0921F7183C00DDA9B4 /* newStockCollectionCell.swift */; };
+		9BDC1D0C21F7186B00DDA9B4 /* outStockCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC1D0B21F7186B00DDA9B4 /* outStockCollectionCell.swift */; };
+		9BDC1D0E21F7187700DDA9B4 /* staticStockCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC1D0D21F7187700DDA9B4 /* staticStockCollectionCell.swift */; };
 		A521E423DA2E2F45CCB29B6E /* Pods_proc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98437B6BEF1E17CDECD22727 /* Pods_proc.framework */; };
 		B80B28EE2109B9CE00413049 /* HomeStoreChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80B28ED2109B9CE00413049 /* HomeStoreChartCell.swift */; };
 		B80B28F02109B9FB00413049 /* HomeStoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80B28EF2109B9FB00413049 /* HomeStoreTableViewController.swift */; };
@@ -25,7 +39,6 @@
 		B817E0A220FC8FF400B2A37C /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B817E0A120FC8FF400B2A37C /* Schedule.storyboard */; };
 		B817E0A420FC900D00B2A37C /* Staff.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B817E0A320FC900D00B2A37C /* Staff.storyboard */; };
 		B81ED696210EB224009DDC42 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ED695210EB224009DDC42 /* StoreViewController.swift */; };
-		B81ED69A210F0C0C009DDC42 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ED699210F0C0C009DDC42 /* Database.swift */; };
 		B838071A20EDC00700A46B20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B838071820EDC00700A46B20 /* Main.storyboard */; };
 		B838071F20EDC00900A46B20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B838071D20EDC00900A46B20 /* LaunchScreen.storyboard */; };
 		B838072A20EDC00900A46B20 /* procTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838072920EDC00900A46B20 /* procTests.swift */; };
@@ -70,15 +83,28 @@
 		6968C756210F0C0200A6FA1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69EBD6F32100719C006B055B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		90CE556C2107342000E20EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		90CE5570210875C900E20EC7 /* Radiobutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radiobutton.swift; sourceTree = "<group>"; };
 		98437B6BEF1E17CDECD22727 /* Pods_proc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_proc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B03EEAA21F6F2F10081752B /* Member.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Member.storyboard; sourceTree = "<group>"; };
+		9B03EEAE21F6F3A60081752B /* MemberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberVC.swift; sourceTree = "<group>"; };
+		9B03EEB021F6FF1A0081752B /* stockListDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stockListDateCell.swift; sourceTree = "<group>"; };
+		9B03EEB221F6FF3E0081752B /* stockListWriterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stockListWriterCell.swift; sourceTree = "<group>"; };
+		9B03EEB421F6FF730081752B /* stockListStockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stockListStockCell.swift; sourceTree = "<group>"; };
+		9B03EEB621F6FFD70081752B /* StockListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListVC.swift; sourceTree = "<group>"; };
+		9BA3F83E21F59885008577BB /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		9BA3F84021F59987008577BB /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		9BA3F84221F59F77008577BB /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		9BA3F84421F59F9D008577BB /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		9BA3F84621F59FB7008577BB /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		9BA3F84821F5BC5D008577BB /* StoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreVC.swift; sourceTree = "<group>"; };
+		9BDC1D0921F7183C00DDA9B4 /* newStockCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newStockCollectionCell.swift; sourceTree = "<group>"; };
+		9BDC1D0B21F7186B00DDA9B4 /* outStockCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = outStockCollectionCell.swift; sourceTree = "<group>"; };
+		9BDC1D0D21F7187700DDA9B4 /* staticStockCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = staticStockCollectionCell.swift; sourceTree = "<group>"; };
 		B80B28ED2109B9CE00413049 /* HomeStoreChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStoreChartCell.swift; sourceTree = "<group>"; };
 		B80B28EF2109B9FB00413049 /* HomeStoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStoreTableViewController.swift; sourceTree = "<group>"; };
 		B8119A33210998DB00C0D6EE /* ScheduleAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddViewController.swift; sourceTree = "<group>"; };
 		B817E0A120FC8FF400B2A37C /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		B817E0A320FC900D00B2A37C /* Staff.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Staff.storyboard; sourceTree = "<group>"; };
 		B81ED695210EB224009DDC42 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
-		B81ED699210F0C0C009DDC42 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		B838071120EDC00700A46B20 /* proc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = proc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B838071920EDC00700A46B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B838071E20EDC00900A46B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -157,6 +183,48 @@
 			path = Docs;
 			sourceTree = "<group>";
 		};
+		9B03EEA921F6F2D30081752B /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				9B03EEAA21F6F2F10081752B /* Member.storyboard */,
+				9B03EEAE21F6F3A60081752B /* MemberVC.swift */,
+			);
+			path = Member;
+			sourceTree = "<group>";
+		};
+		9B03EEB821F70FC20081752B /* StockList */ = {
+			isa = PBXGroup;
+			children = (
+				9B03EEB621F6FFD70081752B /* StockListVC.swift */,
+				9B03EEB421F6FF730081752B /* stockListStockCell.swift */,
+				9B03EEB021F6FF1A0081752B /* stockListDateCell.swift */,
+				9B03EEB221F6FF3E0081752B /* stockListWriterCell.swift */,
+				9BDC1D0921F7183C00DDA9B4 /* newStockCollectionCell.swift */,
+				9BDC1D0B21F7186B00DDA9B4 /* outStockCollectionCell.swift */,
+				9BDC1D0D21F7187700DDA9B4 /* staticStockCollectionCell.swift */,
+			);
+			path = StockList;
+			sourceTree = "<group>";
+		};
+		9BA3F83C21F59865008577BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9BA3F84221F59F77008577BB /* Store.swift */,
+				9BA3F84421F59F9D008577BB /* Home.swift */,
+				9BA3F84621F59FB7008577BB /* Schedule.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9BA3F83D21F5986C008577BB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9BA3F83E21F59885008577BB /* extension.swift */,
+				9BA3F84021F59987008577BB /* ToastView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		B8068A9F20FF3938003BA4CB /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +259,9 @@
 		B838071320EDC00700A46B20 /* proc */ = {
 			isa = PBXGroup;
 			children = (
+				9B03EEA921F6F2D30081752B /* Member */,
+				9BA3F83D21F5986C008577BB /* Extension */,
+				9BA3F83C21F59865008577BB /* Model */,
 				B8DFC2452106EEAD00626614 /* Home */,
 				B8DFC2442106EE6600626614 /* Schedule */,
 				B8DFC2432106EE1300626614 /* Store */,
@@ -201,7 +272,6 @@
 				B838072020EDC00900A46B20 /* Info.plist */,
 				90CE556C2107342000E20EC7 /* AppDelegate.swift */,
 				B817E0A320FC900D00B2A37C /* Staff.storyboard */,
-				B81ED699210F0C0C009DDC42 /* Database.swift */,
 			);
 			path = proc;
 			sourceTree = "<group>";
@@ -228,12 +298,12 @@
 			isa = PBXGroup;
 			children = (
 				692965C62109DF38000AD605 /* Storechart.storyboard */,
-				90CE5570210875C900E20EC7 /* Radiobutton.swift */,
 				B8DFC246210710BF00626614 /* StoreCharCell_More.swift */,
 				B8FE6B7421074DEB00C471FB /* AddStoreViewController.swift */,
 				B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */,
 				B81ED695210EB224009DDC42 /* StoreViewController.swift */,
 				6105581121130DD400E3175C /* StockDetailViewController.swift */,
+				9BA3F84821F5BC5D008577BB /* StoreVC.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -252,6 +322,7 @@
 		B8DFC2452106EEAD00626614 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9B03EEB821F70FC20081752B /* StockList */,
 				59CEA7A720FC81D700847485 /* Home.storyboard */,
 				B80B28ED2109B9CE00413049 /* HomeStoreChartCell.swift */,
 				B8C566BF210B3E36001D470A /* HomeScheduleTableViewCell.swift */,
@@ -376,6 +447,7 @@
 				6968C757210F0C0300A6FA1A /* Assets.xcassets in Resources */,
 				610557FC2110367200E3175C /* index.html in Resources */,
 				692965C72109DF38000AD605 /* Storechart.storyboard in Resources */,
+				9B03EEAB21F6F2F10081752B /* Member.storyboard in Resources */,
 				610558042110368200E3175C /* assets in Resources */,
 				B817E0A220FC8FF400B2A37C /* Schedule.storyboard in Resources */,
 				610558002110367A00E3175C /* elements.html in Resources */,
@@ -406,16 +478,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-proc/Pods-proc-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ABMenuTableViewCell/ABMenuTableViewCell.framework",
+				"${BUILT_PRODUCTS_DIR}/BetterSegmentedControl/BetterSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/SWTableViewCell/SWTableViewCell.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ABMenuTableViewCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BetterSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWTableViewCell.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,21 +520,33 @@
 			files = (
 				B8F2B3522109FAAB008FC382 /* ScheduleLittleTableCell.swift in Sources */,
 				B8DFC247210710BF00626614 /* StoreCharCell_More.swift in Sources */,
+				9BA3F84521F59F9D008577BB /* Home.swift in Sources */,
 				B8DFC2422106EC3500626614 /* ScheduleViewController.swift in Sources */,
+				9B03EEAF21F6F3A60081752B /* MemberVC.swift in Sources */,
+				9BA3F83F21F59885008577BB /* extension.swift in Sources */,
+				9B03EEB521F6FF730081752B /* stockListStockCell.swift in Sources */,
+				9BDC1D0E21F7187700DDA9B4 /* staticStockCollectionCell.swift in Sources */,
+				9BDC1D0C21F7186B00DDA9B4 /* outStockCollectionCell.swift in Sources */,
+				9B03EEB321F6FF3E0081752B /* stockListWriterCell.swift in Sources */,
 				B8119A34210998DB00C0D6EE /* ScheduleAddViewController.swift in Sources */,
+				9BDC1D0A21F7183C00DDA9B4 /* newStockCollectionCell.swift in Sources */,
 				B80B28F02109B9FB00413049 /* HomeStoreTableViewController.swift in Sources */,
-				90CE5571210875C900E20EC7 /* Radiobutton.swift in Sources */,
+				9BA3F84121F59987008577BB /* ToastView.swift in Sources */,
 				B80B28EE2109B9CE00413049 /* HomeStoreChartCell.swift in Sources */,
 				90CE556D2107342000E20EC7 /* AppDelegate.swift in Sources */,
 				69EBD6F42100719C006B055B /* HomeViewController.swift in Sources */,
 				B8B55B8020FF24C10028B233 /* StoreChartTableViewController.swift in Sources */,
+				9BA3F84721F59FB7008577BB /* Schedule.swift in Sources */,
 				B8FE6B7521074DEB00C471FB /* AddStoreViewController.swift in Sources */,
 				B8C566BE210B3BDB001D470A /* HomeScheduleTableViewController.swift in Sources */,
+				9BA3F84921F5BC5D008577BB /* StoreVC.swift in Sources */,
 				B851460C20EF4608000E6C4E /* CompleteViewController.swift in Sources */,
+				9BA3F84321F59F77008577BB /* Store.swift in Sources */,
+				9B03EEB121F6FF1A0081752B /* stockListDateCell.swift in Sources */,
 				B8C566C0210B3E36001D470A /* HomeScheduleTableViewCell.swift in Sources */,
+				9B03EEB721F6FFD70081752B /* StockListVC.swift in Sources */,
 				6105581221130DD400E3175C /* StockDetailViewController.swift in Sources */,
 				B81ED696210EB224009DDC42 /* StoreViewController.swift in Sources */,
-				B81ED69A210F0C0C009DDC42 /* Database.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,7 +721,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R4F334UK8Q;
+				DEVELOPMENT_TEAM = NU8G5ASQP7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = proc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -659,7 +745,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R4F334UK8Q;
+				DEVELOPMENT_TEAM = NU8G5ASQP7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = proc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (

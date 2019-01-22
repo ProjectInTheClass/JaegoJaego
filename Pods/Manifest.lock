@@ -1,28 +1,24 @@
 PODS:
-  - ABMenuTableViewCell (2.0.2)
+  - BetterSegmentedControl (1.0.3)
   - FSCalendar (2.7.9)
-  - JTAppleCalendar (7.1.5)
   - SWTableViewCell (0.3.7)
 
 DEPENDENCIES:
-  - ABMenuTableViewCell (~> 2.0)
+  - BetterSegmentedControl (~> 1.0)
   - FSCalendar
-  - JTAppleCalendar (~> 7.0)
   - SWTableViewCell (~> 0.3.7)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - ABMenuTableViewCell
+    - BetterSegmentedControl
     - FSCalendar
-    - JTAppleCalendar
     - SWTableViewCell
 
 SPEC CHECKSUMS:
-  ABMenuTableViewCell: 931797cc144de2ef0ff56d1fe30ef42dcb26e2dc
+  BetterSegmentedControl: 4e3bd0bd517b0f6077c9e17f5663a01cff48e2c5
   FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
-  JTAppleCalendar: 2d4f974f9f3c8b4964d51ca1f6e004883c031fbe
   SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
 
-PODFILE CHECKSUM: 859e94aa71d4cc9945ed6244ec5ca3ec8b03d721
+PODFILE CHECKSUM: 928bf357e03113573275cca04b60ed7909826b22
 
 COCOAPODS: 1.5.3

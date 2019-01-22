@@ -204,6 +204,7 @@ class ScheduleAddViewController : UIViewController, UITextFieldDelegate, UIPicke
             scheduleModel.dateArray.append(DateAdd)
             
             navigationController?.popViewController(animated: true)
+            
             self.dismiss(animated: true, completion: nil)
         }
 
