@@ -81,10 +81,6 @@ extension StoreVC {
         
         storeListTV.reloadData()
     }
-    
-//    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-//        storeSearchBar.showsCancelButton = true
-//    }
 
     
     // 취소버튼 클릭 시 키보드 닫히고 검색어 초기화
@@ -97,6 +93,7 @@ extension StoreVC {
     
     @objc func editBtnClicked() {
         didSelectEditBtn = true
+        
         if storeListTV.isEditing {
             editBtn.setTitle("Edit", for: .normal)
             storeListTV.setEditing(false, animated: true)
@@ -228,11 +225,9 @@ extension StoreVC {
     }
     
     @objc func segmentControlValueChanged(_ sender: UISegmentedControl){
-        
         UIView.animate(withDuration: 0.3){
             self.buttonBar.frame.origin.x = (self.switchSegment.frame.width / CGFloat(self.switchSegment.numberOfSegments)) * CGFloat(self.switchSegment.selectedSegmentIndex)
         }
-        
         if(switchSegment.selectedSegmentIndex == 0) {
             UIView.animate(withDuration: 0.3, animations: {
                 self.selectSegmentNumber = 0
@@ -248,7 +243,6 @@ extension StoreVC {
                 self.selectSegmentNumber = 2
             })
         }
-        
         self.storeListTV.reloadData()
     }
     
