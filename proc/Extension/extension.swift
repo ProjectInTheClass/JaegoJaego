@@ -71,6 +71,22 @@ extension UIViewController {
 }
 
 extension UIViewController {
+    func stringToDate(_ value: String?) -> Date{
+        guard let value_ = value else { return Date()}
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        return dateFormatter.date(from: value_) ?? Date()
+    }
+    
+    func dateToString(_ value: Date?) -> String {
+        guard let value_ = value else {return ""}
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        return dateFormatter.string(from: value_)
+    }
+    
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -79,5 +95,47 @@ extension UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+}
+
+extension Dictionary where Value: Equatable {
+
+    func someKey(forValue val: Value) -> Key? {
+        return first(where: { $1 == val })?.key
+    }
+    //let dict: [Int: String] = [1: "one", 2: "two", 4: "four"]
+    
+//    if let key = dict.someKey(forValue: "two") {
+//        print(key)
+//    } // 2
+    
+    func allKeys() -> [String] {
+        guard self.keys.first is String else {
+            debugPrint("This function will not return other hashable types. (Only strings)")
+            return []
+        }
+        return self.flatMap { (anEntry) -> String? in
+            guard let temp = anEntry.key as? String else { return nil }
+            return temp }
+    }
+    //let componentsArray = dict.allKeys()
+}
+
+extension UICollectionViewCell {
+    func stringToDate(_ value: String?) -> Date{
+        guard let value_ = value else { return Date()}
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        return dateFormatter.date(from: value_) ?? Date()
+    }
+    
+    func dateToString(_ value: Date?) -> String {
+        guard let value_ = value else {return ""}
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        return dateFormatter.string(from: value_)
     }
 }

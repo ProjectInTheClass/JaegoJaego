@@ -257,9 +257,9 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
         //시험용 배열 데이터 선언
         var _:Array<Store>
 
-        _ = Store(name: NameAdd, UpDate: infoDateAdd , DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  Call: CallAdd)
+        //_ = Store(name: NameAdd, UpDate: infoDateAdd , DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  Call: CallAdd)
 
-        let addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  Call: CallAdd)
+       // let addStock = Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  Call: CallAdd)
 
         if NameAdd == "" {
             alarmLbl.text = "내용을 입력해 주세요"
@@ -312,7 +312,7 @@ class AddStoreViewController:UIViewController, UITextFieldDelegate, UIPickerView
                 
             }
             
-            addTemp.arrayList.append(Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  Call: CallAdd))
+            //addTemp.arrayList.append(Store(name: NameAdd, UpDate: infoDateAdd, DownDate: DateAdd, many: ManyAdd,manytype: ManyTypeAdd,  saveStyle:SaveAdd,  Call: CallAdd))
             //addTemp.arraynumList.append(ManyAdd)
         
             self.dismiss(animated: true, completion: nil)

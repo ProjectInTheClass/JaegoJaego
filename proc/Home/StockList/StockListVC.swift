@@ -58,4 +58,19 @@ extension StockListVC : UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
     
+    // 초점 가운데로 모이게 하기
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let layout = self.stockCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+        let cellWithIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+        
+        var offset = targetContentOffset.pointee
+        let index = (offset.x + scrollView.contentInset.left) / cellWithIncludingSpacing
+        let roundedIndex = round(index)
+        
+        let settingFocus = (self.view.frame.width - layout.itemSize.width ) / 2
+        
+        offset = CGPoint(x: roundedIndex * cellWithIncludingSpacing - scrollView.contentInset.left - settingFocus, y: -scrollView.contentInset.top)
+        targetContentOffset.pointee = offset
+    }
 }
+

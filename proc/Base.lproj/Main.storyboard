@@ -47,8 +47,6 @@
                     <connections>
                         <segue destination="f36-8H-Drl" kind="relationship" relationship="viewControllers" id="s6l-fZ-Tul"/>
                         <segue destination="wf0-aB-1WJ" kind="relationship" relationship="viewControllers" id="Sgn-IX-mXp"/>
-                        <segue destination="mhm-wK-eXx" kind="relationship" relationship="viewControllers" id="Hzh-H3-ndB"/>
-                        <segue destination="4VI-cY-lfL" kind="relationship" relationship="viewControllers" id="a5h-Xr-dgy"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bmy-hQ-zKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -63,7 +61,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jw4-eV-9La" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3082" y="3135"/>
+            <point key="canvasLocation" x="2968" y="3057"/>
         </scene>
         <!--Storechart-->
         <scene sceneID="jsZ-iu-Bar">
@@ -73,7 +71,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7A9-xd-d3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4010" y="3271"/>
+            <point key="canvasLocation" x="3980" y="3213"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="uSe-Gy-1Ky">
@@ -84,16 +82,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Us2-n8-djw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4124" y="3939"/>
-        </scene>
-        <!--Staff-->
-        <scene sceneID="bJB-i9-nv3">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Staff" id="lFJ-yP-51f" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="St9-bo-301"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YUf-ga-AfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4799" y="4752"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="sTm-3H-4hL">
@@ -221,25 +209,6 @@
             </objects>
             <point key="canvasLocation" x="8929" y="-2115"/>
         </scene>
-        <!--직원관리-->
-        <scene sceneID="K5u-Yb-tES">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zBP-oC-Ihw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="직원관리" image="커뮤니티아이콘" id="96d-MT-5ti"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hbM-vA-cmC">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="lFJ-yP-51f" kind="relationship" relationship="rootViewController" id="tTF-Kc-niX"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xwM-7D-dwj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5280.8000000000002" y="4751.8740629685162"/>
-        </scene>
         <!--재고목록-->
         <scene sceneID="2sg-iB-u2I">
             <objects>
@@ -256,7 +225,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMx-Tb-NCG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3514" y="3271"/>
+            <point key="canvasLocation" x="3460" y="3214"/>
         </scene>
         <!--일정-->
         <scene sceneID="nxe-4G-S8B">
@@ -277,16 +246,6 @@
             </objects>
             <point key="canvasLocation" x="3482" y="3940"/>
         </scene>
-        <!--Member-->
-        <scene sceneID="mdF-6G-aLd">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Member" id="Yo2-kR-gaY" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="XjU-wt-iUD"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Oad-eW-448" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3296" y="4608"/>
-        </scene>
         <!--홈-->
         <scene sceneID="lUr-jv-oit">
             <objects>
@@ -303,25 +262,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFR-cM-cGh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2598" y="3136"/>
-        </scene>
-        <!--멤버-->
-        <scene sceneID="ILZ-8k-JLg">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="4VI-cY-lfL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="멤버" id="po6-A6-HFx"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qkX-71-dcC">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Yo2-kR-gaY" kind="relationship" relationship="rootViewController" id="sN8-dG-DK5"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RVu-Bw-kOx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2750" y="4609"/>
+            <point key="canvasLocation" x="2478" y="3058"/>
         </scene>
     </scenes>
     <resources>
@@ -329,6 +270,5 @@
         <image name="home" width="28" height="25"/>
         <image name="jaegoLunch" width="1725" height="3066"/>
         <image name="memo" width="27" height="26"/>
-        <image name="커뮤니티아이콘" width="29" height="29"/>
     </resources>
 </document>

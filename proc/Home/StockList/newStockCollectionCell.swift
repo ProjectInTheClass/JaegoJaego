@@ -8,9 +8,11 @@
 
 import UIKit
 
+var datePerStock : [Store] = []
+
 class newStockCollectionCell: UICollectionViewCell {
     @IBOutlet weak var newStockTV: UITableView!
-    
+ 
     /** 효과 씌우기 */
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -18,32 +20,40 @@ class newStockCollectionCell: UICollectionViewCell {
         layer.shadowRadius = 10
         layer.shadowOpacity = 0.3
         layer.shadowOffset = CGSize(width: 5, height: 10)
-       
+    }
+    
+    override func awakeFromNib() {
+        newStockTV.delegate = self
+        newStockTV.dataSource = self
+        
+        
     }
 }
 
 extension newStockCollectionCell : UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    // 날짜 개수에 따른 값
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return StoreDatabase.buyStockArray.count
+        return StoreDatabase.newDatePerCountDic.keys.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-                        let cell = newStockTV.dequeueReusableCell(withIdentifier: "NewStockDateCell") as! stockListDateCell
-                        cell.stockDateLabel.text = ""
-                        return cell
-                    } else if indexPath.row == 1 {
-                        let cell = newStockTV.dequeueReusableCell(withIdentifier: "NewStockWriterCell") as! stockListWriterCell
-                        cell.stockWriterLabel.text = "작성자"
-                        cell.stockCountLabel.text = "\(StoreDatabase.buyStockArray.count)개 물품"
-            
-                        return cell
-                    } else {
-                        let cell = newStockTV.dequeueReusableCell(withIdentifier: "NewStockStockCell") as! stockListStockCell
-                        cell.stockNameLabel.text = ""
-                        cell.stockCountLabel.text = ""
-                        return cell
-        }
+        let cell = newStockTV.dequeueReusableCell(withIdentifier: "NewStockCell" , for: indexPath) as! newStockCell
+        let state = StoreDatabase.buyStockArray[indexPath.row]
+        
+        cell.newWriterLabel.text = "작성자"
+        cell.newDateLabel.text = dateToString(state.UpDate)
+        cell.newCountLabel.text = "\(state.many)"
+        
+        datePerStock = StoreDatabase.getNewDatePerStock(date: state.UpDate)
+        
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 185
     }
     
 }

@@ -77,8 +77,8 @@ class StockDetailViewController: UIViewController {
         
         graimage.image = UIImage(named: infoStock.Image!)
         name.text = infoStock.name
-        day1.text = infoStock.UpDate
-        day2.text = infoStock.DownDate
+        day1.text = dateToString(infoStock.UpDate)
+        day2.text = dateToString(infoStock.DownDate)
         save.image = UIImage(named: infoStock.saveStyle.rawValue)
         
         //num.text = String(infoStock.many)

@@ -227,18 +227,18 @@ class StoreChartTableViewController: UITableViewController, UISearchBarDelegate 
         
 
         let store = arrayStore[indexPath.row]
-        
         let proccell:StoreChartCell_More = tableView.dequeueReusableCell(withIdentifier: "Cell2IngredientBig") as! StoreChartCell_More
 
         // cell
         proccell.labelName.text = store.name
         proccell.labelSaveStyle.image = UIImage(named: store.saveStyle.rawValue)
-        proccell.labelUpDate.text =  store.UpDate
-        proccell.labelDownDate.text = store.DownDate
+        proccell.labelUpDate.text = dateToString(store.UpDate)
+        proccell.labelDownDate.text = dateToString(store.DownDate)
         proccell.labelMany.text = String(store.many) + String(store.manytype)
         //proccell.labelManyType.text = String(store.manytype)
         proccell.labelTotalMany.text = String(store.TotalMany) + String(store.manytype)
       
+        
         
         if let image2 = store.Image {
             proccell.ChartImage.image = UIImage(named: image2)

@@ -13,6 +13,7 @@ class StoreVC: UIViewController , UISearchBarDelegate {
     @IBOutlet weak var storeListTV: UITableView!
     @IBOutlet weak var storeSearchBar: UISearchBar!
     @IBOutlet weak var searchListView: UIView!
+    @IBOutlet weak var editBtn: UIButton!
     
     // 세그먼트 변수
     let segmentColor = UIColor(red: 0.26, green: 0.43, blue: 0.85, alpha: 1.0)
@@ -30,7 +31,10 @@ class StoreVC: UIViewController , UISearchBarDelegate {
     var searchFilterData1 : [Store] = []
     var searchFilterData2 : [Store] = []
     
-
+    // 세그먼트 오류 방지용
+    var didSelectEditBtn = false
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,18 +45,15 @@ class StoreVC: UIViewController , UISearchBarDelegate {
         StoreDatabase.sameStoreMany()
         
         segmentSetting()
-        buttonbarSetting()
         upDateArraysFromModel()
+        
+        editBtn.addTarget(self, action: #selector(editBtnClicked), for: .touchUpInside)
         storeListTV.reloadData()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        searchFilterData0 = array00Trash.sorted(by: {$0.DownDate < $1.DownDate })
-        searchFilterData1 = array01Today.sorted(by: {$0.DownDate < $1.DownDate})
-        searchFilterData2 = array02Safe.sorted(by: {$0.DownDate < $1.DownDate})
-        
+        updateSearchArray()
         self.storeListTV.reloadData()
     }
 }
@@ -60,12 +61,19 @@ class StoreVC: UIViewController , UISearchBarDelegate {
 
 // 함수
 extension StoreVC {
+    func updateSearchArray(){
+        searchFilterData0 = array00Trash.sorted(by: {$0.DownDate < $1.DownDate })
+        searchFilterData1 = array01Today.sorted(by: {$0.DownDate < $1.DownDate})
+        searchFilterData2 = array02Safe.sorted(by: {$0.DownDate < $1.DownDate})
+    }
+    
     func upDateArraysFromModel(){
         array00Trash = StoreDatabase.storesUntilDate(fromDays: -1, toDays: 0)
         array01Today = StoreDatabase.storesUntilDate(fromDays: 0, toDays: 1)
         array02Safe = StoreDatabase.storesUntilDate(fromDays: 2, toDays: nil)
     }
     
+    // 서치바
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchFilterData0 = searchText.isEmpty ? array00Trash : array00Trash.filter{ $0.name.range(of: searchText) != nil}
         searchFilterData1 = searchText.isEmpty ? array01Today : array01Today.filter{ $0.name.range(of: searchText) != nil}
@@ -74,11 +82,29 @@ extension StoreVC {
         storeListTV.reloadData()
     }
     
+//    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+//        storeSearchBar.showsCancelButton = true
+//    }
+
+    
     // 취소버튼 클릭 시 키보드 닫히고 검색어 초기화
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         storeSearchBar.text = ""
         storeSearchBar.resignFirstResponder()
         self.storeListTV.reloadData()
+        storeSearchBar.showsCancelButton = false
+    }
+    
+    @objc func editBtnClicked() {
+        didSelectEditBtn = true
+        if storeListTV.isEditing {
+            editBtn.setTitle("Edit", for: .normal)
+            storeListTV.setEditing(false, animated: true)
+        } else {
+            editBtn.setTitle("Done", for: .normal)
+            storeListTV.setEditing(true, animated: true)
+            didSelectEditBtn = false
+        }
     }
 }
 
@@ -117,9 +143,8 @@ extension StoreVC : UITableViewDataSource, UITableViewDelegate {
         // cell
         cell.labelName.text = store.name
         cell.labelSaveStyle.image = UIImage(named: store.saveStyle.rawValue)
-        cell.labelDownDate.text = store.DownDate
+        cell.labelDownDate.text = dateToString(store.DownDate)
         cell.labelMany.text = String(store.many) + String(store.manytype)
-        //proccell.labelManyType.text = String(store.manytype)
         cell.labelTotalMany.text = String(store.TotalMany) + String(store.manytype)
         
         
@@ -130,11 +155,41 @@ extension StoreVC : UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
+    // 삭제
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            var index = 0
+            var item :Store?
+            
+            if selectSegmentNumber == 0 {
+                item = searchFilterData0[indexPath.row]
+                searchFilterData0.remove(at: indexPath.row)
+            } else if selectSegmentNumber == 1 {
+                item = searchFilterData1[indexPath.row]
+                searchFilterData1.remove(at: indexPath.row)
+            } else {
+                item = searchFilterData2[indexPath.row]
+                searchFilterData2.remove(at: indexPath.row)
+            }
+            
+            index = StoreDatabase.arrayList.index{$0 == item}!
+            StoreDatabase.arrayList.remove(at: index)
+            
+           
+            storeListTV.deleteRows(at: [indexPath], with: .automatic)
+            self.storeListTV.reloadData()
+            upDateArraysFromModel()
+            updateSearchArray()
+        }
+    }
 }
 
 
@@ -147,7 +202,7 @@ extension StoreVC {
         switchSegment.insertSegment(withTitle: "폐기 물품", at: 0, animated: true)
         switchSegment.insertSegment(withTitle: "당일 마감", at: 1, animated: true)
         switchSegment.insertSegment(withTitle: "양호 물품", at: 2, animated: true)
-        switchSegment.selectedSegmentIndex = 0
+        switchSegment.selectedSegmentIndex = selectSegmentNumber
         switchSegment.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(switchSegment)
         
@@ -165,12 +220,15 @@ extension StoreVC {
         switchSegment.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: segmentFont,size : 18),
                                               NSAttributedString.Key.foregroundColor: segmentColor],  for: .selected)
         
-        switchSegment.addTarget(self, action: #selector(StoreVC.segmentControlValueChanged(_:)), for: UIControl.Event.valueChanged)
-        
-        buttonbarSetting()
+        if didSelectEditBtn == false {
+            buttonbarSetting()
+            switchSegment.addTarget(self, action: #selector(StoreVC.segmentControlValueChanged(_:)), for: UIControl.Event.valueChanged)
+            
+        }
     }
     
     @objc func segmentControlValueChanged(_ sender: UISegmentedControl){
+        
         UIView.animate(withDuration: 0.3){
             self.buttonBar.frame.origin.x = (self.switchSegment.frame.width / CGFloat(self.switchSegment.numberOfSegments)) * CGFloat(self.switchSegment.selectedSegmentIndex)
         }
@@ -190,6 +248,7 @@ extension StoreVC {
                 self.selectSegmentNumber = 2
             })
         }
+        
         self.storeListTV.reloadData()
     }
     

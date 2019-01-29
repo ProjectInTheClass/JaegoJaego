@@ -10,8 +10,6 @@ import UIKit
 
 class outStockCollectionCell: UICollectionViewCell {
     @IBOutlet weak var outStockTV: UITableView!
-    var dateCounts : [String] = []
-
     
     /** 효과 씌우기 */
     override func layoutSubviews() {
@@ -22,34 +20,31 @@ class outStockCollectionCell: UICollectionViewCell {
         layer.shadowOffset = CGSize(width: 5, height: 10)
         
     }
+    
     override func awakeFromNib() {
-        dateCounts = StoreDatabase.sellStockArray.map{$0.DownDate}
-        print("date counts = \(dateCounts.count)")
+        outStockTV.delegate = self
+        outStockTV.dataSource = self
     }
 }
 
 extension outStockCollectionCell : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dateCounts.count
+         return StoreDatabase.sellStockArray.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell = outStockTV.dequeueReusableCell(withIdentifier: "OutStockDateCell") as! stockListDateCell
-            cell.stockDateLabel.text = ""
-            return cell
-        } else if indexPath.row == 1 {
-            let cell = outStockTV.dequeueReusableCell(withIdentifier: "OutStockWriterCell") as! stockListWriterCell
-            cell.stockWriterLabel.text = "작성자"
-            cell.stockCountLabel.text = "\(StoreDatabase.sellStockArray.count)개 물품"
-         
-            return cell
-        } else {
-            let cell = outStockTV.dequeueReusableCell(withIdentifier: "OutStockStockCell") as! stockListStockCell
-            cell.stockNameLabel.text = ""
-            cell.stockCountLabel.text = ""
-            return cell
-        }
+        let cell = outStockTV.dequeueReusableCell(withIdentifier: "OutStockCell") as! outStockCell
+        return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 0 :
+            return 45
+        case 1:
+            return 60
+        default :
+            return 35
+        }
+    }
 }
