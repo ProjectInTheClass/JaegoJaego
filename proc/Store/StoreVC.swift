@@ -9,7 +9,6 @@
 import UIKit
 import Foundation
 
-
 class StoreVC: UIViewController , UISearchBarDelegate {
     @IBOutlet weak var storeListTV: UITableView!
     @IBOutlet weak var storeSearchBar: UISearchBar!
@@ -186,12 +185,12 @@ extension StoreVC : UITableViewDataSource, UITableViewDelegate {
             
             index = StoreDatabase.arrayList.index{$0 == item}!
             StoreDatabase.arrayList.remove(at: index)
-            
-           
             storeListTV.deleteRows(at: [indexPath], with: .automatic)
             self.storeListTV.reloadData()
+            
             upDateArraysFromModel()
             updateSearchArray()
+            StoreDatabase.saveData()
         }
     }
 }

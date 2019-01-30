@@ -8,7 +8,8 @@
 
 import Foundation
 
-var StoreDatabase = StoreModel()
+let StoreDatabase : StoreModel = StoreModel()
+let fileName = "Jaegojaego.file"
 
 // 보관 방법
 enum saveStyle : String {
@@ -18,27 +19,30 @@ enum saveStyle : String {
 }
 
 // 재료 하나 정보
-class Store : Equatable
+class Store : NSObject, NSCoding
 {
+    // 입력받는 값
     var name: String // 제품 이름
     var UpDate: Date  // 등록 날
     var DownDate: Date // 유통기한
-    var untilDate: Int // 남은 기간 일자 (day)
-//    var writeDate: Date // 등록한 날짜 (Date)
     
     var many: Int = 0// 수량
     var manytype :String // 단위 = degree..
     var saveStyle: saveStyle // 보관 상태
-    var saveImage: String? //보관상태 이미지
     
+    // 자동처리 값
+    var untilDate: Int { return dateFormater(downdate: DownDate) }// 남은 기간 일자 (day)
+    var saveImage: String? //보관상태 이미지
     var Image: String? // 그래프 이미지
     var TotalMany:Int = 0 // 전체 수량
     
     let key =  Date().timeIntervalSince1970
-    static func == (lhs: Store, rhs: Store) -> Bool {
-        return lhs.key == rhs.key
+//    static func == (lhs: Store, rhs: Store) -> Bool {
+//        return lhs.key == rhs.key
+//    }
+    override func isEqual(_ object: Any?) -> Bool {
+        return key == (object as? Store)?.key
     }
-    
     
     init(name:String, UpDate:Date, DownDate:Date, many:Int, manytype:String, saveStyle:saveStyle){
         self.name = name
@@ -48,95 +52,40 @@ class Store : Equatable
         self.many = many
         self.manytype = manytype
         self.saveStyle = saveStyle
-        self.saveImage = saveStyle.rawValue
         
         TotalMany += many
-        untilDate = 0
-        untilDate = self.dateFormater(downdate: DownDate)
+        
+        super.init() //안쓰면 함수 못쓰는데 필요한 이유를 모르겠음
+        storesManyFilteredTotalMany()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.name = aDecoder.decodeObject(forKey: "name") as! String
+        self.UpDate = aDecoder.decodeObject(forKey: "UpDate") as! Date
+        self.DownDate = aDecoder.decodeObject(forKey: "DownDate") as! Date
+        
+        self.many = aDecoder.decodeInteger(forKey: "many")
+        self.manytype = aDecoder.decodeObject(forKey: "manytype") as! String
+        self.saveStyle = aDecoder.decodeObject(forKey: "saveStyle") as! saveStyle
+        self.TotalMany += many
+        super.init()
         storesManyFilteredTotalMany()
     }
    
-}
-
-// 재고 ArrayList
-class StoreModel
-{
-    var sectionNum: Int = 0
-    var selectedIndex:Int = 0
-    
-    var arrayList:[Store] = []
-    var arraynumList:[Int] = [] //수량 0이 될때 셀 삭제할때 쓰는 배열
-    var buyStockArray : [Store] = [] // 입고 목록
-    var sellStockArray : [Store] = [] // 출고 목록
-    
-    var newDatePerCountDic : [String : Int] = [:] // 날짜 당 입고 물품 개수를 저장하는 딕션어리
-    var outDatePerCountDic : [String : Int] = [:] // 날짜 당 출고 물품 개수를 저장하는 딕션어리
-    
-    init(){
-        arrayList = []
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.name, forKey: "name")
+        aCoder.encode(self.UpDate, forKey: "UpDate")
+        aCoder.encode(self.DownDate, forKey: "DownDate")
         
-        let today = Date()
-        let todayAfterWeek = Date() + (86400 * 7)
-        let todayBeforeWeek = Date() - (86400 * 7)
-        
-        var stock = Store(name:"독도새우", UpDate:today, DownDate: today + (86400 * 4), many: 22, manytype:"통", saveStyle: .Cold)
-        self.arrayList.append(stock)
-        self.arraynumList.append(stock.many)
-        
-        stock = Store(name:"레몬",  UpDate:today - (86400 * 2), DownDate: todayAfterWeek, many: 6, manytype: "개",saveStyle: .Cold)
-        self.arrayList.append(stock)
-        self.arraynumList.append(stock.many)
-        
-        stock = Store(name:"아보카도",  UpDate:today - 86400, DownDate: todayAfterWeek,many: 11, manytype:"개", saveStyle: .Fresh )
-        
-        self.arrayList.append(stock)
-        self.arraynumList.append(stock.many)
-        
-        stock = Store(name:"젤라또",  UpDate: today, DownDate: today + (86400 * 3),many: 9, manytype:"개", saveStyle: .Fresh)
-        self.arrayList.append(stock)
-        self.arraynumList.append(stock.many)
-        
-        stock = Store(name:"망고",  UpDate: todayBeforeWeek - 86400, DownDate: today ,many: 13, manytype:"개", saveStyle: .Fresh)
-        self.arrayList.append(stock)
-        self.arraynumList.append(stock.many)
-        
-        stock = Store(name:"까르보나라 소스",  UpDate: todayBeforeWeek, DownDate: todayAfterWeek,many: 4, manytype:"개", saveStyle: .Fresh)
-        self.arrayList.append(stock)
-        self.arraynumList.append(stock.many)
-        
-        stock = Store(name:"새우", UpDate: today - (86400 * 5), DownDate: today - 86400, many: 2, manytype:"통", saveStyle: .Cold)
-        self.arrayList.append(stock)
-        self.arraynumList.append(stock.many)
-        
-        stock = Store(name:"새우", UpDate:today - (86400 * 3), DownDate:today + (86400 * 3), many: 12, manytype:"통", saveStyle: .Cold)
-        self.arrayList.append(stock)
-        self.arraynumList.append(stock.many)
-        
-        stock = Store(name:"새우", UpDate: today - (86400 * 4), DownDate: todayAfterWeek + (86400 * 2), many: 7, manytype:"통", saveStyle: .Cold)
-        self.arrayList.append(stock)
-        self.arraynumList.append(stock.many)
-        
-        // 입고 = (오늘 = 등록 날짜) , 내림차순
-        buyStockArray = arrayList.filter{$0.UpDate  <= today}.sorted(by: {$0.UpDate > $1.UpDate})
-        for i in buyStockArray {
-            let getCount = newDatePerCountDic[dateToString(value: i.UpDate)] ?? 0
-            newDatePerCountDic.updateValue(getCount + 1 , forKey: dateToString(value: i.UpDate))
-        }
-        
-        // 출고 = (오늘 = 마감 날짜) , 내림차순
-        sellStockArray = arrayList.filter{$0.DownDate <= today}.sorted(by: {$0.DownDate > $1.DownDate})
-        for i in sellStockArray {
-            let getCount = newDatePerCountDic[dateToString(value: i.DownDate)] ?? 0
-            outDatePerCountDic.updateValue(getCount + 1, forKey: dateToString(value: i.DownDate))
-        }
+        aCoder.encode(self.many, forKey: "many")
+        aCoder.encode(self.manytype, forKey: "manytype")
+        aCoder.encode(self.saveStyle, forKey: "saveStyle")
+        aCoder.encode(self.saveImage, forKey: "saveImage")
     }
-}
-
-
-
-
-// 함수
-extension Store {
+    
+    
+    
+    
     // 남은 기간 계산하기
     func dateFormater(downdate:Date) -> Int {
         // 유통기간 - 오늘날
@@ -175,14 +124,65 @@ extension Store {
         }
         
     }
-    
-    func updateUntilDate(){
-        self.untilDate = dateFormater(downdate: DownDate)
-    }
 }
 
-// 함수
-extension StoreModel {
+// 재고 ArrayList
+class StoreModel
+{
+    
+    
+    var filePath : String { get {
+        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        return documentDirectory + "/" + fileName
+        }
+    }
+    
+    var sectionNum: Int = 0
+    var selectedIndex:Int = 0
+    
+    var arrayList:[Store] = []
+    var arraynumList:[Int] = [] //수량 0이 될때 셀 삭제할때 쓰는 배열
+    var buyStockArray : [Store] {  // 입고 = (오늘 = 등록 날짜) , 내림차순
+        return arrayList.filter{$0.UpDate  <= Date()}.sorted(by: {$0.UpDate > $1.UpDate})
+    }
+    
+    var sellStockArray : [Store] {// 출고 = (오늘 = 마감 날짜) , 내림차순
+        return arrayList.filter{$0.DownDate <= Date()}.sorted(by: {$0.DownDate > $1.DownDate})
+    }
+    
+    init(){
+        if FileManager.default.fileExists(atPath: self.filePath){ //read
+            if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: self.filePath) as? [Store] {
+                arrayList += unarchArray
+            }
+        } else { //create
+            print("creating new file with temporary datas...")
+            arrayList += defaultData()
+        }
+    }
+    
+    func saveData() { // 터어어어ㅓ어짐
+        NSKeyedArchiver.archiveRootObject(self.arrayList, toFile: self.filePath)
+    }
+    
+    func defaultData() -> Array<Store> {
+        let today = Date()
+        let todayAfterWeek = Date() + (86400 * 7)
+        let todayBeforeWeek = Date() - (86400 * 7)
+        
+        let stock1 = Store(name:"독도새우", UpDate:today, DownDate: today + (86400 * 4), many: 22, manytype:"통", saveStyle: .Cold)
+        let stock2 = Store(name:"레몬",  UpDate:today - (86400 * 2), DownDate: todayAfterWeek, many: 6, manytype: "개",saveStyle: .Cold)
+        let stock3 = Store(name:"아보카도",  UpDate:today - 86400, DownDate: todayAfterWeek,many: 11, manytype:"개", saveStyle: .Fresh )
+        let stock4 = Store(name:"젤라또",  UpDate: today, DownDate: today + (86400 * 3),many: 9, manytype:"개", saveStyle: .Fresh)
+        let stock5 = Store(name:"망고",  UpDate: todayBeforeWeek - 86400, DownDate: today ,many: 13, manytype:"개", saveStyle: .Fresh)
+        let stock6 = Store(name:"까르보나라 소스",  UpDate: todayBeforeWeek, DownDate: todayAfterWeek,many: 4, manytype:"개", saveStyle: .Fresh)
+        let stock7 = Store(name:"새우", UpDate: today - (86400 * 5), DownDate: today - 86400, many: 2, manytype:"통", saveStyle: .Cold)
+        let stock8 = Store(name:"새우", UpDate:today - (86400 * 3), DownDate:today + (86400 * 3), many: 12, manytype:"통", saveStyle: .Cold)
+        let stock9 = Store(name:"새우", UpDate: today - (86400 * 4), DownDate: todayAfterWeek + (86400 * 2), many: 7, manytype:"통", saveStyle: .Cold)
+        
+        return [stock1, stock2, stock3, stock4, stock5, stock6, stock7, stock8, stock9]
+    }
+    
     func getNewDatePerStock(date:Date) -> [Store]{
         return arrayList.filter{$0.UpDate == date }
     }
@@ -235,7 +235,7 @@ extension StoreModel {
         var arrayReturn = [Store]()
         
         for s in arrayList {
-            s.updateUntilDate()
+            //s.updateUntilDate()
             
             // 폐기 물품
             if fromDays < 0 {
@@ -269,6 +269,7 @@ extension StoreModel {
         dateFormatter.dateFormat = "yyyy.MM.dd"
         return dateFormatter.date(from: value)!
     }
+    
     func dateToString(value : Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd"
@@ -282,3 +283,4 @@ extension StoreModel {
         return dateFormatter.string(from: today)
     }
 }
+

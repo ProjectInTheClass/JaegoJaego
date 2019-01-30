@@ -37,7 +37,7 @@ extension newStockCollectionCell : UITableViewDelegate, UITableViewDataSource {
     
     // 날짜 개수에 따른 값
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return StoreDatabase.newDatePerCountDic.keys.count
+        return 2//StoreDatabase.newDatePerCountDic.keys.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -26,6 +26,7 @@ class AddStoreVC: UIViewController {
     
     var stockDate = Date()
     var stockSaveType = saveStyle.Fresh
+    var dataFilePath : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,19 +75,6 @@ extension AddStoreVC {
 }
 
 extension AddStoreVC {
-    
-    func setView(){
-        let viewHeight = view.frame.height
-        let viewWidth = view.frame.width
-        let makePickerCenter = (viewHeight - saveStyleView.frame.origin.y - 248) / 2
-
-        //보관방식 중앙으로
-        saveStyleView.frame = CGRect(x: 0, y: viewHeight / 2, width: viewWidth, height: 80)
-        stockPickerView.frame = CGRect(x: 0, y: saveStyleView.frame.origin.y + makePickerCenter, width: viewWidth, height: 248)
-//        stockPickerView.frame = CGRect(x: 0, y: saveStyleView.frame.origin.y + 20, width: viewWidth, height: 248)
-    }
-    
-    
     @objc func segmentValueChanged(sender: BetterSegmentedControl){
         switch sender.index {
         case 0:
@@ -117,6 +105,7 @@ extension AddStoreVC {
             let stock = Store(name: stockName, UpDate: Date(), DownDate: stockDate, many: stockManyToInt, manytype: stockManyType, saveStyle: stockSaveType)
             
             StoreDatabase.arrayList.append(stock)
+            StoreDatabase.saveData()
             presentingViewController?.viewWillAppear(true)
             dismiss(animated: true, completion: nil)
         }
