@@ -437,7 +437,7 @@
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKk-Hv-VlF">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKk-Hv-VlF">
                                 <rect key="frame" x="280" y="570" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="VFE-MJ-1TK"/>
@@ -456,7 +456,6 @@
                             <constraint firstItem="mXT-TC-eTG" firstAttribute="trailing" secondItem="XKk-Hv-VlF" secondAttribute="trailing" constant="25" id="IFe-4a-7al"/>
                             <constraint firstItem="SQf-kG-LB1" firstAttribute="width" secondItem="hYb-LT-QOq" secondAttribute="width" constant="-77" id="QbO-mL-XRq"/>
                             <constraint firstItem="SQf-kG-LB1" firstAttribute="centerX" secondItem="mXT-TC-eTG" secondAttribute="centerX" constant="-38.5" id="T1U-Zg-LDE"/>
-                            <constraint firstItem="XKk-Hv-VlF" firstAttribute="width" secondItem="hYb-LT-QOq" secondAttribute="height" multiplier="70:667" id="UEF-mf-Zhl"/>
                             <constraint firstItem="vVt-aE-FOG" firstAttribute="top" secondItem="SQf-kG-LB1" secondAttribute="bottom" constant="50" id="XOG-GT-wGJ"/>
                             <constraint firstItem="vVt-aE-FOG" firstAttribute="width" secondItem="hYb-LT-QOq" secondAttribute="width" id="ZIj-um-9O0"/>
                             <constraint firstItem="mXT-TC-eTG" firstAttribute="trailing" secondItem="Alp-80-o0l" secondAttribute="trailing" id="b8b-RE-zdc"/>

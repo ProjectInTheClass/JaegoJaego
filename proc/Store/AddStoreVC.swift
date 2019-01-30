@@ -114,7 +114,7 @@ extension AddStoreVC {
         if !(stockName.isEmpty == true || stockMany.isEmpty == true || stockManyType.isEmpty == true){
             
             let stockManyToInt = Int(stockMany)!
-            let stock = Store(name: stockName, UpDate: Date(), DownDate: stockDate, many: stockManyToInt, manytype: stockManyType, saveStyle: stockSaveType, Call: nil)
+            let stock = Store(name: stockName, UpDate: Date(), DownDate: stockDate, many: stockManyToInt, manytype: stockManyType, saveStyle: stockSaveType)
             
             StoreDatabase.arrayList.append(stock)
             presentingViewController?.viewWillAppear(true)
