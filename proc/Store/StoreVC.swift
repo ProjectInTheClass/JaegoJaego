@@ -38,22 +38,20 @@ class StoreVC: UIViewController , UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        storeListTV.delegate = self
-        storeListTV.dataSource = self
-        storeSearchBar.placeholder = "재고 이름을 검색하세요."
-        storeSearchBar.delegate = self
-        StoreDatabase.sameStoreMany()
-        
+        getDelegate()
         segmentSetting()
-        upDateArraysFromModel()
+        hideKeyboardWhenTappedAround()
+        storeListTV.allowsSelection = false
         
+        StoreDatabase.sameStoreMany()
         editBtn.addTarget(self, action: #selector(editBtnClicked), for: .touchUpInside)
         storeListTV.reloadData()
     }
-
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        upDateArraysFromModel()
         updateSearchArray()
         self.storeListTV.reloadData()
     }
@@ -62,6 +60,12 @@ class StoreVC: UIViewController , UISearchBarDelegate {
 
 // 함수
 extension StoreVC {
+    func getDelegate(){
+        storeListTV.delegate = self
+        storeListTV.dataSource = self
+        storeSearchBar.delegate = self
+    }
+    
     func updateSearchArray(){
         searchFilterData0 = array00Trash.sorted(by: {$0.DownDate < $1.DownDate })
         searchFilterData1 = array01Today.sorted(by: {$0.DownDate < $1.DownDate})
@@ -91,17 +95,19 @@ extension StoreVC {
         self.storeListTV.reloadData()
         storeSearchBar.showsCancelButton = false
     }
-    
+        
     @objc func editBtnClicked() {
         didSelectEditBtn = true
         
         if storeListTV.isEditing {
             editBtn.setTitle("Edit", for: .normal)
             storeListTV.setEditing(false, animated: true)
+            storeListTV.allowsSelection = false
         } else {
             editBtn.setTitle("Done", for: .normal)
             storeListTV.setEditing(true, animated: true)
             didSelectEditBtn = false
+            storeListTV.allowsSelection = true
         }
     }
 }
@@ -136,7 +142,7 @@ extension StoreVC : UITableViewDataSource, UITableViewDelegate {
         }
         
         let store = arrayStore[indexPath.row]
-        let cell:StoreChartCell_More = tableView.dequeueReusableCell(withIdentifier: "Cell2IngredientBig") as! StoreChartCell_More
+        let cell:storeChartCell = tableView.dequeueReusableCell(withIdentifier: "StoreChartCell") as! storeChartCell
         
         // cell
         cell.labelName.text = store.name

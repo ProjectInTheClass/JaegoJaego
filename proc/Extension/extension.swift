@@ -71,6 +71,19 @@ extension UIViewController {
 }
 
 extension UIViewController {
+    var previousViewController:UIViewController?{
+        if let controllersOnNavStack = self.navigationController?.viewControllers{
+            let n = controllersOnNavStack.count
+            
+            if controllersOnNavStack.last === self, n > 1{
+                return controllersOnNavStack[n - 2]
+            } else if n > 0{
+                return controllersOnNavStack[n - 1]
+            }
+        }
+        return nil
+    }
+    
     func stringToDate(_ value: String?) -> Date{
         guard let value_ = value else { return Date()}
         
@@ -137,5 +150,14 @@ extension UICollectionViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd"
         return dateFormatter.string(from: value_)
+    }
+}
+
+
+extension UINavigationController {
+    func getPreviousViewController() -> UIViewController? {
+        let count = viewControllers.count
+        guard count > 1 else { return nil }
+        return viewControllers[count - 2]
     }
 }

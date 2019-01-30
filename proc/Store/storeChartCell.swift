@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 //import SWTableViewCell
 
-class StoreChartCell_More : UITableViewCell {
+class storeChartCell : UITableViewCell {
     @IBOutlet weak var labelName:UILabel!
     @IBOutlet weak var labelSaveStyle:UIImageView!
     @IBOutlet weak var ChartImage:UIImageView!

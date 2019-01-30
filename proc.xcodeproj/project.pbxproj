@@ -12,7 +12,6 @@
 		610558002110367A00E3175C /* elements.html in Resources */ = {isa = PBXBuildFile; fileRef = 610557FF2110367A00E3175C /* elements.html */; };
 		610558022110367F00E3175C /* images in Resources */ = {isa = PBXBuildFile; fileRef = 610558012110367F00E3175C /* images */; };
 		610558042110368200E3175C /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 610558032110368200E3175C /* assets */; };
-		6105581221130DD400E3175C /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6105581121130DD400E3175C /* StockDetailViewController.swift */; };
 		692965C72109DF38000AD605 /* Storechart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 692965C62109DF38000AD605 /* Storechart.storyboard */; };
 		6968C757210F0C0300A6FA1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6968C756210F0C0200A6FA1A /* Assets.xcassets */; };
 		69EBD6F42100719C006B055B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EBD6F32100719C006B055B /* HomeViewController.swift */; };
@@ -39,19 +38,16 @@
 		B8119A34210998DB00C0D6EE /* ScheduleAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8119A33210998DB00C0D6EE /* ScheduleAddViewController.swift */; };
 		B817E0A220FC8FF400B2A37C /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B817E0A120FC8FF400B2A37C /* Schedule.storyboard */; };
 		B817E0A420FC900D00B2A37C /* Staff.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B817E0A320FC900D00B2A37C /* Staff.storyboard */; };
-		B81ED696210EB224009DDC42 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ED695210EB224009DDC42 /* StoreViewController.swift */; };
 		B838071A20EDC00700A46B20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B838071820EDC00700A46B20 /* Main.storyboard */; };
 		B838071F20EDC00900A46B20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B838071D20EDC00900A46B20 /* LaunchScreen.storyboard */; };
 		B838072A20EDC00900A46B20 /* procTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838072920EDC00900A46B20 /* procTests.swift */; };
 		B838073520EDC00900A46B20 /* procUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B838073420EDC00900A46B20 /* procUITests.swift */; };
 		B851460C20EF4608000E6C4E /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B851460B20EF4608000E6C4E /* CompleteViewController.swift */; };
-		B8B55B8020FF24C10028B233 /* StoreChartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */; };
 		B8C566BE210B3BDB001D470A /* HomeScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C566BD210B3BDB001D470A /* HomeScheduleTableViewController.swift */; };
 		B8C566C0210B3E36001D470A /* HomeScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C566BF210B3E36001D470A /* HomeScheduleTableViewCell.swift */; };
 		B8DFC2422106EC3500626614 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC2412106EC3500626614 /* ScheduleViewController.swift */; };
-		B8DFC247210710BF00626614 /* StoreCharCell_More.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC246210710BF00626614 /* StoreCharCell_More.swift */; };
+		B8DFC247210710BF00626614 /* storeChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFC246210710BF00626614 /* storeChartCell.swift */; };
 		B8F2B3522109FAAB008FC382 /* ScheduleLittleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2B3512109FAAB008FC382 /* ScheduleLittleTableCell.swift */; };
-		B8FE6B7521074DEB00C471FB /* AddStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FE6B7421074DEB00C471FB /* AddStoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +75,6 @@
 		610557FF2110367A00E3175C /* elements.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = elements.html; sourceTree = "<group>"; };
 		610558012110367F00E3175C /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		610558032110368200E3175C /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
-		6105581121130DD400E3175C /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
 		692965C62109DF38000AD605 /* Storechart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storechart.storyboard; sourceTree = "<group>"; };
 		6968C756210F0C0200A6FA1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69EBD6F32100719C006B055B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +101,6 @@
 		B8119A33210998DB00C0D6EE /* ScheduleAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddViewController.swift; sourceTree = "<group>"; };
 		B817E0A120FC8FF400B2A37C /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		B817E0A320FC900D00B2A37C /* Staff.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Staff.storyboard; sourceTree = "<group>"; };
-		B81ED695210EB224009DDC42 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		B838071120EDC00700A46B20 /* proc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = proc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B838071920EDC00700A46B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B838071E20EDC00900A46B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -118,13 +112,11 @@
 		B838073420EDC00900A46B20 /* procUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = procUITests.swift; sourceTree = "<group>"; };
 		B838073620EDC00900A46B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B851460B20EF4608000E6C4E /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
-		B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChartTableViewController.swift; sourceTree = "<group>"; };
 		B8C566BD210B3BDB001D470A /* HomeScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScheduleTableViewController.swift; sourceTree = "<group>"; };
 		B8C566BF210B3E36001D470A /* HomeScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		B8DFC2412106EC3500626614 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
-		B8DFC246210710BF00626614 /* StoreCharCell_More.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCharCell_More.swift; sourceTree = "<group>"; };
+		B8DFC246210710BF00626614 /* storeChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storeChartCell.swift; sourceTree = "<group>"; };
 		B8F2B3512109FAAB008FC382 /* ScheduleLittleTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLittleTableCell.swift; sourceTree = "<group>"; };
-		B8FE6B7421074DEB00C471FB /* AddStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreViewController.swift; sourceTree = "<group>"; };
 		CA809CB3A8C0B1845755A6AE /* Pods-proc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proc.release.xcconfig"; path = "Pods/Target Support Files/Pods-proc/Pods-proc.release.xcconfig"; sourceTree = "<group>"; };
 		CE2034D60A2D3375CB5FB29D /* Pods_procTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_procTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -206,18 +198,6 @@
 				9B0F2B2421F84DC8003DB228 /* stockListCell.swift */,
 			);
 			path = StockList;
-			sourceTree = "<group>";
-		};
-		9B23A7E42200755900BB2DE1 /* Before */ = {
-			isa = PBXGroup;
-			children = (
-				B8DFC246210710BF00626614 /* StoreCharCell_More.swift */,
-				6105581121130DD400E3175C /* StockDetailViewController.swift */,
-				B8B55B7F20FF24C10028B233 /* StoreChartTableViewController.swift */,
-				B81ED695210EB224009DDC42 /* StoreViewController.swift */,
-				B8FE6B7421074DEB00C471FB /* AddStoreViewController.swift */,
-			);
-			path = Before;
 			sourceTree = "<group>";
 		};
 		9BA3F83C21F59865008577BB /* Model */ = {
@@ -319,8 +299,8 @@
 		B8DFC2432106EE1300626614 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				9B23A7E42200755900BB2DE1 /* Before */,
 				692965C62109DF38000AD605 /* Storechart.storyboard */,
+				B8DFC246210710BF00626614 /* storeChartCell.swift */,
 				9BA3F84821F5BC5D008577BB /* StoreVC.swift */,
 				9B23A7E5220075A100BB2DE1 /* AddStoreVC.swift */,
 			);
@@ -538,7 +518,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8F2B3522109FAAB008FC382 /* ScheduleLittleTableCell.swift in Sources */,
-				B8DFC247210710BF00626614 /* StoreCharCell_More.swift in Sources */,
+				B8DFC247210710BF00626614 /* storeChartCell.swift in Sources */,
 				9BA3F84521F59F9D008577BB /* Home.swift in Sources */,
 				B8DFC2422106EC3500626614 /* ScheduleViewController.swift in Sources */,
 				9B03EEAF21F6F3A60081752B /* MemberVC.swift in Sources */,
@@ -556,17 +536,13 @@
 				90CE556D2107342000E20EC7 /* AppDelegate.swift in Sources */,
 				9B0F2B2521F84DC8003DB228 /* stockListCell.swift in Sources */,
 				69EBD6F42100719C006B055B /* HomeViewController.swift in Sources */,
-				B8B55B8020FF24C10028B233 /* StoreChartTableViewController.swift in Sources */,
 				9BA3F84721F59FB7008577BB /* Schedule.swift in Sources */,
-				B8FE6B7521074DEB00C471FB /* AddStoreViewController.swift in Sources */,
 				B8C566BE210B3BDB001D470A /* HomeScheduleTableViewController.swift in Sources */,
 				9BA3F84921F5BC5D008577BB /* StoreVC.swift in Sources */,
 				B851460C20EF4608000E6C4E /* CompleteViewController.swift in Sources */,
 				9BA3F84321F59F77008577BB /* Store.swift in Sources */,
 				B8C566C0210B3E36001D470A /* HomeScheduleTableViewCell.swift in Sources */,
 				9B03EEB721F6FFD70081752B /* StockListVC.swift in Sources */,
-				6105581221130DD400E3175C /* StockDetailViewController.swift in Sources */,
-				B81ED696210EB224009DDC42 /* StoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,9 +12,9 @@ var StoreDatabase = StoreModel()
 
 // 보관 방법
 enum saveStyle : String {
-    case Fresh = "room"
-    case Cold = "cold"
-    case Ice = "frozen"
+    case Fresh = "room" //실온
+    case Cold = "cold" // 냉장
+    case Ice = "frozen" // 냉동
 }
 
 // 재료 하나 정보
