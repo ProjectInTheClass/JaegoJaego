@@ -149,11 +149,11 @@ extension StoreVC : UITableViewDataSource, UITableViewDelegate {
         cell.labelDownDate.text = dateToString(store.DownDate)
         cell.labelMany.text = String(store.many) + String(store.manytype)
         cell.labelTotalMany.text = String(store.TotalMany) + String(store.manytype)
+        cell.ChartImage.image = UIImage(named: store.Image)
         
-        
-        if let image2 = store.Image {
-            cell.ChartImage.image = UIImage(named: image2)
-        }
+//        if let image2 = store.Image {
+//            cell.ChartImage.image = UIImage(named: image2)
+//        }
         
         return cell
     }
@@ -190,7 +190,7 @@ extension StoreVC : UITableViewDataSource, UITableViewDelegate {
             
             upDateArraysFromModel()
             updateSearchArray()
-            StoreDatabase.saveData()
+            StoreDatabase.saveData() 
         }
     }
 }

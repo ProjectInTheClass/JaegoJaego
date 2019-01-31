@@ -25,7 +25,7 @@ class AddStoreVC: UIViewController {
     }
     
     var stockDate = Date()
-    var stockSaveType = saveStyle.Fresh
+    var stockSaveType = SaveStyle.Fresh
     var dataFilePath : String?
     
     override func viewDidLoad() {
@@ -78,11 +78,11 @@ extension AddStoreVC {
     @objc func segmentValueChanged(sender: BetterSegmentedControl){
         switch sender.index {
         case 0:
-            stockSaveType = saveStyle.Fresh
+            stockSaveType = SaveStyle.Fresh
         case 1:
-            stockSaveType = saveStyle.Cold
+            stockSaveType = SaveStyle.Cold
         default:
-            stockSaveType = saveStyle.Ice
+            stockSaveType = SaveStyle.Ice
         }
     }
     

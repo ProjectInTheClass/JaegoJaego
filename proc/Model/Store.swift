@@ -5,142 +5,17 @@
 //  Created by 성다연 on 2019. 1. 21..
 //  Copyright © 2019년 swuad-19. All rights reserved.
 //
-
+import UIKit
 import Foundation
 
 let StoreDatabase : StoreModel = StoreModel()
 let fileName = "Jaegojaego.file"
 
-// 보관 방법
-enum saveStyle : String {
-    case Fresh = "room" //실온
-    case Cold = "cold" // 냉장
-    case Ice = "frozen" // 냉동
-}
 
-// 재료 하나 정보
-class Store : NSObject, NSCoding
-{
-    // 입력받는 값
-    var name: String // 제품 이름
-    var UpDate: Date  // 등록 날
-    var DownDate: Date // 유통기한
-    
-    var many: Int = 0// 수량
-    var manytype :String // 단위 = degree..
-    var saveStyle: saveStyle // 보관 상태
-    
-    // 자동처리 값
-    var untilDate: Int { return dateFormater(downdate: DownDate) }// 남은 기간 일자 (day)
-    var saveImage: String? //보관상태 이미지
-    var Image: String? // 그래프 이미지
-    var TotalMany:Int = 0 // 전체 수량
-    
-    let key =  Date().timeIntervalSince1970
-//    static func == (lhs: Store, rhs: Store) -> Bool {
-//        return lhs.key == rhs.key
-//    }
-    override func isEqual(_ object: Any?) -> Bool {
-        return key == (object as? Store)?.key
-    }
-    
-    init(name:String, UpDate:Date, DownDate:Date, many:Int, manytype:String, saveStyle:saveStyle){
-        self.name = name
-        self.UpDate = UpDate
-        self.DownDate = DownDate
-        
-        self.many = many
-        self.manytype = manytype
-        self.saveStyle = saveStyle
-        
-        TotalMany += many
-        
-        super.init() //안쓰면 함수 못쓰는데 필요한 이유를 모르겠음
-        storesManyFilteredTotalMany()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        self.name = aDecoder.decodeObject(forKey: "name") as! String
-        self.UpDate = aDecoder.decodeObject(forKey: "UpDate") as! Date
-        self.DownDate = aDecoder.decodeObject(forKey: "DownDate") as! Date
-        
-        self.many = aDecoder.decodeInteger(forKey: "many")
-        self.manytype = aDecoder.decodeObject(forKey: "manytype") as! String
-        self.saveStyle = aDecoder.decodeObject(forKey: "saveStyle") as! saveStyle
-        self.TotalMany += many
-        super.init()
-        storesManyFilteredTotalMany()
-    }
-   
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.name, forKey: "name")
-        aCoder.encode(self.UpDate, forKey: "UpDate")
-        aCoder.encode(self.DownDate, forKey: "DownDate")
-        
-        aCoder.encode(self.many, forKey: "many")
-        aCoder.encode(self.manytype, forKey: "manytype")
-        aCoder.encode(self.saveStyle, forKey: "saveStyle")
-        aCoder.encode(self.saveImage, forKey: "saveImage")
-    }
-    
-    
-    
-    
-    // 남은 기간 계산하기
-    func dateFormater(downdate:Date) -> Int {
-        // 유통기간 - 오늘날
-        let today = Date()
-        let dateformat = downdate.timeIntervalSince1970 - today.timeIntervalSince1970
-        
-        // Date -> 문자열
-        let days = Int(dateformat / 24 / 60 / 60)
-        
-        return days
-    }
-    
-    /** 그래프 이미지 변경 */
-    func storesManyFilteredTotalMany() {
-        
-        let temp:Double = Double(self.many) / Double(self.TotalMany)
-        
-        // 전체수량은 수량보다 작으면 안됨
-        if self.TotalMany - self.many >= 0 {
-            
-            if temp > 0 && temp <= 0.25 {
-                self.Image = "wG4-1"
-            }
-            else if temp > 0.25 && temp <= 0.5 {
-                self.Image = "wG2"
-            }
-            else if temp > 0.5 && temp <= 0.75 {
-                self.Image = "wG3"
-            }
-            else if temp > 0.75 && temp <= 1 {
-                self.Image = "wG1"
-            }
-        }
-        else {
-            self.Image = "graph_0"
-        }
-        
-    }
-}
-
-// 재고 ArrayList
 class StoreModel
 {
-    
-    
-    var filePath : String { get {
-        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        return documentDirectory + "/" + fileName
-        }
-    }
-    
-    var sectionNum: Int = 0
-    var selectedIndex:Int = 0
-    
     var arrayList:[Store] = []
+    
     var arraynumList:[Int] = [] //수량 0이 될때 셀 삭제할때 쓰는 배열
     var buyStockArray : [Store] {  // 입고 = (오늘 = 등록 날짜) , 내림차순
         return arrayList.filter{$0.UpDate  <= Date()}.sorted(by: {$0.UpDate > $1.UpDate})
@@ -150,18 +25,13 @@ class StoreModel
         return arrayList.filter{$0.DownDate <= Date()}.sorted(by: {$0.DownDate > $1.DownDate})
     }
     
-    init(){
-        if FileManager.default.fileExists(atPath: self.filePath){ //read
-            if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: self.filePath) as? [Store] {
-                arrayList += unarchArray
-            }
-        } else { //create
-            print("creating new file with temporary datas...")
-            arrayList += defaultData()
+    var filePath : String { get {
+        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        return documentDirectory + "/" + fileName
         }
     }
     
-    func saveData() { // 터어어어ㅓ어짐
+    func saveData() { 
         NSKeyedArchiver.archiveRootObject(self.arrayList, toFile: self.filePath)
     }
     
@@ -207,7 +77,6 @@ class StoreModel
         // 2. 각 스토어 전체 합계를 업데이트.
         for store in self.arrayList {
             store.TotalMany = dicTotal[store.name]!
-            store.storesManyFilteredTotalMany()
         }
         
     }
@@ -282,5 +151,108 @@ class StoreModel
         dateFormatter.dateFormat = "yyyy.MM.dd"
         return dateFormatter.string(from: today)
     }
+    
+    init(){
+        if FileManager.default.fileExists(atPath: self.filePath){ //read
+            if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: self.filePath) as? [Store] {
+                arrayList = unarchArray
+            }
+        } else { //create
+            arrayList = defaultData()
+        }
+    }
 }
+
+
+
+// 보관 방법
+enum SaveStyle : String {
+    case Fresh = "room" //실온
+    case Cold = "cold" // 냉장
+    case Ice = "frozen" // 냉동
+}
+
+// 재료 하나 정보
+class Store : NSObject, NSCoding
+{
+    // 입력받는 값
+    var name: String // 제품 이름
+    var UpDate: Date  // 등록 날
+    var DownDate: Date // 유통기한
+    
+    var many: Int = 0// 수량
+    var manytype :String // 단위 = degree..
+    var saveStyle: SaveStyle // 보관 상태
+    
+    // 자동처리 값
+    var TotalMany:Int = 0 // 전체 수량
+    var untilDate: Int { return dateFormater(downdate: DownDate) }// 남은 기간 일자 (day)
+    var saveImage: String? //보관상태 이미지
+    var Image: String { // 그래프 이미지
+        let temp:Double = Double(self.many) / Double(self.TotalMany)
+    
+        // 전체수량은 수량보다 작으면 안됨
+        if self.TotalMany - self.many >= 0 {
+            if temp > 0 && temp <= 0.25 { return "wG4-1" }
+            else if temp > 0.25 && temp <= 0.5 { return "wG2" }
+            else if temp > 0.5 && temp <= 0.75 { return "wG3"}
+            else { return "wG1" }
+        } else { return "graph_0" }
+    }
+    
+    let key =  Date().timeIntervalSince1970
+    static func == (lhs: Store, rhs: Store) -> Bool {
+        return lhs.key == rhs.key
+    }
+    
+    init(name:String, UpDate:Date, DownDate:Date, many:Int, manytype:String, saveStyle:SaveStyle){
+        self.name = name
+        self.UpDate = UpDate
+        self.DownDate = DownDate
+        
+        self.many = many
+        self.manytype = manytype
+        self.saveStyle = saveStyle
+        
+        TotalMany += many
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.name = aDecoder.decodeObject(forKey: "name") as! String
+        self.UpDate = aDecoder.decodeObject(forKey: "UpDate") as! Date
+        self.DownDate = aDecoder.decodeObject(forKey: "DownDate") as! Date
+        
+        self.many = aDecoder.decodeInteger(forKey: "many")
+        self.manytype = aDecoder.decodeObject(forKey: "manytype") as! String
+        self.saveStyle = SaveStyle(rawValue: aDecoder.decodeObject(forKey: "saveStyle") as! String)! //aDecoder.decodeObject(forKey: "saveStyle") as! saveStyle
+        self.TotalMany += many
+    }
+   
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.name, forKey: "name")
+        aCoder.encode(self.UpDate, forKey: "UpDate")
+        aCoder.encode(self.DownDate, forKey: "DownDate")
+        
+        aCoder.encode(self.many, forKey: "many")
+        aCoder.encode(self.manytype, forKey: "manytype")
+        aCoder.encode(self.saveStyle.rawValue, forKey: "saveStyle")
+    }
+    
+    
+    
+    
+    // 남은 기간 계산하기
+    func dateFormater(downdate:Date) -> Int {
+        // 유통기간 - 오늘날
+        let today = Date()
+        let dateformat = downdate.timeIntervalSince1970 - today.timeIntervalSince1970
+        
+        // Date -> 문자열
+        let days = Int(dateformat / 24 / 60 / 60)
+        
+        return days
+    }
+    
+}
+
 
