@@ -37,6 +37,7 @@ class StoreVC: UIViewController , UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         getDelegate()
         segmentSetting()
         hideKeyboardWhenTappedAround()
@@ -184,6 +185,7 @@ extension StoreVC : UITableViewDataSource, UITableViewDelegate {
             }
             
             index = StoreDatabase.arrayList.index{$0 == item}!
+           
             StoreDatabase.arrayList.remove(at: index)
             storeListTV.deleteRows(at: [indexPath], with: .automatic)
             self.storeListTV.reloadData()

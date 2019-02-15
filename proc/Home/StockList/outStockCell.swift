@@ -10,6 +10,8 @@ import UIKit
 
 class outStockCell: UITableViewCell {
 
+    @IBOutlet weak var outStockDateLabel: UILabel!
+    @IBOutlet weak var outStockManyLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

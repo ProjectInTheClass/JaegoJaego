@@ -14,9 +14,11 @@ let fileName = "Jaegojaego.file"
 
 class StoreModel
 {
-    var arrayList:[Store] = []
+    // 재고 목록에 사용하는 배열
+    var arrayList:[Store] = [] // 주 배열
+  //  var trashList : [Store] = [] // 출고 배열
     
-    var arraynumList:[Int] = [] //수량 0이 될때 셀 삭제할때 쓰는 배열
+    // 홈에 사용하는 배열
     var buyStockArray : [Store] {  // 입고 = (오늘 = 등록 날짜) , 내림차순
         return arrayList.filter{$0.UpDate  <= Date()}.sorted(by: {$0.UpDate > $1.UpDate})
     }
@@ -25,6 +27,31 @@ class StoreModel
         return arrayList.filter{$0.DownDate <= Date()}.sorted(by: {$0.DownDate > $1.DownDate})
     }
     
+    // 재고 날짜 배열
+    var stockUpDateArray : [Date] {
+        return Array(Set(buyStockArray.flatMap{ $0.UpDate }))
+    }
+    var stockDownDateArray : [Date] {
+        return Array(Set(sellStockArray.flatMap{ $0.DownDate }))
+    }
+    
+    var stockListPerDate : [ Date: [Store]]{
+        var dateList = [Date:[Store]]()
+        for i in stockUpDateArray {
+            dateList.updateValue(buyStockArray.filter{$0.UpDate == i}, forKey: i)
+        }
+        return dateList
+    }
+    
+    var outStockListPerDate : [Date : [Store]]{
+        var dateList = [Date:[Store]]()
+        for i in stockDownDateArray {
+            dateList.updateValue(sellStockArray.filter{$0.DownDate == i}, forKey: i)
+        }
+        return dateList
+    }
+    
+    // 아카이브
     var filePath : String { get {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         return documentDirectory + "/" + fileName
@@ -35,6 +62,7 @@ class StoreModel
         NSKeyedArchiver.archiveRootObject(self.arrayList, toFile: self.filePath)
     }
     
+    // 테스트 데이터
     func defaultData() -> Array<Store> {
         let today = Date()
         let todayAfterWeek = Date() + (86400 * 7)
@@ -47,19 +75,21 @@ class StoreModel
         let stock5 = Store(name:"망고",  UpDate: todayBeforeWeek - 86400, DownDate: today ,many: 13, manytype:"개", saveStyle: .Fresh)
         let stock6 = Store(name:"까르보나라 소스",  UpDate: todayBeforeWeek, DownDate: todayAfterWeek,many: 4, manytype:"개", saveStyle: .Fresh)
         let stock7 = Store(name:"새우", UpDate: today - (86400 * 5), DownDate: today - 86400, many: 2, manytype:"통", saveStyle: .Cold)
-        let stock8 = Store(name:"새우", UpDate:today - (86400 * 3), DownDate:today + (86400 * 3), many: 12, manytype:"통", saveStyle: .Cold)
         let stock9 = Store(name:"새우", UpDate: today - (86400 * 4), DownDate: todayAfterWeek + (86400 * 2), many: 7, manytype:"통", saveStyle: .Cold)
+
+        return [stock1, stock2, stock3, stock4, stock5, stock6, stock7, stock9]
         
-        return [stock1, stock2, stock3, stock4, stock5, stock6, stock7, stock8, stock9]
     }
-    
+   
+    // 입고 (date:Date) -> [Store]
     func getNewDatePerStock(date:Date) -> [Store]{
-        return arrayList.filter{$0.UpDate == date }
+        return buyStockArray.filter{$0.UpDate == date }
+    }
+    // 출고 (date:Date) -> [Store]
+    func getOutDatePerStock(date:Date) -> [Store] {
+        return sellStockArray.filter{$0.DownDate == date}
     }
     
-    func getOutDatePerStock(date:Date) -> [Store] {
-        return arrayList.filter{$0.DownDate == date}
-    }
     
     /** 전체수량 계산 */
     func sameStoreMany() {
@@ -132,6 +162,15 @@ class StoreModel
         }
         return arrayReturn
     }
+//
+//
+//    func stockListPerDate() -> [Date : [Store]] {
+//        var dateList = [Date:[Store]]()
+//        for i in stockUpDateArray {
+//            dateList.updateValue(buyStockArray.filter{$0.UpDate == i}, forKey: i)
+//        }
+//        return dateList
+//    }
     
     func stringToDate(value:String) -> Date{
         let dateFormatter = DateFormatter()
@@ -237,9 +276,6 @@ class Store : NSObject, NSCoding
         aCoder.encode(self.manytype, forKey: "manytype")
         aCoder.encode(self.saveStyle.rawValue, forKey: "saveStyle")
     }
-    
-    
-    
     
     // 남은 기간 계산하기
     func dateFormater(downdate:Date) -> Int {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class stockListCell: UITableViewCell {
+class newStockNameManyCell: UITableViewCell {
     @IBOutlet weak var stockNameLabel: UILabel!
     @IBOutlet weak var stockCountLabel: UILabel!
     
