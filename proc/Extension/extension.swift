@@ -123,19 +123,19 @@ extension Dictionary where Value: Equatable {
 //        print(key)
 //    } // 2
     
-    func allKeys() -> [String] {
-        guard self.keys.first is String else {
-            debugPrint("This function will not return other hashable types. (Only strings)")
-            return []
-        }
-        return self.flatMap { (anEntry) -> String? in
-            guard let temp = anEntry.key as? String else { return nil }
-            return temp }
-    }
     //let componentsArray = dict.allKeys()
 }
 
 extension UICollectionViewCell {
+    func setSubLayer(){
+        /** 효과 씌우기 */
+        super.layoutSubviews()
+        self.clipsToBounds = false
+        layer.shadowRadius = 10
+        layer.shadowOpacity = 0.3
+        layer.shadowOffset = CGSize(width: 5, height: 10)
+    }
+    
     func stringToDate(_ value: String?) -> Date{
         guard let value_ = value else { return Date()}
         
@@ -153,11 +153,16 @@ extension UICollectionViewCell {
     }
 }
 
-
 extension UINavigationController {
     func getPreviousViewController() -> UIViewController? {
         let count = viewControllers.count
         guard count > 1 else { return nil }
         return viewControllers[count - 2]
+    }
+}
+
+extension String  {
+    var isNumber: Bool {
+        return !isEmpty && rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
     }
 }

@@ -16,6 +16,7 @@
 		6968C757210F0C0300A6FA1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6968C756210F0C0200A6FA1A /* Assets.xcassets */; };
 		69EBD6F42100719C006B055B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EBD6F32100719C006B055B /* HomeViewController.swift */; };
 		90CE556D2107342000E20EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE556C2107342000E20EC7 /* AppDelegate.swift */; };
+		9B01DDB8221E8D300074D3E5 /* StorePopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01DDB7221E8D300074D3E5 /* StorePopupVC.swift */; };
 		9B03EEAB21F6F2F10081752B /* Member.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B03EEAA21F6F2F10081752B /* Member.storyboard */; };
 		9B03EEAF21F6F3A60081752B /* MemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B03EEAE21F6F3A60081752B /* MemberVC.swift */; };
 		9B03EEB721F6FFD70081752B /* StockListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B03EEB621F6FFD70081752B /* StockListVC.swift */; };
@@ -33,7 +34,6 @@
 		9BCAB44922168DCF00AB65D7 /* outStockNameManyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCAB44822168DCF00AB65D7 /* outStockNameManyCell.swift */; };
 		9BDC1D0A21F7183C00DDA9B4 /* newStockCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC1D0921F7183C00DDA9B4 /* newStockCollectionCell.swift */; };
 		9BDC1D0C21F7186B00DDA9B4 /* outStockCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC1D0B21F7186B00DDA9B4 /* outStockCollectionCell.swift */; };
-		9BDC1D0E21F7187700DDA9B4 /* staticStockCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC1D0D21F7187700DDA9B4 /* staticStockCollectionCell.swift */; };
 		A521E423DA2E2F45CCB29B6E /* Pods_proc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98437B6BEF1E17CDECD22727 /* Pods_proc.framework */; };
 		B80B28EE2109B9CE00413049 /* HomeStoreChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80B28ED2109B9CE00413049 /* HomeStoreChartCell.swift */; };
 		B80B28F02109B9FB00413049 /* HomeStoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80B28EF2109B9FB00413049 /* HomeStoreTableViewController.swift */; };
@@ -82,6 +82,7 @@
 		69EBD6F32100719C006B055B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		90CE556C2107342000E20EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98437B6BEF1E17CDECD22727 /* Pods_proc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_proc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B01DDB7221E8D300074D3E5 /* StorePopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePopupVC.swift; sourceTree = "<group>"; };
 		9B03EEAA21F6F2F10081752B /* Member.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Member.storyboard; sourceTree = "<group>"; };
 		9B03EEAE21F6F3A60081752B /* MemberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberVC.swift; sourceTree = "<group>"; };
 		9B03EEB621F6FFD70081752B /* StockListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListVC.swift; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		9BCAB44822168DCF00AB65D7 /* outStockNameManyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = outStockNameManyCell.swift; sourceTree = "<group>"; };
 		9BDC1D0921F7183C00DDA9B4 /* newStockCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newStockCollectionCell.swift; sourceTree = "<group>"; };
 		9BDC1D0B21F7186B00DDA9B4 /* outStockCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = outStockCollectionCell.swift; sourceTree = "<group>"; };
-		9BDC1D0D21F7187700DDA9B4 /* staticStockCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = staticStockCollectionCell.swift; sourceTree = "<group>"; };
 		B80B28ED2109B9CE00413049 /* HomeStoreChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStoreChartCell.swift; sourceTree = "<group>"; };
 		B80B28EF2109B9FB00413049 /* HomeStoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStoreTableViewController.swift; sourceTree = "<group>"; };
 		B8119A33210998DB00C0D6EE /* ScheduleAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddViewController.swift; sourceTree = "<group>"; };
@@ -196,7 +196,6 @@
 				9B03EEB621F6FFD70081752B /* StockListVC.swift */,
 				9BDC1D0921F7183C00DDA9B4 /* newStockCollectionCell.swift */,
 				9BDC1D0B21F7186B00DDA9B4 /* outStockCollectionCell.swift */,
-				9BDC1D0D21F7187700DDA9B4 /* staticStockCollectionCell.swift */,
 				9B0F2B2021F83B98003DB228 /* outStockCell.swift */,
 				9B0F2B2221F83E33003DB228 /* newStockCell.swift */,
 				9B0F2B2421F84DC8003DB228 /* newStockNameManyCell.swift */,
@@ -309,6 +308,7 @@
 				B8DFC246210710BF00626614 /* storeChartCell.swift */,
 				9BA3F84821F5BC5D008577BB /* StoreVC.swift */,
 				9B23A7E5220075A100BB2DE1 /* AddStoreVC.swift */,
+				9B01DDB7221E8D300074D3E5 /* StorePopupVC.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -408,13 +408,16 @@
 				TargetAttributes = {
 					B838071020EDC00700A46B20 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 					};
 					B838072420EDC00900A46B20 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = B838071020EDC00700A46B20;
 					};
 					B838072F20EDC00900A46B20 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = B838071020EDC00700A46B20;
 					};
 				};
@@ -530,7 +533,7 @@
 				B8DFC2422106EC3500626614 /* ScheduleViewController.swift in Sources */,
 				9B03EEAF21F6F3A60081752B /* MemberVC.swift in Sources */,
 				9BA3F83F21F59885008577BB /* extension.swift in Sources */,
-				9BDC1D0E21F7187700DDA9B4 /* staticStockCollectionCell.swift in Sources */,
+				9B01DDB8221E8D300074D3E5 /* StorePopupVC.swift in Sources */,
 				9BDC1D0C21F7186B00DDA9B4 /* outStockCollectionCell.swift in Sources */,
 				B8119A34210998DB00C0D6EE /* ScheduleAddViewController.swift in Sources */,
 				9BDC1D0A21F7183C00DDA9B4 /* newStockCollectionCell.swift in Sources */,
@@ -738,7 +741,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ebabac.proc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -762,7 +765,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ebabac.proc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -781,7 +784,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ebabac.procTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/proc.app/proc";
 			};
@@ -801,7 +804,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ebabac.procTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/proc.app/proc";
 			};
@@ -820,7 +823,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ebabac.procUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = proc;
 			};
@@ -839,7 +842,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ebabac.procUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = proc;
 			};

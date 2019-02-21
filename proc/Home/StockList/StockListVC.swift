@@ -11,6 +11,12 @@ import UIKit
 class StockListVC: UIViewController {
     @IBOutlet weak var stockCollectionView: UICollectionView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.stockCollectionView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,7 +28,6 @@ extension StockListVC : UICollectionViewDelegate, UICollectionViewDataSource, UI
     func getCollectionDelegate(){
         stockCollectionView.delegate = self
         stockCollectionView.dataSource = self
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -37,7 +42,7 @@ extension StockListVC : UICollectionViewDelegate, UICollectionViewDataSource, UI
         case 0:
             return newCollectionSetting(stockCollectionView, indexpath: indexPath)
         default:
-           return  outCollectionSetting(stockCollectionView, indexpath: indexPath)
+           return outCollectionSetting(stockCollectionView, indexpath: indexPath)
         }
     }
     
@@ -53,16 +58,16 @@ extension StockListVC : UICollectionViewDelegate, UICollectionViewDataSource, UI
         return cell
     }
     
-    // 미정 - 통계 목록 세팅
-    func staticCollectionSetting(_ collectionView: UICollectionView, indexpath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StaticCollectionCell", for: indexpath) as! staticStockCollectionCell
-        return cell
-    }
+//    // 미정 - 통계 목록 세팅
+//    func staticCollectionSetting(_ collectionView: UICollectionView, indexpath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StaticCollectionCell", for: indexpath) as! staticStockCollectionCell
+//        return cell
+//    }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.view.frame.width - (10 * 2)
-        let height = self.view.frame.height - (100 * 2)
+        let width = self.view.frame.width - (15 * 2)
+        let height = self.view.frame.height - (75 * 2)
         return CGSize(width: width, height: height)
     }
     

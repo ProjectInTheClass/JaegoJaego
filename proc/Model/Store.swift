@@ -9,14 +9,15 @@ import UIKit
 import Foundation
 
 let StoreDatabase : StoreModel = StoreModel()
-let fileName = "Jaegojaego.file"
+let mainfileName = "JaegoList_Main.file"
+let usedFileName = "JaegoList_Used.file"
 
 
 class StoreModel
 {
     // 재고 목록에 사용하는 배열
     var arrayList:[Store] = [] // 주 배열
-  //  var trashList : [Store] = [] // 출고 배열
+    var outList : [Store] = [] // 출고 배열
     
     // 홈에 사용하는 배열
     var buyStockArray : [Store] {  // 입고 = (오늘 = 등록 날짜) , 내림차순
@@ -24,18 +25,18 @@ class StoreModel
     }
     
     var sellStockArray : [Store] {// 출고 = (오늘 = 마감 날짜) , 내림차순
-        return arrayList.filter{$0.DownDate <= Date()}.sorted(by: {$0.DownDate > $1.DownDate})
+        return outList.filter{$0.UpDate <= Date()}.sorted(by: {$0.UpDate > $1.UpDate})
     }
     
     // 재고 날짜 배열
     var stockUpDateArray : [Date] {
-        return Array(Set(buyStockArray.flatMap{ $0.UpDate }))
+        return Array(Set(buyStockArray.compactMap{ $0.UpDate }))
     }
     var stockDownDateArray : [Date] {
-        return Array(Set(sellStockArray.flatMap{ $0.DownDate }))
+        return Array(Set(sellStockArray.compactMap{ $0.UpDate }))
     }
     
-    var stockListPerDate : [ Date: [Store]]{
+    var stockListPerDate : [Date: [Store]]{
         var dateList = [Date:[Store]]()
         for i in stockUpDateArray {
             dateList.updateValue(buyStockArray.filter{$0.UpDate == i}, forKey: i)
@@ -46,20 +47,25 @@ class StoreModel
     var outStockListPerDate : [Date : [Store]]{
         var dateList = [Date:[Store]]()
         for i in stockDownDateArray {
-            dateList.updateValue(sellStockArray.filter{$0.DownDate == i}, forKey: i)
+            dateList.updateValue(sellStockArray.filter{$0.UpDate == i}, forKey: i)
         }
         return dateList
     }
     
     // 아카이브
-    var filePath : String { get {
+    var mainfilePath : String { get {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        return documentDirectory + "/" + fileName
+        return documentDirectory + "/" + mainfileName
         }
     }
+    var usedfilePath : String { get {
+        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        return documentDirectory + "/" + usedFileName
+        }}
     
     func saveData() { 
-        NSKeyedArchiver.archiveRootObject(self.arrayList, toFile: self.filePath)
+        NSKeyedArchiver.archiveRootObject(self.arrayList, toFile: self.mainfilePath)
+        NSKeyedArchiver.archiveRootObject(self.outList, toFile: self.usedfilePath)
     }
     
     // 테스트 데이터
@@ -87,13 +93,14 @@ class StoreModel
     }
     // 출고 (date:Date) -> [Store]
     func getOutDatePerStock(date:Date) -> [Store] {
-        return sellStockArray.filter{$0.DownDate == date}
+        return sellStockArray.filter{$0.UpDate == date}
     }
     
     
     /** 전체수량 계산 */
     func sameStoreMany() {
         var dicTotal = [String:Int]()
+        arrayList.removeAll(where: {$0.many <= 0})
         
         // 1. 각 제품별 총 합계를 구해서 딕에 담기.
         for store in self.arrayList {
@@ -162,15 +169,7 @@ class StoreModel
         }
         return arrayReturn
     }
-//
-//
-//    func stockListPerDate() -> [Date : [Store]] {
-//        var dateList = [Date:[Store]]()
-//        for i in stockUpDateArray {
-//            dateList.updateValue(buyStockArray.filter{$0.UpDate == i}, forKey: i)
-//        }
-//        return dateList
-//    }
+
     
     func stringToDate(value:String) -> Date{
         let dateFormatter = DateFormatter()
@@ -192,12 +191,18 @@ class StoreModel
     }
     
     init(){
-        if FileManager.default.fileExists(atPath: self.filePath){ //read
-            if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: self.filePath) as? [Store] {
-                arrayList = unarchArray
+        if FileManager.default.fileExists(atPath: self.mainfilePath){ //read
+            if let mainarray = NSKeyedUnarchiver.unarchiveObject(withFile: self.mainfilePath) as? [Store] {
+                arrayList = mainarray
             }
         } else { //create
             arrayList = defaultData()
+        }
+        
+        if FileManager.default.fileExists(atPath: self.usedfilePath){
+            if let usedarray = NSKeyedUnarchiver.unarchiveObject(withFile: self.usedfilePath) as? [Store] {
+                outList = usedarray
+            }
         }
     }
 }

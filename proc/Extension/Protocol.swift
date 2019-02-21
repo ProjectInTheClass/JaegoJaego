@@ -8,9 +8,3 @@
 
 import Foundation
 
-protocol getHigherViewWidth{
-    // 프로토콜
-    // get = 읽기
-    // get set = 읽고 쓰기
-    var width : Int {get}
-}

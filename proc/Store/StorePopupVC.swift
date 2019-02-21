@@ -1,0 +1,65 @@
+//
+//  StorePopupVC.swift
+//  proc
+//
+//  Created by 성다연 on 2019. 2. 21..
+//  Copyright © 2019년 swuad-19. All rights reserved.
+//
+
+import UIKit
+
+class StorePopupVC: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var pop_nameLabel: UILabel!
+    @IBOutlet weak var pop_manyLabel: UILabel!
+    @IBOutlet weak var pop_TF: UITextField!
+    @IBAction func pop_cancleBtn(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    @IBOutlet weak var pop_completeBtn: UIButton!
+    
+    var item : Store?
+    var position : Int = 0
+    
+    func setView(){
+        item = StoreDatabase.arrayList[position]
+        pop_nameLabel.text = "제품명 : \(item!.name)"
+        pop_manyLabel.text = "현재 수량 : \(item!.many) \(item!.manytype)"
+    }
+ 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setView()
+        
+        pop_TF.becomeFirstResponder()
+        pop_completeBtn.addTarget(self, action: #selector(isItemUsed), for: .touchUpInside)
+    }
+    
+    @objc func isItemUsed(){
+        guard let usedItem = pop_TF.text else {
+            ToastView.shared.short(self.view, txt_msg: "사용한 개수를 입력해주세요.")
+            return
+        }
+        if (usedItem.isNumber && StoreDatabase.arrayList[position].many - Int(usedItem)! >= 0)  {
+            StoreDatabase.arrayList[position].many -= Int(usedItem)!
+            
+            let name = StoreDatabase.arrayList[position].name
+            let update = StoreDatabase.arrayList[position].UpDate
+            let downdate = StoreDatabase.arrayList[position].DownDate
+            let many = Int(usedItem)!
+            let manytype = StoreDatabase.arrayList[position].manytype
+            let savetype = StoreDatabase.arrayList[position].saveStyle
+            
+            let Stock = Store(name: name, UpDate: update, DownDate: downdate, many: many, manytype: manytype, saveStyle: savetype)
+            
+            StoreDatabase.outList.append(Stock)
+            print("outlist = \(StoreDatabase.outList)")
+            StoreDatabase.saveData()
+            presentingViewController?.viewWillAppear(true)
+            // ++ Storevc 새로고침 해야함
+            dismiss(animated: true)
+        } else {
+            ToastView.shared.short(self.view, txt_msg: "가지고 있는 수량보다 개수가 많거나 숫자가 아닙니다!")
+        }
+    }
+    
+}

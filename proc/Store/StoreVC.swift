@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 
 class StoreVC: UIViewController , UISearchBarDelegate {
+    
     @IBOutlet weak var storeListTV: UITableView!
     @IBOutlet weak var storeSearchBar: UISearchBar!
     @IBOutlet weak var searchListView: UIView!
@@ -33,7 +34,8 @@ class StoreVC: UIViewController , UISearchBarDelegate {
     
     // 세그먼트 오류 방지용
     var didSelectEditBtn = false
-    
+    var selectIndex = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +43,6 @@ class StoreVC: UIViewController , UISearchBarDelegate {
         getDelegate()
         segmentSetting()
         hideKeyboardWhenTappedAround()
-        storeListTV.allowsSelection = false
         
         StoreDatabase.sameStoreMany()
         editBtn.addTarget(self, action: #selector(editBtnClicked), for: .touchUpInside)
@@ -55,6 +56,17 @@ class StoreVC: UIViewController , UISearchBarDelegate {
         updateSearchArray()
         self.storeListTV.reloadData()
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "popupSegue"{
+//            let vc : StorePopupVC = segue.destination as! StorePopupVC
+//            var stock = StoreDatabase.arrayList[selectIndex]
+//            vc.position = selectIndex
+//            print("vc.position = \(vc.position)")
+//        }
+//    }
+//
+   
 }
 
 
@@ -167,8 +179,27 @@ extension StoreVC : UITableViewDataSource, UITableViewDelegate {
         return 100
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var item :Store?
+        
+        if selectSegmentNumber == 0 {
+            item = searchFilterData0[indexPath.row]
+        } else if selectSegmentNumber == 1 {
+            item = searchFilterData1[indexPath.row]
+        } else {
+            item = searchFilterData2[indexPath.row]
+        }
+        selectIndex = StoreDatabase.arrayList.index{$0 == item}!
+        
+        let vc : StorePopupVC = storyboard?.instantiateViewController(withIdentifier: "storePopupVC") as! StorePopupVC
+        vc.position = selectIndex
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true)
+    }
+    
     // 삭제
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             var index = 0
             var item :Store?
@@ -185,7 +216,7 @@ extension StoreVC : UITableViewDataSource, UITableViewDelegate {
             }
             
             index = StoreDatabase.arrayList.index{$0 == item}!
-           
+            
             StoreDatabase.arrayList.remove(at: index)
             storeListTV.deleteRows(at: [indexPath], with: .automatic)
             self.storeListTV.reloadData()

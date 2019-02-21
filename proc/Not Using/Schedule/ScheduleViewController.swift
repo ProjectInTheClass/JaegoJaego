@@ -85,7 +85,7 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
     }
     
     // 삭제
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let temp = tablecell.ScheduleArray[indexPath.row]
         let indexofA = tablecell.ScheduleArray.index(of: temp)
         

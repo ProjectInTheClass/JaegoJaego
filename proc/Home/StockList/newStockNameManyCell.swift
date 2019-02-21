@@ -15,7 +15,5 @@ class newStockNameManyCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //secondBackView.frame.width = 
-        // Initialization code
     }
 }

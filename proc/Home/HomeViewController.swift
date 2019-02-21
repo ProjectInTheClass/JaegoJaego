@@ -37,11 +37,11 @@
  
  extension HomeViewController {
     func reloading(){
-        self.noticeNeedTV.rowHeight = UITableViewAutomaticDimension
-        self.noticeNeedTV.estimatedRowHeight = UITableViewAutomaticDimension
+        self.noticeNeedTV.rowHeight = UITableView.automaticDimension
+        self.noticeNeedTV.estimatedRowHeight = UITableView.automaticDimension
         
-        self.noticeScheduleTV.rowHeight = UITableViewAutomaticDimension
-        self.noticeScheduleTV.estimatedRowHeight = UITableViewAutomaticDimension
+        self.noticeScheduleTV.rowHeight = UITableView.automaticDimension
+        self.noticeScheduleTV.estimatedRowHeight = UITableView.automaticDimension
         
         self.noticeNeedTV.reloadData()
         self.noticeScheduleTV.reloadData()
