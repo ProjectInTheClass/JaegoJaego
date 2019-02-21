@@ -10,6 +10,8 @@ import UIKit
 
 class staticStockCollectionCell: UICollectionViewCell {
     
+    @IBOutlet weak var label: UILabel!
+    
     /** 효과 씌우기 */
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -17,5 +19,10 @@ class staticStockCollectionCell: UICollectionViewCell {
         layer.shadowRadius = 10
         layer.shadowOpacity = 0.3
         layer.shadowOffset = CGSize(width: 5, height: 10)
+    }
+    
+    override func awakeFromNib() {
+        label.layer.cornerRadius = 20
+        label.clipsToBounds = true
     }
 }

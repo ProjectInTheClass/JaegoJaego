@@ -11,6 +11,7 @@ import UIKit
 class newStockCell: UITableViewCell {
     @IBOutlet weak var newDateLabel: UILabel!
     @IBOutlet weak var newCountLabel: UILabel!
+    @IBOutlet weak var backView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

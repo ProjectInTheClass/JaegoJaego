@@ -11,9 +11,11 @@ import UIKit
 class newStockNameManyCell: UITableViewCell {
     @IBOutlet weak var stockNameLabel: UILabel!
     @IBOutlet weak var stockCountLabel: UILabel!
+    @IBOutlet weak var secondBackView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //secondBackView.frame.width = 
         // Initialization code
     }
 }

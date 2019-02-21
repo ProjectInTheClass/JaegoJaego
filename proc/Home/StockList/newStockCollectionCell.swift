@@ -69,7 +69,7 @@ extension newStockCollectionCell : UITableViewDelegate, UITableViewDataSource {
         }
         
         headerCell.newDateLabel.text = dateFormatter.string(from:  objectArray[section].sectionDate)
-        headerCell.newCountLabel.text = "총 \(many)개 제품"
+        headerCell.newCountLabel.text = "총 \(many)개"
         
         return headerCell
     }

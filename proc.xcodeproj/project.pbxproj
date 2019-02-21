@@ -23,6 +23,7 @@
 		9B0F2B2321F83E33003DB228 /* newStockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F2B2221F83E33003DB228 /* newStockCell.swift */; };
 		9B0F2B2521F84DC8003DB228 /* newStockNameManyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F2B2421F84DC8003DB228 /* newStockNameManyCell.swift */; };
 		9B23A7E6220075A100BB2DE1 /* AddStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B23A7E5220075A100BB2DE1 /* AddStoreVC.swift */; };
+		9B90AAE022169E0E00C3AC48 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B90AADF22169E0E00C3AC48 /* Protocol.swift */; };
 		9BA3F83F21F59885008577BB /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F83E21F59885008577BB /* extension.swift */; };
 		9BA3F84121F59987008577BB /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F84021F59987008577BB /* ToastView.swift */; };
 		9BA3F84321F59F77008577BB /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F84221F59F77008577BB /* Store.swift */; };
@@ -88,6 +89,7 @@
 		9B0F2B2221F83E33003DB228 /* newStockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newStockCell.swift; sourceTree = "<group>"; };
 		9B0F2B2421F84DC8003DB228 /* newStockNameManyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newStockNameManyCell.swift; sourceTree = "<group>"; };
 		9B23A7E5220075A100BB2DE1 /* AddStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreVC.swift; sourceTree = "<group>"; };
+		9B90AADF22169E0E00C3AC48 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		9BA3F83E21F59885008577BB /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		9BA3F84021F59987008577BB /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		9BA3F84221F59F77008577BB /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			children = (
 				9BA3F83E21F59885008577BB /* extension.swift */,
 				9BA3F84021F59987008577BB /* ToastView.swift */,
+				9B90AADF22169E0E00C3AC48 /* Protocol.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				B8F2B3522109FAAB008FC382 /* ScheduleLittleTableCell.swift in Sources */,
 				B8DFC247210710BF00626614 /* storeChartCell.swift in Sources */,
 				9BA3F84521F59F9D008577BB /* Home.swift in Sources */,
+				9B90AAE022169E0E00C3AC48 /* Protocol.swift in Sources */,
 				B8DFC2422106EC3500626614 /* ScheduleViewController.swift in Sources */,
 				9B03EEAF21F6F3A60081752B /* MemberVC.swift in Sources */,
 				9BA3F83F21F59885008577BB /* extension.swift in Sources */,
