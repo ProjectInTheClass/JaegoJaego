@@ -89,6 +89,7 @@ extension UIViewController {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd"
+        dateFormatter.locale = Locale(identifier: "ko_kr")
         return dateFormatter.date(from: value_) ?? Date()
     }
     
@@ -96,6 +97,7 @@ extension UIViewController {
         guard let value_ = value else {return ""}
         
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_kr")
         dateFormatter.dateFormat = "yyyy.MM.dd"
         return dateFormatter.string(from: value_)
     }

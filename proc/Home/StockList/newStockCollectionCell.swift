@@ -27,6 +27,8 @@ class newStockCollectionCell: UICollectionViewCell {
             objectArray_Main.append(Objects(sectionDate: key, sectionStock: value))
         }
         objectArray_Main.sort(by: {$0.sectionDate > $1.sectionDate})
+        
+        newStockTV.reloadData()
     }
 }
 

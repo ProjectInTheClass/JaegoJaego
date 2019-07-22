@@ -19,6 +19,7 @@ class StorePopupVC: UIViewController, UITextFieldDelegate {
     
     var item : Store?
     var position : Int = 0
+    var delegate : UpdateDelegate?
     
     func setView(){
         item = StoreDatabase.arrayList[position]
@@ -29,6 +30,7 @@ class StorePopupVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
+        
         
         pop_TF.becomeFirstResponder()
         pop_completeBtn.addTarget(self, action: #selector(isItemUsed), for: .touchUpInside)
@@ -41,10 +43,14 @@ class StorePopupVC: UIViewController, UITextFieldDelegate {
         }
         if (usedItem.isNumber && StoreDatabase.arrayList[position].many - Int(usedItem)! >= 0)  {
             StoreDatabase.arrayList[position].many -= Int(usedItem)!
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let temp = formatter.string(from: Date())
+            formatter.date(from: temp)
             
             let name = StoreDatabase.arrayList[position].name
             let update = StoreDatabase.arrayList[position].UpDate
-            let downdate = StoreDatabase.arrayList[position].DownDate
+            let downdate = formatter.date(from: temp)!
             let many = Int(usedItem)!
             let manytype = StoreDatabase.arrayList[position].manytype
             let savetype = StoreDatabase.arrayList[position].saveStyle
@@ -52,9 +58,10 @@ class StorePopupVC: UIViewController, UITextFieldDelegate {
             let Stock = Store(name: name, UpDate: update, DownDate: downdate, many: many, manytype: manytype, saveStyle: savetype)
             
             StoreDatabase.outList.append(Stock)
-            print("outlist = \(StoreDatabase.outList)")
+            StoreDatabase.sameStoreMany()
             StoreDatabase.saveData()
             presentingViewController?.viewWillAppear(true)
+            self.delegate?.didUpDate(sender: true)
             // ++ Storevc 새로고침 해야함
             dismiss(animated: true)
         } else {

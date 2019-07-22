@@ -23,6 +23,7 @@ class outStockCollectionCell: UICollectionViewCell {
         }
         objectArray_used.sort(by: {$0.sectionDate > $1.sectionDate})
         print("used objectArray = \(objectArray_used)")
+        outStockTV.reloadData()
     }
 }
 

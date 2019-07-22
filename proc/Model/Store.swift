@@ -25,7 +25,7 @@ class StoreModel
     }
     
     var sellStockArray : [Store] {// 출고 = (오늘 = 마감 날짜) , 내림차순
-        return outList.filter{$0.UpDate <= Date()}.sorted(by: {$0.UpDate > $1.UpDate})
+        return outList.filter{$0.DownDate <= Date()}.sorted(by: {$0.DownDate > $1.DownDate})
     }
     
     // 재고 날짜 배열
@@ -33,7 +33,7 @@ class StoreModel
         return Array(Set(buyStockArray.compactMap{ $0.UpDate }))
     }
     var stockDownDateArray : [Date] {
-        return Array(Set(sellStockArray.compactMap{ $0.UpDate }))
+        return Array(Set(sellStockArray.compactMap{ $0.DownDate }))
     }
     
     var stockListPerDate : [Date: [Store]]{
@@ -47,7 +47,7 @@ class StoreModel
     var outStockListPerDate : [Date : [Store]]{
         var dateList = [Date:[Store]]()
         for i in stockDownDateArray {
-            dateList.updateValue(sellStockArray.filter{$0.UpDate == i}, forKey: i)
+            dateList.updateValue(sellStockArray.filter{$0.DownDate == i}, forKey: i)
         }
         return dateList
     }

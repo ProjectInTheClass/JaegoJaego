@@ -8,3 +8,7 @@
 
 import Foundation
 
+protocol UpdateDelegate {
+    func didUpDate(sender: Bool)
+}
+

@@ -9,8 +9,7 @@
 import UIKit
 import Foundation
 
-class StoreVC: UIViewController , UISearchBarDelegate {
-    
+class StoreVC: UIViewController , UISearchBarDelegate, UpdateDelegate {
     @IBOutlet weak var storeListTV: UITableView!
     @IBOutlet weak var storeSearchBar: UISearchBar!
     @IBOutlet weak var searchListView: UIView!
@@ -36,6 +35,8 @@ class StoreVC: UIViewController , UISearchBarDelegate {
     var didSelectEditBtn = false
     var selectIndex = 0
 
+    // 프로토콜
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +51,8 @@ class StoreVC: UIViewController , UISearchBarDelegate {
     }
     
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         upDateArraysFromModel()
         updateSearchArray()
         self.storeListTV.reloadData()
@@ -114,14 +115,20 @@ extension StoreVC {
         if storeListTV.isEditing {
             editBtn.setTitle("Edit", for: .normal)
             storeListTV.setEditing(false, animated: true)
-            storeListTV.allowsSelection = false
         } else {
             editBtn.setTitle("Done", for: .normal)
             storeListTV.setEditing(true, animated: true)
             didSelectEditBtn = false
-            storeListTV.allowsSelection = true
         }
     }
+    
+    func didUpDate(sender: Bool) {
+        guard sender else {return}
+        upDateArraysFromModel()
+        updateSearchArray()
+        self.storeListTV.reloadData()
+    }
+    
 }
 
 
@@ -195,6 +202,7 @@ extension StoreVC : UITableViewDataSource, UITableViewDelegate {
         vc.position = selectIndex
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .overCurrentContext
+        
         present(vc, animated: true)
     }
     
