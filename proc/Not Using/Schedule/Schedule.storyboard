@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lHW-kL-pfQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lHW-kL-pfQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Diary_back" translatesAutoresizingMaskIntoConstraints="NO" id="6lX-bl-Q9P">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6lX-bl-Q9P">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQT-Dy-mto" customClass="FSCalendar">
@@ -91,22 +89,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메모" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4NT-fB-FXl">
-                                                    <rect key="frame" x="132.5" y="14" width="218.5" height="21"/>
+                                                    <rect key="frame" x="132.5" y="14.5" width="219" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:gNE-d6-yjX:image" translatesAutoresizingMaskIntoConstraints="NO" id="gNE-d6-yjX">
-                                                    <rect key="frame" x="117.5" y="8" width="9" height="34"/>
+                                                    <rect key="frame" x="117.5" y="7.5" width="9" height="34.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03:10 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E13-aG-M09">
-                                                    <rect key="frame" x="33" y="14" width="78.5" height="20.5"/>
+                                                    <rect key="frame" x="33" y="14.5" width="78.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:njx-a5-rt1:image" translatesAutoresizingMaskIntoConstraints="NO" id="njx-a5-rt1">
-                                                    <rect key="frame" x="9" y="14.5" width="19" height="19.5"/>
+                                                    <rect key="frame" x="8.5" y="15" width="19.5" height="19.5"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -139,11 +137,12 @@
                                 <sections/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udB-5c-Hbg">
-                                <rect key="frame" x="278" y="528" width="85" height="79"/>
+                                <rect key="frame" x="280" y="521" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="79" id="pJk-Aw-8lO"/>
+                                    <constraint firstAttribute="width" constant="70" id="EBB-Cv-vbG"/>
+                                    <constraint firstAttribute="height" constant="70" id="XeH-kv-frc"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="addBtn-1"/>
+                                <state key="normal" backgroundImage="plusImg"/>
                                 <connections>
                                     <segue destination="bb2-Kr-ebP" kind="presentation" id="Z3W-em-a1N"/>
                                 </connections>
@@ -151,18 +150,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="w9D-oA-Okp" firstAttribute="trailing" secondItem="udB-5c-Hbg" secondAttribute="trailing" constant="12" id="6AQ-Tz-SsY"/>
                             <constraint firstItem="6lX-bl-Q9P" firstAttribute="height" secondItem="zTW-fU-NHa" secondAttribute="height" id="Bnc-dp-JYu"/>
                             <constraint firstItem="eOO-EQ-YLz" firstAttribute="width" secondItem="zTW-fU-NHa" secondAttribute="height" multiplier="349:667" id="HYL-1c-pyc"/>
                             <constraint firstItem="NQT-Dy-mto" firstAttribute="centerX" secondItem="w9D-oA-Okp" secondAttribute="centerX" id="MMa-Ty-fkp"/>
                             <constraint firstItem="w9D-oA-Okp" firstAttribute="bottom" secondItem="eOO-EQ-YLz" secondAttribute="bottom" constant="23" id="Mgm-RU-9Hh"/>
+                            <constraint firstItem="w9D-oA-Okp" firstAttribute="trailing" secondItem="udB-5c-Hbg" secondAttribute="trailing" constant="25" id="Om3-U0-Bf6"/>
                             <constraint firstItem="NQT-Dy-mto" firstAttribute="width" secondItem="zTW-fU-NHa" secondAttribute="height" multiplier="357:667" id="XeG-sl-OjE"/>
-                            <constraint firstItem="w9D-oA-Okp" firstAttribute="bottom" secondItem="udB-5c-Hbg" secondAttribute="bottom" constant="11" id="c6Z-Nn-eUG"/>
                             <constraint firstItem="w9D-oA-Okp" firstAttribute="top" secondItem="6lX-bl-Q9P" secondAttribute="top" constant="64" id="fd7-B0-Mlh"/>
                             <constraint firstItem="NQT-Dy-mto" firstAttribute="top" secondItem="w9D-oA-Okp" secondAttribute="top" constant="5" id="fen-XC-tWg"/>
+                            <constraint firstItem="w9D-oA-Okp" firstAttribute="bottom" secondItem="udB-5c-Hbg" secondAttribute="bottom" constant="27" id="iMp-JV-4Jf"/>
                             <constraint firstItem="6lX-bl-Q9P" firstAttribute="width" secondItem="zTW-fU-NHa" secondAttribute="height" multiplier="375:667" id="rRp-ZW-h5N"/>
                             <constraint firstItem="6lX-bl-Q9P" firstAttribute="leading" secondItem="w9D-oA-Okp" secondAttribute="leading" id="wbV-7X-B9y"/>
-                            <constraint firstItem="udB-5c-Hbg" firstAttribute="width" secondItem="zTW-fU-NHa" secondAttribute="height" multiplier="71:667" constant="14" id="x10-Bw-YEr"/>
                             <constraint firstItem="eOO-EQ-YLz" firstAttribute="centerX" secondItem="w9D-oA-Okp" secondAttribute="centerX" id="yq4-2X-hdH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w9D-oA-Okp"/>
@@ -188,7 +186,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Adddiary" translatesAutoresizingMaskIntoConstraints="NO" id="Y2q-KL-awC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y2q-KL-awC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4kk-ct-3Ii">
@@ -198,7 +196,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="center" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ps-Nb-9TU">
-                                <rect key="frame" x="162" y="333" width="50" height="21"/>
+                                <rect key="frame" x="162.5" y="333" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -439,12 +437,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AddBtn" width="623" height="169"/>
-        <image name="Adddiary" width="1562" height="2779"/>
-        <image name="Diary_back" width="1562" height="2779"/>
-        <image name="addBtn-1" width="223" height="223"/>
+        <image name="AddBtn" width="623.66668701171875" height="169.66667175292969"/>
         <image name="blueCircle" width="33" height="33"/>
-        <image name="closeBtn" width="143" height="140"/>
+        <image name="closeBtn" width="143.66667175292969" height="140"/>
         <image name="greenCircle" width="33" height="33"/>
         <image name="imageView:gNE-d6-yjX:image" width="24" height="123">
             <mutableData key="keyedArchiveRepresentation">
@@ -24897,6 +24892,7 @@ DgAWGRYAFhkZABYZKwAWGS4AFhkzAAAAAAAABAEAAAAAAAAAWQAAAAAAAAAAAAAAAAAWGTU
 </mutableData>
         </image>
         <image name="memo" width="27" height="26"/>
+        <image name="plusImg" width="108" height="108"/>
         <image name="캘린더 일정-1" width="3125" height="5559"/>
     </resources>
 </document>
