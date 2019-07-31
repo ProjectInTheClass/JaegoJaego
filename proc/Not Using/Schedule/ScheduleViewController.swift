@@ -76,9 +76,10 @@ class ScheduleViewController :UIViewController, FSCalendarDataSource, FSCalendar
     //셀 핸들링
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableNewCell = tableView.dequeueReusableCell(withIdentifier: "littleScheduleCell" ,for:indexPath) as! ScheduleLittleTableCell
-        tableNewCell.littlememo.text = filteredData[indexPath.row].memotitle
-        tableNewCell.littletime.text = filteredData[indexPath.row].memotime
-        tableNewCell.littlestack.image = UIImage(named: "schedulestaffimg")
+        
+        tableNewCell.littlememo.text = String(filteredData[indexPath.row].memotitle)
+//        tableNewCell.littletime.text = String(filteredData[indexPath.row].memotime)
+//        tableNewCell.littlestack.image = UIImage(named: "schedulestaffimg")
         tableNewCell.littleJaegom.image = UIImage(named: "gaegom_skyblue")
         // 날짜는 당일로 들어가니 따로 넣지 않음
         return tableNewCell
