@@ -31,13 +31,27 @@ class SchedulePopupVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         print("scheduleDatabase count : \(scheduleModel.ScheduleArray.count)")
         popupDate.text =  dateSetting(date: userDate)
-        popupTF.resignFirstResponder()
-        
+       
+        keyboardSetting()
         savebBtn.addTarget(self, action: #selector(saveButton), for: .touchUpInside)
     }
 }
 
 extension SchedulePopupVC {
+    func keyboardSetting(){
+        popupTF.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        popupTF.resignFirstResponder()
+    }
+    @objc func keyboardWillShow(_ sender: Notification) {
+        self.view.frame.origin.y = -212
+    }
+    @objc func keyboardWillHide(_ sender: Notification){
+        self.view.frame.origin.y = 0
+    }
     func dateSetting(date : Date) -> String{
         let popupDateFormat = DateFormatter()
         popupDateFormat.dateFormat = "MM월 dd일"
@@ -60,6 +74,7 @@ extension SchedulePopupVC {
     }
     
     @objc func saveButton(){
+        popupTF.resignFirstResponder()
         if (popupTF.text != ""){
             let newData = Schedule(memotitle: popupTF.text!, memodates: saveDateFormatter(date: userDate))
             scheduleModel.ScheduleArray.append(newData) // 날짜 임시 데이터

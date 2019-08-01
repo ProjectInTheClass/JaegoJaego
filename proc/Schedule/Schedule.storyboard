@@ -311,7 +311,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4C-g6-g2e">
-                                <rect key="frame" x="0.0" y="235" width="375" height="168"/>
+                                <rect key="frame" x="0.0" y="450" width="375" height="168"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7월 30일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGu-ky-9oj">
                                         <rect key="frame" x="69" y="11" width="90" height="33"/>
@@ -399,8 +399,8 @@
                         </subviews>
                         <color key="backgroundColor" white="0.2114257812" alpha="0.3319509846" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="o4C-g6-g2e" firstAttribute="centerY" secondItem="sGy-bQ-EXT" secondAttribute="centerY" id="4YB-WG-zAv"/>
                             <constraint firstItem="o4C-g6-g2e" firstAttribute="centerX" secondItem="sGy-bQ-EXT" secondAttribute="centerX" id="sct-1P-r3g"/>
+                            <constraint firstItem="sGy-bQ-EXT" firstAttribute="bottom" secondItem="o4C-g6-g2e" secondAttribute="bottom" id="tty-kE-gXG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sGy-bQ-EXT"/>
                     </view>
