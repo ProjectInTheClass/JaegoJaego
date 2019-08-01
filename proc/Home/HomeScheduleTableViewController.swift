@@ -42,7 +42,7 @@ class HomeScheduleTableViewController : UITableViewController {
         let homeScheduleCell:HomeScheduleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "HScheduleCell") as! HomeScheduleTableViewCell
 
         homeScheduleCell.HomeScheduleTitle.text = filterdata[indexPath.row].memotitle
-        homeScheduleCell.HomeScheduleMemo.text = filterdata[indexPath.row].memotime
+        //homeScheduleCell.HomeScheduleMemo.text = filterdata[indexPath.row].memotime
         // 날짜는 당일로 들어가니 따로 넣지 않음
         
         return homeScheduleCell
