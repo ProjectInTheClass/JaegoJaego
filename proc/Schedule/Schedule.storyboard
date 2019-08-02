@@ -114,6 +114,9 @@
                                                 <constraint firstItem="njx-a5-rt1" firstAttribute="leading" secondItem="TIa-2o-iir" secondAttribute="leading" constant="8.5" id="rtp-FI-3Hv"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstItem="Ucu-lD-FTY" firstAttribute="centerY" secondItem="chL-Np-FCS" secondAttribute="centerY" id="8qc-of-eaz"/>
                                             <constraint firstItem="Ucu-lD-FTY" firstAttribute="width" secondItem="chL-Np-FCS" secondAttribute="width" id="9AJ-Uy-ljE"/>
@@ -412,7 +415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JdN-LL-enL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1196" y="880.20989505247383"/>
+            <point key="canvasLocation" x="-1194" y="922"/>
         </scene>
         <!--일정-->
         <scene sceneID="aJj-ip-h9m">

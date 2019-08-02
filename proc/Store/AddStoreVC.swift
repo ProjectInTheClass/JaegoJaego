@@ -87,13 +87,10 @@ extension AddStoreVC {
     }
     
     @objc func getDateFromPicker() {
-        let date = stockDatePK.date
-        let dateformatter = DateFormatter()
-        dateformatter.dateFormat = "yyyy년 MM월 dd일"
-        stockDate = date
-        stockDateLabel.text = dateformatter.string(from: date)
+        stockDate = stockDatePK.date
+        stockDateLabel.text = Date2String(date: stockDate, format: "yyyy년 MM월 dd일")
     }
-    
+
     @objc func addStock(sender: UIButton){
         guard let stockName = stockNameTF.text else {return}
         guard let stockMany = stockManyTF.text else {return}

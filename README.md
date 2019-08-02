@@ -1,8 +1,8 @@
 # JaegoJaego
 [![Language](https://img.shields.io/badge/Language-Swift-blue.svg)](https://paper.dropbox.com/doc/National-Petition-Analysis--AWBChEBfGCjv1j~TH2oJMUKbAg-RYdzoQNc8lAHVcDucJu1K)
-[![useLibrary](https://img.shields.io/badge/useLibrary-FSCalendar-green.svg)](https://github.com/WenchaoD/FSCalendar)
-[![useLibrary](https://img.shields.io/badge/useLibrary-BetterSegmentedControl-lightgray.svg)](https://github.com/gmarm/BetterSegmentedControl)
-[![useLibrary](https://img.shields.io/badge/useLibrary-SWTableViewCell-yellow.svg)](https://github.com/CEWendel/SWTableViewCell)
+[![useLibrary](https://img.shields.io/badge/usedLibrary-FSCalendar-green.svg)](https://github.com/WenchaoD/FSCalendar)
+[![useLibrary](https://img.shields.io/badge/usedLibrary-BetterSegmentedControl-lightgray.svg)](https://github.com/gmarm/BetterSegmentedControl)
+[![useLibrary](https://img.shields.io/badge/usedLibrary-SWTableViewCell-yellow.svg)](https://github.com/CEWendel/SWTableViewCell)
 [![update](https://img.shields.io/badge/updated-2019.8.1-red.svg)]()
 
 식당의 효율적인 음식 재고 관리와 일정을 관리하는 어플

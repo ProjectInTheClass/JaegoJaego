@@ -83,24 +83,7 @@ extension UIViewController {
         }
         return nil
     }
-    
-    func stringToDate(_ value: String?) -> Date{
-        guard let value_ = value else { return Date()}
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy.MM.dd"
-        dateFormatter.locale = Locale(identifier: "ko_kr")
-        return dateFormatter.date(from: value_) ?? Date()
-    }
-    
-    func dateToString(_ value: Date?) -> String {
-        guard let value_ = value else {return ""}
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "ko_kr")
-        dateFormatter.dateFormat = "yyyy.MM.dd"
-        return dateFormatter.string(from: value_)
-    }
+
     
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))

@@ -28,7 +28,6 @@
 		9BA3F83F21F59885008577BB /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F83E21F59885008577BB /* extension.swift */; };
 		9BA3F84121F59987008577BB /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F84021F59987008577BB /* ToastView.swift */; };
 		9BA3F84321F59F77008577BB /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F84221F59F77008577BB /* Store.swift */; };
-		9BA3F84521F59F9D008577BB /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F84421F59F9D008577BB /* Home.swift */; };
 		9BA3F84721F59FB7008577BB /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F84621F59FB7008577BB /* Schedule.swift */; };
 		9BA3F84921F5BC5D008577BB /* StoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F84821F5BC5D008577BB /* StoreVC.swift */; };
 		9BAFBC9F22F14FCA00D7D0F4 /* SchedulePopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFBC9E22F14FCA00D7D0F4 /* SchedulePopupVC.swift */; };
@@ -93,7 +92,6 @@
 		9BA3F83E21F59885008577BB /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		9BA3F84021F59987008577BB /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		9BA3F84221F59F77008577BB /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		9BA3F84421F59F9D008577BB /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		9BA3F84621F59FB7008577BB /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		9BA3F84821F5BC5D008577BB /* StoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreVC.swift; sourceTree = "<group>"; };
 		9BAFBC9E22F14FCA00D7D0F4 /* SchedulePopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePopupVC.swift; sourceTree = "<group>"; };
@@ -206,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				9BA3F84221F59F77008577BB /* Store.swift */,
-				9BA3F84421F59F9D008577BB /* Home.swift */,
 				9BA3F84621F59FB7008577BB /* Schedule.swift */,
 			);
 			path = Model;
@@ -525,7 +522,6 @@
 			files = (
 				B8F2B3522109FAAB008FC382 /* ScheduleLittleTableCell.swift in Sources */,
 				B8DFC247210710BF00626614 /* storeChartCell.swift in Sources */,
-				9BA3F84521F59F9D008577BB /* Home.swift in Sources */,
 				9B90AAE022169E0E00C3AC48 /* Protocol.swift in Sources */,
 				B8DFC2422106EC3500626614 /* ScheduleViewController.swift in Sources */,
 				9B03EEAF21F6F3A60081752B /* MemberVC.swift in Sources */,

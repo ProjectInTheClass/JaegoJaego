@@ -21,11 +21,11 @@
         giveDelegate()
         controlNeedLableView()
         
-        noticeTodayDate?.text! = todayDateFormat()
+        noticeTodayDate?.text! = Date2String(date: Date(), format: "MM월 dd일")
         // 부족한 수량 보여주기
         homeStoreFilterByMany = homeCallStore.showLessManyItem()
         // 오늘날에 해당하는 일정 보여주기
-        homeSchedulefilterData = homeCallSchedule.ScheduleArray.filter{ $0.memodates == scheduleDateFormat()}
+        homeSchedulefilterData = homeCallSchedule.ScheduleArray.filter{ $0.memodates == Date2String(date: Date(), format: "yyyyMMdd")}
         
     }
     
@@ -53,25 +53,6 @@
         
         self.noticeScheduleTV.delegate = self
         self.noticeScheduleTV.dataSource = self
-    }
-    
-    func todayDateFormat() -> String{
-        let formatter = DateFormatter()
-        let formatterdate = Date()
-        
-        formatter.dateFormat = "MM월 dd일"
-        
-        let todayDate = formatter.string(from: formatterdate)
-        return todayDate
-    }
-    
-    func scheduleDateFormat() -> String {
-        let formatter = DateFormatter()
-        let formatterdate = Date()
-        formatter.dateFormat = "yyyyMMdd"
-        
-        let todayDate =  formatter.string(from: formatterdate)
-        return todayDate
     }
     
     func controlNeedLableView(){

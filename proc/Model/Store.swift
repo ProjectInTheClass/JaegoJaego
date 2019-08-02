@@ -55,12 +55,12 @@ class StoreModel
     // 아카이브
     var mainfilePath : String { get {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        return documentDirectory + "/" + mainfileName
+        return documentDirectory + "/" + projectName + "/" + mainfileName
         }
     }
     var usedfilePath : String { get {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        return documentDirectory + "/" + usedFileName
+        return documentDirectory + "/" + projectName + "/" + usedFileName
         }}
     
     func saveData() { 
@@ -168,26 +168,6 @@ class StoreModel
             
         }
         return arrayReturn
-    }
-
-    
-    func stringToDate(value:String) -> Date{
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy.MM.dd"
-        return dateFormatter.date(from: value)!
-    }
-    
-    func dateToString(value : Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy.MM.dd"
-        return dateFormatter.string(from: value)
-    }
-    
-    func returnTodayDate() -> String {
-        let today = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy.MM.dd"
-        return dateFormatter.string(from: today)
     }
     
     init(){

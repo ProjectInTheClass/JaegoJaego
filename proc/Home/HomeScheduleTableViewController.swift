@@ -3,29 +3,16 @@ import Foundation
 
 class HomeScheduleTableViewController : UITableViewController {
     
-     let homeCallSchedule = ScheduleDatabase
+    let homeCallSchedule = ScheduleDatabase
     // 출력하는 섹션 개수
-    
-    let dateformatter = DateFormatter()
     var filterdata = [Schedule]()
     var sameDate = ""
-  
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        filterdata = homeCallSchedule.ScheduleArray.filter{ $0.memodates == dateformatting() }
+        filterdata = homeCallSchedule.ScheduleArray.filter{ $0.memodates == Date2String(date: Date(), format: "yyyyMMdd")}
         self.tableView.reloadData()
     }
-    
-    /** 오늘 날짜를 출력 */
-    func dateformatting() -> String{
-        let formatterdate = Date()
-        dateformatter.dateFormat = "yyyyMMdd"
-        
-        let todayDate = dateformatter.string(from: formatterdate)
-        return todayDate
-    }
-  
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

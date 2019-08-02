@@ -163,11 +163,11 @@ extension StoreVC : UITableViewDataSource, UITableViewDelegate {
         let store = arrayStore[indexPath.row]
         let cell:storeChartCell = tableView.dequeueReusableCell(withIdentifier: "StoreChartCell") as! storeChartCell
         
-        var temp = " 남음"
+        let temp = " 남음"
         // cell
         cell.labelName.text = store.name
         cell.labelSaveStyle.image = UIImage(named: store.saveStyle.rawValue)
-        cell.labelDownDate.text = dateToString(store.DownDate)
+        cell.labelDownDate.text = Date2String(date: store.DownDate, format: "yyyy.MM.dd") 
         cell.labelMany.text = String(store.many) + String(store.manytype) + String(temp)
         //cell.labelTotalMany.text = String(store.TotalMany) + String(store.manytype)
         cell.ChartImage.image = UIImage(named: store.Image)

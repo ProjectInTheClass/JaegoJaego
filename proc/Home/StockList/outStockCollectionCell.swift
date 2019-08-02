@@ -48,14 +48,14 @@ extension outStockCollectionCell : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = tableView.dequeueReusableCell(withIdentifier: "OutStockCell") as! outStockCell
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy. MM. dd"
+
         var many = 0
         for i in objectArray_used[section].sectionStock{
             many += i.many
         }
         
-        headerCell.outStockDateLabel.text = dateFormatter.string(from:  objectArray_used[section].sectionDate)
+        headerCell.outStockDateLabel.text = Date2String(date: objectArray_used[section].sectionDate, format: "yyyy. MM. dd")
+        
         headerCell.outStockManyLabel.text = "총 \(many)개"
         
         return headerCell

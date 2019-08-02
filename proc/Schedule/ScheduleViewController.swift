@@ -7,29 +7,21 @@ class ScheduleViewController : UIViewController {
     @IBOutlet weak var calendar_table: UITableView!
     @IBOutlet weak var ourCalendar: FSCalendar!
     
-    let tablecell = ScheduleDatabase // 저장된 값들을 가지고 있는 배열
-    let formatter = DateFormatter()
     var selectedDate = ""
-    var datesWithEvent = ScheduleDatabase.dateArray
     var filteredData: [Schedule] = [] // 달력과 메모 연결
     
     override func viewDidLoad() {
         self.setNavigationBar()
+        dataReload()
         super.viewDidLoad()
         
         calendar_table.dataSource = self
         calendar_table.delegate = self
-        
-        dataReload()
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    
-        selectedDate = dateFormatting(data: Date())
-        filteredData = tablecell.ScheduleArray.filter{ $0.memodates == selectedDate }
-
         dataReload()
+        super.viewDidAppear(animated)
     }
 }
 
@@ -54,11 +46,11 @@ extension ScheduleViewController : UITableViewDelegate, UITableViewDataSource {
     
     // 삭제
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        let temp = tablecell.ScheduleArray[indexPath.row]
-        let indexofA = tablecell.ScheduleArray.index(of: temp)
+        let temp = ScheduleDatabase.ScheduleArray[indexPath.row]
+        let indexofA = ScheduleDatabase.ScheduleArray.index(of: temp)
         
         filteredData.remove(at: indexPath.row)
-        tablecell.ScheduleArray.remove(at: indexofA!)
+        ScheduleDatabase.ScheduleArray.remove(at: indexofA!)
         
         tableView.deleteRows(at: [indexPath], with: .automatic)
         self.calendar_table.reloadData()
@@ -67,14 +59,16 @@ extension ScheduleViewController : UITableViewDelegate, UITableViewDataSource {
 
 extension ScheduleViewController : FSCalendarDataSource, FSCalendarDelegate {
     func dataReload(){
+        selectedDate = Date2String(date: Date(), format: "yyyyMMdd")
+        filteredData = ScheduleDatabase.ScheduleArray.filter{ $0.memodates == selectedDate }
         self.ourCalendar.reloadData()
         self.calendar_table.reloadData()
     }
     
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at position: FSCalendarMonthPosition){
-        let d = dateFormatting(data: date)
+        let d = Date2String(date: date, format: "yyyyMMdd")
         
-        for dateStr in datesWithEvent{
+        for dateStr in ScheduleDatabase.dateArray{
             if(d == dateStr){
                 cell.eventIndicator.numberOfEvents = 1
                 cell.eventIndicator.isHidden = false
@@ -84,8 +78,8 @@ extension ScheduleViewController : FSCalendarDataSource, FSCalendarDelegate {
     }
     
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        let dateString = dateFormatting(data: date)
-        if self.datesWithEvent.contains(dateString){
+        let dateString = Date2String(date: date, format: "yyyyMMdd")
+        if ScheduleDatabase.dateArray.contains(dateString){
             return 1
         }
         return 0
@@ -93,19 +87,14 @@ extension ScheduleViewController : FSCalendarDataSource, FSCalendarDelegate {
     
     // 선택한 날짜와 같은 날짜의 데이터를 filteredData(테이블뷰) 에 넣어주기
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        selectedDate = dateFormatting(data: date)
-        filteredData = tablecell.ScheduleArray.filter{ $0.memodates == selectedDate }
+        selectedDate = Date2String(date: date, format: "yyyyMMdd")
+        filteredData = ScheduleDatabase.ScheduleArray.filter{ $0.memodates == selectedDate }
         
         self.calendar_table.reloadData()
     }
 }
 
 extension ScheduleViewController {
-    func dateFormatting(data : Date) -> String{
-        formatter.dateFormat = "yyyyMMdd"
-        return formatter.string(from: data)
-    }
-    
     func setNavigationBar(){
         let bar:UINavigationBar! =  self.navigationController?.navigationBar
         bar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)

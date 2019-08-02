@@ -9,10 +9,6 @@
 import UIKit
 import Foundation
 
-protocol popupDelegate {
-    func popupDateDelegate(data:Date)
-}
-
 class SchedulePopupVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var popupDate: UILabel!
     @IBOutlet weak var popupTF: UITextField!
@@ -20,7 +16,6 @@ class SchedulePopupVC: UIViewController, UITextFieldDelegate {
     
     var userDate = Date()
     var userStringDate = ""
-    var delegate : popupDelegate?
     let scheduleModel = ScheduleDatabase
     
     @IBAction func cancleBtn(_ sender: UIButton) {
@@ -29,9 +24,7 @@ class SchedulePopupVC: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("scheduleDatabase count : \(scheduleModel.ScheduleArray.count)")
-        popupDate.text =  dateSetting(date: userDate)
-       
+        popupDate.text =  Date2String(date: userDate, format: "MM월 dd일")
         keyboardSetting()
         savebBtn.addTarget(self, action: #selector(saveButton), for: .touchUpInside)
     }
@@ -52,17 +45,7 @@ extension SchedulePopupVC {
     @objc func keyboardWillHide(_ sender: Notification){
         self.view.frame.origin.y = 0
     }
-    func dateSetting(date : Date) -> String{
-        let popupDateFormat = DateFormatter()
-        popupDateFormat.dateFormat = "MM월 dd일"
-        return popupDateFormat.string(from: date)
-    }
     
-    func saveDateFormatter(date : Date)->String {
-        let saveDateFormatter = DateFormatter()
-        saveDateFormatter.dateFormat = "yyyyMMdd"
-        return saveDateFormatter.string(from: date)
-    }
     //키보드 엔터키 누르면 키보드 내려감
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -73,21 +56,16 @@ extension SchedulePopupVC {
         self.view.endEditing(true)
     }
     
+
     @objc func saveButton(){
         popupTF.resignFirstResponder()
+        
         if (popupTF.text != ""){
-            let newData = Schedule(memotitle: popupTF.text!, memodates: saveDateFormatter(date: userDate))
+            let newData = Schedule(memotitle: popupTF.text!, memodates: Date2String(date: userDate, format: "yyyyMMdd"))
             scheduleModel.ScheduleArray.append(newData) // 날짜 임시 데이터
-            scheduleModel.dateArray.append(saveDateFormatter(date: userDate))
-            //self.delegate?.popupDateDelegate(data: userDate)
-            //self.performSegue(withIdentifier: "popupSegue", sender: self)
+            scheduleModel.dateArray.append(Date2String(date: userDate, format: "yyyyMMdd"))
+            
         }
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let param = segue.destination as! ScheduleViewController
-//        let value = saveDateFormatter(date:userDate)
-//        param.value(forKey: value)
-//    }
 }
