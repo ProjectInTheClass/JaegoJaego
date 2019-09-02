@@ -87,6 +87,7 @@
 		9B0F2B2021F83B98003DB228 /* outStockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = outStockCell.swift; sourceTree = "<group>"; };
 		9B0F2B2221F83E33003DB228 /* newStockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newStockCell.swift; sourceTree = "<group>"; };
 		9B0F2B2421F84DC8003DB228 /* newStockNameManyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newStockNameManyCell.swift; sourceTree = "<group>"; };
+		9B2146E3231D0AFB0015BBBF /* proc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "proc-Bridging-Header.h"; sourceTree = "<group>"; };
 		9B23A7E5220075A100BB2DE1 /* AddStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreVC.swift; sourceTree = "<group>"; };
 		9B90AADF22169E0E00C3AC48 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		9BA3F83E21F59885008577BB /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
@@ -238,6 +239,7 @@
 		B838070820EDC00700A46B20 = {
 			isa = PBXGroup;
 			children = (
+				9B2146E3231D0AFB0015BBBF /* proc-Bridging-Header.h */,
 				610557FA2110366200E3175C /* Docs */,
 				B838071320EDC00700A46B20 /* proc */,
 				B838072820EDC00900A46B20 /* procTests */,
