@@ -23,6 +23,8 @@
 		9B0F2B2121F83B98003DB228 /* outStockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F2B2021F83B98003DB228 /* outStockCell.swift */; };
 		9B0F2B2321F83E33003DB228 /* newStockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F2B2221F83E33003DB228 /* newStockCell.swift */; };
 		9B0F2B2521F84DC8003DB228 /* newStockNameManyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F2B2421F84DC8003DB228 /* newStockNameManyCell.swift */; };
+		9B2146E7231D14720015BBBF /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B2146E6231D14720015BBBF /* Chat.storyboard */; };
+		9B2146E9231D147D0015BBBF /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B2146E8231D147D0015BBBF /* List.storyboard */; };
 		9B23A7E6220075A100BB2DE1 /* AddStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B23A7E5220075A100BB2DE1 /* AddStoreVC.swift */; };
 		9B90AAE022169E0E00C3AC48 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B90AADF22169E0E00C3AC48 /* Protocol.swift */; };
 		9BA3F83F21F59885008577BB /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F83E21F59885008577BB /* extension.swift */; };
@@ -88,6 +90,8 @@
 		9B0F2B2221F83E33003DB228 /* newStockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newStockCell.swift; sourceTree = "<group>"; };
 		9B0F2B2421F84DC8003DB228 /* newStockNameManyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newStockNameManyCell.swift; sourceTree = "<group>"; };
 		9B2146E3231D0AFB0015BBBF /* proc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "proc-Bridging-Header.h"; sourceTree = "<group>"; };
+		9B2146E6231D14720015BBBF /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		9B2146E8231D147D0015BBBF /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
 		9B23A7E5220075A100BB2DE1 /* AddStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreVC.swift; sourceTree = "<group>"; };
 		9B90AADF22169E0E00C3AC48 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		9BA3F83E21F59885008577BB /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
@@ -201,6 +205,22 @@
 			path = StockList;
 			sourceTree = "<group>";
 		};
+		9B2146E4231D13F50015BBBF /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				9B2146E6231D14720015BBBF /* Chat.storyboard */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		9B2146E5231D14330015BBBF /* List */ = {
+			isa = PBXGroup;
+			children = (
+				9B2146E8231D147D0015BBBF /* List.storyboard */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 		9BA3F83C21F59865008577BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +243,7 @@
 		9BF6721E21FC3F310089FB6B /* Not Using */ = {
 			isa = PBXGroup;
 			children = (
+				B8DFC2452106EEAD00626614 /* Home */,
 				B817E0A320FC900D00B2A37C /* Staff.storyboard */,
 				9B03EEA921F6F2D30081752B /* Member */,
 			);
@@ -266,8 +287,9 @@
 			children = (
 				9BF6721E21FC3F310089FB6B /* Not Using */,
 				9BA3F83D21F5986C008577BB /* Extension */,
+				9B2146E5231D14330015BBBF /* List */,
+				9B2146E4231D13F50015BBBF /* Chat */,
 				9BA3F83C21F59865008577BB /* Model */,
-				B8DFC2452106EEAD00626614 /* Home */,
 				B8DFC2432106EE1300626614 /* Store */,
 				B8DFC2442106EE6600626614 /* Schedule */,
 				B838071820EDC00700A46B20 /* Main.storyboard */,
@@ -447,9 +469,11 @@
 				610558022110367F00E3175C /* images in Resources */,
 				B817E0A420FC900D00B2A37C /* Staff.storyboard in Resources */,
 				59CEA7A820FC81D700847485 /* Home.storyboard in Resources */,
+				9B2146E7231D14720015BBBF /* Chat.storyboard in Resources */,
 				B838071A20EDC00700A46B20 /* Main.storyboard in Resources */,
 				6968C757210F0C0300A6FA1A /* Assets.xcassets in Resources */,
 				610557FC2110367200E3175C /* index.html in Resources */,
+				9B2146E9231D147D0015BBBF /* List.storyboard in Resources */,
 				692965C72109DF38000AD605 /* Storechart.storyboard in Resources */,
 				9B03EEAB21F6F2F10081752B /* Member.storyboard in Resources */,
 				610558042110368200E3175C /* assets in Resources */,
