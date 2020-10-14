@@ -252,9 +252,8 @@ extension StoreVC {
         view.addSubview(switchSegment)
         
         switchSegment.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height / 8).isActive = true
-        
         switchSegment.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        switchSegment.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        switchSegment.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         switchSegment.backgroundColor = .clear
         switchSegment.tintColor = .clear

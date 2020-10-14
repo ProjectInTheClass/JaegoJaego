@@ -93,7 +93,7 @@ class StoreModel
     }
     // 출고 (date:Date) -> [Store]
     func getOutDatePerStock(date:Date) -> [Store] {
-        return sellStockArray.filter{$0.UpDate == date}
+        return sellStockArray.filter{$0.DownDate == date}
     }
     
     

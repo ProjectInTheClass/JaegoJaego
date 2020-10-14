@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZQd-fk-OQz">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZQd-fk-OQz">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar Extention-->
         <scene sceneID="S4m-kw-F81">
             <objects>
-                <tabBarController id="ZQd-fk-OQz" sceneMemberID="viewController">
+                <tabBarController id="ZQd-fk-OQz" customClass="TabBarExtention" customModule="proc" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fQ0-lr-nDo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="f36-8H-Drl" kind="relationship" relationship="viewControllers" id="heb-Jp-E2C"/>
                         <segue destination="wf0-aB-1WJ" kind="relationship" relationship="viewControllers" id="Sgn-IX-mXp"/>
                         <segue destination="mhm-wK-eXx" kind="relationship" relationship="viewControllers" id="0Vy-FY-wiA"/>
                         <segue destination="N3A-ga-Xkb" kind="relationship" relationship="viewControllers" id="gOV-mc-zZD"/>
@@ -107,10 +106,10 @@
         <scene sceneID="nxe-4G-S8B">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mhm-wK-eXx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="일정" image="memo" id="bk1-bN-u7i"/>
+                    <tabBarItem key="tabBarItem" title="일정" id="bk1-bN-u7i"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UL8-Qw-PRR">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -170,6 +169,5 @@
     <resources>
         <image name="catagory" width="21" height="28"/>
         <image name="home" width="28" height="25"/>
-        <image name="memo" width="27" height="26"/>
     </resources>
 </document>
