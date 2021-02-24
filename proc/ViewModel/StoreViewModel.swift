@@ -63,8 +63,8 @@ extension StoreViewModel {
     /// 입고 목록
     func returnStockPerDateBuyArray() -> [Date: [Store]] {
         var list = [Date : [Store]]()
-        let array = StockArray.filter { $0.UpDate <= Date()}.sorted(by: { $0.UpDate > $1.UpDate})
-        let array2 = Array(Set(StockArray.compactMap { $0.UpDate }))
+        let array = StockArray.filter { $0.UpDate <= Date()}
+        let array2 = Array(Set(array.compactMap { $0.UpDate }))
         
         array2.forEach { date in
             list.updateValue(array.filter { $0.UpDate == date}, forKey: date)
@@ -75,8 +75,8 @@ extension StoreViewModel {
     /// 출고 목록
     func returnStockPerDateOutArray() -> [Date: [Store]] {
         var list = [Date : [Store]]()
-        let array = StockArray.filter { $0.many <= 0 }.sorted(by: { $0.DownDate > $1.DownDate})
-        let array2 = Array(Set(StockArray.compactMap { $0.DownDate }))
+        let array = StockArray.filter { $0.many <= 0 }
+        let array2 = Array(Set(array.compactMap { $0.DownDate }))
         
         array2.forEach { date in
             list.updateValue(array.filter { $0.DownDate == date}, forKey: date)
@@ -170,8 +170,8 @@ extension StoreViewModel {
             Store(name:"새우", UpDate: today - (86400 * 5), DownDate: today - 86400, many: 2, manytype:"통", saveStyle: .Cold),
             Store(name:"새우", UpDate: today - (86400 * 4), DownDate: todayAfterWeek + (86400 * 2), many: 7, manytype:"통", saveStyle: .Cold),
             
-            Store(name:"랍스타", UpDate: today - (86400 * 4), DownDate: today, many: 7, manytype:"개", saveStyle: .Ice),
-            Store(name:"오일", UpDate: today - (86400 * 9), DownDate: today - 86400, many: 7, manytype:"개", saveStyle: .Fresh)
+            Store(name:"랍스타", UpDate: today - (86400 * 4), DownDate: today, many: 0, manytype:"개", saveStyle: .Ice),
+            Store(name:"오일", UpDate: today - (86400 * 9), DownDate: today - 86400, many: 0, manytype:"개", saveStyle: .Fresh)
         ]
         return list
     }

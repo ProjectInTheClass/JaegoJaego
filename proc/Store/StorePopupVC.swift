@@ -63,8 +63,7 @@ extension StorePopupVC {
             viewModel.saveData()
 
             presentingViewController?.viewWillAppear(true)
-            self.delegate?.didUpDate(sender: true)
-            // ++ Storevc 새로고침 해야함
+            delegate?.didUpDate()
             dismiss(animated: true)
         } else {
             ToastView.shared.short(self.view, txt_msg: "가지고 있는 수량보다 개수가 많거나 숫자가 아닙니다!")

@@ -26,7 +26,7 @@ class outStockCollectionCell: UICollectionViewCell {
         for (key, value) in viewModel.returnStockPerDateOutArray() {
             sectionArray.append(SectionObjects(sectionDate: key, sectionStock: value))
         }
-        
+        print("array = \(sectionArray)")
         sectionArray.sort(by: {$0.sectionDate > $1.sectionDate})
         outStockTV.reloadData()
     }

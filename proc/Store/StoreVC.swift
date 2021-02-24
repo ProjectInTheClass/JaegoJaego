@@ -9,10 +9,9 @@
 import UIKit
 import Foundation
 
-class StoreVC: UIViewController , UISearchBarDelegate, UpdateDelegate {
+class StoreVC: UIViewController {
     @IBOutlet weak var storeListTV: UITableView!
     @IBOutlet weak var storeSearchBar: UISearchBar!
-    @IBOutlet weak var searchListView: UIView!
     @IBOutlet weak var editBtn: UIButton!
     
     private let viewModel = StoreViewModel()
@@ -36,41 +35,46 @@ class StoreVC: UIViewController , UISearchBarDelegate, UpdateDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpDelegate()
         setUpSegmentBar()
-        hideKeyboardWhenTappedAround()
+        setUpSubViews()
         
         viewModel.returnStockTotalCount()
-        editBtn.addTarget(self, action: #selector(editBtnClicked), for: .touchUpInside)
-        storeListTV.reloadData()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        updateArraysFromModel()
-        self.storeListTV.reloadData()
+        didUpDate()
     }
 }
 
 
 // 함수
-extension StoreVC {
+extension StoreVC : UISearchBarDelegate, UpdateDelegate {
     func setUpDelegate(){
         storeListTV.delegate = self
         storeListTV.dataSource = self
         storeSearchBar.delegate = self
+    }
+    
+    func setUpSubViews(){
+        editBtn.addTarget(self, action: #selector(editBtnClicked), for: .touchUpInside)
+        hideKeyboardWhenTappedAround()
     }
 
     func updateArraysFromModel(){
         array00Trash = viewModel.returnStockUntilDate(fromDays: -1, toDays: 0)
         array01Today = viewModel.returnStockUntilDate(fromDays: 0, toDays: 1)
         array02Safe = viewModel.returnStockUntilDate(fromDays: 2, toDays: nil)
+        
+        searchFilterData0 = array00Trash
+        searchFilterData1 = array01Today
+        searchFilterData2 = array02Safe
     }
     
     // 서치바
-    func setUpSearchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchFilterData0 = searchText.isEmpty ? array00Trash : array00Trash.filter{ $0.name.range(of: searchText) != nil}
         searchFilterData1 = searchText.isEmpty ? array01Today : array01Today.filter{ $0.name.range(of: searchText) != nil}
         searchFilterData2 = searchText.isEmpty ? array02Safe : array02Safe.filter{ $0.name.range(of: searchText) != nil}
@@ -100,8 +104,7 @@ extension StoreVC {
         }
     }
     
-    func didUpDate(sender: Bool) {
-        guard sender else {return}
+    func didUpDate() {
         updateArraysFromModel()
         self.storeListTV.reloadData()
     }
@@ -142,8 +145,8 @@ extension StoreVC : UITableViewDataSource, UITableViewDelegate {
         // cell
         cell.labelName.text = store.name
         cell.labelSaveStyle.image = UIImage(named: store.saveStyle.rawValue)
-        cell.labelDownDate.text = Date2String(date: store.DownDate, format: "yyyy.MM.dd") 
-        cell.labelMany.text = "\(store.many)" + "\(store.manytype) 남음"
+        cell.labelDownDate.text = Date2String(date: store.DownDate, format: "yyyy. MM. dd")
+        cell.labelMany.text = "\(store.many)" + "\(store.manytype)"
         cell.ChartImage.image = UIImage(named: store.Image)
         
         return cell
@@ -158,7 +161,7 @@ extension StoreVC : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var item :Store?
+        var item : Store?
         
         if selectSegmentNumber == 0 {
             item = searchFilterData0[indexPath.row]
@@ -176,7 +179,7 @@ extension StoreVC : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             var index = 0
-            var item :Store?
+            var item : Store?
             
             if selectSegmentNumber == 0 {
                 item = searchFilterData0[indexPath.row]
@@ -193,9 +196,8 @@ extension StoreVC : UITableViewDataSource, UITableViewDelegate {
             
             viewModel.removeStock(data: index)
             storeListTV.deleteRows(at: [indexPath], with: .automatic)
-            storeListTV.reloadData()
             
-            updateArraysFromModel()
+            didUpDate()
             viewModel.saveData()
         }
     }
@@ -228,7 +230,6 @@ extension StoreVC {
         if didSelectEditBtn == false {
             buttonbarSetting()
             switchSegment.addTarget(self, action: #selector(StoreVC.segmentControlValueChanged(_:)), for: UIControl.Event.valueChanged)
-            
         }
     }
     

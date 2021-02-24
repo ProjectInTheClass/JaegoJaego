@@ -9,7 +9,7 @@
 import Foundation
 
 protocol UpdateDelegate {
-    func didUpDate(sender: Bool)
+    func didUpDate()
 }
 
 protocol popupDelegate {

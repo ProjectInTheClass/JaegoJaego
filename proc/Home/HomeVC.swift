@@ -72,7 +72,7 @@
         if tableView == noticeNeedTV {
             let HomeStoreInfo = self.homeStoreFilterByMany[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "HStoreCell") as! HomeStoreChartCell
-            let storeManyDegree:String = String(HomeStoreInfo.many) + " / \(HomeStoreInfo.TotalMany)" + " " + HomeStoreInfo.manytype
+            let storeManyDegree = "\(HomeStoreInfo.many) + \(HomeStoreInfo.TotalMany) " + HomeStoreInfo.manytype
             
             cell.HomeStoreName.text = HomeStoreInfo.name
             cell.HomeStoreImage.image = UIImage(named: HomeStoreInfo.saveStyle.rawValue)
