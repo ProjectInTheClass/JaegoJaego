@@ -11,5 +11,4 @@ import UIKit
 class HomeScheduleTableViewCell: UITableViewCell {
     @IBOutlet weak var HomeScheduleTitle:UILabel!
     @IBOutlet weak var HomeScheduleMemo:UILabel!
-    //@IBOutlet weak var HomeScheduleCount:UILabel!
 }

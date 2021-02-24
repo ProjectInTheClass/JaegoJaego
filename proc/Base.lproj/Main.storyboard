@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZQd-fk-OQz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZQd-fk-OQz">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,10 +18,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="f36-8H-Drl" kind="relationship" relationship="viewControllers" id="heb-Jp-E2C"/>
-                        <segue destination="wf0-aB-1WJ" kind="relationship" relationship="viewControllers" id="Sgn-IX-mXp"/>
                         <segue destination="mhm-wK-eXx" kind="relationship" relationship="viewControllers" id="0Vy-FY-wiA"/>
-                        <segue destination="N3A-ga-Xkb" kind="relationship" relationship="viewControllers" id="gOV-mc-zZD"/>
-                        <segue destination="r6b-R5-4eV" kind="relationship" relationship="viewControllers" id="Gf9-ye-3Af"/>
+                        <segue destination="wf0-aB-1WJ" kind="relationship" relationship="viewControllers" id="Sgn-IX-mXp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bmy-hQ-zKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -37,32 +35,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jw4-eV-9La" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2968" y="3057"/>
-        </scene>
-        <!--채팅-->
-        <scene sceneID="B6v-uK-svZ">
-            <objects>
-                <navigationController navigationBarHidden="YES" id="N3A-ga-Xkb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="채팅" id="w7G-oN-pzs"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WSa-US-uuh">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="JzE-XM-32L" kind="relationship" relationship="rootViewController" id="yd3-UN-iZM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VWc-jI-h4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3497" y="4096"/>
-        </scene>
-        <!--Chat-->
-        <scene sceneID="1nI-Lr-zd9">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Chat" id="JzE-XM-32L" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="lVN-Cx-vM1"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pad-jW-Ebn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4107" y="4070"/>
         </scene>
         <!--Storechart-->
         <scene sceneID="jsZ-iu-Bar">
@@ -138,32 +110,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFR-cM-cGh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2478" y="3058"/>
-        </scene>
-        <!--연락처-->
-        <scene sceneID="S05-w7-Ya1">
-            <objects>
-                <navigationController navigationBarHidden="YES" id="r6b-R5-4eV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="연락처" id="j2n-Ez-0cu"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r0D-nE-ZtD">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="vdd-mG-IBq" kind="relationship" relationship="rootViewController" id="Td1-Tl-j5S"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BrZ-Wu-TT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3497" y="4836"/>
-        </scene>
-        <!--List-->
-        <scene sceneID="Nnk-ge-dJg">
-            <objects>
-                <viewControllerPlaceholder storyboardName="List" id="vdd-mG-IBq" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="GDc-hn-Dig"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bGT-FW-Ki6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4079" y="4795"/>
         </scene>
     </scenes>
     <resources>

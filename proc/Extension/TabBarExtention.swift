@@ -13,7 +13,7 @@ class TabBarExtention: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        if let newButton = UIImage(named: "plusImg"){
+        if let newButton = UIImage(named: "calendartabicon"){
             self.addCenterButton(withImage: newButton,highlightImage: newButton)
         }
     }

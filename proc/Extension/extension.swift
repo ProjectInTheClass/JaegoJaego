@@ -83,7 +83,12 @@ extension UIViewController {
         }
         return nil
     }
-
+    
+    func Date2String(date: Date, format : String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: date)
+    }
     
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
@@ -94,22 +99,24 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-    
 }
+
+extension Date {
+    func returnString(format: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: Date())
+    }
+}
+
 
 extension Dictionary where Value: Equatable {
 
     func someKey(forValue val: Value) -> Key? {
         return first(where: { $1 == val })?.key
     }
-    //let dict: [Int: String] = [1: "one", 2: "two", 4: "four"]
-    
-//    if let key = dict.someKey(forValue: "two") {
-//        print(key)
-//    } // 2
-    
-    //let componentsArray = dict.allKeys()
 }
+
 
 extension UICollectionViewCell {
     func setSubLayer(){
@@ -118,24 +125,10 @@ extension UICollectionViewCell {
         self.clipsToBounds = false
         layer.shadowRadius = 10
         layer.shadowOpacity = 0.3
-        layer.shadowOffset = CGSize(width: 5, height: 10)
+        layer.shadowOffset = CGSize(width: 5, height: 5)
     }
     
-    func stringToDate(_ value: String?) -> Date{
-        guard let value_ = value else { return Date()}
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy.MM.dd"
-        return dateFormatter.date(from: value_) ?? Date()
-    }
     
-    func dateToString(_ value: Date?) -> String {
-        guard let value_ = value else {return ""}
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy.MM.dd"
-        return dateFormatter.string(from: value_)
-    }
 }
 
 extension UINavigationController {

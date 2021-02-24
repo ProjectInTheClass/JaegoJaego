@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uxE-JA-gpl">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uxE-JA-gpl">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,11 +17,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MKL-Z1-Pzd">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="MKL-Z1-Pzd" secondAttribute="height" multiplier="375:587" constant="-38.330494037478729" id="JTi-2c-75f"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4Sn-J2-LSp">
                                     <size key="itemSize" width="326" height="573"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -32,7 +27,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewCollectionCell" id="U7S-JA-lMt" customClass="newStockCollectionCell" customModule="proc" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="40.5" width="319" height="566.5"/>
+                                        <rect key="frame" x="0.0" y="50.5" width="319" height="566.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="319" height="566.5"/>
@@ -40,7 +35,7 @@
                                             <subviews>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="eP4-8S-0mU">
                                                     <rect key="frame" x="0.0" y="46" width="319" height="520"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                                     <prototypes>
                                                         <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewStockCell" rowHeight="91" id="ArG-It-lCQ" customClass="newStockCell" customModule="proc" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="55.5" width="319" height="91"/>
@@ -76,7 +71,7 @@
                                                                                     <constraint firstAttribute="height" constant="18" id="aB2-Ig-Ov0"/>
                                                                                 </constraints>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                                                <color key="textColor" systemColor="viewFlipsideBackgroundColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downloadImg" translatesAutoresizingMaskIntoConstraints="NO" id="bUk-R1-szT">
@@ -236,7 +231,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OutCollectionCell" id="6Eh-cd-9QJ" customClass="outStockCollectionCell" customModule="proc" customModuleProvider="target">
-                                        <rect key="frame" x="329" y="40.5" width="319" height="566.5"/>
+                                        <rect key="frame" x="329" y="50.5" width="319" height="566.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="319" height="566.5"/>
@@ -244,7 +239,7 @@
                                             <subviews>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="TXa-kD-8vw">
                                                     <rect key="frame" x="0.0" y="44.5" width="319" height="522"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                                     <prototypes>
                                                         <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OutStockCell" rowHeight="91" id="eH4-bH-XZJ" customClass="outStockCell" customModule="proc" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="55.5" width="319" height="91"/>
@@ -254,7 +249,7 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1997. 10. 21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOG-zL-Ffo">
-                                                                        <rect key="frame" x="50" y="8" width="124" height="24"/>
+                                                                        <rect key="frame" x="52" y="8" width="124" height="24"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="24" id="0o7-k6-hSf"/>
                                                                             <constraint firstAttribute="width" constant="124" id="EQ8-ys-qRe"/>
@@ -264,7 +259,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotImg" translatesAutoresizingMaskIntoConstraints="NO" id="HXj-AI-ScG">
-                                                                        <rect key="frame" x="15" y="14" width="16" height="13"/>
+                                                                        <rect key="frame" x="15" y="14" width="18" height="13"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="13" id="3mW-wY-h5Y"/>
                                                                         </constraints>
@@ -289,7 +284,7 @@
                                                                                     <constraint firstAttribute="width" constant="115" id="seR-1P-CXA"/>
                                                                                 </constraints>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                                                <color key="textColor" systemColor="viewFlipsideBackgroundColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uploadImg" translatesAutoresizingMaskIntoConstraints="NO" id="S3o-Eb-C7O">
@@ -439,6 +434,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="I24-62-hqv"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MKL-Z1-Pzd" firstAttribute="centerX" secondItem="I24-62-hqv" secondAttribute="centerX" id="9sn-Bk-D3Z"/>
@@ -447,7 +443,6 @@
                             <constraint firstItem="MKL-Z1-Pzd" firstAttribute="centerY" secondItem="I24-62-hqv" secondAttribute="centerY" id="fvw-uh-AwK"/>
                             <constraint firstItem="MKL-Z1-Pzd" firstAttribute="height" secondItem="I24-62-hqv" secondAttribute="height" id="oYD-IS-DWx"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="I24-62-hqv"/>
                     </view>
                     <connections>
                         <outlet property="stockCollectionView" destination="MKL-Z1-Pzd" id="Gjd-2x-TXI"/>
@@ -465,5 +460,17 @@
         <image name="downloadImg" width="720" height="720"/>
         <image name="uploadImg" width="256" height="256"/>
         <image name="uploadStockImg" width="238" height="76"/>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="viewFlipsideBackgroundColor">
+            <color red="0.1215686274509804" green="0.12941176470588239" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="viewFlipsideBackgroundColor">
+            <color red="0.1215686274509804" green="0.12941176470588239" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

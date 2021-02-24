@@ -12,7 +12,6 @@ let StoreDatabase : StoreModel = StoreModel()
 let mainfileName = "JaegoList_Main.file"
 let usedFileName = "JaegoList_Used.file"
 
-
 class StoreModel
 {
     // 재고 목록에 사용하는 배열

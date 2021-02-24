@@ -10,11 +10,11 @@
     @IBOutlet weak var noticeScheduleTV: UITableView!
     @IBOutlet weak var noticeTodayDate :UILabel?
    
-    var homeCallStore = StoreDatabase
-    var homeStoreFilterByMany : [Store] = []
+    private var homeCallStore = StoreDatabase
+    private var homeStoreFilterByMany : [Store] = []
     
-    var homeCallSchedule = ScheduleDatabase
-    var homeSchedulefilterData : [Schedule] = []
+    private var homeCallSchedule = ScheduleDatabase
+    private var homeSchedulefilterData : [Schedule] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +22,10 @@
         controlNeedLableView()
         
         noticeTodayDate?.text! = Date2String(date: Date(), format: "MM월 dd일")
-        // 부족한 수량 보여주기
-        homeStoreFilterByMany = homeCallStore.showLessManyItem()
-        // 오늘날에 해당하는 일정 보여주기
-        homeSchedulefilterData = homeCallSchedule.ScheduleArray.filter{ $0.memodates == Date2String(date: Date(), format: "yyyyMMdd")}
+        
+        homeStoreFilterByMany = homeCallStore.showLessManyItem() // 부족한 수량 보여주기
+        homeSchedulefilterData = homeCallSchedule.ScheduleArray.filter{
+            $0.memodates == Date2String(date: Date(), format: "yyyyMMdd")} // 오늘날에 해당하는 일정 보여주기
         
         reloading()
     }
@@ -51,7 +51,6 @@
     func giveDelegate(){
         self.noticeNeedTV.delegate = self
         self.noticeNeedTV.dataSource = self
-        
         self.noticeScheduleTV.delegate = self
         self.noticeScheduleTV.dataSource = self
     }
@@ -64,66 +63,33 @@
     }
  }
  
- extension HomeViewController : UITableViewDataSource {
+ 
+ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var count : Int?
-        
-        if tableView == noticeNeedTV {
-            count = homeStoreFilterByMany.count
-        }
-        else {
-            count = homeSchedulefilterData.count
-        }
-        
-        return count!
+        return tableView == noticeNeedTV ? homeStoreFilterByMany.count : homeSchedulefilterData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell?
-        
         if tableView == noticeNeedTV {
             let HomeStoreInfo = self.homeStoreFilterByMany[indexPath.row]
-            let HomeStorecell: HomeStoreChartCell = tableView.dequeueReusableCell(withIdentifier: "HStoreCell") as! HomeStoreChartCell
-            let storeManyDegree:String = " " + HomeStoreInfo.manytype
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HStoreCell") as! HomeStoreChartCell
+            let storeManyDegree:String = String(HomeStoreInfo.many) + " / \(HomeStoreInfo.TotalMany)" + " " + HomeStoreInfo.manytype
             
-            HomeStorecell.HomeStoreName.text = HomeStoreInfo.name
-            //proccell.ChartImage.image = UIImage(named: image2)
-            HomeStorecell.HomeStoreImage.image = UIImage(named: HomeStoreInfo.saveStyle.rawValue)
-            HomeStorecell.HomeStoreMany.text = String(HomeStoreInfo.many) + " / \(HomeStoreInfo.TotalMany)" + storeManyDegree
-            //HomeStorecell.HomeStoreManytype.text = HomeStoreInfo.manytype
+            cell.HomeStoreName.text = HomeStoreInfo.name
+            cell.HomeStoreImage.image = UIImage(named: HomeStoreInfo.saveStyle.rawValue)
+            cell.HomeStoreMany.text = storeManyDegree
             
+            return cell
+        } else {
+            let cell:HomeScheduleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "HScheduleCell") as! HomeScheduleTableViewCell
+            cell.HomeScheduleTitle.text = homeSchedulefilterData[indexPath.row].memotitle
             
-            cell = HomeStorecell
+            return cell
         }
-        else {
-            let homeScheduleCell:HomeScheduleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "HScheduleCell") as! HomeScheduleTableViewCell
-            
-            homeScheduleCell.HomeScheduleTitle.text = homeSchedulefilterData[indexPath.row].memotitle
-//            homeScheduleCell.HomeScheduleMemo.text = homeSchedulefilterData[indexPath.row].memotime
-            // 날짜는 당일로 들어가니 따로 넣지 않음
-            
-            cell = homeScheduleCell
-        }
-        
-        return cell!
     }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
+  
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if tableView == noticeNeedTV {
-            return 56.0
-        }else{
-            return 50.0
-        }
-//        return UITableViewAutomaticDimension
+        return tableView == noticeNeedTV ? 56.0 : 50.0
     }
  }
- 
- extension HomeViewController : UITableViewDelegate {
-    
- }
- 
- 
+

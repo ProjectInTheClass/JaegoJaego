@@ -13,37 +13,32 @@ class StockListVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
         self.stockCollectionView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         getCollectionDelegate()
     }
-}
-
-extension StockListVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    
     func getCollectionDelegate(){
         stockCollectionView.delegate = self
         stockCollectionView.dataSource = self
+        stockCollectionView.showsHorizontalScrollIndicator = false
     }
-    
+}
+
+
+extension StockListVC : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let state = indexPath.row % 2
-        switch state {
-//        case 0:
-//            return staticCollectionSetting(stockCollectionView, indexpath: indexPath)
-        case 0:
-            return newCollectionSetting(stockCollectionView, indexpath: indexPath)
-        default:
-           return outCollectionSetting(stockCollectionView, indexpath: indexPath)
-        }
+        return indexPath.row % 2 == 0 ?
+            newCollectionSetting(stockCollectionView, indexpath: indexPath) :
+            outCollectionSetting(stockCollectionView, indexpath: indexPath)
     }
     
     // 입고 목록 세팅
@@ -58,6 +53,10 @@ extension StockListVC : UICollectionViewDelegate, UICollectionViewDataSource, UI
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: true)
+    }
+    
 //    // 미정 - 통계 목록 세팅
 //    func staticCollectionSetting(_ collectionView: UICollectionView, indexpath: IndexPath) -> UICollectionViewCell {
 //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StaticCollectionCell", for: indexpath) as! staticStockCollectionCell
@@ -65,15 +64,6 @@ extension StockListVC : UICollectionViewDelegate, UICollectionViewDataSource, UI
 //    }
     
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.view.frame.width - (15 * 2)
-        let height = self.view.frame.height - (75 * 2)
-        return CGSize(width: width, height: height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: true)
-    }
 //    // 초점 가운데로 모이게 하기
 //    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
 //        let layout = self.stockCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
@@ -88,7 +78,13 @@ extension StockListVC : UICollectionViewDelegate, UICollectionViewDataSource, UI
 //        offset = CGPoint(x: roundedIndex * cellWithIncludingSpacing - scrollView.contentInset.left - settingFocus, y: -scrollView.contentInset.top)
 //        targetContentOffset.pointee = offset
 //    }
-    
 }
 
 
+extension StockListVC : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.view.frame.width - (15 * 2)
+        let height = self.view.frame.height - (75 * 2)
+        return CGSize(width: width, height: height)
+    }
+}

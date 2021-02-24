@@ -11,9 +11,13 @@ import UIKit
 class outStockCollectionCell: UICollectionViewCell {
     @IBOutlet weak var outStockTV: UITableView!
     
-    var objectArray_used = [Objects]()
+    private var objectArray_used = [Objects]()
     
     override func awakeFromNib() {
+        setSubViews()
+    }
+    
+    private func setSubViews(){
         outStockTV.delegate = self
         outStockTV.dataSource = self
         setSubLayer()
@@ -21,8 +25,8 @@ class outStockCollectionCell: UICollectionViewCell {
         for (key, value) in StoreDatabase.outStockListPerDate {
             objectArray_used.append(Objects(sectionDate: key, sectionStock: value))
         }
+        
         objectArray_used.sort(by: {$0.sectionDate > $1.sectionDate})
-        print("used objectArray = \(objectArray_used)")
         outStockTV.reloadData()
     }
 }
@@ -50,12 +54,12 @@ extension outStockCollectionCell : UITableViewDataSource, UITableViewDelegate {
         let headerCell = tableView.dequeueReusableCell(withIdentifier: "OutStockCell") as! outStockCell
 
         var many = 0
+        
         for i in objectArray_used[section].sectionStock{
             many += i.many
         }
         
-        headerCell.outStockDateLabel.text = Date2String(date: objectArray_used[section].sectionDate, format: "yyyy. MM. dd")
-        
+        headerCell.outStockDateLabel.text = objectArray_used[section].sectionDate.returnString(format: "yyyy. MM. dd")
         headerCell.outStockManyLabel.text = "총 \(many)개"
         
         return headerCell

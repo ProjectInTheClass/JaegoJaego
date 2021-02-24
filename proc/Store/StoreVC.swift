@@ -34,9 +34,7 @@ class StoreVC: UIViewController , UISearchBarDelegate, UpdateDelegate {
     // 세그먼트 오류 방지용
     var didSelectEditBtn = false
     var selectIndex = 0
-
-    // 프로토콜
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,17 +55,6 @@ class StoreVC: UIViewController , UISearchBarDelegate, UpdateDelegate {
         updateSearchArray()
         self.storeListTV.reloadData()
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "popupSegue"{
-//            let vc : StorePopupVC = segue.destination as! StorePopupVC
-//            var stock = StoreDatabase.arrayList[selectIndex]
-//            vc.position = selectIndex
-//            print("vc.position = \(vc.position)")
-//        }
-//    }
-//
-   
 }
 
 

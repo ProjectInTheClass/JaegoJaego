@@ -17,22 +17,26 @@ class StorePopupVC: UIViewController, UITextFieldDelegate {
     }
     @IBOutlet weak var pop_completeBtn: UIButton!
     
-    var item : Store?
+    private var item : Store?
     var position : Int = 0
-    var delegate : UpdateDelegate?
+    private var delegate : UpdateDelegate?
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setView()
+    }
+}
+
+
+extension StorePopupVC {
     func setView(){
         item = StoreDatabase.arrayList[position]
         pop_nameLabel.text = "제품명 : \(item!.name)"
         pop_manyLabel.text = "현재 수량 : \(item!.many) \(item!.manytype)"
-    }
- 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setView()
-        
         
         pop_TF.becomeFirstResponder()
+        
         pop_completeBtn.addTarget(self, action: #selector(isItemUsed), for: .touchUpInside)
     }
     
@@ -41,12 +45,15 @@ class StorePopupVC: UIViewController, UITextFieldDelegate {
             ToastView.shared.short(self.view, txt_msg: "사용한 개수를 입력해주세요.")
             return
         }
+        
         if (usedItem.isNumber && StoreDatabase.arrayList[position].many - Int(usedItem)! >= 0)  {
             StoreDatabase.arrayList[position].many -= Int(usedItem)!
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             let temp = formatter.string(from: Date())
             formatter.date(from: temp)
+            
+            
             
             let name = StoreDatabase.arrayList[position].name
             let update = StoreDatabase.arrayList[position].UpDate
@@ -68,5 +75,4 @@ class StorePopupVC: UIViewController, UITextFieldDelegate {
             ToastView.shared.short(self.view, txt_msg: "가지고 있는 수량보다 개수가 많거나 숫자가 아닙니다!")
         }
     }
-    
 }

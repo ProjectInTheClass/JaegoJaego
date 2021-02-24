@@ -16,9 +16,13 @@ struct Objects {
 class newStockCollectionCell: UICollectionViewCell {
     @IBOutlet weak var newStockTV: UITableView!
     
-    var objectArray_Main = [Objects]()
+    private var objectArray_Main = [Objects]()
     
     override func awakeFromNib() {
+        setSubViews()
+    }
+    
+    private func setSubViews(){
         newStockTV.delegate = self
         newStockTV.dataSource = self
         setSubLayer()

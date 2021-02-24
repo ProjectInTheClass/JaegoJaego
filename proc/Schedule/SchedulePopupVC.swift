@@ -14,7 +14,6 @@ class SchedulePopupVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var popupTF: UITextField!
     @IBOutlet weak var savebBtn :UIButton!
     
-    var userDate = Date()
     var userStringDate = ""
     let scheduleModel = ScheduleDatabase
     
@@ -24,7 +23,7 @@ class SchedulePopupVC: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        popupDate.text =  Date2String(date: userDate, format: "MM월 dd일")
+        popupDate.text = Date2String(date: Date(), format: "MM월 dd일")
         keyboardSetting()
         savebBtn.addTarget(self, action: #selector(saveButton), for: .touchUpInside)
     }
@@ -60,10 +59,12 @@ extension SchedulePopupVC {
     @objc func saveButton(){
         popupTF.resignFirstResponder()
         
-        if (popupTF.text != ""){
-            let newData = Schedule(memotitle: popupTF.text!, memodates: Date2String(date: userDate, format: "yyyyMMdd"))
+        guard let texts = popupTF.text else { return }
+        
+        if !texts.isEmpty {
+            let newData = Schedule(memotitle: texts, memodates: Date2String(date: Date(), format: "yyyyMMdd"))
             scheduleModel.ScheduleArray.append(newData) // 날짜 임시 데이터
-            scheduleModel.dateArray.append(Date2String(date: userDate, format: "yyyyMMdd"))
+            scheduleModel.dateArray.append(Date2String(date: Date(), format: "yyyyMMdd"))
             
         }
         dismiss(animated: true)
