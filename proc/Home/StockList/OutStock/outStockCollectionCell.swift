@@ -11,7 +11,8 @@ import UIKit
 class outStockCollectionCell: UICollectionViewCell {
     @IBOutlet weak var outStockTV: UITableView!
     
-    private var objectArray_used = [Objects]()
+    private var viewModel = StoreViewModel()
+    private var sectionArray : [SectionObjects] = []
     
     override func awakeFromNib() {
         setSubViews()
@@ -22,26 +23,26 @@ class outStockCollectionCell: UICollectionViewCell {
         outStockTV.dataSource = self
         setSubLayer()
         
-        for (key, value) in StoreDatabase.outStockListPerDate {
-            objectArray_used.append(Objects(sectionDate: key, sectionStock: value))
+        for (key, value) in viewModel.returnStockPerDateOutArray() {
+            sectionArray.append(SectionObjects(sectionDate: key, sectionStock: value))
         }
         
-        objectArray_used.sort(by: {$0.sectionDate > $1.sectionDate})
+        sectionArray.sort(by: {$0.sectionDate > $1.sectionDate})
         outStockTV.reloadData()
     }
 }
 
 extension outStockCollectionCell : UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return objectArray_used.count
+        return sectionArray.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return objectArray_used[section].sectionStock.count
+         return sectionArray[section].sectionStock.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let state = objectArray_used[indexPath.section].sectionStock[indexPath.row]
+        let state = sectionArray[indexPath.section].sectionStock[indexPath.row]
         let cell = outStockTV.dequeueReusableCell(withIdentifier: "OutStockNameManyCell", for: indexPath) as! outStockNameManyCell
         
         cell.outStockNameLabel.text = state.name
@@ -55,11 +56,11 @@ extension outStockCollectionCell : UITableViewDataSource, UITableViewDelegate {
 
         var many = 0
         
-        for i in objectArray_used[section].sectionStock{
+        for i in sectionArray[section].sectionStock{
             many += i.many
         }
         
-        headerCell.outStockDateLabel.text = objectArray_used[section].sectionDate.returnString(format: "yyyy. MM. dd")
+        headerCell.outStockDateLabel.text = sectionArray[section].sectionDate.returnString(format: "yyyy. MM. dd")
         headerCell.outStockManyLabel.text = "총 \(many)개"
         
         return headerCell

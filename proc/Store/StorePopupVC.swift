@@ -17,6 +17,7 @@ class StorePopupVC: UIViewController, UITextFieldDelegate {
     }
     @IBOutlet weak var pop_completeBtn: UIButton!
     
+    private var viewModel = StoreViewModel()
     private var item : Store?
     var position : Int = 0
     private var delegate : UpdateDelegate?
@@ -31,7 +32,7 @@ class StorePopupVC: UIViewController, UITextFieldDelegate {
 
 extension StorePopupVC {
     func setView(){
-        item = StoreDatabase.arrayList[position]
+        item = viewModel.findStock(data: position)
         pop_nameLabel.text = "제품명 : \(item!.name)"
         pop_manyLabel.text = "현재 수량 : \(item!.many) \(item!.manytype)"
         
@@ -45,28 +46,22 @@ extension StorePopupVC {
             ToastView.shared.short(self.view, txt_msg: "사용한 개수를 입력해주세요.")
             return
         }
+        let item = viewModel.findStock (data: position)
         
-        if (usedItem.isNumber && StoreDatabase.arrayList[position].many - Int(usedItem)! >= 0)  {
-            StoreDatabase.arrayList[position].many -= Int(usedItem)!
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            let temp = formatter.string(from: Date())
-            formatter.date(from: temp)
+        if (usedItem.isNumber && item.many - Int(usedItem)! >= 0)  {
+            item.many -= Int(usedItem)!
+            var downDate = item.DownDate
             
+            if item.many <= 0 {
+                downDate = DateFormatter().date(from: Date2String(date: Date(), format: "yyyy.MM.dd"))!
+            }
             
-            
-            let name = StoreDatabase.arrayList[position].name
-            let update = StoreDatabase.arrayList[position].UpDate
-            let downdate = formatter.date(from: temp)!
-            let many = Int(usedItem)!
-            let manytype = StoreDatabase.arrayList[position].manytype
-            let savetype = StoreDatabase.arrayList[position].saveStyle
-            
-            let Stock = Store(name: name, UpDate: update, DownDate: downdate, many: many, manytype: manytype, saveStyle: savetype)
-            
-            StoreDatabase.outList.append(Stock)
-            StoreDatabase.sameStoreMany()
-            StoreDatabase.saveData()
+            let stock = Store(name: item.name, UpDate: item.UpDate, DownDate: downDate, many: Int(usedItem)!, manytype:  item.manytype, saveStyle: item.saveStyle)
+                    
+            viewModel.addStock(data: stock)
+            viewModel.returnStockTotalCount()
+            viewModel.saveData()
+
             presentingViewController?.viewWillAppear(true)
             self.delegate?.didUpDate(sender: true)
             // ++ Storevc 새로고침 해야함

@@ -23,6 +23,7 @@
 		9B0F2B2521F84DC8003DB228 /* newStockNameManyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F2B2421F84DC8003DB228 /* newStockNameManyCell.swift */; };
 		9B2146EB231D17D90015BBBF /* TabBarExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2146EA231D17D90015BBBF /* TabBarExtention.swift */; };
 		9B23A7E6220075A100BB2DE1 /* AddStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B23A7E5220075A100BB2DE1 /* AddStoreVC.swift */; };
+		9B7D618425E63F7E00609FA9 /* StoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7D618325E63F7E00609FA9 /* StoreViewModel.swift */; };
 		9B90AAE022169E0E00C3AC48 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B90AADF22169E0E00C3AC48 /* Protocol.swift */; };
 		9BA3F83F21F59885008577BB /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F83E21F59885008577BB /* extension.swift */; };
 		9BA3F84121F59987008577BB /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F84021F59987008577BB /* ToastView.swift */; };
@@ -84,6 +85,7 @@
 		9B2146E3231D0AFB0015BBBF /* proc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "proc-Bridging-Header.h"; sourceTree = "<group>"; };
 		9B2146EA231D17D90015BBBF /* TabBarExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarExtention.swift; sourceTree = "<group>"; };
 		9B23A7E5220075A100BB2DE1 /* AddStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreVC.swift; sourceTree = "<group>"; };
+		9B7D618325E63F7E00609FA9 /* StoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewModel.swift; sourceTree = "<group>"; };
 		9B90AADF22169E0E00C3AC48 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		9BA3F83E21F59885008577BB /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		9BA3F84021F59987008577BB /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
@@ -198,6 +200,14 @@
 			path = OutStock;
 			sourceTree = "<group>";
 		};
+		9B7D618225E63F7400609FA9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9B7D618325E63F7E00609FA9 /* StoreViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		9BA3F83C21F59865008577BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +261,7 @@
 		B838071320EDC00700A46B20 /* proc */ = {
 			isa = PBXGroup;
 			children = (
+				9B7D618225E63F7400609FA9 /* ViewModel */,
 				9BA3F83D21F5986C008577BB /* Extension */,
 				B8DFC2452106EEAD00626614 /* Home */,
 				9BA3F83C21F59865008577BB /* Model */,
@@ -498,6 +509,7 @@
 				9BDC1D0A21F7183C00DDA9B4 /* newStockCollectionCell.swift in Sources */,
 				9B2146EB231D17D90015BBBF /* TabBarExtention.swift in Sources */,
 				9B23A7E6220075A100BB2DE1 /* AddStoreVC.swift in Sources */,
+				9B7D618425E63F7E00609FA9 /* StoreViewModel.swift in Sources */,
 				B80B28F02109B9FB00413049 /* HomeStoreTableViewController.swift in Sources */,
 				9B0F2B2321F83E33003DB228 /* newStockCell.swift in Sources */,
 				9BA3F84121F59987008577BB /* ToastView.swift in Sources */,

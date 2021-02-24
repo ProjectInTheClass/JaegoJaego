@@ -10,7 +10,6 @@ import UIKit
 import BetterSegmentedControl
 
 class AddStoreVC: UIViewController {
-    // 오토레이아웃용
     @IBOutlet weak var stockPickerView: UIView!
     @IBOutlet weak var saveStyleView: UIView!
     
@@ -24,16 +23,16 @@ class AddStoreVC: UIViewController {
         dismiss(animated: true)
     }
     
-    var stockDate = Date()
-    var stockSaveType = SaveStyle.Fresh
-    var dataFilePath : String?
+    private var viewModel = StoreViewModel()
+    private var stockDate = Date()
+    private var stockType = SaveStyle.Fresh
+    private var dataFilePath : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         segmentSetting()
+        setSubViews()
         hideKeyboardWhenTappedAround()
-        stockDatePK.addTarget(self, action: #selector(getDateFromPicker), for: .valueChanged)
-        saveBtn.addTarget(self, action: #selector(addStock), for: .touchUpInside)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -44,16 +43,16 @@ class AddStoreVC: UIViewController {
 
 extension AddStoreVC : UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        moveTextField(textfield: textField, moveDistance: -250, up: true)
+        moveTextField(textfield: textField, up: true)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        moveTextField(textfield: textField, moveDistance: -250, up: false)
+        moveTextField(textfield: textField, up: false)
     }
     
-    func moveTextField(textfield: UITextField, moveDistance: Int, up: Bool) {
+    func moveTextField(textfield: UITextField, up: Bool) {
         let moveDuration = 0.3
-        let movement: CGFloat = CGFloat(up ? moveDistance: -moveDistance)
+        let movement: CGFloat = CGFloat(up ? 250 : -250)
         UIView.beginAnimations("animateTextField", context: nil)
         UIView.setAnimationBeginsFromCurrentState(true)
         UIView.setAnimationDuration(moveDuration)
@@ -62,8 +61,12 @@ extension AddStoreVC : UITextFieldDelegate {
     }
 }
 
-// 세그먼트
+
 extension AddStoreVC {
+    func setSubViews(){
+        stockDatePK.addTarget(self, action: #selector(getDateFromPicker), for: .valueChanged)
+        saveBtn.addTarget(self, action: #selector(addStock), for: .touchUpInside)
+    }
     func segmentSetting(){
         let saveTypeSegmentControl = BetterSegmentedControl(frame: CGRect(x: (view.frame.width - 310) / 2 , y: 40, width: 317, height: 56), segments: LabelSegment.segments(withTitles: ["실온", "냉장", "냉동"], normalBackgroundColor: .white, normalTextColor: UIColor.init(hex: "#7396D0"), selectedBackgroundColor: UIColor.init(hex: "#7396D0"), selectedTextColor: .white), index: 0, options: [.backgroundColor(UIColor.init(hex: "#7396D0")), .indicatorViewBackgroundColor(.white) ])
         saveTypeSegmentControl.layer.borderWidth = 3
@@ -78,11 +81,11 @@ extension AddStoreVC {
     @objc func segmentValueChanged(sender: BetterSegmentedControl){
         switch sender.index {
         case 0:
-            stockSaveType = SaveStyle.Fresh
+            stockType = SaveStyle.Fresh
         case 1:
-            stockSaveType = SaveStyle.Cold
+            stockType = SaveStyle.Cold
         default:
-            stockSaveType = SaveStyle.Ice
+            stockType = SaveStyle.Ice
         }
     }
     
@@ -99,10 +102,10 @@ extension AddStoreVC {
         if !(stockName.isEmpty == true || stockMany.isEmpty == true || stockManyType.isEmpty == true){
             
             let stockManyToInt = Int(stockMany)!
-            let stock = Store(name: stockName, UpDate: Date(), DownDate: stockDate, many: stockManyToInt, manytype: stockManyType, saveStyle: stockSaveType)
+            let stock = Store(name: stockName, UpDate: Date(), DownDate: stockDate, many: stockManyToInt, manytype: stockManyType, saveStyle: stockType)
             
-            StoreDatabase.arrayList.append(stock)
-            StoreDatabase.saveData()
+            viewModel.addStock(data: stock)
+            viewModel.saveData()
             presentingViewController?.viewWillAppear(true)
             dismiss(animated: true, completion: nil)
         }

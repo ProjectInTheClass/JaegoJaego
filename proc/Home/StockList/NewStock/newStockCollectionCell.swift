@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Objects {
+struct SectionObjects {
     var sectionDate : Date!
     var sectionStock : [Store]!
 }
@@ -16,7 +16,8 @@ struct Objects {
 class newStockCollectionCell: UICollectionViewCell {
     @IBOutlet weak var newStockTV: UITableView!
     
-    private var objectArray_Main = [Objects]()
+    private let viewModel = StoreViewModel()
+    private var sectionArray : [SectionObjects] = []
     
     override func awakeFromNib() {
         setSubViews()
@@ -27,11 +28,10 @@ class newStockCollectionCell: UICollectionViewCell {
         newStockTV.dataSource = self
         setSubLayer()
         
-        for (key, value) in StoreDatabase.stockListPerDate {
-            objectArray_Main.append(Objects(sectionDate: key, sectionStock: value))
+        for (key, value) in viewModel.returnStockPerDateBuyArray() {
+            sectionArray.append(SectionObjects(sectionDate: key, sectionStock: value))
         }
-        objectArray_Main.sort(by: {$0.sectionDate > $1.sectionDate})
-        
+        sectionArray.sort(by: {$0.sectionDate > $1.sectionDate})
         newStockTV.reloadData()
     }
 }
@@ -39,22 +39,21 @@ class newStockCollectionCell: UICollectionViewCell {
 
 extension newStockCollectionCell : UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return objectArray_Main.count
+        return sectionArray.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objectArray_Main[section].sectionStock.count
+        return sectionArray[section].sectionStock.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let state = objectArray_Main[indexPath.section].sectionStock[indexPath.row]
+        let state = sectionArray[indexPath.section].sectionStock[indexPath.row]
         let cell = newStockTV.dequeueReusableCell(withIdentifier: "NewStockNameManyCell", for: indexPath) as! newStockNameManyCell
             
         cell.stockNameLabel.text = state.name
         cell.stockCountLabel.text = "\(state.many)\(state.manytype)"
         
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -62,11 +61,11 @@ extension newStockCollectionCell : UITableViewDelegate, UITableViewDataSource {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy. MM. dd"
         var many = 0
-        for i in objectArray_Main[section].sectionStock{
+        for i in sectionArray[section].sectionStock {
             many += i.many
         }
         
-        headerCell.newDateLabel.text = dateFormatter.string(from:  objectArray_Main[section].sectionDate)
+        headerCell.newDateLabel.text = dateFormatter.string(from:  sectionArray[section].sectionDate)
         headerCell.newCountLabel.text = "총 \(many)개"
         
         return headerCell

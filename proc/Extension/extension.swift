@@ -10,7 +10,6 @@ import UIKit
 import Foundation
 
 extension UIColor {
-    
     // rgb
     convenience init(red: Int, green: Int, blue: Int) {
         let newRed = CGFloat(red)/255
@@ -37,37 +36,6 @@ extension UIColor {
             alpha: CGFloat(1.0)
         )
     }
-}
-
-// optional control
-extension UIViewController {
-    func gsno(_ value: String?) -> String{
-        guard let value_ = value else {//optional 을 해재해서 값을 받아옴
-            return ""
-        }
-        return value_
-    }
-    
-    func gino(_ value: Int?) -> Int{
-        guard let value_ = value else {
-            return 0
-        }
-        return value_
-    }//func gino
-    
-    func gbno(_ value: Bool?) -> Bool{
-        guard let value_ = value else {
-            return false
-        }
-        return value_
-    }//func gbno
-    
-    func gfno(_ value: Float?) -> Float{
-        guard let value_ = value else{
-            return 0
-        }
-        return value_
-    }//func gfno
 }
 
 extension UIViewController {

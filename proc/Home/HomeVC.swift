@@ -8,9 +8,9 @@
     @IBOutlet weak var noticeScheduleView: UIView!
     @IBOutlet weak var noticeNeedTV: UITableView!
     @IBOutlet weak var noticeScheduleTV: UITableView!
-    @IBOutlet weak var noticeTodayDate :UILabel?
+    @IBOutlet weak var noticeTodayDate :UILabel!
    
-    private var homeCallStore = StoreDatabase
+    private var viewModel = StoreViewModel()
     private var homeStoreFilterByMany : [Store] = []
     
     private var homeCallSchedule = ScheduleDatabase
@@ -18,16 +18,9 @@
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        giveDelegate()
-        controlNeedLableView()
-        
-        noticeTodayDate?.text! = Date2String(date: Date(), format: "MM월 dd일")
-        
-        homeStoreFilterByMany = homeCallStore.showLessManyItem() // 부족한 수량 보여주기
-        homeSchedulefilterData = homeCallSchedule.ScheduleArray.filter{
-            $0.memodates == Date2String(date: Date(), format: "yyyyMMdd")} // 오늘날에 해당하는 일정 보여주기
-        
-        reloading()
+        setSubViews()
+        setUpDelegate()
+        setUpNeedLableView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,29 +30,35 @@
 }
  
  extension HomeViewController {
-    func reloading(){
-        self.noticeNeedTV.rowHeight = UITableView.automaticDimension
-        self.noticeNeedTV.estimatedRowHeight = UITableView.automaticDimension
+    func setSubViews(){
+        noticeTodayDate.text = Date2String(date: Date(), format: "MM월 dd일")
+        homeStoreFilterByMany = viewModel.returnStockLessItem()
+        homeSchedulefilterData = homeCallSchedule.ScheduleArray.filter{
+            $0.memodates == Date2String(date: Date(), format: "yyyyMMdd")} // 오늘날에 해당하는 일정 보여주기
         
-        self.noticeScheduleTV.rowHeight = UITableView.automaticDimension
-        self.noticeScheduleTV.estimatedRowHeight = UITableView.automaticDimension
-        
-        self.noticeNeedTV.reloadData()
-        self.noticeScheduleTV.reloadData()
+        noticeNeedTV.rowHeight = UITableView.automaticDimension
+        noticeNeedTV.estimatedRowHeight = UITableView.automaticDimension
+        noticeScheduleTV.rowHeight = UITableView.automaticDimension
+        noticeScheduleTV.estimatedRowHeight = UITableView.automaticDimension
     }
     
-    func giveDelegate(){
-        self.noticeNeedTV.delegate = self
-        self.noticeNeedTV.dataSource = self
-        self.noticeScheduleTV.delegate = self
-        self.noticeScheduleTV.dataSource = self
+    func setUpDelegate(){
+        noticeNeedTV.delegate = self
+        noticeNeedTV.dataSource = self
+        noticeScheduleTV.delegate = self
+        noticeScheduleTV.dataSource = self
     }
     
-    func controlNeedLableView(){
-        self.needLabelView.layoutSubviews()
+    func setUpNeedLableView(){
+        needLabelView.layoutSubviews()
         needLabelView.layer.cornerRadius = 15
         needLabelView.layer.borderColor = UIColor.init(hex: "#85BECA").cgColor
         needLabelView.layer.borderWidth = 3
+    }
+    
+    func reloading(){
+        noticeNeedTV.reloadData()
+        noticeScheduleTV.reloadData()
     }
  }
  
