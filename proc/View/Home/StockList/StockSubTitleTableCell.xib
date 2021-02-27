@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="stockSubTitleTableCell" rowHeight="38" id="rcm-26-LaQ" customClass="StockSubTitleTableCell" customModule="proc" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="319" height="38"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rcm-26-LaQ" id="g1N-jv-SNb">
+                <rect key="frame" x="0.0" y="0.0" width="319" height="38"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RIk-6V-hDS">
+                        <rect key="frame" x="47" y="0.0" width="260" height="38"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제품명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRZ-TX-eUm">
+                                <rect key="frame" x="16" y="5.5" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개수" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25F-Y1-z10">
+                                <rect key="frame" x="217.5" y="5.5" width="31.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HRZ-TX-eUm" firstAttribute="centerY" secondItem="RIk-6V-hDS" secondAttribute="centerY" constant="-3" id="7wE-fY-qvI"/>
+                            <constraint firstItem="HRZ-TX-eUm" firstAttribute="leading" secondItem="RIk-6V-hDS" secondAttribute="leading" constant="16" id="Baa-k2-fzj"/>
+                            <constraint firstItem="25F-Y1-z10" firstAttribute="centerY" secondItem="RIk-6V-hDS" secondAttribute="centerY" constant="-3" id="Tl5-8d-gAV"/>
+                            <constraint firstAttribute="trailing" secondItem="25F-Y1-z10" secondAttribute="trailing" constant="11" id="Ykz-cI-FLa"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="RIk-6V-hDS" firstAttribute="leading" secondItem="g1N-jv-SNb" secondAttribute="leading" constant="47" id="GUT-nL-m2n"/>
+                    <constraint firstAttribute="trailing" secondItem="RIk-6V-hDS" secondAttribute="trailing" constant="12" id="SY9-E7-Ycq"/>
+                    <constraint firstItem="RIk-6V-hDS" firstAttribute="top" secondItem="g1N-jv-SNb" secondAttribute="top" id="f5R-dD-qzM"/>
+                    <constraint firstAttribute="bottom" secondItem="RIk-6V-hDS" secondAttribute="bottom" id="lA7-m2-kBb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="stockCountLabel" destination="25F-Y1-z10" id="JWE-im-lcb"/>
+                <outlet property="stockNameLabel" destination="HRZ-TX-eUm" id="u0h-Gd-BOe"/>
+            </connections>
+            <point key="canvasLocation" x="-163" y="-297"/>
+        </tableViewCell>
+    </objects>
+</document>

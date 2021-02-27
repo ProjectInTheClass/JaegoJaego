@@ -23,8 +23,7 @@ open class ToastView: UILabel {
         return Static.instance
     }
     
-    func setup(_ view: UIView,txt_msg:String)
-    {
+    func setup(_ view: UIView, txt_msg: String) {
         let white = UIColor ( red: 1/255, green: 0/255, blue:0/255, alpha: 0.0 )
         
         backView.frame = CGRect(x: 0, y: 0, width: view.frame.width , height: view.frame.height)
@@ -34,14 +33,13 @@ open class ToastView: UILabel {
         
         overlayView.frame = CGRect(x: 0, y: 0, width: view.frame.width - 60  , height: 50)
         overlayView.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height - 140)
-        overlayView.backgroundColor = UIColor.black
         overlayView.clipsToBounds = true
         overlayView.layer.cornerRadius = 10
         overlayView.alpha = 0
         
         lbl.frame = CGRect(x: 0, y: 0, width: overlayView.frame.width, height: 50)
         lbl.numberOfLines = 0
-        lbl.textColor = UIColor.white
+        lbl.textColor = UIColor.red
         lbl.center = overlayView.center
         lbl.text = txt_msg
         lbl.textAlignment = .center
