@@ -15,6 +15,7 @@ class outStockCollectionCell: UICollectionViewCell {
     private var sectionArray : [SectionObjects] = []
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         setSubViews()
     }
     
@@ -26,8 +27,11 @@ class outStockCollectionCell: UICollectionViewCell {
         for (key, value) in viewModel.returnStockPerDateOutArray() {
             sectionArray.append(SectionObjects(sectionDate: key, sectionStock: value))
         }
-        print("array = \(sectionArray)")
+        /// 나중에 출고 목록을 만들어서 보내줘야함 (사용하면 보내지도록)
         sectionArray.sort(by: {$0.sectionDate > $1.sectionDate})
+        
+        outStockTV.register(UINib(nibName: "StockTitleTableCell", bundle: nil), forCellReuseIdentifier: StockTitleTableCell.titleTableCellID)
+        outStockTV.register(UINib(nibName: "StockSubTitleTableCell", bundle: nil), forCellReuseIdentifier: StockSubTitleTableCell.subTitleTableCellID)
         outStockTV.reloadData()
     }
 }
@@ -43,26 +47,25 @@ extension outStockCollectionCell : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let state = sectionArray[indexPath.section].sectionStock[indexPath.row]
-        let cell = outStockTV.dequeueReusableCell(withIdentifier: "OutStockNameManyCell", for: indexPath) as! outStockNameManyCell
-        
-        cell.outStockNameLabel.text = state.name
-        cell.outStockCountLabel.text = "\(state.many)\(state.manytype)"
+        let cell = outStockTV.dequeueReusableCell(withIdentifier: StockSubTitleTableCell.subTitleTableCellID, for: indexPath) as! StockSubTitleTableCell
+            
+        cell.bindViewModel(stockName: state.name, stockCount: state.many, stockType: state.manytype)
         
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerCell = tableView.dequeueReusableCell(withIdentifier: "OutStockCell") as! outStockCell
+        let headerCell = tableView.dequeueReusableCell(withIdentifier: StockTitleTableCell.titleTableCellID) as! StockTitleTableCell
 
         var many = 0
-        
         for i in sectionArray[section].sectionStock{
             many += i.many
         }
         
-        headerCell.outStockDateLabel.text = sectionArray[section].sectionDate.returnString(format: "yyyy. MM. dd")
-        headerCell.outStockManyLabel.text = "총 \(many)개"
-        
+        headerCell.bindViewModel(stockDate: sectionArray[section].sectionDate,
+                                 stockTotal: many,
+                                 stockImage: false)
         return headerCell
     }
     

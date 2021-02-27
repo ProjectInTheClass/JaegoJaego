@@ -20,6 +20,7 @@ class newStockCollectionCell: UICollectionViewCell {
     private var sectionArray : [SectionObjects] = []
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         setSubViews()
     }
     
@@ -31,7 +32,10 @@ class newStockCollectionCell: UICollectionViewCell {
         for (key, value) in viewModel.returnStockPerDateBuyArray() {
             sectionArray.append(SectionObjects(sectionDate: key, sectionStock: value))
         }
+        
         sectionArray.sort(by: {$0.sectionDate > $1.sectionDate})
+        newStockTV.register(UINib(nibName: "StockTitleTableCell", bundle: nil), forCellReuseIdentifier: StockTitleTableCell.titleTableCellID)
+        newStockTV.register(UINib(nibName: "StockSubTitleTableCell", bundle: nil), forCellReuseIdentifier: StockSubTitleTableCell.subTitleTableCellID)
         newStockTV.reloadData()
     }
 }
@@ -48,25 +52,24 @@ extension newStockCollectionCell : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let state = sectionArray[indexPath.section].sectionStock[indexPath.row]
-        let cell = newStockTV.dequeueReusableCell(withIdentifier: "NewStockNameManyCell", for: indexPath) as! newStockNameManyCell
+        let cell = newStockTV.dequeueReusableCell(withIdentifier: StockSubTitleTableCell.subTitleTableCellID, for: indexPath) as! StockSubTitleTableCell
             
-        cell.stockNameLabel.text = state.name
-        cell.stockCountLabel.text = "\(state.many)\(state.manytype)"
+        cell.bindViewModel(stockName: state.name, stockCount: state.many, stockType: state.manytype)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerCell = tableView.dequeueReusableCell(withIdentifier: "NewStockCell") as! newStockCell
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy. MM. dd"
+        let headerCell = tableView.dequeueReusableCell(withIdentifier: StockTitleTableCell.titleTableCellID) as! StockTitleTableCell
+     
         var many = 0
         for i in sectionArray[section].sectionStock {
             many += i.many
         }
         
-        headerCell.newDateLabel.text = dateFormatter.string(from:  sectionArray[section].sectionDate)
-        headerCell.newCountLabel.text = "총 \(many)개"
+        headerCell.bindViewModel(stockDate: sectionArray[section].sectionDate,
+                                 stockTotal: many,
+                                 stockImage: true)
         
         return headerCell
     }
