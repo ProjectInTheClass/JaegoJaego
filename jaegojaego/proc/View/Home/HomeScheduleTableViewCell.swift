@@ -11,4 +11,8 @@ import UIKit
 class HomeScheduleTableViewCell: UITableViewCell {
     @IBOutlet weak var HomeScheduleTitle:UILabel!
     @IBOutlet weak var HomeScheduleMemo:UILabel!
+    
+    func bindViewModel(text: String){
+        HomeScheduleTitle.text = text
+    }
 }

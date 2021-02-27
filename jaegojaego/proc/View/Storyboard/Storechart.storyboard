@@ -44,7 +44,7 @@
                                         <locale key="locale" localeIdentifier="ko"/>
                                     </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019년 10월 21일" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shP-fj-Qcm">
-                                        <rect key="frame" x="222.5" y="0.0" width="131.5" height="20.5"/>
+                                        <rect key="frame" x="205.5" y="0.0" width="131.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -59,11 +59,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="shP-fj-Qcm" firstAttribute="top" secondItem="DtY-Jm-8dj" secondAttribute="top" id="20R-Tk-FbI"/>
+                                    <constraint firstAttribute="trailing" secondItem="shP-fj-Qcm" secondAttribute="trailing" constant="38" id="4ln-eE-bvJ"/>
                                     <constraint firstItem="NpY-oQ-MNh" firstAttribute="leading" secondItem="DtY-Jm-8dj" secondAttribute="leading" constant="38" id="9CV-hm-gLZ"/>
                                     <constraint firstAttribute="height" constant="230" id="GK8-fO-qe5"/>
                                     <constraint firstItem="NpY-oQ-MNh" firstAttribute="top" secondItem="DtY-Jm-8dj" secondAttribute="top" id="Uwf-8P-YvF"/>
                                     <constraint firstItem="XuH-Ov-PRh" firstAttribute="leading" secondItem="DtY-Jm-8dj" secondAttribute="leading" constant="19" id="XWn-Xa-WpA"/>
-                                    <constraint firstAttribute="trailing" secondItem="shP-fj-Qcm" secondAttribute="trailing" constant="21" id="iFT-xe-SN2"/>
                                     <constraint firstAttribute="trailing" secondItem="XuH-Ov-PRh" secondAttribute="trailing" constant="19" id="kSz-R4-HMO"/>
                                     <constraint firstAttribute="bottom" secondItem="XuH-Ov-PRh" secondAttribute="bottom" id="qLc-xq-Jpj"/>
                                 </constraints>

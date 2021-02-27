@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,7 +27,7 @@
 		9B42918625EA66CC000E3B91 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42918525EA66CC000E3B91 /* ScheduleViewModel.swift */; };
 		9B7D618425E63F7E00609FA9 /* StoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7D618325E63F7E00609FA9 /* StoreViewModel.swift */; };
 		9B90AAE022169E0E00C3AC48 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B90AADF22169E0E00C3AC48 /* Protocol.swift */; };
-		9BA3F83F21F59885008577BB /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F83E21F59885008577BB /* extension.swift */; };
+		9BA3F83F21F59885008577BB /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F83E21F59885008577BB /* Extension.swift */; };
 		9BA3F84121F59987008577BB /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F84021F59987008577BB /* ToastView.swift */; };
 		9BA3F84321F59F77008577BB /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F84221F59F77008577BB /* Store.swift */; };
 		9BA3F84721F59FB7008577BB /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F84621F59FB7008577BB /* Schedule.swift */; };
@@ -90,7 +90,7 @@
 		9B42918525EA66CC000E3B91 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		9B7D618325E63F7E00609FA9 /* StoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewModel.swift; sourceTree = "<group>"; };
 		9B90AADF22169E0E00C3AC48 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
-		9BA3F83E21F59885008577BB /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		9BA3F83E21F59885008577BB /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		9BA3F84021F59987008577BB /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		9BA3F84221F59F77008577BB /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		9BA3F84621F59FB7008577BB /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
@@ -238,7 +238,7 @@
 		9BA3F83D21F5986C008577BB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				9BA3F83E21F59885008577BB /* extension.swift */,
+				9BA3F83E21F59885008577BB /* Extension.swift */,
 				9BA3F84021F59987008577BB /* ToastView.swift */,
 				9B90AADF22169E0E00C3AC48 /* Protocol.swift */,
 				9B2146EA231D17D90015BBBF /* TabBarExtention.swift */,
@@ -470,21 +470,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-proc/Pods-proc-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BetterSegmentedControl/BetterSegmentedControl.framework",
-				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/SWTableViewCell/SWTableViewCell.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-proc/Pods-proc-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BetterSegmentedControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWTableViewCell.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-proc/Pods-proc-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-proc/Pods-proc-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-proc/Pods-proc-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3A108CEC6261DD28972D38E2 /* [CP] Check Pods Manifest.lock */ = {
@@ -516,7 +511,7 @@
 				B8DFC247210710BF00626614 /* storeChartCell.swift in Sources */,
 				9B90AAE022169E0E00C3AC48 /* Protocol.swift in Sources */,
 				B8DFC2422106EC3500626614 /* ScheduleViewController.swift in Sources */,
-				9BA3F83F21F59885008577BB /* extension.swift in Sources */,
+				9BA3F83F21F59885008577BB /* Extension.swift in Sources */,
 				9B01DDB8221E8D300074D3E5 /* StorePopupVC.swift in Sources */,
 				9BDC1D0C21F7186B00DDA9B4 /* outStockCollectionCell.swift in Sources */,
 				9BDC1D0A21F7183C00DDA9B4 /* newStockCollectionCell.swift in Sources */,

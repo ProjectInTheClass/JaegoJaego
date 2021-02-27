@@ -9,7 +9,7 @@ class HomeScheduleTableViewController : UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         filterdata = viewModel.returnScheduleAt(date: Date().returnString(format: "yyyyMMdd"))
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -17,10 +17,10 @@ class HomeScheduleTableViewController : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let homeScheduleCell:HomeScheduleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "HScheduleCell") as! HomeScheduleTableViewCell
+        let cell:HomeScheduleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "HScheduleCell") as! HomeScheduleTableViewCell
 
-        homeScheduleCell.HomeScheduleTitle.text = viewModel.findSchedule(index: indexPath.row).scheduleTitle
+        cell.bindViewModel(text: viewModel.findSchedule(index: indexPath.row).scheduleTitle)
         
-        return homeScheduleCell
+        return cell
     }
 }

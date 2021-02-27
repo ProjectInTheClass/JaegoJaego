@@ -14,7 +14,7 @@ class ScheduleViewModel {
     private let projectName = "JaegoJaego"
     private let scheduleFileName = "JaegoSchedule.file"
     
-    private var schedulFilePath : String {get {
+    private var schedulFilePath : String { get {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         return documentDirectory + "/" + projectName + "/" + scheduleFileName
         }

@@ -21,28 +21,34 @@ class newStockCollectionCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setSubViews()
+        setUpDelegate()
+        setUpSubViews()
+        setUpArray()
+        newStockTV.reloadData()
     }
-    
-    private func setSubViews(){
+}
+
+
+extension newStockCollectionCell {
+    private func setUpDelegate() {
         newStockTV.delegate = self
         newStockTV.dataSource = self
+    }
+    
+    private func setUpSubViews(){
         newStockTV.showsVerticalScrollIndicator = false
         setSubLayer()
         
-        
-        for (key, value) in viewModel.returnStockPerDateBuyArray() {
-            sectionArray.append(SectionObjects(sectionDate: key, sectionStock: value))
-        }
-        
-        sectionArray.sort(by: {$0.sectionDate > $1.sectionDate})
-        print("array")
-        sectionArray.forEach { i in
-            print(i)
-        }
         newStockTV.register(UINib(nibName: "StockTitleTableCell", bundle: nil), forCellReuseIdentifier: StockTitleTableCell.titleTableCellID)
         newStockTV.register(UINib(nibName: "StockSubTitleTableCell", bundle: nil), forCellReuseIdentifier: StockSubTitleTableCell.subTitleTableCellID)
-        newStockTV.reloadData()
+    }
+    
+    private func setUpArray() {
+        let array = viewModel.returnStockPerDateBuyArray()
+        for (key, value) in array {
+            sectionArray.append(SectionObjects(sectionDate: key, sectionStock: value))
+        }
+        sectionArray.sort(by: {$0.sectionDate > $1.sectionDate})
     }
 }
 
@@ -66,18 +72,14 @@ extension newStockCollectionCell : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerCell = tableView.dequeueReusableCell(withIdentifier: StockTitleTableCell.titleTableCellID) as! StockTitleTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: StockTitleTableCell.titleTableCellID) as! StockTitleTableCell
      
-        var many = 0
-        for i in sectionArray[section].sectionStock {
-            many += i.many
-        }
-        
-        headerCell.bindViewModel(stockDate: sectionArray[section].sectionDate,
+        let many = sectionArray[section].sectionStock.map { $0.many }.reduce(0, +)
+        cell.bindViewModel(stockDate: sectionArray[section].sectionDate,
                                  stockTotal: many,
                                  stockImage: true)
         
-        return headerCell
+        return cell
     }
     
     
