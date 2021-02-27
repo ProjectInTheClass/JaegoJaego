@@ -73,7 +73,7 @@ extension AddStoreVC {
         saveTypeSegmentControl.layer.borderColor = UIColor.init(hex: "#7396D0").cgColor
         saveTypeSegmentControl.layer.cornerRadius = 7
         saveTypeSegmentControl.addTarget(self, action: #selector(segmentValueChanged), for: .valueChanged)
-        self.saveStyleView.addSubview(saveTypeSegmentControl)
+        saveStyleView.addSubview(saveTypeSegmentControl)
     }
 }
 
@@ -91,13 +91,13 @@ extension AddStoreVC {
     
     @objc func getDateFromPicker() {
         stockDate = stockDatePK.date
-        stockDateLabel.text = Date2String(date: stockDate, format: "yyyy년 MM월 dd일")
+        stockDateLabel.text = stockDate.returnString(format: "yyyy년 MM월 dd일")
     }
 
     @objc func addStock(sender: UIButton){
-        guard let stockName = stockNameTF.text else {return}
-        guard let stockMany = stockManyTF.text else {return}
-        guard let stockManyType = stockManyTypeTF.text else {return}
+        guard let stockName = stockNameTF.text else { return }
+        guard let stockMany = stockManyTF.text else { return }
+        guard let stockManyType = stockManyTypeTF.text else { return }
         
         if !(stockName.isEmpty == true || stockMany.isEmpty == true || stockManyType.isEmpty == true){
             

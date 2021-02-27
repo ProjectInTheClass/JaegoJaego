@@ -22,8 +22,9 @@
 		9B0F2B2521F84DC8003DB228 /* StockSubTitleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F2B2421F84DC8003DB228 /* StockSubTitleTableCell.swift */; };
 		9B2146EB231D17D90015BBBF /* TabBarExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2146EA231D17D90015BBBF /* TabBarExtention.swift */; };
 		9B23A7E6220075A100BB2DE1 /* AddStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B23A7E5220075A100BB2DE1 /* AddStoreVC.swift */; };
-		9B42914525EA1D37000E3B91 /* StockTitleTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B42914425EA1D37000E3B91 /* StockTitleTableCell.xib */; };
 		9B42914A25EA1F33000E3B91 /* StockSubTitleTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B42914925EA1F33000E3B91 /* StockSubTitleTableCell.xib */; };
+		9B42916225EA5D94000E3B91 /* StockTitleTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B42916125EA5D94000E3B91 /* StockTitleTableCell.xib */; };
+		9B42918625EA66CC000E3B91 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42918525EA66CC000E3B91 /* ScheduleViewModel.swift */; };
 		9B7D618425E63F7E00609FA9 /* StoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7D618325E63F7E00609FA9 /* StoreViewModel.swift */; };
 		9B90AAE022169E0E00C3AC48 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B90AADF22169E0E00C3AC48 /* Protocol.swift */; };
 		9BA3F83F21F59885008577BB /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3F83E21F59885008577BB /* extension.swift */; };
@@ -84,8 +85,9 @@
 		9B2146E3231D0AFB0015BBBF /* proc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "proc-Bridging-Header.h"; sourceTree = "<group>"; };
 		9B2146EA231D17D90015BBBF /* TabBarExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarExtention.swift; sourceTree = "<group>"; };
 		9B23A7E5220075A100BB2DE1 /* AddStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreVC.swift; sourceTree = "<group>"; };
-		9B42914425EA1D37000E3B91 /* StockTitleTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StockTitleTableCell.xib; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/StockTitleTableCell.xib"; sourceTree = "<group>"; };
 		9B42914925EA1F33000E3B91 /* StockSubTitleTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockSubTitleTableCell.xib; sourceTree = "<group>"; };
+		9B42916125EA5D94000E3B91 /* StockTitleTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StockTitleTableCell.xib; sourceTree = "<group>"; };
+		9B42918525EA66CC000E3B91 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		9B7D618325E63F7E00609FA9 /* StoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewModel.swift; sourceTree = "<group>"; };
 		9B90AADF22169E0E00C3AC48 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		9BA3F83E21F59885008577BB /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
@@ -102,7 +104,7 @@
 		B838071120EDC00700A46B20 /* proc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = proc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B838071920EDC00700A46B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B838071E20EDC00900A46B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B838072020EDC00900A46B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B838072020EDC00900A46B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "proc/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
 		B838072520EDC00900A46B20 /* procTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = procTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B838073020EDC00900A46B20 /* procUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = procUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C566BD210B3BDB001D470A /* HomeScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScheduleTableViewController.swift; sourceTree = "<group>"; };
@@ -177,17 +179,49 @@
 				9BDC1D0921F7183C00DDA9B4 /* newStockCollectionCell.swift */,
 				9BDC1D0B21F7186B00DDA9B4 /* outStockCollectionCell.swift */,
 				9B0F2B2221F83E33003DB228 /* StockTitleTableCell.swift */,
-				9B42914425EA1D37000E3B91 /* StockTitleTableCell.xib */,
+				9B42916125EA5D94000E3B91 /* StockTitleTableCell.xib */,
 				9B0F2B2421F84DC8003DB228 /* StockSubTitleTableCell.swift */,
 				9B42914925EA1F33000E3B91 /* StockSubTitleTableCell.xib */,
 			);
 			path = StockList;
 			sourceTree = "<group>";
 		};
+		9B42915B25EA5C52000E3B91 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B838072020EDC00900A46B20 /* Info.plist */,
+				6968C756210F0C0200A6FA1A /* Assets.xcassets */,
+				90CE556C2107342000E20EC7 /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9B42915C25EA5C95000E3B91 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				692965C62109DF38000AD605 /* Storechart.storyboard */,
+				B817E0A120FC8FF400B2A37C /* Schedule.storyboard */,
+				59CEA7A720FC81D700847485 /* Home.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		9B42915D25EA5CC1000E3B91 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B42915C25EA5C95000E3B91 /* Storyboard */,
+				B8DFC2452106EEAD00626614 /* Home */,
+				B8DFC2432106EE1300626614 /* Store */,
+				B8DFC2442106EE6600626614 /* Schedule */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9B7D618225E63F7400609FA9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				9B7D618325E63F7E00609FA9 /* StoreViewModel.swift */,
+				9B42918525EA66CC000E3B91 /* ScheduleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -245,17 +279,13 @@
 		B838071320EDC00700A46B20 /* proc */ = {
 			isa = PBXGroup;
 			children = (
-				9B7D618225E63F7400609FA9 /* ViewModel */,
+				9B42915B25EA5C52000E3B91 /* Supporting Files */,
 				9BA3F83D21F5986C008577BB /* Extension */,
-				B8DFC2452106EEAD00626614 /* Home */,
 				9BA3F83C21F59865008577BB /* Model */,
-				B8DFC2432106EE1300626614 /* Store */,
-				B8DFC2442106EE6600626614 /* Schedule */,
+				9B7D618225E63F7400609FA9 /* ViewModel */,
+				9B42915D25EA5CC1000E3B91 /* View */,
 				B838071820EDC00700A46B20 /* Main.storyboard */,
-				6968C756210F0C0200A6FA1A /* Assets.xcassets */,
 				B838071D20EDC00900A46B20 /* LaunchScreen.storyboard */,
-				B838072020EDC00900A46B20 /* Info.plist */,
-				90CE556C2107342000E20EC7 /* AppDelegate.swift */,
 			);
 			path = proc;
 			sourceTree = "<group>";
@@ -263,7 +293,6 @@
 		B8DFC2432106EE1300626614 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				692965C62109DF38000AD605 /* Storechart.storyboard */,
 				B8DFC246210710BF00626614 /* storeChartCell.swift */,
 				9BA3F84821F5BC5D008577BB /* StoreVC.swift */,
 				9B23A7E5220075A100BB2DE1 /* AddStoreVC.swift */,
@@ -275,7 +304,6 @@
 		B8DFC2442106EE6600626614 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				B817E0A120FC8FF400B2A37C /* Schedule.storyboard */,
 				B8F2B3512109FAAB008FC382 /* ScheduleLittleTableCell.swift */,
 				B8DFC2412106EC3500626614 /* ScheduleViewController.swift */,
 				9BAFBC9E22F14FCA00D7D0F4 /* SchedulePopupVC.swift */,
@@ -287,7 +315,6 @@
 			isa = PBXGroup;
 			children = (
 				9B03EEB821F70FC20081752B /* StockList */,
-				59CEA7A720FC81D700847485 /* Home.storyboard */,
 				B80B28ED2109B9CE00413049 /* HomeStoreChartCell.swift */,
 				B8C566BF210B3E36001D470A /* HomeScheduleTableViewCell.swift */,
 				69EBD6F32100719C006B055B /* HomeVC.swift */,
@@ -408,13 +435,13 @@
 			files = (
 				B838071F20EDC00900A46B20 /* LaunchScreen.storyboard in Resources */,
 				610558022110367F00E3175C /* images in Resources */,
-				9B42914525EA1D37000E3B91 /* StockTitleTableCell.xib in Resources */,
 				9B42914A25EA1F33000E3B91 /* StockSubTitleTableCell.xib in Resources */,
 				59CEA7A820FC81D700847485 /* Home.storyboard in Resources */,
 				B838071A20EDC00700A46B20 /* Main.storyboard in Resources */,
 				6968C757210F0C0300A6FA1A /* Assets.xcassets in Resources */,
 				610557FC2110367200E3175C /* index.html in Resources */,
 				692965C72109DF38000AD605 /* Storechart.storyboard in Resources */,
+				9B42916225EA5D94000E3B91 /* StockTitleTableCell.xib in Resources */,
 				610558042110368200E3175C /* assets in Resources */,
 				B817E0A220FC8FF400B2A37C /* Schedule.storyboard in Resources */,
 				610558002110367A00E3175C /* elements.html in Resources */,
@@ -496,6 +523,7 @@
 				9B2146EB231D17D90015BBBF /* TabBarExtention.swift in Sources */,
 				9B23A7E6220075A100BB2DE1 /* AddStoreVC.swift in Sources */,
 				9B7D618425E63F7E00609FA9 /* StoreViewModel.swift in Sources */,
+				9B42918625EA66CC000E3B91 /* ScheduleViewModel.swift in Sources */,
 				B80B28F02109B9FB00413049 /* HomeStoreTableViewController.swift in Sources */,
 				9B0F2B2321F83E33003DB228 /* StockTitleTableCell.swift in Sources */,
 				9BA3F84121F59987008577BB /* ToastView.swift in Sources */,
@@ -613,6 +641,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -667,6 +696,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -687,7 +717,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = proc/Info.plist;
+				INFOPLIST_FILE = "proc/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -696,7 +726,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ebabac.proc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -711,7 +741,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = proc/Info.plist;
+				INFOPLIST_FILE = "proc/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -720,7 +750,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ebabac.proc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

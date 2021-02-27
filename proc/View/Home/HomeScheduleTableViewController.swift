@@ -2,13 +2,13 @@ import UIKit
 import Foundation
 
 class HomeScheduleTableViewController : UITableViewController {
-    private let homeCallSchedule = ScheduleDatabase
+    private let viewModel = ScheduleViewModel()
     // 출력하는 섹션 개수
     private var filterdata = [Schedule]()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        filterdata = homeCallSchedule.ScheduleArray.filter{ $0.memodates == Date2String(date: Date(), format: "yyyyMMdd")}
+        filterdata = viewModel.returnScheduleAt(date: Date().returnString(format: "yyyyMMdd"))
         self.tableView.reloadData()
     }
     
@@ -19,7 +19,7 @@ class HomeScheduleTableViewController : UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let homeScheduleCell:HomeScheduleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "HScheduleCell") as! HomeScheduleTableViewCell
 
-        homeScheduleCell.HomeScheduleTitle.text = filterdata[indexPath.row].memotitle
+        homeScheduleCell.HomeScheduleTitle.text = viewModel.findSchedule(index: indexPath.row).scheduleTitle
         
         return homeScheduleCell
     }

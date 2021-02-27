@@ -27,13 +27,19 @@ class newStockCollectionCell: UICollectionViewCell {
     private func setSubViews(){
         newStockTV.delegate = self
         newStockTV.dataSource = self
+        newStockTV.showsVerticalScrollIndicator = false
         setSubLayer()
+        
         
         for (key, value) in viewModel.returnStockPerDateBuyArray() {
             sectionArray.append(SectionObjects(sectionDate: key, sectionStock: value))
         }
         
         sectionArray.sort(by: {$0.sectionDate > $1.sectionDate})
+        print("array")
+        sectionArray.forEach { i in
+            print(i)
+        }
         newStockTV.register(UINib(nibName: "StockTitleTableCell", bundle: nil), forCellReuseIdentifier: StockTitleTableCell.titleTableCellID)
         newStockTV.register(UINib(nibName: "StockSubTitleTableCell", bundle: nil), forCellReuseIdentifier: StockSubTitleTableCell.subTitleTableCellID)
         newStockTV.reloadData()

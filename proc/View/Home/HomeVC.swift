@@ -10,12 +10,12 @@
     @IBOutlet weak var noticeScheduleTV: UITableView!
     @IBOutlet weak var noticeTodayDate :UILabel!
    
-    private var viewModel = StoreViewModel()
-    private var homeStoreFilterByMany : [Store] = []
+    private let storeViewModel = StoreViewModel()
+    private let scheduleViewModel = ScheduleViewModel()
+    private var homeStoreArray : [Store] = []
+    private var homeScheduleArray : [Schedule] = []
     
-    private var homeCallSchedule = ScheduleDatabase
-    private var homeSchedulefilterData : [Schedule] = []
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         setSubViews()
@@ -31,10 +31,9 @@
  
  extension HomeViewController {
     func setSubViews(){
-        noticeTodayDate.text = Date2String(date: Date(), format: "MM월 dd일")
-        homeStoreFilterByMany = viewModel.returnStockLessItem()
-        homeSchedulefilterData = homeCallSchedule.ScheduleArray.filter{
-            $0.memodates == Date2String(date: Date(), format: "yyyyMMdd")} // 오늘날에 해당하는 일정 보여주기
+        noticeTodayDate.text = Date().returnString(format: "MM월 dd일")
+        homeStoreArray = storeViewModel.returnStockLessItem()
+        homeScheduleArray = scheduleViewModel.returnScheduleAt(date: Date().returnString(format: "yyyyMMdd"))
         
         noticeNeedTV.rowHeight = UITableView.automaticDimension
         noticeNeedTV.estimatedRowHeight = UITableView.automaticDimension
@@ -65,12 +64,12 @@
  
  extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableView == noticeNeedTV ? homeStoreFilterByMany.count : homeSchedulefilterData.count
+        return tableView == noticeNeedTV ? homeStoreArray.count : homeScheduleArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == noticeNeedTV {
-            let HomeStoreInfo = self.homeStoreFilterByMany[indexPath.row]
+            let HomeStoreInfo = homeStoreArray[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "HStoreCell") as! HomeStoreChartCell
             let storeManyDegree = "\(HomeStoreInfo.many) + \(HomeStoreInfo.TotalMany) " + HomeStoreInfo.manytype
             
@@ -81,7 +80,7 @@
             return cell
         } else {
             let cell:HomeScheduleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "HScheduleCell") as! HomeScheduleTableViewCell
-            cell.HomeScheduleTitle.text = homeSchedulefilterData[indexPath.row].memotitle
+            cell.HomeScheduleTitle.text = homeScheduleArray[indexPath.row].scheduleTitle
             
             return cell
         }

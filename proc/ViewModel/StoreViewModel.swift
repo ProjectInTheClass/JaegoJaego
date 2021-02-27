@@ -28,12 +28,12 @@ class StoreViewModel {
 
 
 extension StoreViewModel {
-    func returnBuyStockArray() -> [Store] { // 입고, 내림차순
-        return StockArray.filter { $0.UpDate <= Date()}.sorted(by: { $0.UpDate > $1.UpDate})
+    func returnBuyStockArray() -> [Store] {
+        return StockArray.filter { $0.many > 0 }
     }
     
     func returnSellStockArray() -> [Store] {
-        return StockArray.filter { $0.DownDate <= Date()}.sorted(by: { $0.DownDate > $1.DownDate})
+        return StockArray.filter { $0.DownDate <= Date() || $0.many <= 0}
     }
     
     func returnStockDateArray() -> [Date] {
@@ -52,22 +52,22 @@ extension StoreViewModel {
         StockArray.remove(at: data)
     }
     
-    func findStock(data : Int) -> Store {
+    func findStockAsInt(data : Int) -> Store {
         return StockArray[data]
     }
     
-    func findStockIndex(data : Store) -> Int {
+    func findStockAsStock(data : Store) -> Int {
         return StockArray.index(of: data)!
     }
     
     /// 입고 목록
     func returnStockPerDateBuyArray() -> [Date: [Store]] {
         var list = [Date : [Store]]()
-        let array = StockArray.filter { $0.UpDate <= Date()}
+        let array = returnBuyStockArray()
         let array2 = Array(Set(array.compactMap { $0.UpDate }))
         
         array2.forEach { date in
-            list.updateValue(array.filter { $0.UpDate == date}, forKey: date)
+            list.updateValue(array.filter { $0.UpDate == date }, forKey: date)
         }
         return list
     }
@@ -75,7 +75,7 @@ extension StoreViewModel {
     /// 출고 목록
     func returnStockPerDateOutArray() -> [Date: [Store]] {
         var list = [Date : [Store]]()
-        let array = StockArray.filter { $0.many <= 0 }
+        let array = returnSellStockArray()
         let array2 = Array(Set(array.compactMap { $0.DownDate }))
         
         array2.forEach { date in
@@ -145,17 +145,26 @@ extension StoreViewModel {
         return list.sorted(by: {$0.DownDate < $1.DownDate})
     }
     
-    func setArchiveFile(){
+    func returnChartModel(index value: Int) -> [Store]{
+        switch value {
+        case 0:
+            return returnStockUntilDate(fromDays: -1, toDays: 0)
+        case 1:
+            return returnStockUntilDate(fromDays: 0, toDays: 1)
+        default:
+            return returnStockUntilDate(fromDays: 2, toDays: nil)
+        }
+    }
+    
+    private func setArchiveFile(){
         if FileManager.default.fileExists(atPath: mainFilePath){ //read
             if let mainarray = NSKeyedUnarchiver.unarchiveObject(withFile: mainFilePath) as? [Store] {
                 StockArray = mainarray
             }
-        } else { //create
-            StockArray = defaultData()
-        }
+        } else { StockArray = setDefaultData() }
     }
     
-    func defaultData() -> [Store] {
+    private func setDefaultData() -> [Store] {
         let today = Date()
         let todayAfterWeek = Date() + (86400 * 7)
         let todayBeforeWeek = Date() - (86400 * 7)
@@ -165,13 +174,13 @@ extension StoreViewModel {
             Store(name:"레몬",  UpDate:today - (86400 * 2), DownDate: todayAfterWeek, many: 6, manytype: "개",saveStyle: .Cold),
             Store(name:"아보카도",  UpDate: today - 86400, DownDate: todayAfterWeek,many: 11, manytype:"개", saveStyle: .Fresh),
             Store(name:"젤라또",  UpDate: today, DownDate: today + (86400 * 3),many: 9, manytype:"개", saveStyle: .Fresh),
-            Store(name:"망고",  UpDate: todayBeforeWeek - 86400, DownDate: today ,many: 13, manytype:"개", saveStyle: .Fresh),
             Store(name:"까르보나라 소스",  UpDate: todayBeforeWeek, DownDate: todayAfterWeek,many: 4, manytype:"개", saveStyle: .Fresh),
-            Store(name:"새우", UpDate: today - (86400 * 5), DownDate: today - 86400, many: 2, manytype:"통", saveStyle: .Cold),
             Store(name:"새우", UpDate: today - (86400 * 4), DownDate: todayAfterWeek + (86400 * 2), many: 7, manytype:"통", saveStyle: .Cold),
             
-            Store(name:"랍스타", UpDate: today - (86400 * 4), DownDate: today, many: 0, manytype:"개", saveStyle: .Ice),
-            Store(name:"오일", UpDate: today - (86400 * 9), DownDate: today - 86400, many: 0, manytype:"개", saveStyle: .Fresh)
+            Store(name:"망고",  UpDate: todayBeforeWeek - 86400, DownDate: today ,many: 13, manytype:"개", saveStyle: .Fresh),
+            Store(name:"새우", UpDate: today - (86400 * 5), DownDate: today - 86400, many: 2, manytype:"통", saveStyle: .Cold),
+            Store(name:"랍스타", UpDate: today - (86400 * 4), DownDate: today, many: 1, manytype:"개", saveStyle: .Ice),
+            Store(name:"오일", UpDate: today - (86400 * 9), DownDate: today - 86400, many: 2, manytype:"개", saveStyle: .Fresh)
         ]
         return list
     }

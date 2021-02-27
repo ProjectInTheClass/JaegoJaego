@@ -18,34 +18,23 @@ class StoreVC: UIViewController {
     private let buttonBar = UIView()
     private var switchSegment = UISegmentedControl()
     private var selectSegmentNumber = 0
-    
-    // 재고 변수
-    private var array00Trash : [Store] = []
-    private var array01Today : [Store] = []
-    private var array02Safe : [Store] = []
-    // 검색 필터
-    private var searchFilterData0 : [Store] = []
-    private var searchFilterData1 : [Store] = []
-    private var searchFilterData2 : [Store] = []
-    
-    // 세그먼트 오류 방지용
-    private var didSelectEditBtn = false
+    private var searchArray : [Int : [Store]] = [:]
     private var selectIndex = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpDelegate()
-        setUpSegmentBar()
         setUpSubViews()
-        
-        viewModel.returnStockTotalCount()
+        setUpSegmentBar()
+        setUpSearchArray()
+        setUpButtonLayoutSetting()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        didUpDate()
+        storeListTV.reloadData()
     }
 }
 
@@ -59,36 +48,43 @@ extension StoreVC : UISearchBarDelegate, UpdateDelegate {
     }
     
     func setUpSubViews(){
+        view.addSubview(buttonBar)
+        view.addSubview(switchSegment)
+        storeListTV.separatorStyle = .none
+        switchSegment.addTarget(self, action: #selector(StoreVC.segmentControlValueChanged(_:)), for: UIControl.Event.valueChanged)
         editBtn.addTarget(self, action: #selector(editBtnClicked), for: .touchUpInside)
         hideKeyboardWhenTappedAround()
     }
 
-    func updateArraysFromModel(){
-        array00Trash = viewModel.returnStockUntilDate(fromDays: -1, toDays: 0)
-        array01Today = viewModel.returnStockUntilDate(fromDays: 0, toDays: 1)
-        array02Safe = viewModel.returnStockUntilDate(fromDays: 2, toDays: nil)
+    func setUpSearchArray(){
+        viewModel.returnStockTotalCount()
         
-        searchFilterData0 = array00Trash
-        searchFilterData1 = array01Today
-        searchFilterData2 = array02Safe
+        searchArray.updateValue(viewModel.returnStockUntilDate(fromDays: -1, toDays: 0), forKey: 0)
+        searchArray.updateValue(viewModel.returnStockUntilDate(fromDays: 0, toDays: 1), forKey: 1)
+        searchArray.updateValue(viewModel.returnStockUntilDate(fromDays: 2, toDays: nil), forKey: 2)
     }
     
     // 서치바
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchFilterData0 = searchText.isEmpty ? array00Trash : array00Trash.filter{ $0.name.range(of: searchText) != nil}
-        searchFilterData1 = searchText.isEmpty ? array01Today : array01Today.filter{ $0.name.range(of: searchText) != nil}
-        searchFilterData2 = searchText.isEmpty ? array02Safe : array02Safe.filter{ $0.name.range(of: searchText) != nil}
+        switch searchText.isEmpty {
+        case true :
+            searchArray[0] = viewModel.returnChartModel(index: 0)
+            searchArray[1] = viewModel.returnChartModel(index: 1)
+            searchArray[2] = viewModel.returnChartModel(index: 2)
+        case false :
+            searchArray[0] = viewModel.returnChartModel(index: 0).filter { $0.name.range(of: searchText) != nil }
+            searchArray[1] = viewModel.returnChartModel(index: 1).filter { $0.name.range(of: searchText) != nil }
+            searchArray[2] = viewModel.returnChartModel(index: 2).filter { $0.name.range(of: searchText) != nil }
+        }
         
         storeListTV.reloadData()
     }
 
-    
-    // 취소버튼 클릭 시 키보드 닫히고 검색어 초기화
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         storeSearchBar.text = ""
         storeSearchBar.resignFirstResponder()
-        storeListTV.reloadData()
         storeSearchBar.showsCancelButton = false
+        storeListTV.reloadData()
     }
         
     @objc func editBtnClicked() {
@@ -96,17 +92,14 @@ extension StoreVC : UISearchBarDelegate, UpdateDelegate {
         case true:
             editBtn.setTitle("Edit", for: .normal)
             storeListTV.setEditing(false, animated: true)
-            didSelectEditBtn = true
         case false:
             editBtn.setTitle("Done", for: .normal)
             storeListTV.setEditing(true, animated: true)
-            didSelectEditBtn = false
         }
     }
     
     func didUpDate() {
-        updateArraysFromModel()
-        self.storeListTV.reloadData()
+        storeListTV.reloadData()
     }
 }
 
@@ -114,40 +107,16 @@ extension StoreVC : UISearchBarDelegate, UpdateDelegate {
 // 테이블 뷰
 extension StoreVC : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var rValue = 0
-        switch selectSegmentNumber {
-            case 0:
-                rValue = self.searchFilterData0.count
-            case 1:
-                rValue = self.searchFilterData1.count
-            default:
-                rValue = self.searchFilterData2.count
-        }
-        return rValue
+        guard let array = searchArray[selectSegmentNumber] else { return 1}
+        return array.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        var arrayStore : [Store]!
-        
-        switch selectSegmentNumber {
-        case 0:
-            arrayStore = searchFilterData0
-        case 1:
-            arrayStore = searchFilterData1
-        default:
-            arrayStore = searchFilterData2
-        }
-        
-        let store = arrayStore[indexPath.row]
-        let cell:storeChartCell = tableView.dequeueReusableCell(withIdentifier: "StoreChartCell") as! storeChartCell
+        guard let array = searchArray[selectSegmentNumber] else { return UITableViewCell() }
+        let store = array[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StoreChartCell") as! storeChartCell
 
-        // cell
-        cell.labelName.text = store.name
-        cell.labelSaveStyle.image = UIImage(named: store.saveStyle.rawValue)
-        cell.labelDownDate.text = Date2String(date: store.DownDate, format: "yyyy. MM. dd")
-        cell.labelMany.text = "\(store.many)" + "\(store.manytype)"
-        cell.ChartImage.image = UIImage(named: store.Image)
+        cell.bindViewModel(store: store)
         
         return cell
     }
@@ -161,44 +130,21 @@ extension StoreVC : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var item : Store?
-        
-        if selectSegmentNumber == 0 {
-            item = searchFilterData0[indexPath.row]
-        } else if selectSegmentNumber == 1 {
-            item = searchFilterData1[indexPath.row]
-        } else {
-            item = searchFilterData2[indexPath.row]
+        if let array = searchArray[selectSegmentNumber] {
+            selectIndex = viewModel.findStockAsStock(data: array[indexPath.row])
+            nextVC()
         }
-        selectIndex = viewModel.findStockIndex(data: item!)
-        
-        nextVC()
     }
     
     // 삭제
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            var index = 0
-            var item : Store?
-            
-            if selectSegmentNumber == 0 {
-                item = searchFilterData0[indexPath.row]
-                searchFilterData0.remove(at: indexPath.row)
-            } else if selectSegmentNumber == 1 {
-                item = searchFilterData1[indexPath.row]
-                searchFilterData1.remove(at: indexPath.row)
-            } else {
-                item = searchFilterData2[indexPath.row]
-                searchFilterData2.remove(at: indexPath.row)
-            }
-            
-            index = viewModel.findStockIndex(data: item!)
-            
-            viewModel.removeStock(data: index)
+            guard var array = searchArray[selectSegmentNumber] else { return }
+            array.remove(at: indexPath.row)
+            viewModel.removeStock(data: viewModel.findStockAsStock(data: array[indexPath.row]))
             storeListTV.deleteRows(at: [indexPath], with: .automatic)
-            
-            didUpDate()
             viewModel.saveData()
+            didUpDate()
         }
     }
 }
@@ -213,24 +159,19 @@ extension StoreVC {
         switchSegment.insertSegment(withTitle: "양호 물품", at: 2, animated: true)
         switchSegment.selectedSegmentIndex = selectSegmentNumber
         switchSegment.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(switchSegment)
         
-        switchSegment.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height / 8).isActive = true
+        switchSegment.topAnchor.constraint(equalTo: view.topAnchor, constant: 104).isActive = true
         switchSegment.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        switchSegment.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        switchSegment.heightAnchor.constraint(equalToConstant: 46).isActive = true
         
         switchSegment.backgroundColor = .clear
         switchSegment.tintColor = .clear
         switchSegment.setTitleTextAttributes([
-            NSAttributedString.Key.font : UIFont(name: "DiwanMishafi", size: 18),
+            NSAttributedString.Key.font : UIFont(name: "DiwanMishafi", size: 16)!,
             NSAttributedString.Key.foregroundColor: UIColor.lightGray], for: .normal)
-        switchSegment.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "DiwanMishafi", size : 18),
-                                              NSAttributedString.Key.foregroundColor: UIColor(red: 0.26, green: 0.43, blue: 0.85, alpha: 1.0)],  for: .selected)
-        
-        if didSelectEditBtn == false {
-            buttonbarSetting()
-            switchSegment.addTarget(self, action: #selector(StoreVC.segmentControlValueChanged(_:)), for: UIControl.Event.valueChanged)
-        }
+        switchSegment.setTitleTextAttributes([
+            NSAttributedString.Key.font: UIFont(name: "DiwanMishafi", size : 18)!,
+            NSAttributedString.Key.foregroundColor: UIColor(red: 0.26, green: 0.43, blue: 0.85, alpha: 1.0)], for: .selected)
     }
     
     @objc func segmentControlValueChanged(_ sender: UISegmentedControl){
@@ -252,15 +193,13 @@ extension StoreVC {
                 self.selectSegmentNumber = 2
             })
         }
-        self.storeListTV.reloadData()
+        storeListTV.reloadData()
     }
     
     /** 세그먼트 하단 바 설정 */
-    func buttonbarSetting(){
-        buttonBar.translatesAutoresizingMaskIntoConstraints = false
+    func setUpButtonLayoutSetting(){
         buttonBar.backgroundColor = UIColor(red: 0.26, green: 0.43, blue: 0.85, alpha: 1.0)
-        view.addSubview(buttonBar)
-        
+        buttonBar.translatesAutoresizingMaskIntoConstraints = false
         buttonBar.topAnchor.constraint(equalTo: switchSegment.bottomAnchor).isActive = true
         buttonBar.heightAnchor.constraint(equalToConstant: 5).isActive = true
         buttonBar.leftAnchor.constraint(equalTo: switchSegment.leftAnchor).isActive = true

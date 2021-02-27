@@ -22,6 +22,7 @@ class outStockCollectionCell: UICollectionViewCell {
     private func setSubViews(){
         outStockTV.delegate = self
         outStockTV.dataSource = self
+        outStockTV.showsVerticalScrollIndicator = false
         setSubLayer()
         
         for (key, value) in viewModel.returnStockPerDateOutArray() {

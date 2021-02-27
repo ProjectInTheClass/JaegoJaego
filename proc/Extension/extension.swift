@@ -10,21 +10,12 @@ import UIKit
 import Foundation
 
 extension UIColor {
-    // rgb
-    convenience init(red: Int, green: Int, blue: Int) {
-        let newRed = CGFloat(red)/255
-        let newGreen = CGFloat(green)/255
-        let newBlue = CGFloat(blue)/255
-        
-        self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
-    }
-    
     // hex
     convenience init(hex: String){
         var cString: String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         var rgbValue:UInt32 = 0
         
-        if (cString.hasPrefix("#")) {
+        if cString.hasPrefix("#") {
             cString.remove(at: cString.startIndex)
         }
         Scanner(string:cString).scanHexInt32(&rgbValue)
@@ -52,12 +43,6 @@ extension UIViewController {
         return nil
     }
     
-    func Date2String(date: Date, format : String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = format
-        return dateFormatter.string(from: date)
-    }
-    
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -73,13 +58,18 @@ extension Date {
     func returnString(format: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
-        return dateFormatter.string(from: Date())
+        return dateFormatter.string(from: self)
     }
 }
 
 
 extension Dictionary where Value: Equatable {
-
+    subscript(i : Int) -> (key: Key, value: Value) {
+        get {
+            return self[index(startIndex, offsetBy: i)]
+        }
+    }
+    
     func someKey(forValue val: Value) -> Key? {
         return first(where: { $1 == val })?.key
     }

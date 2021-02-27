@@ -32,7 +32,7 @@ class StorePopupVC: UIViewController, UITextFieldDelegate {
 
 extension StorePopupVC {
     func setView(){
-        item = viewModel.findStock(data: position)
+        item = viewModel.findStockAsInt(data: position)
         pop_nameLabel.text = "제품명 : \(item!.name)"
         pop_manyLabel.text = "현재 수량 : \(item!.many) \(item!.manytype)"
         
@@ -46,14 +46,14 @@ extension StorePopupVC {
             ToastView.shared.short(self.view, txt_msg: "사용한 개수를 입력해주세요.")
             return
         }
-        let item = viewModel.findStock (data: position)
+        let item = viewModel.findStockAsInt(data: position)
         
         if (usedItem.isNumber && item.many - Int(usedItem)! >= 0)  {
             item.many -= Int(usedItem)!
             var downDate = item.DownDate
             
             if item.many <= 0 {
-                downDate = DateFormatter().date(from: Date2String(date: Date(), format: "yyyy.MM.dd"))!
+                downDate = DateFormatter().date(from: Date().returnString(format: "yyyy.MM.dd"))!
             }
             
             let stock = Store(name: item.name, UpDate: item.UpDate, DownDate: downDate, many: Int(usedItem)!, manytype:  item.manytype, saveStyle: item.saveStyle)

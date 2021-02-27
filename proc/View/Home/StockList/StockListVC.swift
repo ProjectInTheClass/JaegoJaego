@@ -25,6 +25,7 @@ class StockListVC: UIViewController {
     func getCollectionDelegate(){
         stockCollectionView.delegate = self
         stockCollectionView.dataSource = self
+        stockCollectionView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         stockCollectionView.showsHorizontalScrollIndicator = false
     }
 }
@@ -56,35 +57,13 @@ extension StockListVC : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: true)
     }
-    
-//    // 미정 - 통계 목록 세팅
-//    func staticCollectionSetting(_ collectionView: UICollectionView, indexpath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StaticCollectionCell", for: indexpath) as! staticStockCollectionCell
-//        return cell
-//    }
-    
-    
-//    // 초점 가운데로 모이게 하기
-//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-//        let layout = self.stockCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
-//        let cellWithIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
-//
-//        var offset = targetContentOffset.pointee
-//        let index = (offset.x + scrollView.contentInset.left) / cellWithIncludingSpacing
-//        let roundedIndex = round(index)
-//
-//        let settingFocus = (self.view.frame.width - layout.itemSize.width ) / 2
-//
-//        offset = CGPoint(x: roundedIndex * cellWithIncludingSpacing - scrollView.contentInset.left - settingFocus, y: -scrollView.contentInset.top)
-//        targetContentOffset.pointee = offset
-//    }
 }
 
 
 extension StockListVC : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.view.frame.width - (15 * 2)
-        let height = self.view.frame.height - (75 * 2)
+        let width = self.view.frame.width - 30
+        let height = self.view.frame.height - (80 * 2)
         return CGSize(width: width, height: height)
     }
 }
