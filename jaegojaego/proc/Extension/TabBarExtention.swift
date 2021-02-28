@@ -10,6 +10,7 @@ import UIKit
 
 class TabBarExtention: UITabBarController {
     let button = UIButton(type: .custom)
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
@@ -17,13 +18,7 @@ class TabBarExtention: UITabBarController {
             self.addCenterButton(withImage: newButton,highlightImage: newButton)
         }
     }
-
-    @objc func handleTouchTabbarCenter(sender: UIButton){
-        if let count = self.tabBar.items?.count {
-            let i = floor(Double(count/2))
-            self.selectedViewController = self.viewControllers?[Int(i)]
-        }
-    }
+    
     func addCenterButton(withImage buttonImage: UIImage, highlightImage : UIImage){
         let paddingBottom : CGFloat = 20.0
 
@@ -49,6 +44,13 @@ class TabBarExtention: UITabBarController {
             let i = floor(Double(count / 2))
             let item = self.tabBar.items![Int(i)]
             item.title = ""
+        }
+    }
+    
+    @objc func handleTouchTabbarCenter(sender: UIButton){
+        if let count = self.tabBar.items?.count {
+            let i = floor(Double(count/2))
+            self.selectedViewController = self.viewControllers?[Int(i)]
         }
     }
 }

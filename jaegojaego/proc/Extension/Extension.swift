@@ -30,7 +30,7 @@ extension UIColor {
 }
 
 extension UIViewController {
-    var previousViewController:UIViewController?{
+    var previousViewController : UIViewController?{
         if let controllersOnNavStack = self.navigationController?.viewControllers{
             let n = controllersOnNavStack.count
             
@@ -53,22 +53,8 @@ extension Date {
 }
 
 
-extension Dictionary where Value: Equatable {
-    subscript(i : Int) -> (key: Key, value: Value) {
-        get {
-            return self[index(startIndex, offsetBy: i)]
-        }
-    }
-    
-    func someKey(forValue val: Value) -> Key? {
-        return first(where: { $1 == val })?.key
-    }
-}
-
-
 extension UICollectionViewCell {
     func setSubLayer(){
-        /** 효과 씌우기 */
         super.layoutSubviews()
         self.clipsToBounds = false
         layer.shadowRadius = 10

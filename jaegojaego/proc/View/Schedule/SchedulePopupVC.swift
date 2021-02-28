@@ -55,7 +55,6 @@ extension SchedulePopupVC : UITextFieldDelegate {
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
         })
-//        self.view.frame.origin.y = -212
     }
     @objc func keyboardWillHide(_ sender: Notification){
         popupTFBottomConstraint.constant = 0
