@@ -1,25 +1,24 @@
 import UIKit
 
 class HomeStoreTableViewController : UITableViewController {
-    private var viewModel = StoreViewModel()
+    private let viewModel = StoreViewModel()
     private var homeStoreFilterByMany: [Store] = []
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        showLowStoresAtHome()
+        setUpArray()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
 }
 
 
 extension HomeStoreTableViewController {
-    func showLowStoresAtHome() {
+    func setUpArray() {
         homeStoreFilterByMany = viewModel.returnStockLessItem()
-        self.tableView.reloadData()
     }
 }
 
@@ -30,14 +29,10 @@ extension HomeStoreTableViewController {
     }
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let HomeStoreInfo = self.homeStoreFilterByMany[indexPath.row]
-        let HomeStorecell: HomeStoreChartCell = tableView.dequeueReusableCell(withIdentifier: "HStoreCell") as! HomeStoreChartCell
-        let storeManyDegree:String = String(HomeStoreInfo.many) + " / \(HomeStoreInfo.TotalMany)" + " " + HomeStoreInfo.manytype
+        let cell: HomeStoreChartCell = tableView.dequeueReusableCell(withIdentifier: "HStoreCell") as! HomeStoreChartCell
         
-        HomeStorecell.HomeStoreName.text = HomeStoreInfo.name
-        HomeStorecell.HomeStoreImage.image = UIImage(named: HomeStoreInfo.saveStyle.rawValue)
-        HomeStorecell.HomeStoreMany.text = storeManyDegree
-        
-        return HomeStorecell
+        cell.bindViewModel(stock: homeStoreFilterByMany[indexPath.row])
+      
+        return cell
     }
 }

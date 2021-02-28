@@ -10,12 +10,17 @@ import UIKit
 import Foundation
 
 class SchedulePopupVC: UIViewController {
-    @IBOutlet weak var popupDate: UILabel!
-    @IBOutlet weak var popupTF: UITextField!
+    @IBOutlet weak var popupDate: UILabel! {
+        didSet {
+            popupDate.text = Date().returnString(format: "MM월 dd일")
+        }
+    }
+    @IBOutlet weak var popupTF: UITextField! { didSet { popupTF.delegate = self } }
     @IBOutlet weak var savebBtn :UIButton!
     @IBAction func cancleBtn(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    @IBOutlet weak var popupTFBottomConstraint: NSLayoutConstraint!
     
     private let viewModel = ScheduleViewModel()
     private var userStringDate = ""
@@ -32,30 +37,30 @@ class SchedulePopupVC: UIViewController {
 }
 
 extension SchedulePopupVC : UITextFieldDelegate {
-    func setUpSubViews() {
-        popupTF.delegate = self
-        popupTF.becomeFirstResponder()
-        popupDate.text = Date().returnString(format: "MM월 dd일")
+    private func setUpSubViews() {
         savebBtn.addTarget(self, action: #selector(saveButton), for: .touchUpInside)
     }
     
-    //키보드 엔터키 누르면 키보드 내려감
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
         return true
     }
     
-    func setUpkeyboard() {
+    private func setUpkeyboard() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        hideKeyboardWhenTappedAround()
     }
     
     @objc func keyboardWillShow(_ sender: Notification) {
-        self.view.frame.origin.y = -212
+        popupTFBottomConstraint.constant = 212
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        })
     }
     @objc func keyboardWillHide(_ sender: Notification){
-        self.view.frame.origin.y = 0
+        popupTFBottomConstraint.constant = 0
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        })
     }
 
 

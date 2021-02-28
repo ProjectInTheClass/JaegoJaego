@@ -9,7 +9,7 @@ DEPENDENCIES:
   - SWTableViewCell (~> 0.3.7)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - BetterSegmentedControl
     - FSCalendar
     - SWTableViewCell
@@ -19,6 +19,6 @@ SPEC CHECKSUMS:
   FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
   SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
 
-PODFILE CHECKSUM: 928bf357e03113573275cca04b60ed7909826b22
+PODFILE CHECKSUM: 4f31deb6b572d983b8ec8baaf38eed563069a938
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.10.1

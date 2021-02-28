@@ -11,31 +11,43 @@ import UIKit
 class outStockCollectionCell: UICollectionViewCell {
     @IBOutlet weak var outStockTV: UITableView!
     
-    private var viewModel = StoreViewModel()
+    private let viewModel = StoreViewModel()
     private var sectionArray : [SectionObjects] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setSubViews()
-    }
-    
-    private func setSubViews(){
-        outStockTV.delegate = self
-        outStockTV.dataSource = self
-        outStockTV.showsVerticalScrollIndicator = false
-        setSubLayer()
-        
-        for (key, value) in viewModel.returnStockPerDateOutArray() {
-            sectionArray.append(SectionObjects(sectionDate: key, sectionStock: value))
-        }
-        /// 나중에 출고 목록을 만들어서 보내줘야함 (사용하면 보내지도록)
-        sectionArray.sort(by: {$0.sectionDate > $1.sectionDate})
-        
-        outStockTV.register(UINib(nibName: "StockTitleTableCell", bundle: nil), forCellReuseIdentifier: StockTitleTableCell.titleTableCellID)
-        outStockTV.register(UINib(nibName: "StockSubTitleTableCell", bundle: nil), forCellReuseIdentifier: StockSubTitleTableCell.subTitleTableCellID)
+        setUpDelegate()
+        setUpSubViews()
+        setUpArray()
         outStockTV.reloadData()
     }
 }
+
+
+extension outStockCollectionCell {
+    private func setUpDelegate(){
+        outStockTV.delegate = self
+        outStockTV.dataSource = self
+    }
+    
+    private func setUpSubViews(){
+        outStockTV.showsVerticalScrollIndicator = false
+        setSubLayer()
+        
+        outStockTV.register(UINib(nibName: "StockTitleTableCell", bundle: nil), forCellReuseIdentifier: StockTitleTableCell.titleTableCellID)
+        outStockTV.register(UINib(nibName: "StockSubTitleTableCell", bundle: nil), forCellReuseIdentifier: StockSubTitleTableCell.subTitleTableCellID)
+    }
+    
+    private func setUpArray(){
+        let dic = viewModel.returnStockPerDateOutArray()
+        for (key, value) in dic {
+            sectionArray.append(SectionObjects(sectionDate: key, sectionStock: value))
+        }
+        /// 나중에 출고 목록을 만들어서 보내줘야함 (사용하면 보내지도록)
+        sectionArray.sort(by: { $0.sectionDate > $1.sectionDate })
+    }
+}
+
 
 extension outStockCollectionCell : UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -57,17 +69,13 @@ extension outStockCollectionCell : UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerCell = tableView.dequeueReusableCell(withIdentifier: StockTitleTableCell.titleTableCellID) as! StockTitleTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: StockTitleTableCell.titleTableCellID) as! StockTitleTableCell
 
-        var many = 0
-        for i in sectionArray[section].sectionStock{
-            many += i.many
-        }
-        
-        headerCell.bindViewModel(stockDate: sectionArray[section].sectionDate,
+        let many = sectionArray[section].sectionStock.map { $0.many }.reduce(0, +)
+        cell.bindViewModel(stockDate: sectionArray[section].sectionDate,
                                  stockTotal: many,
                                  stockImage: false)
-        return headerCell
+        return cell
     }
     
     

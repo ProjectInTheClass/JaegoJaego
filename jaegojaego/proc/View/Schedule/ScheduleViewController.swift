@@ -41,6 +41,7 @@ extension ScheduleViewController {
         filteredData = viewModel.returnScheduleAt(date: selectedDate)
         ourCalendar.reloadData()
         calendar_table.reloadData()
+        calendar_table.separatorStyle = .none
     }
 }
 
@@ -53,7 +54,7 @@ extension ScheduleViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "littleScheduleCell", for: indexPath) as! ScheduleLittleTableCell
         
-        cell.bindViewModel(title: viewModel.findSchedule(index: indexPath.row).scheduleTitle)
+        cell.bindViewModel(title: filteredData[indexPath.row] .scheduleTitle)
        
         return cell
     }

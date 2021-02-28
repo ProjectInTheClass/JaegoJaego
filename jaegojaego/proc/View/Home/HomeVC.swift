@@ -15,7 +15,6 @@
     private var homeStoreArray : [Store] = []
     private var homeScheduleArray : [Schedule] = []
     
- 
     override func viewDidLoad() {
         super.viewDidLoad()
         setSubViews()
@@ -30,7 +29,7 @@
 }
  
  extension HomeViewController {
-    func setSubViews(){
+    private func setSubViews(){
         noticeTodayDate.text = Date().returnString(format: "MM월 dd일")
         homeStoreArray = storeViewModel.returnStockLessItem()
         homeScheduleArray = scheduleViewModel.returnScheduleAt(date: Date().returnString(format: "yyyyMMdd"))
@@ -41,14 +40,14 @@
         noticeScheduleTV.estimatedRowHeight = UITableView.automaticDimension
     }
     
-    func setUpDelegate(){
+    private func setUpDelegate(){
         noticeNeedTV.delegate = self
         noticeNeedTV.dataSource = self
         noticeScheduleTV.delegate = self
         noticeScheduleTV.dataSource = self
     }
     
-    func setUpNeedLableView(){
+    private func setUpNeedLableView(){
         needLabelView.layoutSubviews()
         needLabelView.layer.cornerRadius = 15
         needLabelView.layer.borderColor = UIColor.init(hex: "#85BECA").cgColor
@@ -69,18 +68,15 @@
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == noticeNeedTV {
-            let HomeStoreInfo = homeStoreArray[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "HStoreCell") as! HomeStoreChartCell
-            let storeManyDegree = "\(HomeStoreInfo.many) + \(HomeStoreInfo.TotalMany) " + HomeStoreInfo.manytype
-            
-            cell.HomeStoreName.text = HomeStoreInfo.name
-            cell.HomeStoreImage.image = UIImage(named: HomeStoreInfo.saveStyle.rawValue)
-            cell.HomeStoreMany.text = storeManyDegree
+        
+            cell.bindViewModel(stock: homeStoreArray[indexPath.row])
             
             return cell
         } else {
             let cell:HomeScheduleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "HScheduleCell") as! HomeScheduleTableViewCell
-            cell.HomeScheduleTitle.text = homeScheduleArray[indexPath.row].scheduleTitle
+            
+            cell.bindViewModel(text: homeScheduleArray[indexPath.row].scheduleTitle)
             
             return cell
         }

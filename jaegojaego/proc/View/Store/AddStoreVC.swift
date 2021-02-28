@@ -23,20 +23,19 @@ class AddStoreVC: UIViewController {
         dismiss(animated: true)
     }
     
-    private var viewModel = StoreViewModel()
+    private let viewModel = StoreViewModel()
     private var stockDate = Date()
     private var stockType = SaveStyle.Fresh
     private var dataFilePath : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        segmentSetting()
         setSubViews()
-        hideKeyboardWhenTappedAround()
+        setUpSegment()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 
@@ -50,7 +49,7 @@ extension AddStoreVC : UITextFieldDelegate {
         moveTextField(textfield: textField, up: false)
     }
     
-    func moveTextField(textfield: UITextField, up: Bool) {
+    private func moveTextField(textfield: UITextField, up: Bool) {
         let moveDuration = 0.3
         let movement: CGFloat = CGFloat(up ? 250 : -250)
         UIView.beginAnimations("animateTextField", context: nil)
@@ -63,11 +62,12 @@ extension AddStoreVC : UITextFieldDelegate {
 
 
 extension AddStoreVC {
-    func setSubViews(){
+    private func setSubViews(){
         stockDatePK.addTarget(self, action: #selector(getDateFromPicker), for: .valueChanged)
         saveBtn.addTarget(self, action: #selector(addStock), for: .touchUpInside)
     }
-    func segmentSetting(){
+    
+    private func setUpSegment(){
         let saveTypeSegmentControl = BetterSegmentedControl(frame: CGRect(x: (view.frame.width - 310) / 2 , y: 40, width: 317, height: 56), segments: LabelSegment.segments(withTitles: ["실온", "냉장", "냉동"], normalBackgroundColor: .white, normalTextColor: UIColor.init(hex: "#7396D0"), selectedBackgroundColor: UIColor.init(hex: "#7396D0"), selectedTextColor: .white), index: 0, options: [.backgroundColor(UIColor.init(hex: "#7396D0")), .indicatorViewBackgroundColor(.white) ])
         saveTypeSegmentControl.layer.borderWidth = 3
         saveTypeSegmentControl.layer.borderColor = UIColor.init(hex: "#7396D0").cgColor
@@ -78,7 +78,7 @@ extension AddStoreVC {
 }
 
 extension AddStoreVC {
-    @objc func segmentValueChanged(sender: BetterSegmentedControl){
+    @objc private func segmentValueChanged(sender: BetterSegmentedControl){
         switch sender.index {
         case 0:
             stockType = SaveStyle.Fresh
@@ -89,23 +89,25 @@ extension AddStoreVC {
         }
     }
     
-    @objc func getDateFromPicker() {
+    @objc private func getDateFromPicker() {
         stockDate = stockDatePK.date
         stockDateLabel.text = stockDate.returnString(format: "yyyy년 MM월 dd일")
     }
 
-    @objc func addStock(sender: UIButton){
-        guard let stockName = stockNameTF.text else { return }
-        guard let stockMany = stockManyTF.text else { return }
-        guard let stockManyType = stockManyTypeTF.text else { return }
+    @objc private func addStock(sender: UIButton){
+        guard let stockName = stockNameTF.text,
+              let stockMany = stockManyTF.text,
+              let stockManyType = stockManyTypeTF.text else { return }
         
-        if !(stockName.isEmpty == true || stockMany.isEmpty == true || stockManyType.isEmpty == true){
+        /// 나중에 기본 값으로 빠르게 넘어가는 걸로 변경
+        if stockName.isEmpty == false && stockMany.isEmpty == false && stockManyType.isEmpty == false {
             
             let stockManyToInt = Int(stockMany)!
             let stock = Store(name: stockName, UpDate: Date(), DownDate: stockDate, many: stockManyToInt, manytype: stockManyType, saveStyle: stockType)
             
             viewModel.addStock(data: stock)
             viewModel.saveData()
+            /// 작동하니..?
             presentingViewController?.viewWillAppear(true)
             dismiss(animated: true, completion: nil)
         }
